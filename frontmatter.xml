@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2023 Andrew Beveridge
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+
+
+<frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <titlepage>
+
+        <author>
+            <personname>Andrew Beveridge</personname>
+            <department>Department of Mathematics, Statistics  and Computer Science</department>
+            <institution>Macalester College</institution>
+            <email>abeverid@macalester.edu</email>
+        </author>
+
+
+        <date><today /></date>
+
+    </titlepage>
+
+
+    <!-- A section of its own in HTML, migrates to copyright-page in LaTeX -->
+    <!-- Titles are optional, presumably none for single author,           -->
+    <!-- or for every author, even if we test a mix here                   -->
+
+    <!--biography xml:id="author-bio-ajb">
+        <title>About Andrew Beveridge</title>
+        <p> Andrew plays bass guitar in "Math Emergency."</p>
+    </biography-->
+
+    <!-- The following items must be placed in the desired/required order -->
+    <!-- This will be checked by a Document Type Definition eventually -->
+    <!-- Order: dedication, acknowledgements, forewords, prefaces -->
+
+    <!-- Each paragraph gets centered and has some vertical separatation -->
+    <!-- A line element may be used here with a single paragraph   -->
+    <!--dedication xml:id="dedication">
+        <p>
+            <line>To students of algebra everywhere</line>
+            <line>they are the reason</line>
+        </p>
+        <p>And to those who teach them</p>
+    </dedication-->
+
+    <!--preface>
+    <p>Have fun.</p>
+
+    </preface-->
+
+
+</frontmatter>

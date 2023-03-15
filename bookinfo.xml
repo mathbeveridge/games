@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<docinfo>
+
+ 
+
+    <!-- Prefix to enhance Sage notebook contents -->
+    <initialism>dm</initialism>
+
+    <!-- Math-related macros from "macros.tex" in previous LaTeX version -->
+    <!-- \notdivide replaces \notmid to avoid conflict with tikz - TWJ 5/6/2010 -->
+    <!-- Added operator \gf  - TWJ 2/26/2013 -->
+    <!-- Added operator \inn - TWJ 4/6/2013  -->
+    <!-- Added operator \aut - TWJ 4/6/2013  -->
+    <!-- Added operator \Hom - TWJ 8/19/2010 -->
+    <macros>
+    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{->-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+%%%%%%%% from H2BAP
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{nonum}{}
+\newtheorem{mydef}{Definition}[section]
+
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+
+
+
+\newcommand{\marginterm}[1]{{\bf #1}\marginpar{{\small #1}}}
+\newcommand{\scmarginterm}[1]{{\sc #1}\marginpar{{\small{\sc #1}}}}
+
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+\newenvironment{my_enumerate}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}{\end{enumerate}
+}
+\newenvironment{my_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{1pt}
+  \setlength{\parsep}{0pt}}{\end{itemize}
+}
+
+
+%\newcommand{\st}[2]{({#1}\,;\,{#2})}
+
+
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     %%%%%%%%%%%%%%%%% tikz helpers
+
+
+%%%%%%%%%%%%%%%%%%% NIMBLE BOARD
+
+%%%%% nimbleboard
+\newcommand{\nimbleboard}[1]{
+
+%%% the board
+% we shift so that the coins can be placed at integer coordinates
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+%%%%%%%%%%%%%%%%%%% COIN
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+%%%%%%%%%%%%%%%%%%% BEAN
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+%%%%%%%%%%%%%%%%%%% HEAP
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+  
+    </macros>
+
+    <!-- this is the default, but supresses a warning -->
+    <cross-references text="type-global" />
+
+    <!-- tikz package and libraries for images -->
+    <latex-image-preamble>
+    \usepackage{multicol} 
+    \usepackage{textcomp}
+    \usepackage{tikz}
+    \usetikzlibrary{backgrounds}
+    \usetikzlibrary{arrows,matrix}
+    \usetikzlibrary{snakes}
+    \usetikzlibrary{decorations.pathreplacing}
+    </latex-image-preamble>
+
+    <!-- more invasive option is "structural" -->
+    <numbering>
+        <division part="decorative" />
+    </numbering>
+
+</docinfo>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--********************************************************************
+Copyright 2023 Andrew Beveridge
+
+xsltproc -xinclude /Users/abeverid/mathbook/xsl/pretext-html.xsl ../discrete.xml
+python3 /Users/abeverid/mathbook/pretext/pretext -vv -c latex-image -f svg -d images  ../discrete.xml
+
+write a  python script to handle:
+enumerate
+> and < and &
+$x$ and $$x$$ and align
+
+pull the name of the problem from the first line  of  the \item
+
+
+*********************************************************************-->
+<!-- This file was originally part of the book     -->
+<!-- (as copied on 2015/07/12)                     -->
+<!--                                               -->
+<!--   Abstract Algebra:  Theory and Applications   -->
+<!--                                                -->
+<!-- Copyright (C) 1997-2014  Thomas W. Judson      -->
+
+<!-- USE XINCLUDE SWITCH ON XSLTPROC -->
+
+<!-- Master file for AATA                           -->
+<!-- Use XSL stylesheets to create subsets          -->
+<!--    Important: Always process all of the source -->
+<!--    to preserve numbering and cross-references! -->
+<!--    So it is never advisable to edit this file  -->
+
+<!-- Changing xml:lang causes many strings to change language -->
+<!-- See the  xsl/localizations  directory for details        -->
+<!-- Note the use of the "xinclude" namespace in order to use multiple files -->
+<!-- Each included file must contain exactly one top-level element, -->
+<!-- such as a chapter or section -->
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+<!-- <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="fr-FR"> -->
+
+    <docinfo>
+    <latex-image-preamble>
+    \usepackage{tikz}
+    \usepackage{multirow}
+    </latex-image-preamble>
+    </docinfo>
+
+    <xi:include href="./bookinfo.xml" /> <!-- ISBN, website, other metadata -->
+
+    <book xml:id="dm">
+    <title>Discrete Mathematics</title>
+    <subtitle>Activities and Exercises</subtitle>
+
+            <xi:include href="./frontmatter.xml" />  
+
+    <!-- Parts are optional, included here for testing            -->
+    <!-- In "bookinfo.xml" set to "structural" for maximum effect -->
+
+    <part xml:id="part-slf">
+        <title>Sets, Logic and Functions</title>
+            <xi:include href="./a01-sets1.xml" />   
+            <xi:include href="./a01-sets2.xml" />
+            <xi:include href="./a01-logic1.xml" />   
+            <xi:include href="./a01-logic2.xml" />  
+            <xi:include href="./a01-function1.xml" /> 
+            <xi:include href="./a01-function2.xml" />     
+            <xi:include href="./a01-function3.xml" />                                 
+    </part>
+    <part xml:id="part-gi">
+        <title>Graphs, Trees, Induction</title>
+            <xi:include href="./b01-graph1.xml" />
+            <xi:include href="./b01-graph2.xml" />  
+            <xi:include href="./b01-tree1.xml" />  
+            <xi:include href="./b01-induction1.xml" />  
+            <xi:include href="./b01-induction2.xml" />   
+            <xi:include href="./b01-planar.xml" />               
+            <!--xi:include href="./ex01-counting.xml" /-->                       
+    </part>    
+
+    </book>
+
+</pretext>
