@@ -48,8 +48,8 @@ pull the name of the problem from the first line  of  the \item
     <xi:include href="./bookinfo.xml" /> <!-- ISBN, website, other metadata -->
 
     <book xml:id="dm">
-    <title>Discrete Mathematics</title>
-    <subtitle>Activities and Exercises</subtitle>
+    <title>How to Be a Player</title>
+    <subtitle>Impartial Combinatorial Games</subtitle>
 
             <xi:include href="./frontmatter.xml" />  
 
@@ -57,25 +57,16 @@ pull the name of the problem from the first line  of  the \item
     <!-- In "bookinfo.xml" set to "structural" for maximum effect -->
 
     <part xml:id="part-slf">
-        <title>Sets, Logic and Functions</title>
-            <xi:include href="./a01-sets1.xml" />   
-            <xi:include href="./a01-sets2.xml" />
-            <xi:include href="./a01-logic1.xml" />   
-            <xi:include href="./a01-logic2.xml" />  
-            <xi:include href="./a01-function1.xml" /> 
-            <xi:include href="./a01-function2.xml" />     
-            <xi:include href="./a01-function3.xml" />                                 
+        <title>The Game of Nim</title>
+        <chapter xml:id="games" xmlns:xi="http://www.w3.org/2001/XInclude">
+            <title>Combinatorical Games</title>
+            <xi:include href="./sec11-nimble.xml" />   
+            <xi:include href="./sec12-combgame.xml" />  
+            <xi:include href="./sec13-gametrees.xml" />
+            <xi:include href="./sec14-exercises.xml" />
+        </chapter>                     
     </part>
-    <part xml:id="part-gi">
-        <title>Graphs, Trees, Induction</title>
-            <xi:include href="./b01-graph1.xml" />
-            <xi:include href="./b01-graph2.xml" />  
-            <xi:include href="./b01-tree1.xml" />  
-            <xi:include href="./b01-induction1.xml" />  
-            <xi:include href="./b01-induction2.xml" />   
-            <xi:include href="./b01-planar.xml" />               
-            <!--xi:include href="./ex01-counting.xml" /-->                       
-    </part>    
+ 
 
     </book>
 

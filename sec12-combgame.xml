@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="comb-games">
+	<title>Combinatorial Games</title>
+	<p>
+	
+	Having seen one example of a combinatorial game, we are now ready to give a precise definition. We restrict our attention to <em>impartial combinatorial games</em>, where both players have the same possible moves from each position. Whenever we say "combinatorial game," or more simply "game," we mean an "impartial combinatorial game."
+	
+
+</p>
+<p>
+<definition>
+<statement>
+<p>
+A  (impartial)  <term>combinatorial game</term> <m>\cG</m> satisfies the following conditions.
+
+	</p>
+	<p>
+	<ol>
+				<li>
+					<p>
+  There are two <term>players</term>.
+					</p>
+				</li>
+				<li>
+					<p>
+  There is a set, usually finite, of possible <term>positions</term> of the game.
+					</p>
+				</li>
+				<li>
+					<p>
+ The rules of the game specify  which moves to
+other positions are legal moves. These are called the <term>followers</term> of the current position. The legal moves are determined only by the current position of the game (and do not depend on the player whose turn it is). If <m>X</m> is a game position, then we denote the set of its followers by
+<me>
+	\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}.
+	</me>
+</p>
+				</li>
+				<li>
+					<p>
+  The players alternate moving.
+					</p>
+				</li>
+				<li>
+					<p>
+ The game ends when a position is reached from which no moves are possible. In other words, the position <m>X</m> has no followers, <m>\cF(X) = \emptyset</m>. Such a position <m>X</m> is called a <term>terminal position</term>.
+					</p>
+				</li>
+				<li>
+					<p>
+ The  last player to move wins. Or more precisely, the first player who cannot move loses!
+					</p>
+				</li>
+				<li>
+					<p>
+ The game ends in a finite number of moves no matter how it is played.
+
+					</p>
+				</li>
+			</ol>
+
+</p>
+</statement>
+</definition>
+	</p>
+
+	<p>
+
+		There are two parts of this definition that are worth emphasizing. 
+	</p>
+    <fact>
+	<p>
+		The game is <term>impartial</term> because
+		 the legal moves only depend upon the current position, not on the current player.
+	</p>
+</fact>
+	<p>
+		In other words, the coins in Nimble are "gray" instead of being "black" or "white." This restriction
+		excludes games like tic-tac-toe, checkers and chess.<fn>These three games are  examples of <em>partizan games</em>, which have a much more complicated theory.</fn> 
+		Second, the victory condition is always the same:
+	</p>
+    <fact>
+	<p>		
+		The last player to move wins.
+	</p>
+</fact>
+	<p>
+		This excludes games like Mancala and Go, where you accumulate points until the end of the game.
+		Finally, it is crucial to note what else is omitted in this definition.
+				<ul>
+					<li>
+					<p>
+		 No random moves such as the rolling of dice or the dealing of cards are allowed. This rules out games like Backgammon, Poker and Monopoly.
+					</p>
+					</li>
+					<li>
+					<p>
+		 A combinatorial game is a game of perfect information: hidden information and simultaneous moves
+		are not allowed. This rules out Battleship, Poker and Rock-Paper-Scissors.
+					</p>
+					</li>
+					<li>
+					<p>
+		  No draws  are possible.
+					</p>
+					</li>
+				</ul>
+		
+		When analyzing a combinatorial game, it is useful to give names to the players. You might be tempted to call them "the first player" and "the second player." Or perhaps you might choose "Player 1" and "Player 2." However, during gameplay this becomes confusing. As we alternate moves, these numbers no longer correspond to which player is active for the current move. (That is, after Player 1's  first move, Player 2 becomes the  first player for the new position.)
+
+		</p>
+		<table>
+            <title>Conventional names for our players</title>
+		<tabular top="minor" left="minor" bottom="minor" right="minor">
+		<row>
+		<cell>
+		<em>First move of the game</em>
+		</cell>
+		<cell>
+		<em>Second move of the game</em>
+		</cell>
+		</row>
+		<row>
+		<cell>
+		Alice
+		</cell>
+		<cell>
+		Bob
+		</cell>
+		</row>
+		<row>
+		<cell>
+		Left
+		</cell>
+		<cell>
+		Right
+		</cell>
+		</row>
+		<row>
+		<cell>
+		Blue
+		</cell>
+		<cell>
+		Red
+		</cell>
+		</row>
+		</tabular>
+		</table>
+		<p>
+		
+	
+		
+		We actually need <em>two sets of names</em> to distinguish the players. First, we want to give them absolute names that never change throughout the game.  The names we will use appear in Table \ref{table:names}.
+		Recently, <em>Alice</em> and <em>Bob</em> have become the conventional names for players, with Alice being the first to act in the game 
+        (because <m>A</m>  precedes <m>B</m>). More traditionally, the players have been called <em>Left</em> and <em>Right</em>, with Left being the first to act (because we read from left to right). <em>Blue</em> and <em>Red</em> are also common names, sometimes written as bLue and Red to emphasize the connection to Left and Right.
+		
+        </p>
+        <p>
+		Our second set of names is associated to the current position (rather than the actual player). 
+        The <term>Next</term> player is the person whose turn it is. 
+        The other player is the <term>Previous</term> player. 
+        We abbreviate these names as <m>\cN</m> and <m>\cP</m>, respectively. 
+        Since we use such fancy type, these symbols must be important!
+		</p>
+		<p>
+        <figure xml:id="fig-nimbleplay">
+			<image width="80%" xml:id="img-nimbleplay">
+						<latex-image>
+		\begin{tikzpicture}
+		
+		\begin{scope}
+		
+		\node at (-1, .8) {<m>\{3,3,3\}=</m>};
+		
+		\nimbleboard{6};
+		\coin{(3,1)};
+		\coin{(2.8,1.1)};
+		\coin{(2.9,1.2)};
+		
+		\node at (8, 1.15) {<m>\cN=</m> Alice};
+		\node at (7.95, .5) {<m>\cP=</m> Bob};
+		
+		\end{scope}
+		
+		
+		\begin{scope}[shift={(0,-2)}]
+		
+		\node at (-1, .8) {<m>\{1,3,3\}=</m>};
+		
+		\nimbleboard{6};
+		\coin{(3,1)};
+		\coin{(2.8,1.1)};
+		\coin{(1,1)};
+		
+		\node at (8, 1.15) {<m>\cN=</m> Bob};
+		\node at (7.95, .5) {<m>\cP=</m> Alice};
+		
+		\end{scope}
+		
+		\begin{scope}[shift={(0,-4)}]
+		
+		
+		\node at (-1, .8) {<m>\{3,3\}=</m>};
+		
+		\nimbleboard{6};
+		\coin{(3,1)};
+		\coin{(2.8,1.1)};
+		
+		
+		\node at (8, 1.15) {<m>\cN=</m> Alice};
+		\node at (7.95, .5) {<m>\cP=</m> Bob};
+		
+		\end{scope}
+		
+		
+		\begin{scope}[shift={(0,-6)}]
+		
+		
+		\node at (-1, .8) {<m>\{3\} = </m>};
+		
+		\nimbleboard{6};
+		\coin{(3,1)};
+		
+		
+		
+		\node at (8, 1.15) {<m>\cN=</m> Bob};
+		\node at (7.95, .5) {<m>\cP=</m> Alice};
+		
+		\end{scope}
+		
+		
+		\begin{scope}[shift={(0,-8)}]
+		
+		\node at (-1, .8) {<m>\emptyset = </m>};
+		
+		\nimbleboard{6};
+		
+		
+		
+		\node at (8, 1.15) {<m>\cN=</m> Alice};
+		\node at (7.95, .5) {<m>\cP=</m> Bob};
+		
+		\end{scope}
+		
+		\end{tikzpicture}
+                </latex-image>
+			</image>
+			<caption>Example play of a game of Nimble. The roles of <m>\cN</m> and <m>\cP</m> alternate with each turn.</caption>
+        </figure>
+    
+</p>	
+		
+
+		
+	<p>
+		
+		
+		Now that we have these two different ways to refer to players, let us look 
+        at the example play of Nimble shown in  <xref ref="fig-nimbleplay" />. 
+        In this figure, we also describe the position as a <em>multiset</em> 
+        (a set where elements can repeat)
+        where we list the locations of the coins in brackets. 
+        This more compact notation will be quite useful. 
+        <ul>
+            <li>
+            <p>
+                The game starts with three coins on square 3, represented by the 
+        multiset <m>\{3,3,3\}</m>.
+            </p>
+            </li>
+            <li>
+                <p>
+                    Alice goes first in this game, so she starts as 
+                    player <m>\cN</m> and Bob starts as player <m>\cP</m>. Alice moves one 
+                    coin to square 1. The game position is now <m>\{1,3,3\}</m>. Bob becomes player <m>\cN</m>
+                    (because now it is his turn) and Alice becomes player <m>\cP</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Bob sees that he can set up a Tweedledum-Tweedledee position by
+                    moving the coin at square 1 off of the board. The game position is now <m>\{3,3\}</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Now Alice is player <m>\cN</m> again. She realizes that she will 
+                    lose the game no matter what. She removes one coin from the board. 
+                    The game position is now <m>\{3\}</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Bob becomes player <m>\cN</m>. He copies her move. 
+                    This brings us to the final (empty) board <m>\emptyset</m>. 
+                </p>
+            </li> 
+            <li>
+                <p>
+                Alice is player <m>\cN</m> and there are no valid moves. Therefore, Bob is the winner.
+                </p>
+            </li>                                  
+        </ul>
+        
+
+         
+         
+		
+		</p>
+	
+
+
+</section>

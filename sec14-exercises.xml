@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="nimble-exercise">
+	<title>Exercises</title>
+
+
+	<exercises>
+		<title>Exercises</title>
+		<exercise>
+			<statement>
+				<p>
+ How many distinct first moves are there in the Nimble position of Figure <xref ref="fig-nimble"/>? (Don't worry about whether these moves are winning or losing; just count the total number of possible first moves.)
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Explain why Position 5 in Figure <xref ref="fig-nimble-examples" /> is Bob-win.
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Should Alice have lost the game in Figure <xref ref="fig-nimbleplay"/>>? Why or why not?
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Consider the  Nimble position in Figure <xref ref="fig-nimble4"/>, where it is Alice's turn to move. Who is the winner: Alice or Bob? Explain.
+
+
+</p>
+<p>
+
+    <figure xml:id="fig-nimble4">
+			<image width="50%" xml:id="fig-img-nimble-nimble4">
+				<latex-image>
+\begin{tikzpicture}
+
+\nimbleboard{6};
+\coin{(1,1)};
+\coin{(2,1)};
+\coin{(3,1)};
+\coin{(4,1)};
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+            <caption>Who wins this  Nimble position with 4 coins?</caption>
+    </figure>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Who wins the Nimble position in Figure <xref ref="fig-nimble" />? Explain. (Hint: your answer to exercise 2 will be helpful.)
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Consider a game of Nimble with two coins in position <m>\{ r, s \}</m>. Under what conditions is the game position an  <m>\cN</m>-position, and when is it a   <m>\cP</m>-position? Justify your answers by giving a winning strategy in each case.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Create the game tree for the Nimble position <m>\{1,1,2 \}</m>. Indicate whether each position in the game tree is an  <m>\cN</m>-position or a  <m>\cP</m>-position.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ For each of the  game trees in Figure <xref ref="fig-tree-exercise"/>, recursively determine whether each position is an  <m>\cN</m>-position or a  <m>\cP</m>-position.   Who wins the root game position, Alice or Bob?
+
+</p>
+<p>
+
+
+
+    <figure xml:id="fig-tree-exercise">
+
+			<image width="90%" xml:id="fig-img-tree-exercise">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=30mm/#1}, scale=.8] 
+
+
+
+
+\begin{scope}
+
+
+\node (G0)    {<m>\Box</m>}
+child { node (G1) {<m>\Box</m>}
+child { node (G1a) {<m>\Box</m>}
+child { node (G1a1) {<m>\Box</m>}
+child { node (G1a1a) { <m>\cP</m> }}
+}
+}
+child { node (G1b) {<m>\Box</m>}
+child { node (G1b1) { <m>\cP</m> }}
+}
+child { node (G1c) {<m>\cP</m>}}
+}
+child { node (G2) {<m>\Box</m>}
+child { node (G2b) { <m>\Box</m> }
+child { node (G2b1) {<m>\Box</m>}
+child { node (G2b1a) {<m>\cP</m>}
+}
+}
+}
+child { node (G2a) {<m>\Box</m>}
+child { node (G2a1) {<m>\Box</m>}
+child { node (G2a11) {<m>\cP</m>}}
+}
+child { node (G2a2) {<m>\Box</m>}
+child { node (G2a21) {<m>\cP</m>}}
+}
+}
+};
+
+\node at (0,-8) {(b)};
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(-10,0)}]
+
+
+\node (G2) {<m>\Box</m>}
+child { node (G2b) { <m>\Box</m> }
+child { node (G2b2) {<m> \cP</m>}}
+child { node (G2b1) {<m>\Box</m>}
+child { node (G2b1a) {<m> \cP</m>}}
+}
+}
+child { node (G2c) {<m>\Box </m>}
+child { node (G2c1) {<m> \cP</m>}}
+}
+child { node (G2a) {<m>\Box</m>}
+child { node (G2a1) {<m>  \cP</m>}}
+child { node (G2a2) {<m> \Box</m>}
+child { node (G2a21) {<m>  \cP</m>}}
+}
+};
+
+\node at (0,-8) {(a)};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+            <caption>Is the root position an <m>\cN</m>-position or a <m>\cN</m>-position ?</caption>
+</figure>
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</section>

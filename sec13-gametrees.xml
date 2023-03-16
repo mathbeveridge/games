@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="game-trees">
+	<title>Game Trees</title>
+	<p>
+
+
+Look back at the example games in  <xref ref="fig-nimble-examples" />. 
+Positions 1, 3 and 4 were Alice-win and positions 2 and 5 were Bob-win.
+Of course, these characterizations assume that Alice and Bob use <term>optimal play</term>, 
+meaning that they do not make inadvertent mistakes that cost them the game. 
+We say that Alice  <em>has a winning strategy</em> for positions 1, 3 and 4, 
+and that Bob has a <term>winning strategy</term> for positions  2 and 5. 
+</p>
+<p>
+Mathematicians don't actually use the terms Alice-win and Bob-win. Instead, they use the Next and Previous terminology.
+
+</p>
+<p>
+<definition>
+<statement>
+<p>
+A game position is an <term><m>\cN</m>-position</term> if the Next player has a winning strategy. Otherwise, it is a <term><m>\cP</m>-position</term>, and the Previous player has a winning strategy.
+</p>
+</statement>
+</definition>
+</p>
+<p>
+
+Our first observation is that any game position is either an <m>\cN</m>-position or a <m>\cP</m>-position. There is no ambiguity about who the winner should be, assuming optimal play.  Indeed, there  is no randomness
+in a combinatorial game, so a player cannot be defeated by bad luck. Also, there is no hidden information, so the player cannot be foiled by a lack of understanding of the current state of the game. Just like tic-tac-toe, a combinatorial game can be mastered. Ultimately, the fun of a combinatorial game is the process of discovering the optimal strategy.
+
+
+		</p>
+		<p>
+
+        <figure xml:id="fig-gametree">
+			<image width="90%" xml:id="img-gametree">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=37mm/#1}]
+
+\node (G0)    {<m>\{ 1, 3 \}</m>}
+child { node (G1) {<m>\{ 3 \}</m>}
+child { node (G1a) {<m>\emptyset</m>}}
+child { node (G1b) {<m>\{ 1 \} </m>}
+child { node (G1b1) { <m>\emptyset</m> }}
+}
+child { node (G1c) {<m>\{ 2 \} </m>}
+child { node (G1c1) { <m>\emptyset</m> }}
+child { node (G1c2) { <m>\{ 1 \}</m> }
+child { node (G1c2a) { <m>\emptyset</m> }}
+}
+}
+}
+child { node (G2) {<m>\{ 1 \}</m>}
+child { node (G2a) { <m>\emptyset</m> }}
+}
+child { node (G2) {<m>\{ 1,1 \}</m>}
+child { node (G1b) {<m>\{ 1 \} </m>}
+child { node (G2a) { <m>\emptyset</m> }}
+}
+}
+child { node (H0)    {<m>\{ 1, 2 \}</m>}
+child { node (H1) {<m>\{ 2 \}</m>}
+child { node (H1a) {<m>\emptyset</m>}}
+child { node (H1b) {<m>\{ 1 \} </m>}
+child { node (H2a) { <m>\emptyset</m> }}
+}
+}
+child { node (H2) {<m>\{ 1 \}</m>}
+child { node (H2a) { <m>\emptyset</m> }}
+}
+child { node (H2) {<m>\{ 1,1 \}</m>}
+child { node (H1b) {<m>\{ 1 \} </m>}
+child { node (H2a) { <m>\emptyset</m> }}
+}
+}
+};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+            <caption>The game tree for Nimble position <m>\{ 1, 3 \}</m></caption>
+</figure>
+
+</p>
+<p>
+
+Given a game position, how do we decide  whether it is an <m>\cN</m>-position or a <m>\cP</m>-position?
+One powerful tool for resolving this question is a <term>game tree</term>. In this tree structure, we list all possible ways for the game to play out. 
+</p>
+<p>
+ <xref ref="fig-gametree" /> shows a  game tree for the Nimble position <m>\{1,3 \}</m>, where once again we use the more compact multiset representation of a Nimble position.  The root of this tree is labeled by <m>\{1,3 \}</m>. This root has three children, corresponding to the follower positions <m>\{ 3 \}</m>, <m>\{ 1 \}</m>, <m>\{ 1, 1\}</m> and <m>\{1,2\}</m>. The tree continues branching downward until we reach <m>\emptyset</m>, which signifies the end of the game.
+
+
+
+
+</p>
+<p>
+
+
+        <figure xml:id="fig-gametree2">
+			<image width="90%" xml:id="img-gametree2">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=45mm/#1}, scale=.8, every node/.style = {font=\sffamily\small}]
+
+\node (G0)    {<m>\{ 1, 3 \}</m>}
+child { node (G1) {<m>\{ 3 \}</m>}
+child { node (G1a) {<m>\emptyset</m>}}
+child { node (G1b) {<m>\{ 1 \} </m>}
+child { node (G1b1) { <m>\emptyset</m> }}
+}
+child { node (G1c) {<m>\{ 2 \} </m>}
+child { node (G1c1) { <m>\emptyset</m> }}
+child { node (G1c2) { <m>\{ 1 \}</m> }
+child { node (G1c2a) { <m>\emptyset</m> }}
+}
+}
+}
+child { node (G2) {<m>\{ 1 \}</m>}
+child { node (G2a) { <m>\emptyset</m> }}
+}
+child { node (G3) {<m>\{ 1,1 \}</m>}
+child { node (G3a) {<m>\{ 1 \} </m>}
+child { node (G3a1) { <m>\emptyset</m> }}
+}
+}
+child { node (H0)    {<m>\{ 1, 2 \}</m>}
+child { node (H3) {<m>\{ 1,1 \}</m>}
+child { node (H3a) {<m>\{ 1 \} </m>}
+child { node (H3a1) { <m>\emptyset</m> }}
+}
+}
+child { node (H2) {<m>\{ 1 \}</m>}
+child { node (H2a) { <m>\emptyset</m> }}
+}
+child { node (H1) {<m>\{ 2 \}</m>}
+child { node (H1a) {<m>\emptyset</m>}}
+child { node (H1b) {<m>\{ 1 \} </m>}
+child { node (H1b1) { <m>\emptyset</m> }}
+}
+}
+};
+
+\node (G0S) [above=.1pt of G0] {<m>\cN</m>};
+\node (G1S) [left=1pt of G1] {<m>\cN</m>};
+\node (G1aS) [below=1pt of G1a] {<m>\cP</m>};
+\node (G1bS) [left=1pt of G1b] {<m>\cN</m>};
+\node (G1b1S) [below=1pt of G1b1] {<m>\cP</m>};
+\node (G1cS) [right=1pt of G1c] {<m>\cN</m>};
+\node (G1c1S) [below=1pt of G1c1] {<m>\cP</m>};
+\node (G1c2S) [right=1pt of G1c2] {<m>\cN</m>};
+\node (G1c2aS) [below=1pt of G1c2a] {<m>\cP</m>};
+\node (G2S) [right=1pt of G2] {<m>\cN</m>};
+\node (G2aS) [below right=1pt of G2a] {<m>\cP</m>};
+\node (G3S) [left=1pt of G3] {<m>\cP</m>};
+\node (G3aS) [left=1pt of G3a] {<m>\cN</m>};
+\node (G3a1S) [below=1pt of G3a1] {<m>\cP</m>};
+
+
+\node (H0S) [right=1pt of H0] {<m>\cN</m>};
+\node (H1S) [right=1pt of H1] {<m>\cN</m>};
+\node (H1aS) [below=1pt of H1a] {<m>\cP</m>};
+\node (H1bS) [right=1pt of H1b] {<m>\cN</m>};
+\node (H1b1S) [below=1pt of H1b1] {<m>\cP</m>};
+\node (H2S) [right=1pt of H2] {<m>\cN</m>};
+\node (H2aS) [below=1pt of H2a] {<m>\cP</m>};
+\node (H3S) [left=1pt of H3] {<m>\cP</m>};
+\node (H3aS) [left=1pt of H3a] {<m>\cN</m>};
+\node (H3a1S) [below=1pt of H3a1] {<m>\cP</m>};
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+            <caption>The game tree for Nimble position <m>\{ 1, 3 \}</m> with the appropriate appelation <m>\cN</m> or <m>\cP</m> next  to each position.</caption>
+            </figure>
+
+
+</p>
+<p>
+
+Next, we add the symbol <m>\cN</m> or <m>\cP</m> next to each position, according to the outcome of the game (under optimal play). This is shown in Figure <xref ref="fig-gametree2"/>. We know that <m>\{ 1, 3 \}</m> is an <m>\cN</m>-position because Alice can set up the Tweedle position <m>\{ 1,1\}</m>. 
+
+</p>
+<p>
+Figure <xref ref="fig-gametree2" /> shows that this is the <em>only</em> winning move for the Next player: all other moves lead to <m>\cN</m>-positions and Bob gets to play from this position. Having a winning strategy means that there is at least one winning move. We have observed the following general fact:
+</p>
+<fact>
+	<p><em>Rule 1</em>: An <m>\cN</m>-position must have at least one follower that is a <m>\cP</m>-position.
+	</p>>
+</fact>
+<p>
+This fact simply points out that if the game is in a winning position, then there must be at least one move that puts the game into  a losing position.
+We can devise a complementary condition for <m>\cP</m>-positions. In <xref ref="fig-gametree2"/>, some <m>\cP</m>-positions mark terminal positions in the game, where there are no valid moves. As for the other <m>\cP</m>-positions, each one has a single follower that is an <m>\cN</m>-position.  More generally, we have the following fact:
+</p>
+<fact>
+<p><em>Rule 2</em>: Every follower of a <m>\cP</m>-position must be an <m>\cN</m>-position.</p>
+</fact>
+<p>
+This fact simply says that if we are in a losing position, then regardless of the next move, the game must be placed into a winning position. Note that the statement above is still true when there are no valid moves: the set of followers is empty, so the statement "every follower of a <m>\cP</m>-position is an <m>\cN</m>-position" is true vacuously.
+ <xref ref="fig-gametree3" /> shows the game tree for the losing Nimble position <m>\{ 2, 2\}</m>. This starting position has multiple moves, each of which places the game into a winning position for the opponent.
+</p>
+<p>
+
+These two rules partition the set of game positions into two sets. This partitioning is so important that it leads to our first theorem. We can actually characterize the <m>\cN</m>-positions and <m>\cP</m>-positions via this partition!
+
+</p>
+<p>
+<theorem>
+<statement>
+<p>
+Let <m>\cG</m> be a combinatorial game. Suppose that we can partition the set of positions of <m>\cG</m> into two sets <m>\cA</m> and <m>\cB</m> such that the following hold:
+		<ul>
+			<li>
+			<p>
+ If  <m>Y \in \cB</m> then there is at least one follower <m>Z \in \cF(Y)</m> such that <m>Z \in \cA</m>, and
+			</p>
+			</li>
+			<li>
+			<p>
+ If  <m>X \in \cA</m> then <m>\cF(X) \subset \cB</m>.
+			</p>
+			</li>
+		</ul>
+Then <m>\cA</m> is the set of <m>\cP</m>-positions and <m>\cB</m> is the set of <m>\cN</m>-positions.
+</p>
+</statement>
+</theorem>
+</p>
+<p>
+
+
+This theorem encapsulates the following remarkable fact:  there is only one way to a partition of the set of game positions into two sets that satisfy these conditions. If we can find such a partition, then we have in fact found the <m>\cN</m>-positions and the <m>\cP</m>-positions.
+
+</p>
+<p>
+<proof>
+<p>
+The set <m>\cB</m> obeys Rule 1. The set <m>\cA</m> obeys Rule 2. In particular, positions with no followers are in <m>\cA</m> because they satisfy Rule 2 (vacuously) and they violate Rule 1.
+</p>
+</proof>
+</p>
+<p>
+
+Don't be fooled by the fact that this proof is so short. This is a powerful theorem that is the backbone of all the results that follow!
+</p>
+<p>
+
+
+
+
+        <figure xml:id="fig-gametree3">
+			<image width="90%" xml:id="img-gametree3">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=60mm/#1}, ]
+
+\node (G0)    {<m>\{ 2,2 \}</m>}
+child { node (G1) {<m>\{ 2 \}</m>}
+child { node (G1a) {<m>\emptyset</m>}}
+child { node (G1b) {<m>\{ 1 \} </m>}
+child { node (G1b1) { <m>\emptyset</m> }}
+}
+}
+child { node (G2) {<m>\{ 1,2 \}</m>}
+child { node (G2b) { <m>\{ 1, 1 \}</m> }
+child { node (G2b1) {<m> \{ 1 \} </m>}
+child { node (G2b1a) {<m> \emptyset</m>}}
+}
+}
+child { node (G2c) {<m>\{ 1 \} </m>}
+child { node (G2c1) {<m> \emptyset</m>}}
+}
+child { node (G2a) {<m>\{ 2 \} </m>}
+child { node (G2a1) {<m> \emptyset</m>}}
+child { node (G2a2) {<m> \{ 1 \} </m>}
+child { node (G2a21) {<m> \emptyset</m>}}
+}
+}
+};
+
+\node (G0S) [above=.1pt of G0] {<m>\cP</m>};
+\node (G1S) [left=1pt of G1] {<m>\cN</m>};
+\node (G1aS) [below=1pt of G1a] {<m>\cP</m>};
+\node (G1bS) [left=1pt of G1b] {<m>\cN</m>};
+\node (G1b1S) [below=1pt of G1b1] {<m>\cP</m>};
+\node (G2S) [right=1pt of G2] {<m>\cN</m>};
+\node (G2aS) [right=1pt of G2a] {<m>\cN</m>};
+\node (G2a1S) [below=1pt of G2a1] {<m>\cP</m>};
+\node (G2a2S) [right=1pt of G2a2] {<m>\cN</m>};
+\node (G2a21S) [below=1pt of G2a21] {<m>\cP</m>};
+\node (G2bS) [right=1pt of G2b] {<m>\cP</m>};
+\node (G2b1S) [right=1pt of G2b1] {<m>\cN</m>};
+\node (G2b1aS) [below=1pt of G2b1a] {<m>\cP</m>};
+\node (G2cS) [right=1pt of G2c] {<m>\cN</m>};
+\node (G2c1S) [below=1pt of G2c1] {<m>\cP</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+<caption>The game tree for Nimble position <m>\{ 2,2 \}</m>. 
+Both of the followers of the <m>\cP</m>-position <m>\{ 2,2 \}</m> are <m>\cN</m>-positions.</caption>
+</figure>
+
+
+</p>
+<p>
+
+
+
+This brings us to one of the most useful observations in this section. <em>We can use the game tree to recursively determine the <m>\cN</m>-position</em>s and the <m>\cP</m>-positions.
+
+</p>
+<p>
+We start with the leaves, which correspond to games with no valid moves. 
+Therefore, all of the leaves are <m>\cP</m>-positions by Rule 2. 
+Next, we consider positions whose followers are all leaves. 
+These are <m>\cN</m>-positions by Rule 1. 
+
+</p>
+<p>
+We continue in this manner, dealing with positions whose set of followers have already been labeled. Eventually, we are able to label all the game positions in the tree (including the root position).   <xref ref="fig-gametree-label"/> shows this process in action for the game tree of some unknown combinatorial game.
+
+
+</p>
+<p>
+
+
+
+
+        <figure xml:id="fig-gametree-label">
+			<image width="90%" xml:id="img-gametree-label">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=20mm/#1}, ]
+
+
+
+
+\begin{scope}
+
+
+\node (G0)    {<m>\Box</m>}
+child { node (G1) {<m>\Box</m>}
+child { node (G1a) {<m>\Box</m>}
+child { node (G1a1) {<m>\Box</m>}
+child { node (G1a1a) { <m>\cP</m> }}
+}
+}
+child { node (G1b) {<m>\Box</m>}
+child { node (G1b1) { <m>\cP</m> }}
+}
+}
+child { node (G3) {<m>\Box</m>}
+child { node (G3a) { <m>\Box</m> }
+child { node (G3a1) {<m>\Box</m>}
+child { node (G3a1a) {<m>\cP</m>}}
+}
+}
+}
+child { node (G2) {<m>\Box</m>}
+child { node (G2b) { <m>\Box</m> }
+child { node (G2b1) {<m>\Box</m>}
+child { node (G2b1a) {<m>\cP</m>}}
+}
+}
+child { node (G2a) {<m>\Box</m>}
+child { node (G2a1) {<m>\cP</m>}}
+child { node (G2a2) {<m>\Box</m>}
+child { node (G2a21) {<m>\cP</m>}}
+}
+}
+};
+
+
+\end{scope}
+
+
+
+\draw[-latex, thick] (3.25,-3.5) -- (4.75,-3.5);
+\draw[-latex, thick] (7,-6.5) -- (2,-8.5);
+\draw[-latex, thick] (3.25,-11.5) -- (4.75,-11.5);
+
+
+\begin{scope}[shift={(8,0)}]
+
+
+\node (G0)    {<m>\Box</m>}
+child { node (G1) {<m>\Box</m>}
+child { node (G1a) {<m>\Box</m>}
+child { node (G1a1) {<m>\cN</m>}
+child { node (G1a1a) { <m>\cP</m> }}
+}
+}
+child { node (G1b) {<m>\cN</m>}
+child { node (G1b1) { <m>\cP</m> }}
+}
+}
+child { node (G3) {<m>\Box</m>}
+child { node (G3a) { <m>\Box</m> }
+child { node (G3a1) {<m>\cN</m>}
+child { node (G3a1a) {<m>\cP</m>}}
+}
+}
+}
+child { node (G2) {<m>\Box</m>}
+child { node (G2b) { <m>\Box</m> }
+child { node (G2b1) {<m>\cN</m>}
+child { node (G2b1a) {<m>\cP</m>}}
+}
+}
+child { node (G2a) {<m>\cN</m>}
+child { node (G2a1) {<m>\cP</m>}}
+child { node (G2a2) {<m>\cN</m>}
+child { node (G2a21) {<m>\cP</m>}}
+}
+}
+};
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-8)}]
+
+
+\node (G0)    {<m>\Box</m>}
+child { node (G1) {<m>\Box</m>}
+child { node (G1a) {<m>\cP</m>}
+child { node (G1a1) {<m>\cN</m>}
+child { node (G1a1a) { <m>\cP</m> }}
+}
+}
+child { node (G1b) {<m>\cN</m>}
+child { node (G1b1) { <m>\cP</m> }}
+}
+}
+child { node (G3) {<m>\Box</m>}
+child { node (G3a) { <m>\cP</m> }
+child { node (G3a1) {<m>\cN</m>}
+child { node (G3a1a) {<m>\cP</m>}}
+}
+}
+}
+child { node (G2) {<m>\Box</m>}
+child { node (G2b) { <m>\cP</m> }
+child { node (G2b1) {<m>\cN</m>}
+child { node (G2b1a) {<m>\cP</m>}}
+}
+}
+child { node (G2a) {<m>\cN</m>}
+child { node (G2a1) {<m>\cP</m>}}
+child { node (G2a2) {<m>\cN</m>}
+child { node (G2a21) {<m>\cP</m>}}
+}
+}
+};
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,-8)}]
+
+
+\node (G0)    {<m>\cP</m>}
+child { node (G1) {<m>\cN</m>}
+child { node (G1a) {<m>\cP</m>}
+child { node (G1a1) {<m>\cN</m>}
+child { node (G1a1a) { <m>\cP</m> }}
+}
+}
+child { node (G1b) {<m>\cN</m>}
+child { node (G1b1) { <m>\cP</m> }}
+}
+}
+child { node (G3) {<m>\cN</m>}
+child { node (G3a) { <m>\cP</m> }
+child { node (G3a1) {<m>\cN</m>}
+child { node (G3a1a) {<m>\cP</m>}}
+}
+}
+}
+child { node (G2) {<m>\cN</m>}
+child { node (G2b) { <m>\cP</m> }
+child { node (G2b1) {<m>\cN</m>}
+child { node (G2b1a) {<m>\cP</m>}}
+}
+}
+child { node (G2a) {<m>\cN</m>}
+child { node (G2a1) {<m>\cP</m>}}
+child { node (G2a2) {<m>\cN</m>}
+child { node (G2a21) {<m>\cP</m>}}
+}
+}
+};
+
+
+\end{scope}
+
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			<caption>Starting with a game tree, we can recursively label the positions as <m>\cN</m>-positions and <m>\cP</m>-positions. Initially, we only know the ending positions. Using Rule 1 and Rule 2, we can recursively work our way up the tree, identifying each position as an <m>\cN</m>-position or a <m>\cP</m>-position. For this game tree, the root is a <m>\cP</m>-position.</caption>
+		</figure>
+
+
+
+
+			</p><p>
+
+
+
+
+
+There is no denying that this method is a brute force approach, and it is time consuming. Indeed, we enumerate every possible move for every possible position (regardless of whether we think it is a good choice). Therefore, game trees can become unmanageable quite quickly. However, for small games, constructing a game tree can be very useful. 
+</p><p>
+
+In order to develop a winning strategy, you must understand what constitutes good moves and bad moves.
+A game tree is a methodical way to identify game positions that are winning or losing. Once you have a sense of these categories, you can start to  think about more complicated starting positions, and then formulate a broader strategy for the game at hand.
+
+
+
+
+</p>
+
+
+</section>

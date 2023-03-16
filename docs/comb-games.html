@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dm Combinatorial Games</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{nonum}{}
+\newtheorem{mydef}{Definition}[section]
+
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+
+
+
+\newcommand{\marginterm}[1]{{\bf #1}\marginpar{{\small #1}}}
+\newcommand{\scmarginterm}[1]{{\sc #1}\marginpar{{\small{\sc #1}}}}
+
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+\newenvironment{my_enumerate}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}{\end{enumerate}
+}
+\newenvironment{my_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{1pt}
+  \setlength{\parsep}{0pt}}{\end{itemize}
+}
+
+
+
+
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="nimble.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="games.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="game-trees.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="nimble.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="games.html" title="Up">Up</a><a class="next-button button toolbar-item" href="game-trees.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-slf.html" data-scroll="part-slf"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+<li class="link">
+<a href="games.html" data-scroll="games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="comb-games.html" data-scroll="comb-games" class="active">Combinatorial Games</a></li>
+<li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="comb-games"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Combinatorial Games</span>
+</h2>
+<p id="p-14">Having seen one example of a combinatorial game, we are now ready to give a precise definition. We restrict our attention to <em class="emphasis">impartial combinatorial games</em>, where both players have the same possible moves from each position. Whenever we say "combinatorial game," or more simply "game," we mean an "impartial combinatorial game."</p>
+<p id="p-15"><article class="definition definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-16">A  (impartial)  <dfn class="terminology">combinatorial game</dfn> \(\cG\) satisfies the following conditions.</p>
+<ol id="p-17" class="decimal">
+<li id="li-1"><p id="p-18">There are two <dfn class="terminology">players</dfn>.</p></li>
+<li id="li-2"><p id="p-19">There is a set, usually finite, of possible <dfn class="terminology">positions</dfn> of the game.</p></li>
+<li id="li-3">
+<p id="p-20">The rules of the game specify  which moves to other positions are legal moves. These are called the <dfn class="terminology">followers</dfn> of the current position. The legal moves are determined only by the current position of the game (and do not depend on the player whose turn it is). If \(X\) is a game position, then we denote the set of its followers by</p>
+<div class="displaymath">
+\begin{equation*}
+\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}.
+\end{equation*}
+</div>
+</li>
+<li id="li-4"><p id="p-21">The players alternate moving.</p></li>
+<li id="li-5"><p id="p-22">The game ends when a position is reached from which no moves are possible. In other words, the position \(X\) has no followers, \(\cF(X) = \emptyset\text{.}\) Such a position \(X\) is called a <dfn class="terminology">terminal position</dfn>.</p></li>
+<li id="li-6"><p id="p-23">The  last player to move wins. Or more precisely, the first player who cannot move loses!</p></li>
+<li id="li-7"><p id="p-24">The game ends in a finite number of moves no matter how it is played.</p></li>
+</ol></article></p>
+<p id="p-25">There are two parts of this definition that are worth emphasizing.</p>
+<article class="fact theorem-like" id="fact-1"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-26">The game is <dfn class="terminology">impartial</dfn> because the legal moves only depend upon the current position, not on the current player.</p></article><p id="p-27">In other words, the coins in Nimble are "gray" instead of being "black" or "white." This restriction excludes games like tic-tac-toe, checkers and chess.<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 1 </sup></a> Second, the victory condition is always the same:</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn">These three games are  examples of <em class="emphasis">partizan games</em>, which have a much more complicated theory.</div></div>
+<article class="fact theorem-like" id="fact-2"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-28">The last player to move wins.</p></article><p id="p-29">This excludes games like Mancala and Go, where you accumulate points until the end of the game. Finally, it is crucial to note what else is omitted in this definition.</p>
+<ul class="disc">
+<li id="li-8"><p id="p-30">No random moves such as the rolling of dice or the dealing of cards are allowed. This rules out games like Backgammon, Poker and Monopoly.</p></li>
+<li id="li-9"><p id="p-31">A combinatorial game is a game of perfect information: hidden information and simultaneous moves are not allowed. This rules out Battleship, Poker and Rock-Paper-Scissors.</p></li>
+<li id="li-10"><p id="p-32">No draws  are possible.</p></li>
+</ul>
+<p class="continuation">When analyzing a combinatorial game, it is useful to give names to the players. You might be tempted to call them "the first player" and "the second player." Or perhaps you might choose "Player 1" and "Player 2." However, during gameplay this becomes confusing. As we alternate moves, these numbers no longer correspond to which player is active for the current move. (That is, after Player 1's  first move, Player 2 becomes the  first player for the new position.)</p>
+<figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.4<span class="period">.</span></span><span class="space"> </span>Conventional names for our players</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r1 l1 t1 lines"><em class="emphasis">First move of the game</em></td>
+<td class="l m b1 r1 l0 t1 lines"><em class="emphasis">Second move of the game</em></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Alice</td>
+<td class="l m b1 r1 l0 t0 lines">Bob</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Left</td>
+<td class="l m b1 r1 l0 t0 lines">Right</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Blue</td>
+<td class="l m b1 r1 l0 t0 lines">Red</td>
+</tr>
+</table></div></figure><p id="p-33">We actually need <em class="emphasis">two sets of names</em> to distinguish the players. First, we want to give them absolute names that never change throughout the game.  The names we will use appear in Table \ref{table:names}. Recently, <em class="emphasis">Alice</em> and <em class="emphasis">Bob</em> have become the conventional names for players, with Alice being the first to act in the game (because \(A\)  precedes \(B\)). More traditionally, the players have been called <em class="emphasis">Left</em> and <em class="emphasis">Right</em>, with Left being the first to act (because we read from left to right). <em class="emphasis">Blue</em> and <em class="emphasis">Red</em> are also common names, sometimes written as bLue and Red to emphasize the connection to Left and Right.</p>
+<p id="p-34">Our second set of names is associated to the current position (rather than the actual player). The <dfn class="terminology">Next</dfn> player is the person whose turn it is. The other player is the <dfn class="terminology">Previous</dfn> player. We abbreviate these names as \(\cN\) and \(\cP\text{,}\) respectively. Since we use such fancy type, these symbols must be important!</p>
+<p id="p-35"><figure class="figure figure-like" id="fig-nimbleplay"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/img-nimbleplay.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.5<span class="period">.</span></span><span class="space"> </span>Example play of a game of Nimble. The roles of \(\cN\) and \(\cP\) alternate with each turn.</figcaption></figure></p>
+<p id="p-36">Now that we have these two different ways to refer to players, let us look at the example play of Nimble shown in  <a class="xref" data-knowl="./knowl/fig-nimbleplay.html" title="Figure 1.2.5">Figure 1.2.5</a>. In this figure, we also describe the position as a <em class="emphasis">multiset</em> (a set where elements can repeat) where we list the locations of the coins in brackets. This more compact notation will be quite useful.</p>
+<ul class="disc">
+<li id="li-11"><p id="p-37">The game starts with three coins on square 3, represented by the multiset \(\{3,3,3\}\text{.}\)</p></li>
+<li id="li-12"><p id="p-38">Alice goes first in this game, so she starts as player \(\cN\) and Bob starts as player \(\cP\text{.}\) Alice moves one coin to square 1. The game position is now \(\{1,3,3\}\text{.}\) Bob becomes player \(\cN\) (because now it is his turn) and Alice becomes player \(\cP\text{.}\)</p></li>
+<li id="li-13"><p id="p-39">Bob sees that he can set up a Tweedledum-Tweedledee position by moving the coin at square 1 off of the board. The game position is now \(\{3,3\}\text{.}\)</p></li>
+<li id="li-14"><p id="p-40">Now Alice is player \(\cN\) again. She realizes that she will lose the game no matter what. She removes one coin from the board. The game position is now \(\{3\}\text{.}\)</p></li>
+<li id="li-15"><p id="p-41">Bob becomes player \(\cN\text{.}\) He copies her move. This brings us to the final (empty) board \(\emptyset\text{.}\)</p></li>
+<li id="li-16"><p id="p-42">Alice is player \(\cN\) and there are no valid moves. Therefore, Bob is the winner.</p></li>
+</ul></section></div></main>
+</div>
+</body>
+</html>

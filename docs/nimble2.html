@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dm Game Trees</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{nonum}{}
+\newtheorem{mydef}{Definition}[section]
+
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+
+
+
+\newcommand{\marginterm}[1]{{\bf #1}\marginpar{{\small #1}}}
+\newcommand{\scmarginterm}[1]{{\sc #1}\marginpar{{\small{\sc #1}}}}
+
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+\newenvironment{my_enumerate}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}{\end{enumerate}
+}
+\newenvironment{my_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{1pt}
+  \setlength{\parsep}{0pt}}{\end{itemize}
+}
+
+
+
+
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="dm.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="nimble1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="games.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="nimble1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="games.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-slf.html" data-scroll="part-slf"><span class="codenumber">I</span> <span class="title">Nimble</span></a></li>
+<li class="link">
+<a href="games.html" data-scroll="games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="nimble1.html" data-scroll="nimble1">Combinatorial Games</a></li>
+<li><a href="nimble2.html" data-scroll="nimble2" class="active">Game Trees</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="nimble2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Game Trees</span>
+</h2>
+<p id="p-43">Look back at the example games in  <a class="xref" data-knowl="./knowl/fig-nimble-examples.html" title="Figure 1.1.2">Figure 1.1.2</a>. Positions 1, 3 and 4 were Alice-win and positions 2 and 5 were Bob-win. Of course, these characterizations assume that Alice and Bob use <dfn class="terminology">optimal play</dfn>, meaning that they do not make inadvertent mistakes that cost them the game. We say that Alice  <em class="emphasis">has a winning strategy</em> for positions 1, 3 and 4, and that Bob has a <dfn class="terminology">winning strategy</dfn> for positions  2 and 5.</p>
+<p id="p-44">Mathematicians don't actually use the terms Alice-win and Bob-win. Instead, they use the Next and Previous terminology.</p>
+<p id="p-45"><article class="definition definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-46">A game position is an <dfn class="terminology">\(\cN\)-position</dfn> if the Next player has a winning strategy. Otherwise, it is a <dfn class="terminology">\(\cP\)-position</dfn>, and the Previous player has a winning strategy.</p></article></p>
+<p id="p-47">Our first observation is that any game position is either an \(\cN\)-position or a \(\cP\)-position. There is no ambiguity about who the winner should be, assuming optimal play.  Indeed, there  is no randomness in a combinatorial game, so a player cannot be defeated by bad luck. Also, there is no hidden information, so the player cannot be foiled by a lack of understanding of the current state of the game. Just like tic-tac-toe, a combinatorial game can be mastered. Ultimately, the fun of a combinatorial game is the process of discovering the optimal strategy.</p>
+<p id="p-48"><figure class="figure figure-like" id="fig-gametree"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/img-gametree.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.2<span class="period">.</span></span><span class="space"> </span>The game tree for Nimble position \(\{ 1, 3 \}\)</figcaption></figure></p>
+<p id="p-49">Given a game position, how do we decide  whether it is an \(\cN\)-position or a \(\cP\)-position? One powerful tool for resolving this question is a <dfn class="terminology">game tree</dfn>. In this tree structure, we list all possible ways for the game to play out.</p>
+<p id="p-50"><a class="xref" data-knowl="./knowl/fig-gametree.html" title="Figure 1.3.2">Figure 1.3.2</a> shows a  game tree for the Nimble position \(\{1,3 \}\text{,}\) where once again we use the more compact multiset representation of a Nimble position.  The root of this tree is labeled by \(\{1,3 \}\text{.}\) This root has three children, corresponding to the follower positions \(\{ 3 \}\text{,}\) \(\{ 1 \}\text{,}\) \(\{ 1, 1\}\) and \(\{1,2\}\text{.}\) The tree continues branching downward until we reach \(\emptyset\text{,}\) which signifies the end of the game.</p>
+<p id="p-51"><figure class="figure figure-like" id="fig-gametree2"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/img-gametree2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.3<span class="period">.</span></span><span class="space"> </span>The game tree for Nimble position \(\{ 1, 3 \}\) with the appropriate appelation \(\cN\) or \(\cP\) next  to each position.</figcaption></figure></p>
+<p id="p-52">Next, we add the symbol \(\cN\) or \(\cP\) next to each position, according to the outcome of the game (under optimal play). This is shown in Figure <a class="xref" data-knowl="./knowl/fig-gametree2.html" title="Figure 1.3.3">Figure 1.3.3</a>. We know that \(\{ 1, 3 \}\) is an \(\cN\)-position because Alice can set up the Tweedle position \(\{ 1,1\}\text{.}\)</p>
+<p id="p-53">Figure <a class="xref" data-knowl="./knowl/fig-gametree2.html" title="Figure 1.3.3">Figure 1.3.3</a> shows that this is the <em class="emphasis">only</em> winning move for the Next player: all other moves lead to \(\cN\)-positions and Bob gets to play from this position. Having a winning strategy means that there is at least one winning move. We have observed the following general fact:</p>
+<article class="fact theorem-like" id="fact-3"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
+</h6>
+<p id="p-54"><em class="emphasis">Rule 1</em>: An \(\cN\)-position must have at least one follower that is a \(\cP\)-position.</p></article><p id="p-55">This fact simply points out that if the game is in a winning position, then there must be at least one move that puts the game into  a losing position. We can devise a complementary condition for \(\cP\)-positions. In <a class="xref" data-knowl="./knowl/fig-gametree2.html" title="Figure 1.3.3">Figure 1.3.3</a>, some \(\cP\)-positions mark terminal positions in the game, where there are no valid moves. As for the other \(\cP\)-positions, each one has a single follower that is an \(\cN\)-position.  More generally, we have the following fact:</p>
+<article class="fact theorem-like" id="fact-4"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
+</h6>
+<p id="p-56"><em class="emphasis">Rule 2</em>: Every follower of a \(\cP\)-position must be an \(\cN\)-position.</p></article><p id="p-57">This fact simply says that if we are in a losing position, then regardless of the next move, the game must be placed into a winning position. Note that the statement above is still true when there are no valid moves: the set of followers is empty, so the statement "every follower of a \(\cP\)-position is an \(\cN\)-position" is true vacuously. <a class="xref" data-knowl="./knowl/fig-gametree3.html" title="Figure 1.3.7">Figure 1.3.7</a> shows the game tree for the losing Nimble position \(\{ 2, 2\}\text{.}\) This starting position has multiple moves, each of which places the game into a winning position for the opponent.</p>
+<p id="p-58">These two rules partition the set of game positions into two sets. This partitioning is so important that it leads to our first theorem. We can actually characterize the \(\cN\)-positions and \(\cP\)-positions via this partition!</p>
+<p id="p-59"><article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
+</h6>
+<p id="p-60">Let \(\cG\) be a combinatorial game. Suppose that we can partition the set of positions of \(\cG\) into two sets \(\cA\) and \(\cB\) such that the following hold:</p>
+<ul class="disc">
+<li id="li-17"><p id="p-61">If  \(Y \in \cB\) then there is at least one follower \(Z \in \cF(Y)\) such that \(Z \in \cA\text{,}\) and</p></li>
+<li id="li-18"><p id="p-62">If  \(X \in \cA\) then \(\cF(X) \subset \cB\text{.}\)</p></li>
+</ul>
+<p class="continuation">Then \(\cA\) is the set of \(\cP\)-positions and \(\cB\) is the set of \(\cN\)-positions.</p></article></p>
+<p id="p-63">This theorem encapsulates the following remarkable fact:  there is only one way to a partition of the set of game positions into two sets that satisfy these conditions. If we can find such a partition, then we have in fact found the \(\cN\)-positions and the \(\cP\)-positions.</p>
+<p id="p-64"><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-65">The set \(\cB\) obeys Rule 1. The set \(\cA\) obeys Rule 2. In particular, positions with no followers are in \(\cA\) because they satisfy Rule 2 (vacuously) and they violate Rule 1.</p></article></div></p>
+<p id="p-66">Don't be fooled by the fact that this proof is so short. This is a powerful theorem that is the backbone of all the results that follow!</p>
+<p id="p-67"><figure class="figure figure-like" id="fig-gametree3"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/img-gametree3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.7<span class="period">.</span></span><span class="space"> </span>The game tree for Nimble position \(\{ 2,2 \}\text{.}\) Both of the followers of the \(\cP\)-position \(\{ 2,2 \}\) are \(\cN\)-positions.</figcaption></figure></p>
+<p id="p-68">This brings us to one of the most useful observations in this section. <em class="emphasis">We can use the game tree to recursively determine the \(\cN\)-position</em>s and the \(\cP\)-positions.</p>
+<p id="p-69">We start with the leaves, which correspond to games with no valid moves. Therefore, all of the leaves are \(\cP\)-positions by Rule 2. Next, we consider positions whose followers are all leaves. These are \(\cN\)-positions by Rule 1.</p>
+<p id="p-70">We continue in this manner, dealing with positions whose set of followers have already been labeled. Eventually, we are able to label all the game positions in the tree (including the root position).   <a class="xref" data-knowl="./knowl/fig-gametree-label.html" title="Figure 1.3.8">Figure 1.3.8</a> shows this process in action for the game tree of some unknown combinatorial game.</p>
+<p id="p-71"><figure class="figure figure-like" id="fig-gametree-label"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/img-gametree-label.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.8<span class="period">.</span></span><span class="space"> </span>Starting with a game tree, we can recursively label the positions as \(\cN\)-positions and \(\cP\)-positions. Initially, we only know the ending positions. Using Rule 1 and Rule 2, we can recursively work our way up the tree, identifying each position as an \(\cN\)-position or a \(\cP\)-position. For this game tree, the root is a \(\cP\)-position.</figcaption></figure></p>
+<p id="p-72">There is no denying that this method is a brute force approach, and it is time consuming. Indeed, we enumerate every possible move for every possible position (regardless of whether we think it is a good choice). Therefore, game trees can become unmanageable quite quickly. However, for small games, constructing a game tree can be very useful.</p>
+<p id="p-73">In order to develop a winning strategy, you must understand what constitutes good moves and bad moves. A game tree is a methodical way to identify game positions that are winning or losing. Once you have a sense of these categories, you can start to  think about more complicated starting positions, and then formulate a broader strategy for the game at hand.</p></section></div></main>
+</div>
+</body>
+</html>
