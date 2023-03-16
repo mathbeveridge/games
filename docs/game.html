@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Games: Nimble</title>
+<title>Games: How to Be a Player</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>window.MathJax = {
@@ -193,10 +193,10 @@
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="games.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="games.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="comb-games.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><span id="previousbutton" class="previous-button button toolbar-item disabled">Prev</span><span id="upbutton" class="up-button button disabled toolbar-item">Up</span><a id="nextbutton" class="next-button button toolbar-item" href="frontmatter.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="games.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="games.html" title="Up">Up</a><a class="next-button button toolbar-item" href="comb-games.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><span class="previous-button button toolbar-item disabled">Prev</span><span class="up-button button disabled toolbar-item">Up</span><a class="next-button button toolbar-item" href="frontmatter.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -205,7 +205,7 @@
 <li class="link part"><a href="nim.html" data-scroll="nim"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
 <li class="link">
 <a href="games.html" data-scroll="games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
-<li><a href="nimble.html" data-scroll="nimble" class="active">Nimble</a></li>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
 <li><a href="comb-games.html" data-scroll="comb-games">Combinatorial Games</a></li>
 <li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
 <li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
@@ -213,27 +213,10 @@
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="nimble"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Nimble</span>
-</h2>
-<p id="p-1">Let's play a two-player game called <dfn class="terminology">Nimble</dfn>. The board is a strip of squares. Place some coins on the board, however you like. We can have empty squares, as well as multiple coins on a single square. <a class="xref" data-knowl="./knowl/fig-nimble.html" title="Figure 1.1.1">Figure 1.1.1</a> shows a game with seven coins.</p>
-<p id="p-2"><figure class="figure figure-like" id="fig-nimble"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/img-nimble.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>A game of Nimble.</figcaption></figure></p>
-<p id="p-3">During the game, the two players take turns, <em class="emphasis">moving a single coin to the left.</em> There are no restrictions on how far you can move the coin. You can jump onto or over other coins. You can have any number of coins on a square.  You can even jump all the way off the strip! Once a coin is moved off of the strip, it is out of play. <em class="emphasis">The winner is the person who makes the last move.</em></p>
-<p id="p-4"><article class="exploration project-like" id="exploration-1"><h6 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Nimble.</span>
-</h6> Play some games of Nimble. You can draw your own board and use whatever markers you like for your "coins." You can use pennies,  stones,  bits of paper, anything. Try playing various games with one coin, two coins and three coins. Can you find a winning strategy for one coin Nimble? two coin Nimble? three coin Nimble?</article></p>
-<p id="p-5">Now that you've played Nimble, let's try to analyze the game. We name our two players Alice and Bob, where Alice plays first. Who wins the Nimble positions in Figure <a class="xref" data-knowl="./knowl/fig-nimble-examples.html" title="Figure 1.1.2">Figure 1.1.2</a>, Alice or Bob? Try to determine the winner of these games before you continue reading. We encourage you to actually play the games against a real opponent!</p>
-<p id="p-6"><figure class="figure figure-like" id="fig-nimble-examples"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/img-nimble-examples.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Some quick games of Nimble.</figcaption></figure></p>
-<p id="p-7"><em class="alert">Position 1.</em> It is pretty obvious that Alice (who plays first) can win Position 1 by moving the coin off the board. This leaves an empty board, so Bob cannot move. Alice made the last move, and this means that she wins.</p>
-<p id="p-8">Note that Alice could make a mistake and lose the game by moving the coin to the first square, setting up Bob for the win. But since Alice has at least one winning strategy, we consider this game to be <em class="emphasis">Alice-win.</em> (In this game, Alice has exactly one winning strategy, but we will encounter more complicated games that have multiple winning moves.)</p>
-<p id="p-9"><em class="alert">Position 2.</em> Position 2 is a <em class="emphasis">Bob-win</em> game. Here is a winning strategy for Bob (who plays second): just copy whatever move Alice made! If Alice moves a coin off the board, then Bob does as well, which ends the game. If Alice moves to the first or second square, Bob copies this move with the other coin. Once again, we have a single pile of two coins, so Bob can repeat this strategy.</p>
-<p id="p-10">We have a special name for this copycat strategy. Whenever the second player can repeatedly copy the first player, then the second player will win (since the second player always has a valid move). This is called the <dfn class="terminology">Tweedledum &amp; Tweedledee Principle</dfn>.<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a></p>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn">You probably know that Tweedledum and Tweedledee are characters from Lewis Caroll's <em class="emphasis">Through the Looking Glass</em>. This disparaging term is used more generally to describe two people who look and act in identical ways.</div></div>
-<p id="p-11"><em class="alert">Position 3.</em> Position 3 is an <em class="emphasis">Alice-win</em> game. Can you see why? She can move the coin on square 5 to square 2. This sets up the Tweedledum &amp; Tweedledee Principle with the player roles reversed.</p>
-<p id="p-12"><em class="alert">Position 4.</em> Position 4 also belongs to Alice. She can create a Tweedledum-Tweedledee position by moving the coin on square 5 to square 1. This time, we have two different Tweedles (on squares 1 and 4),  with Alice controlling each of them.</p>
-<p id="p-13"><em class="alert">Position 5.</em> Position 5 is the most complicated game of the bunch. This game is <em class="emphasis">Bob-win</em>. No matter how Alice plays, Bob can respond by making a Tweedledum-Tweedledee position. We leave the proof as an exercise.</p></section></div></main>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="book" id="game"><nav class="summary-links"><ul>
+<li><a href="frontmatter.html"><span class="title">Front Matter</span></a></li>
+<li><a href="nim.html"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+</ul></nav></section></div></main>
 </div>
 </body>
 </html>

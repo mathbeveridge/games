@@ -47,7 +47,7 @@ pull the name of the problem from the first line  of  the \item
 
     <xi:include href="./bookinfo.xml" /> <!-- ISBN, website, other metadata -->
 
-    <book xml:id="dm">
+    <book xml:id="game">
     <title>How to Be a Player</title>
     <subtitle>Impartial Combinatorial Games</subtitle>
 
@@ -56,7 +56,7 @@ pull the name of the problem from the first line  of  the \item
     <!-- Parts are optional, included here for testing            -->
     <!-- In "bookinfo.xml" set to "structural" for maximum effect -->
 
-    <part xml:id="part-slf">
+    <part xml:id="nim">
         <title>The Game of Nim</title>
         <chapter xml:id="games" xmlns:xi="http://www.w3.org/2001/XInclude">
             <title>Combinatorical Games</title>
