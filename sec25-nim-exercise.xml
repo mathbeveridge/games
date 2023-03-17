@@ -9,7 +9,7 @@
 		<exercise>
 			<statement>
 				<p>
- Create the game tree for single heap nim, when the heap contains (a) one bean (b) two beans (c) three beans (d) four beans.
+ Create the game tree for single nim heap nim with three beans.
 				</p>
 			</statement>
 		</exercise>
@@ -263,7 +263,7 @@ her number is 38
   In grade school, you had to create addition tables and times tables so that you could learn how these operations worked. We need to do the same with Nim addition. Here is the Nim addition table for the numbers 0 through 3.
 
 
-<me>
+<men xml:id="eqn-nimadd">
 \begin{array}{c||c|c|c|c}
 \oplus &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
 \hline
@@ -276,7 +276,7 @@ her number is 38
 \hline
 3 &amp; 3 &amp; 2 &amp; 1 &amp; 0
 \end{array}
-</me>
+</men>
 Create a nim sum addition table for the numbers 0 through 7. Comment on any patterns that you see.
 
 

@@ -207,7 +207,7 @@ These two rules partition the set of game positions into two sets. This partitio
 
 </p>
 <p>
-<theorem>
+<theorem xml:id="thm-NP">
 <statement>
 <p>
 Let <m>\cG</m> be a combinatorial game. Suppose that we can partition the set of positions of <m>\cG</m> into two sets <m>\cA</m> and <m>\cB</m> such that the following hold:

@@ -128,7 +128,8 @@
 
 
 
-
+\newcommand{\pile}[1]{\bullet{#1}}
+\newcommand{\ppile}[1]{\bullet({#1})}
 
 \newcommand{\nim}[1]{*{#1}}
 
@@ -246,6 +247,16 @@
 <li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="ch-sg.html" data-scroll="ch-sg"><span class="codenumber">3</span> <span class="title">Sprague-Grundy Values</span></a><ul>
+<li><a href="sg-mex.html" data-scroll="sg-mex">Mex</a></li>
+<li><a href="sg-subtract.html" data-scroll="sg-subtract">Subtraction Games</a></li>
+<li><a href="sg-nim.html" data-scroll="sg-nim">Sprague-Grundy Values for Nim</a></li>
+<li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
+<li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
+<li><a href="exercises-3.html" data-scroll="exercises-3">Exercises</a></li>
+</ul>
+</li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="game-trees"><h2 class="heading hide-type">
@@ -275,7 +286,7 @@
 </h6>
 <p id="p-56"><em class="emphasis">Rule 2</em>: Every follower of a \(\cP\)-position must be an \(\cN\)-position.</p></article><p id="p-57">This fact simply says that if we are in a losing position, then regardless of the next move, the game must be placed into a winning position. Note that the statement above is still true when there are no valid moves: the set of followers is empty, so the statement "every follower of a \(\cP\)-position is an \(\cN\)-position" is true vacuously. <a class="xref" data-knowl="./knowl/fig-gametree3.html" title="Figure 1.3.7">Figure 1.3.7</a> shows the game tree for the losing Nimble position \(\{ 2, 2\}\text{.}\) This starting position has multiple moves, each of which places the game into a winning position for the opponent.</p>
 <p id="p-58">These two rules partition the set of game positions into two sets. This partitioning is so important that it leads to our first theorem. We can actually characterize the \(\cN\)-positions and \(\cP\)-positions via this partition!</p>
-<p id="p-59"><article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
+<p id="p-59"><article class="theorem theorem-like" id="thm-NP"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
 </h6>
 <p id="p-60">Let \(\cG\) be a combinatorial game. Suppose that we can partition the set of positions of \(\cG\) into two sets \(\cA\) and \(\cB\) such that the following hold:</p>

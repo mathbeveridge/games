@@ -97,7 +97,8 @@
 %%%%%%%% from H2BAP
 
 
-
+\newcommand{\pile}[1]{\bullet{#1}}
+\newcommand{\ppile}[1]{\bullet({#1})}
 
 \newcommand{\nim}[1]{*{#1}}
 

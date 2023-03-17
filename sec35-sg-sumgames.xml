@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sg-sumgames">
+<title>The Sprague-Grundy Theorem</title>
+<p>
+
+
+We frequently we have put together smaller combinatorial games to make bigger games. 
+For example, we created multi-heap Nim by playing with multiple heaps simultaneously 
+(although we can only move in one heap at a time). We make this idea more formal in this
+ section, and refer to this construction as the <em>sum of games</em>. 
+ The main goal of this section is to prove the Sprague-Grundy Theorem, which shows 
+ how to find the Sprague-Grundy value of the sum of games. Once we have this result in hand, 
+ we can finally show that the nim sum of the pile sizes in Nim is truly equal to 
+ the Sprague-Grundy value of the game.
+
+			</p><p>
+
+Given two combinatorial games <m>\cG_1, \cG_2</m>, we can define a new game as follows. A player's turn consists of choosing one of the two games and then making a move in that game. The winner is the person who makes the last move overall (when there are no moves possible in either <m>\cG_1</m> or <m>\cG_2</m>). The resulting game is called the <term>sum of games</term>, and is denoted by <m>\cG_1 \oplus \cG_2</m>.
+
+			</p><p>
+
+Of course, we can also take the sum of any number of games <m>\cG_1, \cG_2, \ldots \cG_k</m>. The game
+<me>
+\cG_1 \oplus  \cG_2 \oplus \cdots \oplus \cG_k
+</me>
+is defined as follows. The <m>\cG_i</m> are called the <term>component games</term>. The positions are of the form <m>(X_1, X_2, \ldots , X_k)</m> where <m>X_i \in \cG_i</m> is a position in the corresponding component game. A valid move consists of picking one of the component games <m>\cG_i</m> and making a valid move in that game:
+<me>
+(X_1,  \ldots , X_{i-1}, X_i, X_{i+1}, \ldots,   X_k) \rightarrow (X_1,  \ldots , X_{i-1}, Z, X_{i+1}, \ldots ,  X_k)
+</me>
+where <m>Z \in \cF(X_i)</m>.
+We leave all the other games untouched. We play until every component game has completed, meaning that there are no moves available in any component. The winner is the player who makes the last move.
+
+			</p><p>
+
+Looking back, we realize that we have been playing with sums of games all along. Multi-heap nim is a sum of single-heap nim games. Indeed, a move in nim consists of picking a heap (component) and then making a valid nim move for that heap (component). For example, the notation <m>* 3 \oplus *5 \oplus *8</m> for a particular 3-pile nim is consistent with the more general notation for a sum of games. This multi-heap nim game is the sum of the component games <m>*3</m>, <m>*5</m> and <m>*8</m>.
+
+			</p><p>
+
+This brings us to the Sprague-Grundy Theorem, which tells us how to find the Sprague-Grundy value of the sum of games.  This theorem says that the Sprague-Grundy value of the sum of games equals the nim sum of the values of the component games!
+
+</p>
+<p>
+<theorem xml:id="thm-sg">
+<statement>
+<p>
+Suppose that we have games <m>\cG_1, \cG_2, \ldots , \cG_n</m> with respective Sprague-Grundy functions <m>g_1, g_2, \ldots g_n</m>. 
+Then the sum of games <me>\cG_1 \oplus  \cG_2 \oplus \cdots \oplus \cG_n</me> has Sprague-Grundy function
+<me>
+g(X_1, X_2, \ldots, X_n) = g_1(X_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n)
+</me>
+</p>
+</statement>
+</theorem>
+</p>
+<p>
+
+
+</p>
+<p>
+<proof>
+<p>
+The sum of games has some (unknown) Sprague-Grundy function <m>g: \cG \rightarrow \W</m>. Let <m>X=(X_1, X_2, \ldots , X_n)</m> be a position in the sum of games <m>\cG =\cG_1 \oplus  \cG_2 \oplus \cdots \oplus \cG_n</m>.
+Let <m>b \in \W</m> be the value 
+<me>b =   g_1(X_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n).</me> 
+In order to prove that <m>g(X)=b</m> we must show that
+	</p>
+	<p>
+	<ol>
+				<li>
+					<p>
+ For every <m>a \in \W</m> such that <m>a &lt; b</m>, there is a follower <m>Y \in \cF(X)</m> with <m>g(Y)=a</m>.
+					</p>
+				</li>
+				<li>
+					<p>
+ No follower <m>Z \in \cF(X)</m> has value <m>g(Z)=b</m>.
+					</p>
+				</li>
+			</ol>
+
+First, we prove (1). Let <m>d = a \oplus b</m>. Let <m>k</m> be the number of digits in the binary expansion for <m>d</m>, so that <m>2^{k-1} \leq d &lt; 2^k</m> and <m>d</m> has a 1 in the <m>k</m>th position from the right. Since <m>a&lt;b</m>, the binary expansion of <m>b</m> has a 1 in the <m>k</m>th position and <m>a</m> has a 0 there.
+
+			</p><p>
+
+Recall that <m>b =g_1(X_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n)</m>, which means that the binary expansion of at least one <m>g(X_i)</m> also has a 1 in the <m>k</m>th position. To keep our argument simple, we assume that <m>i=1</m>, because we can just rearrange the <m>X_i</m> so that <m>i=1</m> without effecting the gameplay of <m>G</m>. We have <m>d \oplus g_1(X_1) &lt; g_1(X_1)</m> because the leftmost binary digit that changes the <m>k</m>th digit, which goes from 1 to 0. Because <m>g_1</m> is the Sprague-Grundy function for <m>\cG_1</m>, there is a move from <m>X_1</m> to <m>Y_1 \in \cF_{\cG_1}(X)</m> where <m>g_1(Y_1) = d \oplus g_1(X_1).</m> The move
+<me>
+(X_1, X_2, \ldots, X_n) \rightarrow (Y_1, X_2, \ldots X_n)
+</me>
+is a legal move in <m>\cG = \cG_1 \oplus  \cG_2 \oplus \cdots \oplus \cG_n</m> and
+$$
+\begin{array}{rcl}
+&amp; &amp; g_1(Y_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \\
+&amp;=&amp; \big( d \oplus g_1(X_1) \big)  \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \\
+&amp;=&amp;  d \oplus \big(g_1(X_1)  \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \big)\\
+&amp;=&amp; d \oplus b \, =  \, a.
+\end{array}
+$$
+In summary, we have found a follower of  <m>(X_1, X_2, \ldots, X_n)</m> whose Sprague-Grundy value is <m>a</m>.
+
+			</p><p>
+
+Next, we prove (2). Let <m>s(X)</m> be the size of the game tree rooted at <m>X</m>.  We prove (2) by strong induction on <m>s(X)</m>.
+The statement holds for the terminal positions of the game, which form our base cases.
+Assume that 
+<me>g\left( (Z_1, Z_2 , \ldots Z_n) \right) = g_1(Z_1) \oplus g_2( Z_2 ) \oplus \cdots \oplus g_n(Z_n)</me> 
+for every position <m>Z=(Z_1, Z_2, \ldots, Z_n)</m> with <m>s(Z) &lt; m</m>.
+
+			</p><p>
+
+Consider <m>X=(X_1, X_2, \ldots , X_n)</m> with <m>g(X)=b</m>. Suppose that the game tree rooted at position <m>X</m> has  <m>s(X)=m</m> total vertices.
+Assume for the sake of contradiction that (2) is false: that <m>X</m> has a follower whose Sprague-Grundy value is <m>b</m>.
+Again for simplicity of notation, we assume that this follower is obtained by a move in the first game. In other words, there exists <m>Y_1 \in \cF_{\cG_1}(X_1)</m> such that
+<m>b= g ( Y_1, X_2 , \ldots, X_n)</m>. Note that <m>s(Y_1, X_2 , \ldots, X_n) &lt; m</m> because we have moved down one level of the game tree. By induction <m>b= g_1( Y_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n)</m>. This means that
+<me>
+g_1( X_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n) = g_1( Y_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n)
+</me>
+which forces <m>g_1(X_1) = g_1(Y_1)</m> by the cancellation law of  <xref ref="lemma-cancel" />. This is a contradiction because <m>Y_1</m> is a follower of <m>X_1</m> in <m>\cG_1</m> and <m>g_1</m> is the Sprague-Grundy function of <m>\cG_1</m>. This means our assumption is false, so (2) is true! This completes the proof.
+</p>
+</proof>
+</p>
+<p>
+
+
+This theorem also resolves the mystery behind why the nim sum of the heap sizes tell us who wins the game of Nim: this is just a special case of the Sprague-Grundy Theorem. We can finally prove that  the nim sum of the heap sizes in Nim equals the Sprague-Grundy value of the game!
+
+</p><corollary><statement>
+For the Nim position <m>*n_1 \oplus *n_2 \oplus \cdots \oplus *n_k</m>, we have
+<me>
+g(*n_1 \oplus *n_2 \oplus \cdots \oplus *n_k) = g(n_1) \oplus g(n_2) \oplus \cdots \oplus g(n_k).
+</me>
+</statement></corollary><p>
+
+</p>
+<p>
+<proof>
+<p>
+We showed that  <m>g(*n)=n</m> in  <xref ref="lemma-nimsprague" />.  <xref ref="thm-sg" /> states that we get the Sprague-Grundy value of the sum of games by taking the nim sum of their respective Sprague-Grundy values.
+</p>
+</proof>
+</p>
+<p>
+
+</p>
+</section>

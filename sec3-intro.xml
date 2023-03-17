@@ -1,0 +1,13 @@
+
+
+<introduction>
+	<p>
+
+In the first two chapters, we cracked the game of Nim: 
+the nim value of a Nim position determines the winner.  
+However, Nim is not the only game in town. The goal of this chapter is to 
+introduce a broader framework that applies to all impartial combinatorial games. 
+Our investigation will culminate in the <em>Sprague-Grundy value</em> of a game position.
+
+</p>
+</introduction>

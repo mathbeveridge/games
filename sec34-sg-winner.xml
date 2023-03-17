@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<section xml:id="sg-winner">
+<title>Who Wins?</title>
+<p>
+
+In this section, we prove that the Sprague-Grundy value of a position tells us 
+whether it is an <m>\cN</m>-position or a <m>\cP</m>-position. 
+We have seen some nice evidence that the Sprague-Grundy value is actually a
+generalization of the nim value. Indeed,  our main result is analogous  
+to  <xref ref="thm-nim" />: we are in an <m>\cN</m>-position if 
+and only if the Sprague-Grundy value is nonzero.
+
+
+</p>
+<p>
+<theorem xml:id="thm:-grundy">
+<statement>
+<p>
+The <m>\cG</m> be any combinatorial game. The game position <m>X \in \cG</m> is
+		<ul>
+			<li>
+			<p>
+ a <m>\cP</m>-position  when <m>\g(X) = 0</m>,
+			</p>
+			</li>
+			<li>
+			<p>
+ an <m>\cN</m>-position  when <m>\g(X) \neq 0</m>.
+			</p>
+			</li>
+		</ul>
+
+</p>
+</statement>
+</theorem>
+</p>
+<p>
+
+Our proof is a streamlined form of the proof of  <xref ref="thm-nim" />. In that proof, 
+we had an explicit formula for the nim sum, rather than a recursive definition that uses 
+the values of the followers. Starting with that formula, we had to understand the behavior
+ of the nim value, compared to the nim value of the followers.
+The recursive definition for the Sprague-Grundy value makes our general argument a breeze.
+
+</p>
+<p>
+<proof>
+<p>
+Let <m>\cA = \{ X \in \cG  \mid g(X)=0 \}</m> and <m>\cB = \{ Y \in \cG \mid g(X) \neq 0 \}</m>. 
+If <m>X \in \cA</m>, then no follower of <m>X</m> is in <m>\cA</m> 
+(because otherwise <m>g(X) \neq 0</m>). In other words, every follower of
+ <m>X</m>  is in <m>\cB</m>. Meanwhile, if <m>Y \in \cB</m> then <m>g(Y) \neq 0</m>. 
+ This means that there is at least one follower of <m>Y</m> that is in <m>\cA</m>. 
+ By  <xref ref="thm-NP" />, <m>\cA</m> is the set of <m>\cP</m>-positions and <m>\cB</m> is the set of <m>\cN</m>-positions.
+
+
+</p>
+</proof>
+</p>
+<p>
+
+In the next section, we will finally show that the nim value of a Nim position 
+is identical to its Sprague-Grundy value. In other words, the Sprague-Grundy 
+value is truly a generalization of the Nim value.
+</p>
+</section>

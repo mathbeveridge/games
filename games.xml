@@ -73,6 +73,15 @@ pull the name of the problem from the first line  of  the \item
             <xi:include href="./sec24-nim-bogus.xml" />    
             <xi:include href="./sec25-nim-exercise.xml" />       
         </chapter>                   
+        <chapter xml:id="ch-sg" xmlns:xi="http://www.w3.org/2001/XInclude">
+            <title>Sprague-Grundy Values</title>
+            <xi:include href="./sec31-mex.xml" />       
+            <xi:include href="./sec32-subtract.xml" />  
+            <xi:include href="./sec33-sg-nim.xml" />  
+            <xi:include href="./sec34-sg-winner.xml" />    
+            <xi:include href="./sec35-sg-sumgames.xml" />   
+            <xi:include href="./sec36-sg-exercise.xml" />     
+        </chapter> 
     </part>
  
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Consider \(X=(X_1, X_2, \ldots , X_n)\) with \(g(X)=b\text{.}\) Suppose that the game tree rooted at position \(X\) has  \(s(X)=m\) total vertices. Assume for the sake of contradiction that (2) is false: that \(X\) has a follower whose Sprague-Grundy value is \(b\text{.}\) Again for simplicity of notation, we assume that this follower is obtained by a move in the first game. In other words, there exists \(Y_1 \in \cF_{\cG_1}(X_1)\) such that \(b= g ( Y_1, X_2 , \ldots, X_n)\text{.}\) Note that \(s(Y_1, X_2 , \ldots, X_n) &lt; m\) because we have moved down one level of the game tree. By induction \(b= g_1( Y_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n)\text{.}\) This means that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+g_1( X_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n) = g_1( Y_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n)
+\end{equation*}
+</div>
+<p class="continuation">which forces \(g_1(X_1) = g_1(Y_1)\) by the cancellation law of  <a class="xref" data-knowl="./knowl/lemma-cancel.html" title="Lemma 2.2.4: Cancellation Law">Lemma 2.2.4</a>. This is a contradiction because \(Y_1\) is a follower of \(X_1\) in \(\cG_1\) and \(g_1\) is the Sprague-Grundy function of \(\cG_1\text{.}\) This means our assumption is false, so (2) is true! This completes the proof.</p>
+<span class="incontext"><a href="sg-sumgames.html#p-270">in-context</a></span>
+</body>
+</html>

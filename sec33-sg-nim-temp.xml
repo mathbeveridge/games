@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+</p>
+<section xml:id="sg-nim0">
+<title>Sprague-Grundy Values for Nim</title>
+<p>
+
+In this subsection, we explore the Sprague-Grundy values for the game of Nim. Let's start simply.
+What is the Sprague-Grundy value for a single heap nim game  <m>\nim{n}</m>? Nim position <m>\nim{1}</m> only has one follower: <m>\nim{0}</m>. Therefore
+<me>
+\g(\nim{1}) = \mex \{ \g( \nim{0}) \} = \mex \{ 0 \} = 1.
+</me>
+Nim position <m>\nim{2}</m> has two followers: <m>\cF( \nim{2} ) = \{ \nim{0}, \nim{1} \}</m>, so that
+<me>
+\g(\nim{2}) = \mex \{ \g( \nim{0}) , \g( \nim{1}) \} = \mex \{ 0, 1 \} = 2.
+</me>
+Continuing this way, we find that
+<me>
+\g(\nim{3}) = \mex \{ \g(\nim{0}), \g(\nim{1}) , \g(\nim{2}) \} = \mex \{ 0, 1, 2 \} = 3.
+</me>
+This same proof applies in general, and gives us the following lemma.
+
+</p><lemma><statement>
+\label{lemma:nimsprague}
+The Sprague-Grundy value of <m>*n</m> is  <m>g(\nim{n})= n. </m>
+</statement></lemma><p>
+
+</p>
+<p>
+<proof>
+<p>
+We leave this straight-forward proof by strong induction for the exercises.
+</p>
+</proof>
+</p>
+<p>
+
+You may be a little disappointed that the Sprague-Grundy value of a nim heap is so <m>\ldots</m> boring. But this is actually great news!  Single heap Nim is the most fundamental combinatorial game, so we expect that its Sprague-Grundy values should be the easiest to calculate.
+
+Let's move on to some small two-heap games of Nim. We must build up these values recursively. Clearly
+<me>
+\g(\nim{0} \oplus \nim{0})  = 0,
+</me>
+because <m>\nim{0} \oplus \nim{0}</m> is a terminal position, and
+<me>
+\g(\nim{n} \oplus \nim{0}) = \g( \nim{0}  \oplus \nim{n}) = n
+</me>
+because <m>\nim{0}  \oplus \nim{n}</m> plays just like the one-pile game <m>\nim{n}</m>.
+Recursively, we have
+<me>
+\begin{array}{rcl}
+\g(\nim{1} \oplus \nim{1} ) &amp;=&amp; \mex  \{ g(\nim{1} \oplus \nim{0}), g(\nim{0} \oplus \nim{1})  \}  =  \mex \{ 1, 1 \} = 0, \\
+g(\nim{2} \oplus \nim{1} ) &amp;=&amp; \mex  \{ g(\nim{1} \oplus \nim{1}), g(\nim{0} \oplus \nim{1}),  g(\nim{2} \oplus \nim{0}) \}  =  \mex \{ 0,1,2 \} = 3, \\
+g(\nim{2} \oplus \nim{2} ) &amp;=&amp; \mex  \{ g(\nim{1} \oplus \nim{2}), g(\nim{0} \oplus \nim{2}),  g(\nim{2} \oplus \nim{1}), g(\nim{2} \oplus \nim{0}) \}  =  \mex \{ 3, 2, 3, 2 \} = 0.
+\end{array}
+</me>
+This is already getting pretty messy. The best way to calculate the Sprague-Grundy value is to use a game tree.  We do this for nim position <m>\nim{2} \oplus \nim{1}</m> in Figure <xref ref="fig:nim2-2" />.
+The tree structure clearly shows the followers of each position. The recursive nature of the Sprague-Grundy definition is easy to chase through. Start by writing down value 0 at the leaves. Then move up the tree, calculating the mex of the followers of each position. Eventually, you will find the value of the root.
+
+
+\begin{figure}[ht]
+
+
+			<figure xml:id="fig-sg-nim0">
+				<caption>Caption goes here.</caption>
+			<image width="80%" xml:id="fig-img-sg-nim0">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=40mm/#1}, scale=1] %mathbook width=80%
+
+\tikzstyle{every node}=[font=\small]
+
+\node (G0)    {$\nim{2} \oplus \nim{1}$}
+child { node (G1) {$\nim{0} \oplus \nim{1}$}
+child { node (G1a) {$ \nim{0} \oplus \nim{0} $}}
+}
+child { node (G2) {$\nim{1} \oplus \nim{1}$}
+child { node (G2a) {$ \nim{0} \oplus \nim{1} $}
+child { node (G2a1) {$ \nim{0} \oplus \nim{0} $}}
+}
+child { node (G2b) {$ \nim{1} \oplus \nim{0} $}
+child { node (G2a1) {$ \nim{0} \oplus \nim{0} $}}
+}
+}
+child { node (G3) {$\nim{2} \oplus \nim{0}$}
+child { node (G2b) {$ \nim{1} \oplus \nim{0} $}
+child { node (G2a1) {$ \nim{0} \oplus \nim{0} $}}
+}
+}
+;
+
+
+\begin{scope}[shift={(0,-4)}]
+
+\node (G0)    {$\g=3$}
+child { node (G1) {$\g=1$}
+child { node (G1a) {$ \g=0 $}}
+}
+child { node (G2) {$\g=0$}
+child { node (G2a) {$ \g=1$}
+child { node (G2a1) {$ \g=0 $}}
+}
+child { node (G2b) {$ \g=1 $}
+child { node (G2a1) {$ \g=0 $}}
+}
+}
+child { node (G3) {$\g=2$}
+child { node (G2b) {$\g=1 $}
+child { node (G2a1) {$ \g=0$}}
+}
+}
+;
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<caption>Calculating <m>g(\nim{2} \oplus \nim{1})=3</m> using the full game tree. <em> Top</em>: the game tree listing the positions and their followers. <em> Bottom</em>: the Sprague-Grundy values of those positions.</caption>
+\label{fig:nim2-2}
+
+\end{figure}
+
+
+
+Continuing this way, we populate Table <xref ref="table:sgv" /> for nim heaps <m>*n \times *m</m> up to size 3.
+<me>
+\begin{array}{c|cccc}
+\g(\cdot) &amp; \nim{0} &amp; \nim{1} &amp; \nim{2} &amp; \nim{3} \\
+\hline
+\nim{0} &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+\nim{1} &amp; 1 &amp; 0 &amp; 3 &amp; 2 \\
+\nim{2} &amp; 2 &amp; 3 &amp; 0 &amp; 1 \\
+\nim{3} &amp;3 &amp; 2 &amp; 1 &amp; 0
+\end{array}
+\label{eqn-sgv}
+</me>
+As with the nim value, the Sprague-Grundy value is 0 if and only if we are in a <m>\cP</m>-position. In fact, if we compare these Sprague-Grundy values with the nim addition values in Table <xref ref="eqn-nim-add" />, we see that they are identical!
+Could it be that these very different functions are actually one and the same? The answer is a resounding yes: <m>n \oplus m = g(\nim{n} \oplus \nim{m})</m> for all <m>n,m \in \W.</m> We prove this surprising fact in Section <xref ref="sec:sumgames" />.
+
+
+
+
+
+
+
+We close this section by revisiting our use of the game tree to find the Sprague-Grundy value. In Figure <xref ref="fig-nim2-2" />, we see many positions that we recognize from our previous analysis. There is no need to expand the tree beneath a position with a known value. Instead, we can prune the tree at that position, and just write down the known Sprague-Grundy value for that position. This can save a lot of work, as show in
+Figure <xref ref="fig:nim2-4" /> where we calculate <m>g(\nim{1} \oplus \nim{4})</m>.
+
+\begin{figure}[ht]
+
+
+			<figure xml:id="fig-sg-nim1">
+				<caption>Caption goes here.</caption>
+			<image width="80%" xml:id="fig-img-sg-nim1">
+				<latex-image>
+\begin{tikzpicture}[level/.style={sibling distance=35mm/#1}, scale=.8] %mathbook width=80%
+
+\tikzstyle{every node}=[font=\scriptsize]
+
+\node (G0)    {$\nim{2} \oplus \nim{4}$}
+child { node (G1) {$\nim{0} \oplus \nim{4}$}
+}
+child { node (G2) {$\nim{1} \oplus \nim{4}$}
+child { node (G2a) {$ \nim{0} \oplus \nim{4} $}}
+child { node (G2b) {$ \nim{1} \oplus \nim{0} $}}
+child { node (G2c) {$ \nim{1} \oplus \nim{1} $}}
+child { node (G2d) {$ \nim{1} \oplus \nim{2} $}}
+child { node (G2e) {$ \nim{1} \oplus \nim{3} $}}
+}
+child { node (G3) {$\nim{2} \oplus \nim{0}$}}
+child { node (G3) {$\nim{2} \oplus \nim{1}$}}
+child { node (G3) {$\nim{2} \oplus \nim{2}$}}
+child { node (G3) {$\nim{2} \oplus \nim{3}$}}
+;
+
+\begin{scope}[shift={(0,-4)}]
+
+\tikzstyle{every node}=[font=\small]
+
+\node (G0)    {$g=6$}
+child { node (G1) {$g=4$}
+}
+child { node (G2) {$g=5$}
+child { node (G2a) {$g=4$}}
+child { node (G2b) {$ g=1 $}}
+child { node (G2c) {$ g=0$}}
+child { node (G2d) {$ g=3 $}}
+child { node (G2e) {$ g=2 $}}
+}
+child { node (G3) {$g=2$}}
+child { node (G3) {$g=3$}}
+child { node (G3) {$g=0$}}
+child { node (G3) {$g=1$}}
+;
+
+\end{scope}
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+<caption>Calculating <m>g(\nim{2} \oplus \nim{4})=6</m> using the partial game tree and the known values in Table <xref ref="eqn-sgv" />. We stop drawing the game tree when we encounter positions with known values.</caption>
+\label{fig-nim2-4}
+
+\end{figure}
+
+
+The definition of the Sprague-Grundy value is much more cumbersome that nim addition. So why should we bother with it? The reason is that the Sprague-Grundy function works for <em>all impartial combinatorial games</em>. Nim addition only applies to the game of Nim (and its disguised forms). In the next section, we will use the Sprague-Grundy value to find winning strategies are games that are distinct from Nim. We will see that for any combinatorial game, the Sprague-Grundy value is zero if and only if the position is a <m>\cP</m>-position.
+
+</p>
+</section>
+</chapter>

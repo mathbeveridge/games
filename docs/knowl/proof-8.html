@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>The sum of games has some (unknown) Sprague-Grundy function \(g: \cG \rightarrow \W\text{.}\) Let \(X=(X_1, X_2, \ldots , X_n)\) be a position in the sum of games \(\cG =\cG_1 \oplus  \cG_2 \oplus \cdots \oplus \cG_n\text{.}\) Let \(b \in \W\) be the value</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+b =   g_1(X_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n).
+\end{equation*}
+</div>
+<p class="continuation">In order to prove that \(g(X)=b\) we must show that</p>
+<ol class="decimal">
+<li><p>For every \(a \in \W\) such that \(a &lt; b\text{,}\) there is a follower \(Y \in \cF(X)\) with \(g(Y)=a\text{.}\)</p></li>
+<li><p>No follower \(Z \in \cF(X)\) has value \(g(Z)=b\text{.}\)</p></li>
+</ol>
+<p class="continuation">First, we prove (1). Let \(d = a \oplus b\text{.}\) Let \(k\) be the number of digits in the binary expansion for \(d\text{,}\) so that \(2^{k-1} \leq d &lt; 2^k\) and \(d\) has a 1 in the \(k\)th position from the right. Since \(a&lt;b\text{,}\) the binary expansion of \(b\) has a 1 in the \(k\)th position and \(a\) has a 0 there.</p>
+<p>Recall that \(b =g_1(X_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n)\text{,}\) which means that the binary expansion of at least one \(g(X_i)\) also has a 1 in the \(k\)th position. To keep our argument simple, we assume that \(i=1\text{,}\) because we can just rearrange the \(X_i\) so that \(i=1\) without effecting the gameplay of \(G\text{.}\) We have \(d \oplus g_1(X_1) &lt; g_1(X_1)\) because the leftmost binary digit that changes the \(k\)th digit, which goes from 1 to 0. Because \(g_1\) is the Sprague-Grundy function for \(\cG_1\text{,}\) there is a move from \(X_1\) to \(Y_1 \in \cF_{\cG_1}(X)\) where \(g_1(Y_1) = d \oplus g_1(X_1).\) The move</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(X_1, X_2, \ldots, X_n) \rightarrow (Y_1, X_2, \ldots X_n)
+\end{equation*}
+</div>
+<p class="continuation">is a legal move in \(\cG = \cG_1 \oplus  \cG_2 \oplus \cdots \oplus \cG_n\) and $$ \​begin{array}{rcl} &amp; &amp; g_1(Y_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \\ &amp;=&amp; \big( d \oplus g_1(X_1) \big)  \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \\ &amp;=&amp;  d \oplus \big(g_1(X_1)  \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \big)\\ &amp;=&amp; d \oplus b \, =  \, a. \end{array} $$ In summary, we have found a follower of  \((X_1, X_2, \ldots, X_n)\) whose Sprague-Grundy value is \(a\text{.}\)</p>
+<p>Next, we prove (2). Let \(s(X)\) be the size of the game tree rooted at \(X\text{.}\)  We prove (2) by strong induction on \(s(X)\text{.}\) The statement holds for the terminal positions of the game, which form our base cases. Assume that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+g\left( (Z_1, Z_2 , \ldots Z_n) \right) = g_1(Z_1) \oplus g_2( Z_2 ) \oplus \cdots \oplus g_n(Z_n)
+\end{equation*}
+</div>
+<p class="continuation">for every position \(Z=(Z_1, Z_2, \ldots, Z_n)\) with \(s(Z) &lt; m\text{.}\)</p>
+<p>Consider \(X=(X_1, X_2, \ldots , X_n)\) with \(g(X)=b\text{.}\) Suppose that the game tree rooted at position \(X\) has  \(s(X)=m\) total vertices. Assume for the sake of contradiction that (2) is false: that \(X\) has a follower whose Sprague-Grundy value is \(b\text{.}\) Again for simplicity of notation, we assume that this follower is obtained by a move in the first game. In other words, there exists \(Y_1 \in \cF_{\cG_1}(X_1)\) such that \(b= g ( Y_1, X_2 , \ldots, X_n)\text{.}\) Note that \(s(Y_1, X_2 , \ldots, X_n) &lt; m\) because we have moved down one level of the game tree. By induction \(b= g_1( Y_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n)\text{.}\) This means that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+g_1( X_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n) = g_1( Y_1) \oplus g_2(X_2) \oplus \cdots g_n(X_n)
+\end{equation*}
+</div>
+<p class="continuation">which forces \(g_1(X_1) = g_1(Y_1)\) by the cancellation law of  <a class="xref" data-knowl="./knowl/lemma-cancel.html" title="Lemma 2.2.4: Cancellation Law">Lemma 2.2.4</a>. This is a contradiction because \(Y_1\) is a follower of \(X_1\) in \(\cG_1\) and \(g_1\) is the Sprague-Grundy function of \(\cG_1\text{.}\) This means our assumption is false, so (2) is true! This completes the proof.</p></article><span class="incontext"><a href="sg-sumgames.html#proof-8">in-context</a></span>
+</body>
+</html>
