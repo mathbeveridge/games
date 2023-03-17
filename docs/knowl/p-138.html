@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>First, we write out the binary representation for each heap size, one per row. We add leading zeros so that every binary representation has the same number of digits. For our example game, this looks like</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+1&amp;1&amp;0&amp;1&amp;1 \\
+0&amp;1&amp;0&amp;0&amp;0 \\
+0&amp;0&amp;0&amp;1&amp;1 \\
+1&amp;1&amp;1&amp;0&amp;1.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">We say that a column is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">bad</em> if it has an odd number of ones, and it is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">good</em> if it has an even number of ones. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Since the nim sum of these heap sizes is nonzero, there is at least one bad column.</em> Our example has three bad columns, corresponding to \(2^3\text{,}\) \(2^2\) and \(2^0\) when considered from left to right. These three bad columns are highlighted below:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\begin{array}{c}
+1 \\ 0 \\ 0 \\ 1\\
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+1 \\ 1 \\ 0 \\ 1\\
+\hline
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+0 \\ 0 \\ 0 \\ 1 \\
+\hline
+\end{array}
+&amp;
+\begin{array}{c}
+1 \\ 0 \\ 1 \\ 0\\
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+1 \\ 0 \\ 1 \\ 1\\
+\hline
+\end{array}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">We now show how to make a Nim move that results in a position with nim value \(=0\text{.}\) Consider the  leftmost bad column. In our example, this is the \(2^3\) column, which contains three 1's. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">There is a winning move for every row that has a 1 in this leftmost bad column.</em> Let's call these the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">bad rows</em>.  Here is our winning move:</p>
+<span class="incontext"><a href="sec-nim-win.html#p-138">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Games: The Game of Nim</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+
+    \definecolor{orange}{RGB}{255, 165,   0}
+    \definecolor{crimson}{RGB}{220,20,60}
+    \definecolor{pink}{RGB}{255,20,147}
+    \definecolor{darkGreen}{RGB}{34,139,34}
+    \definecolor{olive}{RGB}{128,128,0}
+    \definecolor{teal}{RGB}{0,128,128}
+    \definecolor{turquoise}{RGB}{64,224,208}
+    \definecolor{navy}{RGB}{30, 144, 255}
+    \definecolor{purple}{RGB}{128,0,128}
+    \definecolor{indigo}{RGB}{216, 191, 216}
+    \definecolor{maroon}{RGB}{128,0,0}
+    \definecolor{gold}{RGB}{255,215,0}
+    \definecolor{lemon}{RGB}{255, 250, 205}
+    \definecolor{peru}{RGB}{205, 133,  63}
+
+    \definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+    \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+    \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+    \definecolor{tuscanred}{rgb}{0.51, 0.21, 0.21}
+    \definecolor{steelBlue}{rgb}{0.27, 0.51, 0.71}
+    \definecolor{tyrianpurple}{rgb}{0.4, 0.01, 0.24}
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+
+
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+
+\def\nimsum{\, \oplus \,}
+\def\mex{{\mathrm{mex}}}
+\def\g{g}
+
+\newcommand{\inter}{{\mathrm{int}}}
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="game.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch-nim.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-nim.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-binary.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch-nim.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-nim.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-binary.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="nim.html" data-scroll="nim"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+<li class="link">
+<a href="ch-games.html" data-scroll="ch-games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="comb-games.html" data-scroll="comb-games">Combinatorial Games</a></li>
+<li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-nim.html" data-scroll="ch-nim"><span class="codenumber">2</span> <span class="title">Nim</span></a><ul>
+<li><a href="sec-nim.html" data-scroll="sec-nim" class="active">The Game of Nim</a></li>
+<li><a href="sec-binary.html" data-scroll="sec-binary">Binary Representation of Numbers</a></li>
+<li><a href="sec-nim-win.html" data-scroll="sec-nim-win">Who wins at Nim?</a></li>
+<li><a href="nim-bogus0.html" data-scroll="nim-bogus0">Bogus Nim Heaps</a></li>
+<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-nim"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">The Game of Nim</span>
+</h2>
+<p id="p-84">In this chapter, we develop the lovely mathematical theory of the game of <dfn class="terminology">Nim</dfn>. This two-player game starts with a few heaps (or piles) of beans (or stones or coins). A move consists of removing some or all of the beans in a single heap. The players take turns, and the winner is the person who makes the last move.</p>
+<p id="p-85">Borrowing the multiset notation from Nimble, we use \(\{ n_1, n_2, \ldots. n_k \}\) to represent a Nim game with \(k\) heaps, where the \(i\)th heap contains \(n_i\) beans, \(1 \leq i \leq k\text{.}\) For example,  <a class="xref" data-knowl="./knowl/fig-nim.html" title="Figure 2.1.1">Figure 2.1.1</a> shows the game position \(\{ 4, 3, 7 \}.\) There are 14 possible moves from this position. Are any of these options winning moves? We will soon see that the answer to this question is "No." This Nim position is a \(\cP\)-position.</p>
+<p id="p-86"><figure class="figure figure-like" id="fig-nim"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-nim.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.1<span class="period">.</span></span><span class="space"> </span>A game of Nim with heap sizes 4, 3 and 7.</figcaption></figure></p>
+<article class="exploration project-like" id="exploration-2"><h6 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Nim.</span>
+</h6> Play some games of Nim. Once again, you can use whatever markers you like as your beans. Try playing various games with one heap, two heaps and three heaps. Can you find a winning strategy for Nim? Are there any similarities between Nim and Nimble? \end{recess}</article><p id="p-87">The game of <dfn class="terminology">Nim</dfn> is the Rosetta Stone for combinatorial games. Charles Bouton  analyzed the game of Nim over a century ago. The insights he held and the mathematical framework he devised remain the foundation of the theory of combinatorial games. The name "Nim"  appears in the vocabulary of combinatorial games like a mathematical motif. This name appears in definitions like "nim addition" and "nim value."</p>
+<p id="p-88">In fact, the name <em class="emphasis">Nimble</em> is a clever play on words: the game of Nimble is actually Nim in disguised form! This masquerade is quite thin and easy to reveal. In Nim, we can reduce a heap of \(n\) beans to a heap of \(n-1, n-2, \ldots, 2, 1\) or 0 beans. In Nimble, we can move a coin from square \(n\) to square \(n-1, n-2, \ldots, 2, 1\) or off the board (onto "square 0"). So here is the disguise:  the coins in a game of Nimble mark the sizes of the heaps in the corresponding game of Nim. This shows that Nim and Nimble are actually the same game, and <a class="xref" data-knowl="./knowl/fig-nim-and-nimble.html" title="Figure 2.1.2">Figure 2.1.2</a> demonstrates this correspondence.</p>
+<p id="p-89"><figure class="figure figure-like" id="fig-nim-and-nimble"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-nim-and-nimble.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.2<span class="period">.</span></span><span class="space"> </span>A game of Nim with heap sizes \(\{ 1, 2, 2, 4 \}\) is equivalent to a game of Nimble with coins at \(\{1,2,2,4\}.\)</figcaption></figure></p>
+<p id="p-90">In general, we have:</p>
+<article class="fact theorem-like" id="fact-5"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-91">The Nim position with heap sizes \(\{ k_1, k_2, \ldots , k_r \}\) is equivalent to the Nimble position with coins on squares \(\{ k_1, k_2, \ldots , k_r \}\text{.}\)</p></article><p id="p-92">By "equivalent," we mean that a move in Nim corresponds to a move in Nimble. If we remove \(m\) beans from a heap of size \(k\) in Nim, then the analogous move in Nimble is to move the token from square \(k\) to square \(k-m\text{.}\) Therefore, a winning strategy in Nim can be converted into a winning strategy in Nimble, and vice versa.</p>
+<p id="p-93">So who wins at Nim?  As a warm-up, consider a Nim game with one heap of \(n\) beans. This game is clearly an \(\cN\)-position, since the Next player can simply remove all of the beans. In fact, this is the <em class="emphasis">only</em> move that guarantees a win. If we leave any beans behind, our opponent can immediately take them all to win the game. Two-heap Nim is also easy to resolve: we leave it as an exercise that \(\{ n, m \}\) is an \(\cN\)-position precisely when \(n \neq m\text{.}\) Three-heap Nim is more complicated, so we are best served by moving directly to the \(k\)-heap case.</p>
+<p id="p-94">In the rest of this chapter, we will develop Bouton's theory of Nim, which gives us a straightforward criteria for determining whether a given Nim position is an \(\cN\)-position (Next player wins) or a \(\cP\)-position (Previous player wins). The key to this framework is to use <em class="emphasis">binary representations of numbers</em>. So let's start by discussing this method of representing numbers.</p></section></div></main>
+</div>
+</body>
+</html>

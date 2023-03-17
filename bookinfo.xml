@@ -28,6 +28,29 @@
     \newcommand{\Null}{\operatorname{Null}}
 
 
+
+    \definecolor{orange}{RGB}{255, 165,   0}
+    \definecolor{crimson}{RGB}{220,20,60}
+    \definecolor{pink}{RGB}{255,20,147}
+    \definecolor{darkGreen}{RGB}{34,139,34}
+    \definecolor{olive}{RGB}{128,128,0}
+    \definecolor{teal}{RGB}{0,128,128}
+    \definecolor{turquoise}{RGB}{64,224,208}
+    \definecolor{navy}{RGB}{30, 144, 255}
+    \definecolor{purple}{RGB}{128,0,128}
+    \definecolor{indigo}{RGB}{216, 191, 216}
+    \definecolor{maroon}{RGB}{128,0,0}
+    \definecolor{gold}{RGB}{255,215,0}
+    \definecolor{lemon}{RGB}{255, 250, 205}
+    \definecolor{peru}{RGB}{205, 133,  63}
+
+    \definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+    \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+    \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+    \definecolor{tuscanred}{rgb}{0.51, 0.21, 0.21}
+    \definecolor{steelBlue}{rgb}{0.27, 0.51, 0.71}
+    \definecolor{tyrianpurple}{rgb}{0.4, 0.01, 0.24}
+
     \def\Z{\mathbb Z}
     \def\R{\mathbb R}
     \def\Q{\mathbb Q}
@@ -84,9 +107,11 @@
 
 
 
-%\newcommand{\st}[2]{({#1}\,;\,{#2})}
+\def\nimsum{\, \oplus \,}
+\def\mex{{\mathrm{mex}}}
+\def\g{g}
 
-
+\newcommand{\inter}{{\mathrm{int}}}
 
 
 \def\cA{{\mathcal A}}
@@ -169,10 +194,12 @@
     \usepackage{multicol} 
     \usepackage{textcomp}
     \usepackage{tikz}
+    \usepackage{color}
     \usetikzlibrary{backgrounds}
     \usetikzlibrary{arrows,matrix}
     \usetikzlibrary{snakes}
     \usetikzlibrary{decorations.pathreplacing}
+    
     </latex-image-preamble>
 
     <!-- more invasive option is "structural" -->

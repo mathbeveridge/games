@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Games: Who wins at Nim?</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+
+    \definecolor{orange}{RGB}{255, 165,   0}
+    \definecolor{crimson}{RGB}{220,20,60}
+    \definecolor{pink}{RGB}{255,20,147}
+    \definecolor{darkGreen}{RGB}{34,139,34}
+    \definecolor{olive}{RGB}{128,128,0}
+    \definecolor{teal}{RGB}{0,128,128}
+    \definecolor{turquoise}{RGB}{64,224,208}
+    \definecolor{navy}{RGB}{30, 144, 255}
+    \definecolor{purple}{RGB}{128,0,128}
+    \definecolor{indigo}{RGB}{216, 191, 216}
+    \definecolor{maroon}{RGB}{128,0,0}
+    \definecolor{gold}{RGB}{255,215,0}
+    \definecolor{lemon}{RGB}{255, 250, 205}
+    \definecolor{peru}{RGB}{205, 133,  63}
+
+    \definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+    \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+    \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+    \definecolor{tuscanred}{rgb}{0.51, 0.21, 0.21}
+    \definecolor{steelBlue}{rgb}{0.27, 0.51, 0.71}
+    \definecolor{tyrianpurple}{rgb}{0.4, 0.01, 0.24}
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+
+
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+
+\def\nimsum{\, \oplus \,}
+\def\mex{{\mathrm{mex}}}
+\def\g{g}
+
+\newcommand{\inter}{{\mathrm{int}}}
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="game.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-binary.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-nim.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="nim-bogus0.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-binary.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-nim.html" title="Up">Up</a><a class="next-button button toolbar-item" href="nim-bogus0.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="nim.html" data-scroll="nim"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+<li class="link">
+<a href="ch-games.html" data-scroll="ch-games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="comb-games.html" data-scroll="comb-games">Combinatorial Games</a></li>
+<li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-nim.html" data-scroll="ch-nim"><span class="codenumber">2</span> <span class="title">Nim</span></a><ul>
+<li><a href="sec-nim.html" data-scroll="sec-nim">The Game of Nim</a></li>
+<li><a href="sec-binary.html" data-scroll="sec-binary">Binary Representation of Numbers</a></li>
+<li><a href="sec-nim-win.html" data-scroll="sec-nim-win" class="active">Who wins at Nim?</a></li>
+<li><a href="nim-bogus0.html" data-scroll="nim-bogus0">Bogus Nim Heaps</a></li>
+<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-nim-win"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Who wins at Nim?</span>
+</h2>
+<p id="p-122">In this section, we present the criterion for determining whether a Nim position is an \(\cN\)-position or a \(\cP\)-position. Our proof of this result will also show us how to play the game optimally.  The key will be to assign a <em class="emphasis">nim value</em> to a Nim position.</p>
+<article class="definition definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Nim Value.</span>
+</h6> Given a Nim position \(\{ n_1, n_2, \ldots , n_k \}\text{,}\)  its <dfn class="terminology">nim value</dfn> is<div class="displaymath">
+\begin{equation*}
+n_1 \nimsum n_2 \nimsum \cdots  \nimsum n_k,
+\end{equation*}
+</div>the nim sum of the sizes of the heaps.</article><p id="p-123">This nim value tells us who wins the game. <article class="theorem theorem-like" id="thm-nim"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-124">The Nim position \(\{ n_1, n_2, \ldots , n_k \}\) is</p>
+<ul class="disc">
+<li id="li-29"><p id="p-125">a \(\cP\)-position when  \(n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k = 0\text{,}\)</p></li>
+<li id="li-30"><p id="p-126">an \(\cN\)-position when  \(n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k \neq 0\text{.}\)</p></li>
+</ul></article></p>
+<p id="p-127">In other words,  you can determine the winner of Nim  by simply taking the nim sum of the heap sizes! Recall the two rules for characterizing positions of a combinatorial game:</p>
+<ul class="disc">
+<li id="li-31"><p id="p-128"><em class="alert">Rule 1</em>: An \(\cN\)-position must have at least one follower that is a \(\cP\)-position.</p></li>
+<li id="li-32"><p id="p-129"><em class="alert">Rule 2</em>: Every follower of a \(\cP\)-position must be an \(\cN\)-position.</p></li>
+</ul>
+<p class="continuation">According to this theorem, a \(\cP\)-position in Nim always has nim value \(=0\text{,}\) and an \(\cN\)-position always has nim value \(\neq 0\text{.}\) So we can rephrase these rules according to nim values of our game positions. In order to prove this theorem, we will prove the following two Nim Rules:</p>
+<ul class="disc">
+<li id="li-33"><p id="p-130"><em class="alert">Nim Rule 1</em>: A Nim position with a nim value \(\neq 0\) must have at least one follower that has a nim value \(=0\text{.}\)</p></li>
+<li id="li-34"><p id="p-131"><em class="alert">Nim Rule 2</em>: Every follower of a Nim position with nim value \(= 0\) must have  nim value \(\neq 0\text{.}\)</p></li>
+</ul>
+<p id="p-132"><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-133">We must  prove the validity of the two Nim Rules. The proof of Nim Rule 2 is much easier than the proof of Nim Rule 1. Therefore, we present this argument first.</p>
+<p id="p-134"><em class="alert">Proof of Nim Rule 2.</em> Suppose that we have Nim position \(\{ n_1, n_2, \ldots , n_k\}\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k = 0.
+\end{equation*}
+</div>
+<p class="continuation">We show that every move we make results in a position with nim value \(\neq 0\text{.}\)</p>
+<p id="p-135">First, we write out the binary representation for each heap size, one per row. We add leading zeros so that every binary representation has the same number of digits. Since the nim value is zero, we know that every column contains an even number of 1's.</p>
+<p id="p-136">Pick any heap, say heap \(i\) of size \(n_i\text{.}\) Remove some number \(s&gt;1\) of beans.  The binary representation of \(n_i - s\) is different from that of \(n_i\text{.}\) Pick any column where the digit has changed. The number of 1's in that column is now odd. Therefore the nim sum of the new position is nonzero:</p>
+<div class="displaymath">
+\begin{equation*}
+n_1 \nimsum \cdots \nimsum n_{i-1} \nimsum (n_i - s) \nimsum n_{i+1} \nimsum \cdots \nimsum n_{k} \neq 0.
+\end{equation*}
+</div>
+<p class="continuation">This is true for every possible choice of heap, and every possible move. In other words, the nim value of every follower is nonzero. This proves Nim Rule 2.</p>
+<p id="p-137"><em class="alert">Proof of Nim Rule 1</em> We will present our proof for an arbitrary  Nim position \(\{ n_1 , n_2, \ldots , n_k \}\) where \(n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k \neq 0\text{.}\) However, it will be useful to consider an example as we go through the proof. We will use the Nim position \(\{ 27, 8, 3, 29 \}\text{.}\) As shown in equation \eqref{eqn-nimsum-example}, we have \(27 \nimsum 8 \nimsum 3 \nimsum 29 = 13 \neq 0\text{,}\) so this will be an \(\cN\)-position.</p>
+<p id="p-138">First, we write out the binary representation for each heap size, one per row. We add leading zeros so that every binary representation has the same number of digits. For our example game, this looks like</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+1&amp;1&amp;0&amp;1&amp;1 \\
+0&amp;1&amp;0&amp;0&amp;0 \\
+0&amp;0&amp;0&amp;1&amp;1 \\
+1&amp;1&amp;1&amp;0&amp;1.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">We say that a column is <em class="emphasis">bad</em> if it has an odd number of ones, and it is <em class="emphasis">good</em> if it has an even number of ones. <em class="emphasis">Since the nim sum of these heap sizes is nonzero, there is at least one bad column.</em> Our example has three bad columns, corresponding to \(2^3\text{,}\) \(2^2\) and \(2^0\) when considered from left to right. These three bad columns are highlighted below:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\begin{array}{c}
+1 \\ 0 \\ 0 \\ 1\\
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+1 \\ 1 \\ 0 \\ 1\\
+\hline
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+0 \\ 0 \\ 0 \\ 1 \\
+\hline
+\end{array}
+&amp;
+\begin{array}{c}
+1 \\ 0 \\ 1 \\ 0\\
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+1 \\ 0 \\ 1 \\ 1\\
+\hline
+\end{array}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">We now show how to make a Nim move that results in a position with nim value \(=0\text{.}\) Consider the  leftmost bad column. In our example, this is the \(2^3\) column, which contains three 1's. <em class="emphasis">There is a winning move for every row that has a 1 in this leftmost bad column.</em> Let's call these the <em class="emphasis">bad rows</em>.  Here is our winning move:</p>
+<article class="algorithm theorem-like" id="algorithm-3"><h6 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Winning move when nim sum \(\neq 0\).</span>
+</h6>
+<p id="p-139">Given a nim position with nim sum \(\neq 0\text{:}\)</p>
+<ol class="decimal">
+<li id="li-35"><p id="p-derived-li-35">Pick a bad row (any bad row will do).</p></li>
+<li id="li-36"><p id="p-derived-li-36">Change each of the entries that are in  bad columns, either from 1 to 0, or from 0 to 1.</p></li>
+</ol></article><p id="p-140">Of course, the leftmost digit that you flip will go from 1 to 0 because a bad row must have a 1 in the leftmost bad column (that is what makes it a bad row). Here are the three possible winning moves in our example:</p>
+<p id="p-141"><figure class="figure figure-like" id="fig-nim-win0"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-nim-win0.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>The three winning moves in our exaxmple Nim position.</figcaption></figure></p>
+<p id="p-142">The first, second and fourth rows are bad rows: they have a 1 in the second column from the left. In each winning move, we pick one bad row and change the digits in its entries in the three bad columns. After flipping these digits, every column has an even number of 1's. Therefore the nim value of this new position is 0. This is  precisely what Nim Rule 1 claims: there is at least one follower with nim value \(= 0\text{.}\)</p>
+<p id="p-143">It remains to show that these digit flips in a bad row correspond to a valid move in Nim. That is, in the corresponding Nim game, the size of this Nim heap must decrease. This is certainly true for our three example moves, which look like:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+27 = 11011 &amp;\rightarrow&amp; 10110 = 22, \\
+8 = 01000 &amp;\rightarrow&amp; 00101 = \,\,5, \\
+29 = 11101 &amp;\rightarrow&amp; 10000 = 16.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">It is interesting to note that each of these moves does decrease the heap size, but the size of that decrease depends on the choice of heap. We can write these three winning moves more compactly by using the decimal notation for our nim heap positions:</p>
+<p id="p-144"><figure class="figure figure-like" id="fig-nim-win1"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-nim-win1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>The three winning moves in decimal notation.</figcaption></figure></p>
+<p id="p-145">Here is another way to think about what we are doing as we flip the digits in the three bad columns:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcccccl}
+27 - 8 + 4 -1 &amp;=&amp; 11011 - 01000 +00100 -00001 &amp;=&amp; 10110 &amp;=&amp; 22, \\
+12 - 8 + 4 +1 &amp;=&amp; 01000 - 01000 +00100 +00001 &amp;=&amp; 00101 &amp;=&amp; 5, \\
+29 -8 - 4 - 1 &amp;=&amp; 11101 -01000 -00100 - 00001 &amp;=&amp; 10000 &amp;=&amp; 16.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">From this expansion, it should be clear that flipping the digits in the bad columns does correspond to removing some beans from the heap.</p>
+<p id="p-146">Let's get back to the general case and show that we always decrease the size of the heap corresponding to the bad row. Suppose that our bad columns correspond to \(2^{k_1} &gt; 2^{k_2} &gt; \cdots &gt; 2^{k_r}\text{.}\) If the digit for  \(2^{k_i}\) was 1, we change it to 0, which corresponds to removing \(2^{k_i}\) beans from the \(i\)th heap. That is no problem. However, when the digit for \(2^{k_i}\) changes from a 0 to a 1, this corresponds to adding back \(2^{k_i}\) beans to the heap.   We must make sure that we take away more beans than we add. We need the following inequality</p>
+<div class="displaymath">
+\begin{equation}
+2^{k_1} &gt; 2^{k_1} -1 = \sum_{j=0}^{k_1 -1} 2^{j} \geq  \sum_{i=2}^{r} 2^{k_i}.\label{eqn-sum-powers-of-2}\tag{2.3.1}
+\end{equation}
+</div>
+<p class="continuation">(The exercises in Section <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec-nim-exercises" missing or not unique]</code> ask you to prove the validity of  inequality <a class="xref" data-knowl="./knowl/eqn-sum-powers-of-2.html" title="Equation 2.3.1">(2.3.1)</a>.) The right  hand side is an upper bound on the number of beans that we must add back to the heap, after removing the \(2^{k_1}\) beans corresponding to the leftmost bad column. In other words, the size of the heap decreases. This completes the proof of Nim Rule 1.</p></article></div></p>
+<p id="p-147">Theorem <a class="xref" data-knowl="./knowl/thm-nim.html" title="Theorem 2.3.2">Theorem 2.3.2</a> completely characterizes the game of Nim. We have a simple test for figuring out whether we are in an \(\cN\)-position  or a \(\cP\)-position. When we are in the former, we can use the binary expansions of the pile sizes to find our winning moves.</p></section></div></main>
+</div>
+</body>
+</html>

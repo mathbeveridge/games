@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<section xml:id="sec-nim-win">
+<title>Who wins at Nim?</title>
+<p>
+In this section, we present the criterion for determining whether a Nim position is 
+an <m>\cN</m>-position or a <m>\cP</m>-position. Our proof of this result will 
+	also show us how to play the game optimally.  The key will be to assign a <em>nim value</em>
+	to a Nim position.
+</p>
+	<definition>
+<title>Nim Value</title>
+Given a Nim position
+	 <m>\{ n_1, n_2, \ldots , n_k \}</m>,  its <term>nim value</term> is
+<me>
+n_1 \nimsum n_2 \nimsum \cdots  \nimsum n_k,
+</me>
+the nim sum of the sizes of the heaps.
+	</definition>
+
+<p>	
+	 This nim value tells us who wins the game.
+
+<theorem xml:id='thm-nim'>
+	<statement>
+	<p>
+	The Nim position <m>\{ n_1, n_2, \ldots , n_k \}</m> is
+			<ul>
+				<li>
+				<p>
+	 a <m>\cP</m>-position when  <m> n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k = 0</m>,
+				</p>
+				</li>
+				<li>
+				<p>
+	 an <m>\cN</m>-position when  <m> n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k \neq 0</m>.
+				</p>
+				</li>
+			</ul>
+	</p>
+	</statement>
+	</theorem>
+
+	</p>
+
+	<p>
+
+
+		In other words,  you can determine the winner of Nim  by simply taking the nim sum of the heap sizes! Recall the two rules for characterizing positions of a combinatorial game:
+		
+				<ul>
+					<li>
+					<p>
+		 <alert>Rule 1</alert>: An <m>\cN</m>-position must have at least one follower that is a <m>\cP</m>-position.
+					</p>
+					</li>
+					<li>
+					<p>
+		 <alert>Rule 2</alert>: Every follower of a <m>\cP</m>-position must be an <m>\cN</m>-position.
+		</p>
+		</li>
+		</ul>
+		
+		
+		According to this theorem, a <m>\cP</m>-position in Nim always has nim value <m>=0</m>, 
+		and an <m>\cN</m>-position always has nim value <m>\neq 0</m>. 
+		So we can rephrase these rules according to nim values of our game positions. 
+		In order to prove this theorem, we will prove the following two Nim Rules:
+		
+		
+				<ul>
+					<li>
+					<p>
+		 <alert>Nim Rule 1</alert>: A Nim position with a nim value <m>\neq 0</m> must have at least one follower that has a nim value <m>=0</m>.
+					</p>
+					</li>
+					<li>
+					<p>
+		 <alert>Nim Rule 2</alert>: Every follower of a Nim position with nim value <m>= 0</m> must have  nim value <m>\neq 0</m>.
+					</p>
+					</li>
+				</ul>
+		
+		
+		
+		</p>
+		<p>
+		<proof>
+		<p>
+		We must  prove the validity of the two Nim Rules.
+		The proof of Nim Rule 2 is much easier than the proof of Nim Rule 1. 
+		Therefore, we present this argument first.
+		
+					</p><p>
+		
+		<alert>Proof of Nim Rule 2.</alert>
+		Suppose that we have Nim position <m>\{ n_1, n_2, \ldots , n_k\}</m> such that
+		<me>
+		n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k = 0.
+		</me>
+		We show that every move we make results in a position with nim value <m>\neq 0</m>.
+		
+	</p>
+	<p>
+
+		First, we write out the binary representation for each heap size, one per row. 
+		We add leading zeros so that every binary representation has the same number of digits. 
+		Since the nim value is zero, we know that every column contains an even number of 1's. 
+		
+	</p>
+	<p>
+		
+		Pick any heap, say heap <m>i</m> of size <m>n_i</m>. Remove some number <m>s&gt;1</m> of beans.  The binary representation of <m>n_i - s</m> is different from that of <m>n_i</m>. Pick any column where the digit has changed. The number of 1's in that column is now odd. Therefore the nim sum of the new position is nonzero:
+		<me>
+		n_1 \nimsum \cdots \nimsum n_{i-1} \nimsum (n_i - s) \nimsum n_{i+1} \nimsum \cdots \nimsum n_{k} \neq 0.
+		</me>
+		This is true for every possible choice of heap, and every possible move. In other words, the nim value of every follower is nonzero. This proves Nim Rule 2.
+		
+		
+	</p><p>
+		
+		<alert>Proof of Nim Rule 1</alert>
+		We will present our proof for an arbitrary  Nim position <m>\{ n_1 , n_2, \ldots , n_k \}</m> where <m>n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k \neq 0</m>. However, it will be useful to consider an example as we go through the proof.
+		We will use the Nim position <m>\{ 27, 8, 3, 29 \}</m>. As shown in equation \eqref{eqn-nimsum-example}, we have <m>27 \nimsum 8 \nimsum 3 \nimsum 29 = 13 \neq 0</m>, so this will be an <m>\cN</m>-position.
+		
+					</p><p>
+		
+		First, we write out the binary representation for each heap size, one per row. We add leading zeros so that every binary representation has the same number of digits. For our example game, this looks like
+		<me>
+		\begin{array}{lllll}
+		1&amp;1&amp;0&amp;1&amp;1 \\
+		0&amp;1&amp;0&amp;0&amp;0 \\
+		0&amp;0&amp;0&amp;1&amp;1 \\
+		1&amp;1&amp;1&amp;0&amp;1.
+		\end{array}
+		</me>
+		
+		
+		We say that a column is <em>bad</em> if it has an odd number of ones,
+		and it is <em>good</em> if it has an even number of ones.
+		<em>Since the nim sum of these heap sizes is nonzero, there is at least one bad column.</em> 
+		Our example has three bad columns, corresponding to <m>2^3</m>, <m>2^2</m> and <m>2^0</m> when 
+		considered from left to right. These three bad columns are highlighted below:
+		
+		<me>
+		\begin{array}{lllll}
+		\begin{array}{c}
+		1 \\ 0 \\ 0 \\ 1\\
+		\end{array}
+		&amp;
+		\begin{array}{|c|}
+		\hline
+		1 \\ 1 \\ 0 \\ 1\\
+		\hline
+		\end{array}
+		&amp;
+		\begin{array}{|c|}
+		\hline
+		0 \\ 0 \\ 0 \\ 1 \\
+		\hline
+		\end{array}
+		&amp;
+		\begin{array}{c}
+		1 \\ 0 \\ 1 \\ 0\\
+		\end{array}
+		&amp;
+		\begin{array}{|c|}
+		\hline
+		1 \\ 0 \\ 1 \\ 1\\
+		\hline
+		\end{array}
+		\end{array}
+		</me>
+		
+		
+		
+		We now show how to make a Nim move that results in a position with nim value <m>=0</m>. Consider the  leftmost bad column. In our example, this is the <m>2^3</m> column, which contains three 1's. <em>There is a winning move for every row that has a 1 in this leftmost bad column.</em> Let's call these the <em>bad rows</em>.  Here is our winning move:
+		
+		
+		</p>
+		
+		<algorithm>
+			<title>Winning move when nim sum <m>\neq 0</m></title>
+			<p>
+				Given a nim position with nim sum <m>\neq 0</m>:
+				<ol>
+					<li>
+						Pick a bad row (any bad row will do).
+					</li>
+					<li>
+						Change each of the entries that are in  bad columns, either from 1 to 0, or from 0 to 1.
+					</li>
+				</ol>
+			</p>
+		</algorithm>
+		
+		<p>
+		
+		
+		Of course, the leftmost digit that you flip will go from 1 to 0 because a bad row 
+		must have a 1 in the leftmost bad column (that is what makes it a bad row). 
+		Here are the three possible winning moves in our example:
+	</p><p>
+					<figure xml:id="fig-nim-win0">
+						<caption>The three winning moves in our exaxmple Nim position.</caption>
+					<image width="80%" xml:id="fig-img-nim-win0">
+						<latex-image>
+		\begin{tikzpicture} %mathbook width=80%
+		
+		\draw[very thick, -latex] (-.75,2) -- (-3.8,1);
+		\draw[very thick, -latex] (.15,2) -- (.15,1);
+		\draw[very thick, -latex] (.75,2) -- (3.8,1);
+		
+		\node at (0,3.2) {$
+		\begin{array}{lllll}
+		\begin{array}{c}
+		1 \\ 0 \\ 0 \\ 1\\
+		\end{array}
+		&amp;
+		\begin{array}{|c|}
+		\hline
+		1 \\ 1 \\ 0 \\ 1\\
+		\hline
+		\end{array}
+		&amp;
+		\begin{array}{c}
+		0 \\ 0 \\ 0 \\ 1\\
+		\end{array}
+		&amp;
+		\begin{array}{c}
+		1 \\ 0 \\ 1 \\ 0\\
+		\end{array}
+		&amp;
+		\begin{array}{c}
+		1 \\ 0 \\ 1 \\ 1\\
+		\end{array}
+		\end{array}
+		$};
+		
+		
+		\node at (-5.5,-.1) {$\begin{array}{c}
+		\begin{array}{|ccccc|}
+		\hline
+		1&amp;  0&amp; 1 &amp;1&amp; 0\\
+		\hline
+		\end{array}
+		\\
+		\begin{array}{ccccc}
+		0&amp;1&amp;0&amp;0&amp;0 \\
+		\end{array}
+		\\
+		\begin{array}{ccccc}
+		0&amp;0&amp;0&amp;1&amp;1 \\
+		\end{array}
+		\\
+		\begin{array}{ccccc}
+		1&amp;1&amp;1&amp;0&amp;1
+		\end{array}
+		\end{array}$};
+		
+		\node at (0.15,-.1) {
+		$\begin{array}{c}
+		\begin{array}{ccccc}
+		1&amp; 1&amp;0&amp;1&amp;1\\
+		\end{array}
+		\\
+		\begin{array}{|ccccc|}
+		\hline
+		0&amp; 0 &amp; 1 &amp;0&amp; 1 \\
+		\hline
+		\end{array}
+		\\
+		\begin{array}{ccccc}
+		0&amp;0&amp;0&amp;1&amp;1 \\
+		\end{array}
+		\\
+		\begin{array}{ccccc}
+		1&amp;1&amp;1&amp;0&amp;1
+		\end{array}
+		\end{array}$
+		};
+		
+		\node at (5.1,-.1)  {
+		$\begin{array}{c}
+		\begin{array}{ccccc}
+		1&amp; 1&amp;0&amp;1&amp;1\\
+		\end{array}
+		\\
+		\begin{array}{ccccc}
+		0&amp;1&amp;0&amp;0&amp;0
+		\end{array}
+		\\
+		\begin{array}{ccccc}
+		0&amp;0&amp;0&amp;1&amp;1 \\
+		\end{array}
+		\\
+		\begin{array}{|ccccc|}
+		\hline
+		1&amp; 0 &amp; 0 &amp;0&amp; 0 \\
+		\hline
+		\end{array}
+		\end{array}$
+		};
+		
+		\end{tikzpicture}
+						</latex-image>
+					</image>
+					</figure>
+				</p><p>
+		
+		The first, second and fourth rows are bad rows: they have a 1 in the second column 
+		from the left. In each winning move, we pick one bad row and change the digits in its 
+		entries in the three bad columns. After flipping these digits, every column has an even 
+		number of 1's. Therefore the nim value of this new position is 0. This is  precisely what 
+		Nim Rule 1 claims: there is at least one follower with nim value <m>= 0</m>.
+		
+					</p><p>
+		
+		It remains to show that these digit flips in a bad row correspond to a valid move in Nim. That is, in the corresponding Nim game, the size of this Nim heap must decrease. 
+		This is certainly true for our three example moves, which look like:
+		<me>
+		\begin{array}{rcl}
+		27 = 11011 &amp;\rightarrow&amp; 10110 = 22, \\
+		8 = 01000 &amp;\rightarrow&amp; 00101 = \,\,5, \\
+		29 = 11101 &amp;\rightarrow&amp; 10000 = 16.
+		\end{array}
+		</me>
+		It is interesting to note that each of these moves does decrease the heap size, but the size of that decrease depends on the choice of heap.
+		We can write these three winning moves more compactly by using the decimal notation for our nim heap positions:
+	</p><p>
+					<figure xml:id="fig-nim-win1">
+						<caption>The three winning moves in decimal notation.</caption>
+					<image width="80%" xml:id="fig-img-nim-win1">
+						<latex-image>
+		\begin{tikzpicture}
+		
+		\draw[very thick, -latex] (-.75,2) -- (-3.8,1);
+		\draw[very thick, -latex] (.15,2) -- (.15,1);
+		\draw[very thick, -latex] (.75,2) -- (3.8,1);
+		
+		\node at (0,2.5) {$\{ 27, 8, 3, 29 \}$};
+		
+		
+		\node at (-4,0.5) {$\{ \framebox{22}, 8, 3, 29 \}$};
+		
+		\node at (0,0.5) {$\{ 27,  \framebox{5}, 3, 29 \}$};
+		
+		\node at (4,0.5) {$\{ 27, 8, 3,  \framebox{16} \}$};
+		
+		\end{tikzpicture}
+						</latex-image>
+					</image>
+		</figure>
+	</p><p>
+		Here is another way to think about what we are doing as we flip the digits in the three bad columns:
+		<me>
+		\begin{array}{rcccccl}
+		27 - 8 + 4 -1 &amp;=&amp; 11011 - 01000 +00100 -00001 &amp;=&amp; 10110 &amp;=&amp; 22, \\
+		12 - 8 + 4 +1 &amp;=&amp; 01000 - 01000 +00100 +00001 &amp;=&amp; 00101 &amp;=&amp; 5, \\
+		29 -8 - 4 - 1 &amp;=&amp; 11101 -01000 -00100 - 00001 &amp;=&amp; 10000 &amp;=&amp; 16.
+		\end{array}
+		</me>
+		From this expansion, it should be clear that flipping the digits in the bad columns does correspond to removing some beans from the heap.
+		
+					</p><p>
+		
+		Let's get back to the general case and show that we always decrease the size of the heap corresponding to the bad row. Suppose that our bad columns correspond to <m>2^{k_1} &gt; 2^{k_2} &gt; \cdots &gt; 2^{k_r}</m>. If the digit for  <m>2^{k_i}</m> was 1, we change it to 0, which corresponds to removing <m>2^{k_i}</m> beans from the <m>i</m>th heap. That is no problem. However, when the digit for <m>2^{k_i}</m> changes from a 0 to a 1, this corresponds to adding back <m>2^{k_i}</m> beans to the heap.   We must make sure that we take away more beans than we add. We need the following inequality
+		<men xml:id="eqn-sum-powers-of-2">
+		2^{k_1} &gt; 2^{k_1} -1 = \sum_{j=0}^{k_1 -1} 2^{j} \geq  \sum_{i=2}^{r} 2^{k_i}.
+		</men>
+		(The exercises in Section <xref ref="sec-nim-exercises" /> ask you to prove the validity of  inequality <xref ref="eqn-sum-powers-of-2"/>.)
+		The right  hand side is an upper bound on the number of beans that we must add back to the heap, after removing the <m>2^{k_1}</m> beans corresponding to the leftmost bad column. In other words, the size of the heap decreases. This completes the proof of Nim Rule 1.
+		
+		</p>
+		</proof>
+		</p>
+		<p>
+		
+		Theorem <xref ref="thm-nim" /> completely characterizes the game of Nim. We have a simple test for figuring out whether we are in an <m>\cN</m>-position  or a <m>\cP</m>-position. When we are in the former, we can use the binary expansions of the pile sizes to find our winning moves.
+		
+		
+		
+		</p>
+
+</section>

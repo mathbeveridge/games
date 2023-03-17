@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>We must  prove the validity of the two Nim Rules. The proof of Nim Rule 2 is much easier than the proof of Nim Rule 1. Therefore, we present this argument first.</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Proof of Nim Rule 2.</em> Suppose that we have Nim position \(\{ n_1, n_2, \ldots , n_k\}\) such that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k = 0.
+\end{equation*}
+</div>
+<p class="continuation">We show that every move we make results in a position with nim value \(\neq 0\text{.}\)</p>
+<p>First, we write out the binary representation for each heap size, one per row. We add leading zeros so that every binary representation has the same number of digits. Since the nim value is zero, we know that every column contains an even number of 1's.</p>
+<p>Pick any heap, say heap \(i\) of size \(n_i\text{.}\) Remove some number \(s&gt;1\) of beans.  The binary representation of \(n_i - s\) is different from that of \(n_i\text{.}\) Pick any column where the digit has changed. The number of 1's in that column is now odd. Therefore the nim sum of the new position is nonzero:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+n_1 \nimsum \cdots \nimsum n_{i-1} \nimsum (n_i - s) \nimsum n_{i+1} \nimsum \cdots \nimsum n_{k} \neq 0.
+\end{equation*}
+</div>
+<p class="continuation">This is true for every possible choice of heap, and every possible move. In other words, the nim value of every follower is nonzero. This proves Nim Rule 2.</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Proof of Nim Rule 1</em> We will present our proof for an arbitrary  Nim position \(\{ n_1 , n_2, \ldots , n_k \}\) where \(n_1 \nimsum n_2 \nimsum  \cdots \nimsum  n_k \neq 0\text{.}\) However, it will be useful to consider an example as we go through the proof. We will use the Nim position \(\{ 27, 8, 3, 29 \}\text{.}\) As shown in equation \eqref{eqn-nimsum-example}, we have \(27 \nimsum 8 \nimsum 3 \nimsum 29 = 13 \neq 0\text{,}\) so this will be an \(\cN\)-position.</p>
+<p>First, we write out the binary representation for each heap size, one per row. We add leading zeros so that every binary representation has the same number of digits. For our example game, this looks like</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+1&amp;1&amp;0&amp;1&amp;1 \\
+0&amp;1&amp;0&amp;0&amp;0 \\
+0&amp;0&amp;0&amp;1&amp;1 \\
+1&amp;1&amp;1&amp;0&amp;1.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">We say that a column is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">bad</em> if it has an odd number of ones, and it is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">good</em> if it has an even number of ones. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Since the nim sum of these heap sizes is nonzero, there is at least one bad column.</em> Our example has three bad columns, corresponding to \(2^3\text{,}\) \(2^2\) and \(2^0\) when considered from left to right. These three bad columns are highlighted below:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\begin{array}{c}
+1 \\ 0 \\ 0 \\ 1\\
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+1 \\ 1 \\ 0 \\ 1\\
+\hline
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+0 \\ 0 \\ 0 \\ 1 \\
+\hline
+\end{array}
+&amp;
+\begin{array}{c}
+1 \\ 0 \\ 1 \\ 0\\
+\end{array}
+&amp;
+\begin{array}{|c|}
+\hline
+1 \\ 0 \\ 1 \\ 1\\
+\hline
+\end{array}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">We now show how to make a Nim move that results in a position with nim value \(=0\text{.}\) Consider the  leftmost bad column. In our example, this is the \(2^3\) column, which contains three 1's. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">There is a winning move for every row that has a 1 in this leftmost bad column.</em> Let's call these the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">bad rows</em>.  Here is our winning move:</p>
+<article class="algorithm theorem-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Winning move when nim sum \(\neq 0\).</span>
+</h6>
+<p>Given a nim position with nim sum \(\neq 0\text{:}\)</p>
+<ol class="decimal">
+<li><p>Pick a bad row (any bad row will do).</p></li>
+<li><p>Change each of the entries that are in  bad columns, either from 1 to 0, or from 0 to 1.</p></li>
+</ol></article><p>Of course, the leftmost digit that you flip will go from 1 to 0 because a bad row must have a 1 in the leftmost bad column (that is what makes it a bad row). Here are the three possible winning moves in our example:</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-nim-win0.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>The three winning moves in our exaxmple Nim position.</figcaption></figure></p>
+<p>The first, second and fourth rows are bad rows: they have a 1 in the second column from the left. In each winning move, we pick one bad row and change the digits in its entries in the three bad columns. After flipping these digits, every column has an even number of 1's. Therefore the nim value of this new position is 0. This is  precisely what Nim Rule 1 claims: there is at least one follower with nim value \(= 0\text{.}\)</p>
+<p>It remains to show that these digit flips in a bad row correspond to a valid move in Nim. That is, in the corresponding Nim game, the size of this Nim heap must decrease. This is certainly true for our three example moves, which look like:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+27 = 11011 &amp;\rightarrow&amp; 10110 = 22, \\
+8 = 01000 &amp;\rightarrow&amp; 00101 = \,\,5, \\
+29 = 11101 &amp;\rightarrow&amp; 10000 = 16.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">It is interesting to note that each of these moves does decrease the heap size, but the size of that decrease depends on the choice of heap. We can write these three winning moves more compactly by using the decimal notation for our nim heap positions:</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-nim-win1.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>The three winning moves in decimal notation.</figcaption></figure></p>
+<p>Here is another way to think about what we are doing as we flip the digits in the three bad columns:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rcccccl}
+27 - 8 + 4 -1 &amp;=&amp; 11011 - 01000 +00100 -00001 &amp;=&amp; 10110 &amp;=&amp; 22, \\
+12 - 8 + 4 +1 &amp;=&amp; 01000 - 01000 +00100 +00001 &amp;=&amp; 00101 &amp;=&amp; 5, \\
+29 -8 - 4 - 1 &amp;=&amp; 11101 -01000 -00100 - 00001 &amp;=&amp; 10000 &amp;=&amp; 16.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">From this expansion, it should be clear that flipping the digits in the bad columns does correspond to removing some beans from the heap.</p>
+<p>Let's get back to the general case and show that we always decrease the size of the heap corresponding to the bad row. Suppose that our bad columns correspond to \(2^{k_1} &gt; 2^{k_2} &gt; \cdots &gt; 2^{k_r}\text{.}\) If the digit for  \(2^{k_i}\) was 1, we change it to 0, which corresponds to removing \(2^{k_i}\) beans from the \(i\)th heap. That is no problem. However, when the digit for \(2^{k_i}\) changes from a 0 to a 1, this corresponds to adding back \(2^{k_i}\) beans to the heap.   We must make sure that we take away more beans than we add. We need the following inequality</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+2^{k_1} &gt; 2^{k_1} -1 = \sum_{j=0}^{k_1 -1} 2^{j} \geq  \sum_{i=2}^{r} 2^{k_i}.\tag{2.3.1}
+\end{equation}
+</div>
+<p class="continuation">(The exercises in Section <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec-nim-exercises" missing or not unique]</code> ask you to prove the validity of  inequality <a class="xref" data-knowl="./knowl/eqn-sum-powers-of-2.html" title="Equation 2.3.1">(2.3.1)</a>.) The right  hand side is an upper bound on the number of beans that we must add back to the heap, after removing the \(2^{k_1}\) beans corresponding to the leftmost bad column. In other words, the size of the heap decreases. This completes the proof of Nim Rule 1.</p></article><span class="incontext"><a href="sec-nim-win.html#proof-4">in-context</a></span>
+</body>
+</html>

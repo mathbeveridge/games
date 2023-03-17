@@ -39,40 +39,40 @@ in a combinatorial game, so a player cannot be defeated by bad luck. Also, there
 				<latex-image>
 \begin{tikzpicture}[level/.style={sibling distance=37mm/#1}]
 
-\node (G0)    {<m>\{ 1, 3 \}</m>}
-child { node (G1) {<m>\{ 3 \}</m>}
-child { node (G1a) {<m>\emptyset</m>}}
-child { node (G1b) {<m>\{ 1 \} </m>}
-child { node (G1b1) { <m>\emptyset</m> }}
+\node (G0)    {$\{ 1, 3 \}$}
+child { node (G1) {$\{ 3 \}$}
+child { node (G1a) {$\emptyset$}}
+child { node (G1b) {$\{ 1 \} $}
+child { node (G1b1) { $\emptyset$ }}
 }
-child { node (G1c) {<m>\{ 2 \} </m>}
-child { node (G1c1) { <m>\emptyset</m> }}
-child { node (G1c2) { <m>\{ 1 \}</m> }
-child { node (G1c2a) { <m>\emptyset</m> }}
-}
-}
-}
-child { node (G2) {<m>\{ 1 \}</m>}
-child { node (G2a) { <m>\emptyset</m> }}
-}
-child { node (G2) {<m>\{ 1,1 \}</m>}
-child { node (G1b) {<m>\{ 1 \} </m>}
-child { node (G2a) { <m>\emptyset</m> }}
+child { node (G1c) {$\{ 2 \} $}
+child { node (G1c1) { $\emptyset$ }}
+child { node (G1c2) { $\{ 1 \}$ }
+child { node (G1c2a) { $\emptyset$ }}
 }
 }
-child { node (H0)    {<m>\{ 1, 2 \}</m>}
-child { node (H1) {<m>\{ 2 \}</m>}
-child { node (H1a) {<m>\emptyset</m>}}
-child { node (H1b) {<m>\{ 1 \} </m>}
-child { node (H2a) { <m>\emptyset</m> }}
+}
+child { node (G2) {$\{ 1 \}$}
+child { node (G2a) { $\emptyset$ }}
+}
+child { node (G2) {$\{ 1,1 \}$}
+child { node (G1b) {$\{ 1 \} $}
+child { node (G2a) { $\emptyset$ }}
 }
 }
-child { node (H2) {<m>\{ 1 \}</m>}
-child { node (H2a) { <m>\emptyset</m> }}
+child { node (H0)    {$\{ 1, 2 \}$}
+child { node (H1) {$\{ 2 \}$}
+child { node (H1a) {$\emptyset$}}
+child { node (H1b) {$\{ 1 \} $}
+child { node (H2a) { $\emptyset$ }}
 }
-child { node (H2) {<m>\{ 1,1 \}</m>}
-child { node (H1b) {<m>\{ 1 \} </m>}
-child { node (H2a) { <m>\emptyset</m> }}
+}
+child { node (H2) {$\{ 1 \}$}
+child { node (H2a) { $\emptyset$ }}
+}
+child { node (H2) {$\{ 1,1 \}$}
+child { node (H1b) {$\{ 1 \} $}
+child { node (H2a) { $\emptyset$ }}
 }
 }
 };
@@ -104,70 +104,70 @@ One powerful tool for resolving this question is a <term>game tree</term>. In th
 				<latex-image>
 \begin{tikzpicture}[level/.style={sibling distance=45mm/#1}, scale=.8, every node/.style = {font=\sffamily\small}]
 
-\node (G0)    {<m>\{ 1, 3 \}</m>}
-child { node (G1) {<m>\{ 3 \}</m>}
-child { node (G1a) {<m>\emptyset</m>}}
-child { node (G1b) {<m>\{ 1 \} </m>}
-child { node (G1b1) { <m>\emptyset</m> }}
+\node (G0)    {$\{ 1, 3 \}$}
+child { node (G1) {$\{ 3 \}$}
+child { node (G1a) {$\emptyset$}}
+child { node (G1b) {$\{ 1 \} $}
+child { node (G1b1) { $\emptyset$ }}
 }
-child { node (G1c) {<m>\{ 2 \} </m>}
-child { node (G1c1) { <m>\emptyset</m> }}
-child { node (G1c2) { <m>\{ 1 \}</m> }
-child { node (G1c2a) { <m>\emptyset</m> }}
-}
-}
-}
-child { node (G2) {<m>\{ 1 \}</m>}
-child { node (G2a) { <m>\emptyset</m> }}
-}
-child { node (G3) {<m>\{ 1,1 \}</m>}
-child { node (G3a) {<m>\{ 1 \} </m>}
-child { node (G3a1) { <m>\emptyset</m> }}
+child { node (G1c) {$\{ 2 \} $}
+child { node (G1c1) { $\emptyset$ }}
+child { node (G1c2) { $\{ 1 \}$ }
+child { node (G1c2a) { $\emptyset$ }}
 }
 }
-child { node (H0)    {<m>\{ 1, 2 \}</m>}
-child { node (H3) {<m>\{ 1,1 \}</m>}
-child { node (H3a) {<m>\{ 1 \} </m>}
-child { node (H3a1) { <m>\emptyset</m> }}
+}
+child { node (G2) {$\{ 1 \}$}
+child { node (G2a) { $\emptyset$ }}
+}
+child { node (G3) {$\{ 1,1 \}$}
+child { node (G3a) {$\{ 1 \} $}
+child { node (G3a1) { $\emptyset$ }}
 }
 }
-child { node (H2) {<m>\{ 1 \}</m>}
-child { node (H2a) { <m>\emptyset</m> }}
+child { node (H0)    {$\{ 1, 2 \}$}
+child { node (H3) {$\{ 1,1 \}$}
+child { node (H3a) {$\{ 1 \} $}
+child { node (H3a1) { $\emptyset$ }}
 }
-child { node (H1) {<m>\{ 2 \}</m>}
-child { node (H1a) {<m>\emptyset</m>}}
-child { node (H1b) {<m>\{ 1 \} </m>}
-child { node (H1b1) { <m>\emptyset</m> }}
+}
+child { node (H2) {$\{ 1 \}$}
+child { node (H2a) { $\emptyset$ }}
+}
+child { node (H1) {$\{ 2 \}$}
+child { node (H1a) {$\emptyset$}}
+child { node (H1b) {$\{ 1 \} $}
+child { node (H1b1) { $\emptyset$ }}
 }
 }
 };
 
-\node (G0S) [above=.1pt of G0] {<m>\cN</m>};
-\node (G1S) [left=1pt of G1] {<m>\cN</m>};
-\node (G1aS) [below=1pt of G1a] {<m>\cP</m>};
-\node (G1bS) [left=1pt of G1b] {<m>\cN</m>};
-\node (G1b1S) [below=1pt of G1b1] {<m>\cP</m>};
-\node (G1cS) [right=1pt of G1c] {<m>\cN</m>};
-\node (G1c1S) [below=1pt of G1c1] {<m>\cP</m>};
-\node (G1c2S) [right=1pt of G1c2] {<m>\cN</m>};
-\node (G1c2aS) [below=1pt of G1c2a] {<m>\cP</m>};
-\node (G2S) [right=1pt of G2] {<m>\cN</m>};
-\node (G2aS) [below right=1pt of G2a] {<m>\cP</m>};
-\node (G3S) [left=1pt of G3] {<m>\cP</m>};
-\node (G3aS) [left=1pt of G3a] {<m>\cN</m>};
-\node (G3a1S) [below=1pt of G3a1] {<m>\cP</m>};
+\node (G0S) at (0,1) {$\cN$};
+\node (G1S) at (-6.75,-0.75) {$\cN$};
+\node (G1aS) at (-9.5,-3) {$\cP$};
+\node (G1bS) at (-6,-3) {$\cN$};
+\node (G1b1S) at (-7,-5) {$\cP$};
+\node (G1cS) at (-3.75,-3) {$\cN$};
+\node (G1c1S) at (-5,-5) {$\cP$};
+\node (G1c2S) at (-3,-4.75) {$\cN$};
+\node (G1c2aS) at (-2,-3.5) {$\cP$};
+\node (G2S) at (-3,-1.5) {$\cN$};
+\node (G2aS) at (-3.5,-6.5) {$\cP$};
+\node (G3S) at (1.4,-1.5) {$\cP$};
+\node (G3aS) at (1.5,-3) {$\cN$};
+\node (G3a1S) at (2,-5.25) {$\cP$};
 
 
-\node (H0S) [right=1pt of H0] {<m>\cN</m>};
-\node (H1S) [right=1pt of H1] {<m>\cN</m>};
-\node (H1aS) [below=1pt of H1a] {<m>\cP</m>};
-\node (H1bS) [right=1pt of H1b] {<m>\cN</m>};
-\node (H1b1S) [below=1pt of H1b1] {<m>\cP</m>};
-\node (H2S) [right=1pt of H2] {<m>\cN</m>};
-\node (H2aS) [below=1pt of H2a] {<m>\cP</m>};
-\node (H3S) [left=1pt of H3] {<m>\cP</m>};
-\node (H3aS) [left=1pt of H3a] {<m>\cN</m>};
-\node (H3a1S) [below=1pt of H3a1] {<m>\cP</m>};
+\node (H0S) at (6.75,-.75) {$\cN$};
+\node (H1S) at (3.5,-3) {$\cP$};
+\node (H1aS) at (8,-5) {$\cP$};
+\node (H1bS) at (10.5,-4.5) {$\cN$};
+\node (H1b1S) at (10.5,-6) {$\cP$};
+\node (H2S) at (6,-3) {$\cN$};
+\node (H2aS) at (3.75,-4.5) {$\cN$};
+\node (H3S) at (9.75,-3) {$\cN$};
+\node (H3aS) at (6.5,-5) {$\cP$};
+\node (H3a1S) at (4,-6.5) {$\cP$};
 
 
 \end{tikzpicture}
@@ -255,45 +255,45 @@ Don't be fooled by the fact that this proof is so short. This is a powerful theo
 				<latex-image>
 \begin{tikzpicture}[level/.style={sibling distance=60mm/#1}, ]
 
-\node (G0)    {<m>\{ 2,2 \}</m>}
-child { node (G1) {<m>\{ 2 \}</m>}
-child { node (G1a) {<m>\emptyset</m>}}
-child { node (G1b) {<m>\{ 1 \} </m>}
-child { node (G1b1) { <m>\emptyset</m> }}
+\node (G0)    {$\{ 2,2 \}$}
+child { node (G1) {$\{ 2 \}$}
+child { node (G1a) {$\emptyset$}}
+child { node (G1b) {$\{ 1 \} $}
+child { node (G1b1) { $\emptyset$ }}
 }
 }
-child { node (G2) {<m>\{ 1,2 \}</m>}
-child { node (G2b) { <m>\{ 1, 1 \}</m> }
-child { node (G2b1) {<m> \{ 1 \} </m>}
-child { node (G2b1a) {<m> \emptyset</m>}}
+child { node (G2) {$\{ 1,2 \}$}
+child { node (G2b) { $\{ 1, 1 \}$ }
+child { node (G2b1) {$ \{ 1 \} $}
+child { node (G2b1a) {$ \emptyset$}}
 }
 }
-child { node (G2c) {<m>\{ 1 \} </m>}
-child { node (G2c1) {<m> \emptyset</m>}}
+child { node (G2c) {$\{ 1 \} $}
+child { node (G2c1) {$ \emptyset$}}
 }
-child { node (G2a) {<m>\{ 2 \} </m>}
-child { node (G2a1) {<m> \emptyset</m>}}
-child { node (G2a2) {<m> \{ 1 \} </m>}
-child { node (G2a21) {<m> \emptyset</m>}}
+child { node (G2a) {$\{ 2 \} $}
+child { node (G2a1) {$ \emptyset$}}
+child { node (G2a2) {$ \{ 1 \} $}
+child { node (G2a21) {$ \emptyset$}}
 }
 }
 };
 
-\node (G0S) [above=.1pt of G0] {<m>\cP</m>};
-\node (G1S) [left=1pt of G1] {<m>\cN</m>};
-\node (G1aS) [below=1pt of G1a] {<m>\cP</m>};
-\node (G1bS) [left=1pt of G1b] {<m>\cN</m>};
-\node (G1b1S) [below=1pt of G1b1] {<m>\cP</m>};
-\node (G2S) [right=1pt of G2] {<m>\cN</m>};
-\node (G2aS) [right=1pt of G2a] {<m>\cN</m>};
-\node (G2a1S) [below=1pt of G2a1] {<m>\cP</m>};
-\node (G2a2S) [right=1pt of G2a2] {<m>\cN</m>};
-\node (G2a21S) [below=1pt of G2a21] {<m>\cP</m>};
-\node (G2bS) [right=1pt of G2b] {<m>\cP</m>};
-\node (G2b1S) [right=1pt of G2b1] {<m>\cN</m>};
-\node (G2b1aS) [below=1pt of G2b1a] {<m>\cP</m>};
-\node (G2cS) [right=1pt of G2c] {<m>\cN</m>};
-\node (G2c1S) [below=1pt of G2c1] {<m>\cP</m>};
+\node (G0S) at (0,.5) {$\cP$};
+\node (G1S) at (-3,-1) {$\cN$};
+\node (G1aS) at (-5,-3) {$\cP$};
+\node (G1bS) at (-2,-3) {$\cN$};
+\node (G1b1S) at (-1.75,-5) {$\cP$};
+\node (G2S) at (3,-1) {$\cN$};
+\node (G2aS) at (6.75,-3) {$\cN$};
+\node (G2a1S) at (5,-5) {$\cP$};
+\node (G2a2S) at (7.85,-4.5) {$\cN$};
+\node (G2a21S) at (7.5,-6) {$\cP$};
+\node (G2bS)  at (3.5,-3) {$\cP$};
+\node (G2b1S) at (3.25,-5) {$\cN$};
+\node (G2b1aS) at (.5,-6) {$\cP$};
+\node (G2cS) at (1,-3) {$\cN$};
+\node (G2c1S) at (.5,-4.5) {$\cP$};
 
 \end{tikzpicture}
 				</latex-image>
@@ -339,34 +339,34 @@ We continue in this manner, dealing with positions whose set of followers have a
 \begin{scope}
 
 
-\node (G0)    {<m>\Box</m>}
-child { node (G1) {<m>\Box</m>}
-child { node (G1a) {<m>\Box</m>}
-child { node (G1a1) {<m>\Box</m>}
-child { node (G1a1a) { <m>\cP</m> }}
+\node (G0)    {$\Box$}
+child { node (G1) {$\Box$}
+child { node (G1a) {$\Box$}
+child { node (G1a1) {$\Box$}
+child { node (G1a1a) { $\cP$ }}
 }
 }
-child { node (G1b) {<m>\Box</m>}
-child { node (G1b1) { <m>\cP</m> }}
+child { node (G1b) {$\Box$}
+child { node (G1b1) { $\cP$ }}
 }
 }
-child { node (G3) {<m>\Box</m>}
-child { node (G3a) { <m>\Box</m> }
-child { node (G3a1) {<m>\Box</m>}
-child { node (G3a1a) {<m>\cP</m>}}
+child { node (G3) {$\Box$}
+child { node (G3a) { $\Box$ }
+child { node (G3a1) {$\Box$}
+child { node (G3a1a) {$\cP$}}
 }
 }
 }
-child { node (G2) {<m>\Box</m>}
-child { node (G2b) { <m>\Box</m> }
-child { node (G2b1) {<m>\Box</m>}
-child { node (G2b1a) {<m>\cP</m>}}
+child { node (G2) {$\Box$}
+child { node (G2b) { $\Box$ }
+child { node (G2b1) {$\Box$}
+child { node (G2b1a) {$\cP$}}
 }
 }
-child { node (G2a) {<m>\Box</m>}
-child { node (G2a1) {<m>\cP</m>}}
-child { node (G2a2) {<m>\Box</m>}
-child { node (G2a21) {<m>\cP</m>}}
+child { node (G2a) {$\Box$}
+child { node (G2a1) {$\cP$}}
+child { node (G2a2) {$\Box$}
+child { node (G2a21) {$\cP$}}
 }
 }
 };
@@ -384,34 +384,34 @@ child { node (G2a21) {<m>\cP</m>}}
 \begin{scope}[shift={(8,0)}]
 
 
-\node (G0)    {<m>\Box</m>}
-child { node (G1) {<m>\Box</m>}
-child { node (G1a) {<m>\Box</m>}
-child { node (G1a1) {<m>\cN</m>}
-child { node (G1a1a) { <m>\cP</m> }}
+\node (G0)    {$\Box$}
+child { node (G1) {$\Box$}
+child { node (G1a) {$\Box$}
+child { node (G1a1) {$\cN$}
+child { node (G1a1a) { $\cP$ }}
 }
 }
-child { node (G1b) {<m>\cN</m>}
-child { node (G1b1) { <m>\cP</m> }}
+child { node (G1b) {$\cN$}
+child { node (G1b1) { $\cP$ }}
 }
 }
-child { node (G3) {<m>\Box</m>}
-child { node (G3a) { <m>\Box</m> }
-child { node (G3a1) {<m>\cN</m>}
-child { node (G3a1a) {<m>\cP</m>}}
+child { node (G3) {$\Box$}
+child { node (G3a) { $\Box$ }
+child { node (G3a1) {$\cN$}
+child { node (G3a1a) {$\cP$}}
 }
 }
 }
-child { node (G2) {<m>\Box</m>}
-child { node (G2b) { <m>\Box</m> }
-child { node (G2b1) {<m>\cN</m>}
-child { node (G2b1a) {<m>\cP</m>}}
+child { node (G2) {$\Box$}
+child { node (G2b) { $\Box$ }
+child { node (G2b1) {$\cN$}
+child { node (G2b1a) {$\cP$}}
 }
 }
-child { node (G2a) {<m>\cN</m>}
-child { node (G2a1) {<m>\cP</m>}}
-child { node (G2a2) {<m>\cN</m>}
-child { node (G2a21) {<m>\cP</m>}}
+child { node (G2a) {$\cN$}
+child { node (G2a1) {$\cP$}}
+child { node (G2a2) {$\cN$}
+child { node (G2a21) {$\cP$}}
 }
 }
 };
@@ -423,34 +423,34 @@ child { node (G2a21) {<m>\cP</m>}}
 \begin{scope}[shift={(0,-8)}]
 
 
-\node (G0)    {<m>\Box</m>}
-child { node (G1) {<m>\Box</m>}
-child { node (G1a) {<m>\cP</m>}
-child { node (G1a1) {<m>\cN</m>}
-child { node (G1a1a) { <m>\cP</m> }}
+\node (G0)    {$\Box$}
+child { node (G1) {$\Box$}
+child { node (G1a) {$\cP$}
+child { node (G1a1) {$\cN$}
+child { node (G1a1a) { $\cP$ }}
 }
 }
-child { node (G1b) {<m>\cN</m>}
-child { node (G1b1) { <m>\cP</m> }}
+child { node (G1b) {$\cN$}
+child { node (G1b1) { $\cP$ }}
 }
 }
-child { node (G3) {<m>\Box</m>}
-child { node (G3a) { <m>\cP</m> }
-child { node (G3a1) {<m>\cN</m>}
-child { node (G3a1a) {<m>\cP</m>}}
+child { node (G3) {$\Box$}
+child { node (G3a) { $\cP$ }
+child { node (G3a1) {$\cN$}
+child { node (G3a1a) {$\cP$}}
 }
 }
 }
-child { node (G2) {<m>\Box</m>}
-child { node (G2b) { <m>\cP</m> }
-child { node (G2b1) {<m>\cN</m>}
-child { node (G2b1a) {<m>\cP</m>}}
+child { node (G2) {$\Box$}
+child { node (G2b) { $\cP$ }
+child { node (G2b1) {$\cN$}
+child { node (G2b1a) {$\cP$}}
 }
 }
-child { node (G2a) {<m>\cN</m>}
-child { node (G2a1) {<m>\cP</m>}}
-child { node (G2a2) {<m>\cN</m>}
-child { node (G2a21) {<m>\cP</m>}}
+child { node (G2a) {$\cN$}
+child { node (G2a1) {$\cP$}}
+child { node (G2a2) {$\cN$}
+child { node (G2a21) {$\cP$}}
 }
 }
 };
@@ -463,34 +463,34 @@ child { node (G2a21) {<m>\cP</m>}}
 \begin{scope}[shift={(8,-8)}]
 
 
-\node (G0)    {<m>\cP</m>}
-child { node (G1) {<m>\cN</m>}
-child { node (G1a) {<m>\cP</m>}
-child { node (G1a1) {<m>\cN</m>}
-child { node (G1a1a) { <m>\cP</m> }}
+\node (G0)    {$\cP$}
+child { node (G1) {$\cN$}
+child { node (G1a) {$\cP$}
+child { node (G1a1) {$\cN$}
+child { node (G1a1a) { $\cP$ }}
 }
 }
-child { node (G1b) {<m>\cN</m>}
-child { node (G1b1) { <m>\cP</m> }}
+child { node (G1b) {$\cN$}
+child { node (G1b1) { $\cP$ }}
 }
 }
-child { node (G3) {<m>\cN</m>}
-child { node (G3a) { <m>\cP</m> }
-child { node (G3a1) {<m>\cN</m>}
-child { node (G3a1a) {<m>\cP</m>}}
+child { node (G3) {$\cN$}
+child { node (G3a) { $\cP$ }
+child { node (G3a1) {$\cN$}
+child { node (G3a1a) {$\cP$}}
 }
 }
 }
-child { node (G2) {<m>\cN</m>}
-child { node (G2b) { <m>\cP</m> }
-child { node (G2b1) {<m>\cN</m>}
-child { node (G2b1a) {<m>\cP</m>}}
+child { node (G2) {$\cN$}
+child { node (G2b) { $\cP$ }
+child { node (G2b1) {$\cN$}
+child { node (G2b1a) {$\cP$}}
 }
 }
-child { node (G2a) {<m>\cN</m>}
-child { node (G2a1) {<m>\cP</m>}}
-child { node (G2a2) {<m>\cN</m>}
-child { node (G2a21) {<m>\cP</m>}}
+child { node (G2a) {$\cN$}
+child { node (G2a1) {$\cP$}}
+child { node (G2a2) {$\cN$}
+child { node (G2a21) {$\cP$}}
 }
 }
 };

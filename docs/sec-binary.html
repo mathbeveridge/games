@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Games: Binary Representation of Numbers</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+
+    \definecolor{orange}{RGB}{255, 165,   0}
+    \definecolor{crimson}{RGB}{220,20,60}
+    \definecolor{pink}{RGB}{255,20,147}
+    \definecolor{darkGreen}{RGB}{34,139,34}
+    \definecolor{olive}{RGB}{128,128,0}
+    \definecolor{teal}{RGB}{0,128,128}
+    \definecolor{turquoise}{RGB}{64,224,208}
+    \definecolor{navy}{RGB}{30, 144, 255}
+    \definecolor{purple}{RGB}{128,0,128}
+    \definecolor{indigo}{RGB}{216, 191, 216}
+    \definecolor{maroon}{RGB}{128,0,0}
+    \definecolor{gold}{RGB}{255,215,0}
+    \definecolor{lemon}{RGB}{255, 250, 205}
+    \definecolor{peru}{RGB}{205, 133,  63}
+
+    \definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+    \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+    \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+    \definecolor{tuscanred}{rgb}{0.51, 0.21, 0.21}
+    \definecolor{steelBlue}{rgb}{0.27, 0.51, 0.71}
+    \definecolor{tyrianpurple}{rgb}{0.4, 0.01, 0.24}
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+
+
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+
+\def\nimsum{\, \oplus \,}
+\def\mex{{\mathrm{mex}}}
+\def\g{g}
+
+\newcommand{\inter}{{\mathrm{int}}}
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="game.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-nim.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-nim.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-nim-win.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-nim.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-nim.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-nim-win.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="nim.html" data-scroll="nim"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+<li class="link">
+<a href="ch-games.html" data-scroll="ch-games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="comb-games.html" data-scroll="comb-games">Combinatorial Games</a></li>
+<li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-nim.html" data-scroll="ch-nim"><span class="codenumber">2</span> <span class="title">Nim</span></a><ul>
+<li><a href="sec-nim.html" data-scroll="sec-nim">The Game of Nim</a></li>
+<li><a href="sec-binary.html" data-scroll="sec-binary" class="active">Binary Representation of Numbers</a></li>
+<li><a href="sec-nim-win.html" data-scroll="sec-nim-win">Who wins at Nim?</a></li>
+<li><a href="nim-bogus0.html" data-scroll="nim-bogus0">Bogus Nim Heaps</a></li>
+<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-binary"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Binary Representation of Numbers</span>
+</h2>
+<p id="p-95">When you see the number 263, there is no ambiguity. You see  "two hundred sixty three."</p>
+<p id="p-96">Of course this interpretation uses the standard convention for how to read numbers. That is, the rightmost number is the "ones place," the middle digit is the "tens place" and the left digit is the "hundreds place." You have gotten so used to this convention that it is second nature to you. But when you originally learned it, your teacher probably had you break this number down like so:</p>
+<div class="displaymath">
+\begin{equation*}
+263 = 200 + 60 + 3.
+\end{equation*}
+</div>
+<p class="continuation">Mathematicians call this <em class="emphasis">decimal representation</em> of a number. They might prefer to write this as</p>
+<div class="displaymath">
+\begin{equation*}
+263 = (2 \times 10^2) + (6 \times 10^1) + (3 \times 10^0),
+\end{equation*}
+</div>
+<p class="continuation">and they call this the <em class="emphasis">decimal expansion</em> of the number. Of course, <em class="emphasis">decimal</em> refers to the fact that we have ten digits in our number system \(0,1,2,3,4,5,6,7,8,9\text{.}\) When we need to count above 9, we reuse these digits, but shift them over by one to represent multiples of 10. This scheme goes from 10 up to 99, where we must add another digit to represent multiples of 100, and so on. Every positive integer has a unique decimal representation, and this uniqueness is crucial.</p>
+<p id="p-97">However, the use of ten different digit symbols is a <em class="emphasis">choice</em>. Undoubtedly, this is a <em class="emphasis">convenient</em> choice for obvious reasons. Computers do not use a decimal representation of numbers  because they don't have fingers and toes. Instead, they are built out of switches that have two positions: "on" and "off." The "on" state corresponds to having electrical current present, and it is assigned the value "1." The "off" state corresponds to no current, and it is assigned the value "0."</p>
+<p id="p-98">In other words, the "digits" in a digital computer have two states. So in the computer worldview, a <dfn class="terminology">binary number system</dfn> (that only uses the symbols 0 and 1) fits its worldview much better than a decimal number system.<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 1 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn">If we were visited by aliens with 17 polyps on their one sensory pseudopod, you can bet that they will use 17 digits in their number system.</div></div>
+<p id="p-99">Here is how a computer counts to 8 in binary:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|r|r|r|}
+\hline
+\mbox{decimal} &amp; \mbox{binary} &amp; \mbox{binary expansion} \\
+\hline
+1 &amp; 1 &amp; ( 1 \times 2^0)\\
+2 &amp; 10 &amp; ( 1 \times 2^1) + ( 0 \times 2^0) \\
+3 &amp; 11 &amp; ( 1 \times 2^1) + ( 1 \times 2^0) \\
+4 &amp; 100 &amp;  ( 1 \times 2^2) +( 0 \times 2^1) + ( 0 \times 2^0)\\
+5 &amp; 101 &amp; ( 1 \times 2^2) +( 0 \times 2^1) + ( 1 \times 2^0)\\
+6 &amp; 110 &amp; ( 1 \times 2^2) +( 1 \times 2^1) + ( 0 \times 2^0)\\
+7 &amp; 111 &amp; ( 1 \times 2^2) +( 1 \times 2^1) + ( 1 \times 2^0)\\
+8 &amp; 1000 &amp; ( 1 \times 2^3) +( 0 \times 2^2) +( 0 \times 2^1) + ( 0 \times 2^0)\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">In a decimal representation, we have the "ones place," the "tens place", the "hundreds place" and so on. In a binary representation, we have the "ones place" the "twos place", the "fours place", the "eights place" and so on. Furthermore, there are only two digits employed in the binary representation: 0 and 1. Just as for a decimal representation, the binary representation of a number is unique.</p>
+<section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Converting between number systems</span>
+</h3>
+<p id="p-100">Let's practice some conversions between binary representations and decimal representations. Going from binary to decimal is pretty straightforward. Here are some examples:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|r|c|c|}
+\hline
+\mbox{binary} &amp; \mbox{binary expansion}  &amp; \mbox{decimal} \\
+\hline
+01011 &amp; \phantom{1}0 +  8 + 0 + 2 + 1 &amp; 11 \\
+10010 &amp; 16+0 + 0+ 2+ 0  &amp; 18 \\
+11001 &amp;  16+ 8+0 + 0 +1  &amp; 25 \\
+11111 &amp;  16+ 8+4+2+1  &amp; 31 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Converting from decimal to binary is a bit harder because most people haven't memorized the powers of 2. Here are   the first few values of \(2^n\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+2^0 &amp; 2^1 &amp; 2^2 &amp; 2^3 &amp; 2^4 &amp; 2^5 &amp; 2^6 &amp; 2^7 &amp; 2^8 &amp; 2^9 &amp; 2^{10} \\
+\hline
+1 &amp; 2 &amp; 4 &amp; 8 &amp; 16 &amp; 32 &amp; 64 &amp; 128 &amp; 256 &amp; 512 &amp; 1024 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Here is how to find the binary representation of a positive integer \(n\text{:}\)</p>
+<article class="algorithm theorem-like" id="algorithm-1"><h6 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Binary Representation.</span>
+</h6>
+<p id="p-101">Given a positive integer \(n\text{:}\)</p>
+<ol id="p-102" class="decimal">
+<li id="li-19"><p id="p-103">Find the largest \(k\) such that \(2^k \leq n\)</p></li>
+<li id="li-20"><p id="p-104">Repeat step 1 for the remainder \(n - 2^k\) until you reach 0.</p></li>
+<li id="li-21"><p id="p-105">This gives you the expansion \(n= 2^{k_1} + 2^{k_2} + \cdots + 2^{k_r}\text{.}\)</p></li>
+<li id="li-22"><p id="p-106">The binary representation of \(n\) consists of \(k_1+1\) digits. It has a 1 in the positions \(k_1, k_2, \ldots, k_r\text{,}\) where the rightmost position is indexed by 0. The remaining digits are each 0.</p></li>
+</ol></article><p id="p-107">Here are some examples of converting from decimal representation to binary representation</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|r|rcl|r|}
+\hline
+\mbox{decimal} &amp; \mbox{decomposing into powers of 2}  &amp;&amp;&amp; \mbox{binary} \\
+\hline
+53 &amp;  32 + 16 + 4 +1 &amp;=&amp; 2^5 + 2^4 + 2^2 + 2^0 &amp; 110101 \\
+44 &amp;  32 + 8 + 4  &amp;=&amp; 2^5 + 2^3 + 2^2  &amp; 101100 \\
+31 &amp;   16 + 8 + 4 +2 +1 &amp;=&amp; 2^4 + 2^3 + 2^2 + 2^1+2^0 &amp; 11111 \\
+80 &amp;   64 + 16 &amp;=&amp; 2^6 + 2^4  &amp; 1010000 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Finally, it is often useful to add leading zeros to a binary number, so that all the numbers under consideration have the same length. In other words, we might replace the list of binary numbers \(0\text{,}\) \(101\text{,}\) \(1100\) with the representations \(0000\text{,}\) \(0101\text{,}\) \(1100\) so that each of these numbers uses four symbols.</p></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Addition of Binary Numbers</span>
+</h3>
+<p id="p-108">Addition of binary numbers follows rules analogous to decimal addition: we must carry over to the next column whenever we exceed the digit symbols available. For us, this means that whenever we have a column containing \(1+1\text{,}\) we must enter a 0 in that column and carry over a 1 to the next column. For example, we have:</p>
+<div class="displaymath">
+\begin{equation}
+\begin{array}{cccccc}
+\begin{array}{r}
+101 \\
++ 011 \\
+\hline
+1000
+\end{array},
+&amp;
+\qquad
+\begin{array}{r}
+111 \\
++ 111 \\
+\hline
+1110
+\end{array},
+&amp;
+\qquad
+\begin{array}{r}
+10110 \\
++00101\\
+\hline
+11011
+\end{array},
+&amp;
+\qquad
+\begin{array}{r}
+01101 \\
++ 10110 \\
+\hline
+100011
+\end{array}.
+\end{array}\label{eqn-binary-addition}\tag{2.2.1}
+\end{equation}
+</div>
+<p class="continuation">You should check that you get the same answers for these sums when you convert the numbers to decimal representations.</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Nim Addition of Binary Numbers</span>
+</h3>
+<p id="p-109">The key to cracking the game of nim is to use a <em class="emphasis">different</em> type of addition of binary numbers, which we will call <dfn class="terminology">nim addition</dfn>. We use the symbol  \(\nimsum\) to denote this operation.</p>
+<p id="p-110">Nim addition of binary numbers is actually easier than regular binary addition. You perform the addition <em class="emphasis">without carrying over</em>! In other words,  regular addition gives \(1+1 = 10\text{,}\) while Nim addition gives \(1 \nimsum 1 = 0\text{.}\) For example, taking the nim sum of the numbers in equation <a class="xref" data-knowl="./knowl/eqn-binary-addition.html" title="Equation 2.2.1">(2.2.1)</a>, we have</p>
+<div class="displaymath">
+\begin{equation}
+\begin{array}{cccccc}
+\begin{array}{r}
+101 \\
+\nimsum 011 \\
+\hline
+110
+\end{array},
+&amp;
+\qquad
+\begin{array}{r}
+111 \\
+\nimsum 111 \\
+\hline
+000
+\end{array},
+&amp;
+\qquad
+\begin{array}{r}
+10110 \\
+\nimsum 00101\\
+\hline
+10011
+\end{array},
+&amp;
+\qquad
+\begin{array}{r}
+01101 \\
+\nimsum 10110 \\
+\hline
+11011
+\end{array}.
+\end{array}\label{eqn-nim-addition}\tag{2.2.2}
+\end{equation}
+</div>
+<p class="continuation">As you can see from the answers in equations <a class="xref" data-knowl="./knowl/eqn-binary-addition.html" title="Equation 2.2.1">(2.2.1)</a> and <a class="xref" data-knowl="./knowl/eqn-nim-addition.html" title="Equation 2.2.2">(2.2.2)</a>,  nim sum is completely different from regular addition.</p>
+<p id="p-111">In fact, nim sums have other applications. For example, in computer science this operation evaluated by taking the "bitwise exclusive or" of the two numbers.  For the game of Nim, we will see that taking the nim sums of the heap sizes reveals whether we are in an \(\cN\)-position or a \(\cP\)-position.</p>
+<p id="p-112">We note that there is nothing wrong with taking the nim sum of two numbers written in decimal notation. To do so, we must convert to binary notation, perform the nim sum, and then convert back to decimal. Here is an example: \(7 \nimsum 3 = 4\) because</p>
+<div class="displaymath">
+\begin{equation*}
+\label{eqn:nimsum-example}
+\underbrace{7  \nimsum   3}_{\mbox{decimal}}  =
+\underbrace{111  \nimsum   011}_{\mbox{binary}}  =
+\underbrace{100}_{\mbox{binary}}  =
+\underbrace{4}_{\mbox{decimal}}.
+\end{equation*}
+</div>
+<p class="continuation">Finally, it is  easy to take the nim sum of multiple numbers simultaneously.</p>
+<article class="algorithm theorem-like" id="algorithm-2"><h6 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Nim Sum of Mutiple Numbers.</span>
+</h6>
+<ol id="p-113" class="decimal">
+<li id="li-23"><p id="p-derived-li-23">Line up the binary numbers, as usual.</p></li>
+<li id="li-24"><p id="p-derived-li-24">Place a 1 in the columns where there are an odd number of 1's.</p></li>
+<li id="li-25"><p id="p-derived-li-25">Place a 0 in the columns with an even number of 1's.</p></li>
+</ol></article><p id="p-114">Here is an example of the nim sum of 4 binary numbers:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{r}
+1\,1\,0\,1\,1 \\
+\nimsum \,0\,1\,0\,0\,1 \\
+\nimsum \,0\,0\,1\,1\,1 \\
+\nimsum \,1\,1\,0\,0\,0 \\
+\hline
+0 \, 1 \, 1 \,0 \, 1.
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">When written in decimal notation, this says that \(27 \nimsum 9 \nimsum 7 \nimsum 24 = 13\text{.}\)</p>
+<p id="p-115">We end this section with two final lemmas. <article class="lemma theorem-like" id="lemma-nimadd-rules"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h6>Nim addition satisfies the following conditions for any integers \(a,b,c\text{:}\) <ol class="decimal">
+<li id="li-26"><p id="p-derived-li-26">Additive inverse law:  \(a \oplus a = 0\text{,}\)</p></li>
+<li id="li-27"><p id="p-derived-li-27">Commutative law:  \(a \oplus b = b \oplus a\text{,}\)</p></li>
+<li id="li-28"><p id="p-derived-li-28">Associative law:  \((a \oplus b) \oplus c = a \oplus (b \oplus c)\text{.}\)</p></li>
+</ol></article></p>
+<p id="p-116"><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-117">We leave the proof of these three properties for the exercises.</p></article></div></p>
+<p id="p-118"><article class="lemma theorem-like" id="lemma-cancel"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cancellation Law.</span>
+</h6>If \(a \oplus c = b \oplus c\) then \(a=b\text{.}\)</article></p>
+<p id="p-119"><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-120">Suppose that \(a \oplus c = b \oplus c\text{.}\) Since \(c \oplus c = 0\) and nim addition is associative, we have</p>
+<div class="displaymath">
+\begin{equation*}
+a= a \oplus 0  = a \oplus (c \oplus c) = (a \oplus c)  \oplus c = (b \oplus c)  \oplus c= b \oplus  (c \oplus c) =
+b \oplus 0 = b.
+\end{equation*}
+</div></article></div></p>
+<p id="p-121">We will need  <a class="xref" data-knowl="./knowl/lemma-cancel.html" title="Lemma 2.2.4: Cancellation Law">Lemma 2.2.4</a> in Section <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec-sumgames" missing or not unique]</code>.</p></section></section></div></main>
+</div>
+</body>
+</html>

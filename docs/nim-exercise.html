@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Games: Exercises</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+
+    \definecolor{orange}{RGB}{255, 165,   0}
+    \definecolor{crimson}{RGB}{220,20,60}
+    \definecolor{pink}{RGB}{255,20,147}
+    \definecolor{darkGreen}{RGB}{34,139,34}
+    \definecolor{olive}{RGB}{128,128,0}
+    \definecolor{teal}{RGB}{0,128,128}
+    \definecolor{turquoise}{RGB}{64,224,208}
+    \definecolor{navy}{RGB}{30, 144, 255}
+    \definecolor{purple}{RGB}{128,0,128}
+    \definecolor{indigo}{RGB}{216, 191, 216}
+    \definecolor{maroon}{RGB}{128,0,0}
+    \definecolor{gold}{RGB}{255,215,0}
+    \definecolor{lemon}{RGB}{255, 250, 205}
+    \definecolor{peru}{RGB}{205, 133,  63}
+
+    \definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+    \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+    \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+    \definecolor{tuscanred}{rgb}{0.51, 0.21, 0.21}
+    \definecolor{steelBlue}{rgb}{0.27, 0.51, 0.71}
+    \definecolor{tyrianpurple}{rgb}{0.4, 0.01, 0.24}
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+
+
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+
+\def\nimsum{\, \oplus \,}
+\def\mex{{\mathrm{mex}}}
+\def\g{g}
+
+\newcommand{\inter}{{\mathrm{int}}}
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="game.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="nim-bogus0.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-nim.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="nim-bogus0.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-nim.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="nim.html" data-scroll="nim"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+<li class="link">
+<a href="ch-games.html" data-scroll="ch-games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="comb-games.html" data-scroll="comb-games">Combinatorial Games</a></li>
+<li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-nim.html" data-scroll="ch-nim"><span class="codenumber">2</span> <span class="title">Nim</span></a><ul>
+<li><a href="sec-nim.html" data-scroll="sec-nim">The Game of Nim</a></li>
+<li><a href="sec-binary.html" data-scroll="sec-binary">Binary Representation of Numbers</a></li>
+<li><a href="sec-nim-win.html" data-scroll="sec-nim-win">Who wins at Nim?</a></li>
+<li><a href="nim-bogus0.html" data-scroll="nim-bogus0">Bogus Nim Heaps</a></li>
+<li><a href="nim-exercise.html" data-scroll="nim-exercise" class="active">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="nim-exercise"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Exercises</span>
+</h2>
+<section class="exercises" id="exercises-2"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-9"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-157">Create the game tree for single heap nim, when the heap contains (a) one bean (b) two beans (c) three beans (d) four beans.</p></article><article class="exercise exercise-like" id="exercise-10"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-158">Create the game tree for the Nim position \(\{2, 1 \}\text{.}\) Indicate whether each position in the game tree is an \(\cN\)-position or a \(\cP\)-position.</p></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-159">Find the decimal representation of the following binary numbers:</p>
+<ol class="lower-alpha">
+<li id="li-37"><p id="p-160">1101</p></li>
+<li id="li-38"><p id="p-161">110110</p></li>
+<li id="li-39"><p id="p-162">10101</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-163">Find the binary representations of the following decimal numbers:</p>
+<ol class="lower-alpha">
+<li id="li-40"><p id="p-164">25</p></li>
+<li id="li-41"><p id="p-165">100</p></li>
+<li id="li-42"><p id="p-166">800</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-167">Convert the numbers in equation \eqref{eqn:binary-addition} to decimal representations. Check that you get the same answer when you sum these decimal numbers.</p></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-168">Calculate the following in binary</p>
+<ol class="lower-alpha">
+<li id="li-43"><p id="p-169">\(\displaystyle 1011 + 1110\)</p></li>
+<li id="li-44"><p id="p-170">\(\displaystyle 1011 \oplus 1110\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-171">Here is a cool magician's trick. The magician gives the six cards in Figure \ref{fig:cards} to an audience member. The magician asks her to pick a number that appears on at least one of the cards, and then sort the cards into two piles: those that contain her number and those that do not. After some deep concentration, the magician reads her mind, and correctly guesses her number! Here are the cards.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cc}
+\begin{array}{|cccccc|}
+\hline
+1 &amp; 11 &amp; 21 &amp; 31 &amp; 41 &amp; 51 \\
+3 &amp; 13 &amp; 23 &amp; 33 &amp; 43 &amp; 53 \\
+5 &amp; 15 &amp; 25 &amp; 35 &amp; 45 &amp; 55 \\
+7 &amp; 17 &amp; 27 &amp; 37 &amp; 47 &amp; 57 \\
+9 &amp; 19 &amp; 29 &amp; 39 &amp; 49 &amp; 59 \\
+\hline
+\end{array}
+&amp;
+\begin{array}{|cccccc|}
+\hline
+2 &amp; 11 &amp; 22 &amp; 31 &amp; 42 &amp; 51 \\
+3 &amp; 14 &amp; 23 &amp; 34 &amp; 43 &amp; 54 \\
+6 &amp; 15 &amp; 26 &amp; 35 &amp; 46 &amp; 55 \\
+7 &amp; 18 &amp; 27 &amp; 38 &amp; 47 &amp; 58 \\
+10 &amp; 19 &amp; 30 &amp; 39 &amp; 50 &amp; 59 \\
+\hline
+\end{array}
+\\
+\begin{array}{|cccccc|}
+\hline
+4 &amp; 13 &amp; 22 &amp; 31 &amp; 44 &amp; 53 \\
+5 &amp; 14 &amp; 23 &amp; 36 &amp; 45 &amp; 54 \\
+6 &amp; 15 &amp; 26 &amp; 37 &amp; 46 &amp; 55 \\
+7 &amp; 20 &amp; 29 &amp; 38 &amp; 47 &amp; 60 \\
+12 &amp; 21 &amp; 30 &amp; 39 &amp; 52 &amp; \clubsuit \\
+\hline
+\end{array}
+&amp;
+\begin{array}{|cccccc|}
+\hline
+8 &amp; 13 &amp; 26 &amp; 31 &amp; 44 &amp; 57 \\
+9 &amp; 14 &amp; 27 &amp; 40 &amp; 45 &amp; 58 \\
+10 &amp; 15 &amp; 28 &amp; 41 &amp; 46 &amp; 59 \\
+11 &amp; 24 &amp; 29 &amp; 42 &amp; 47 &amp; 60 \\
+12 &amp; 25 &amp; 30 &amp; 43 &amp; 46 &amp; \diamondsuit \\
+\hline
+\end{array}
+\\
+\begin{array}{|cccccc|}
+\hline
+16 &amp; 21 &amp; 26 &amp; 31 &amp; 52 &amp; 57 \\
+17 &amp; 22 &amp; 27 &amp; 48 &amp; 53 &amp; 58 \\
+18 &amp; 23 &amp; 28 &amp; 49 &amp; 54 &amp; 59 \\
+19 &amp; 24 &amp; 29 &amp; 50 &amp; 55 &amp; 60 \\
+20 &amp; 25 &amp; 30 &amp; 51 &amp; 56 &amp; \heartsuit \\
+\hline
+\end{array}
+&amp;
+\begin{array}{|cccccc|}
+\hline
+32 &amp; 37 &amp; 42 &amp; 47 &amp; 52 &amp; 57 \\
+33 &amp; 38 &amp; 43 &amp; 48 &amp; 53 &amp; 58 \\
+34 &amp; 39 &amp; 44 &amp; 49 &amp; 54 &amp; 59 \\
+35 &amp; 40 &amp; 45 &amp; 50 &amp; 55 &amp; 60 \\
+36 &amp; 41 &amp; 46 &amp; 51 &amp; 56 &amp; \spadesuit \\
+\hline
+\end{array}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Here are some examples:</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r1 l1 t1 lines">if the audience member says \(\ldots\)</td>
+<td class="l m b1 r1 l0 t1 lines">then the magician says \(\ldots\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">cards 1 and 3</td>
+<td class="l m b1 r1 l0 t0 lines">her number is 5</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">cards 1, 3 and 5</td>
+<td class="l m b1 r1 l0 t0 lines">her number is 21</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">cards  2, 3  and 6</td>
+<td class="l m b1 r1 l0 t0 lines">her number is 38</td>
+</tr>
+</table></div>
+<ol id="p-172" class="lower-alpha">
+<li id="li-45"><p id="p-173">Explain how the magician's trick works. (Hint: look at the number in the upper left hand corner of each card.)</p></li>
+<li id="li-46"><p id="p-174">Explain <em class="emphasis">why</em> the magician's trick works. What do all of the numbers on a given card have in common? Why does a subset of cards uniquely determine a single number?</p></li>
+<li id="li-47">
+<p id="p-175">What number am I thinking of if...</p>
+<ol class="lower-roman">
+<li id="li-48"><p id="p-176">the number appears on cards 2, 3 and 4?</p></li>
+<li id="li-49"><p id="p-177">the number appears on cards 2, 4, and 6?</p></li>
+<li id="li-50"><p id="p-178">the number appears on cards 1, 2, 3, and 5?</p></li>
+</ol>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-179">In grade school, you had to create addition tables and times tables so that you could learn how these operations worked. We need to do the same with Nim addition. Here is the Nim addition table for the numbers 0 through 3.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c||c|c|c|c}
+\oplus &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+\hline
+\hline
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+\hline
+1 &amp; 1 &amp; 0 &amp; 3 &amp; 2 \\
+\hline
+2 &amp; 2 &amp; 3 &amp; 0 &amp; 1 \\
+\hline
+3 &amp; 3 &amp; 2 &amp; 1 &amp; 0
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Create a nim sum addition table for the numbers 0 through 7. Comment on any patterns that you see.</p></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-180">Extend the nim sum addition table from the previous problem to include the numbers 0 through 15.  Comment on the remarkable patterns that you see.</p></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-181">In this problem, you will prove Lemma \ref{lemma:nimadd-rules}. For any integers \(a,b,c\text{,}\) prove that the following hold.</p>
+<ol class="lower-alpha">
+<li id="li-51"><p id="p-182">Additive inverse law:  \(a \oplus a = 0\text{,}\)</p></li>
+<li id="li-52"><p id="p-183">Commutative law:  \(a \oplus b = b \oplus a\text{,}\)</p></li>
+<li id="li-53"><p id="p-184">Associative law:  \((a \oplus b) \oplus c = a \oplus (b \oplus c)\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-185">Typically, the sum of two numbers \(n + m\) is not equal to their nim sum \(n \nimsum m\text{.}\) Under what conditions on \(n\) and \(m\) do we have the equality \(n+m = n \nimsum m\text{?}\) Explain.</p></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-186">This problem fills in some details about powers of 2.</p>
+<ol class="lower-alpha">
+<li id="li-54">
+<p id="p-187">Use induction to prove that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{i=0}^{n-1} 2^i = 2^{n} -1.
+\end{equation*}
+</div>
+</li>
+<li id="li-55">
+<p id="p-188">Use part (a) to prove that if \(k_1 &gt; k_2 &gt; \cdots k_r \geq 0\) then</p>
+<div class="displaymath">
+\begin{equation*}
+2^{k_1} &gt; \sum_{i=2}^{r} 2^{k_i}.
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-189">Determine whether each of these games of Nim is in an \(\cN\)-position or a \(\cP\)-position. If it is an \(\cN\)-position, then list every winning move for the Next player.</p>
+<ol class="lower-alpha">
+<li id="li-56"><p id="p-190">\(\displaystyle \{ 1, 3, 5, 7 \}\)</p></li>
+<li id="li-57"><p id="p-191">\(\displaystyle \{ 12, 7, 15 \}\)</p></li>
+<li id="li-58"><p id="p-192">\(\displaystyle \{ 20, 55, 12, 40 \}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-193">Determine whether each of these games of Nim is in an \(\cN\)-position or a \(\cP\)-position. If it is an \(\cN\)-position, then list every winning move for the Next player.</p>
+<ol class="lower-alpha">
+<li id="li-59"><p id="p-194">\(\displaystyle \{ 13, 6, 21, 7 \}\)</p></li>
+<li id="li-60"><p id="p-195">\(\displaystyle \{ 8, 10, 12 \}\)</p></li>
+<li id="li-61"><p id="p-196">\(\displaystyle \{ 26, 15, 38, 21, 37 \}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-197">Explain why there are always an odd number of winning moves from an \(\cN\)-position.</p></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-198">Prove that the \(\cN\)-positions and \(\cP\)-positions of Poker Nim are exactly the same as the  \(\cN\)-positions and \(\cP\)-positions of Nim. In particular, be sure to explain how the winning player can prevent the game from going on forever.</p></article><article class="exercise exercise-like" id="exercise-25"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-199">Explain how two players of Poker Nim could work together to make the game last forever. What is the minimum number of beans that these players need to pull this off?</p></article><article class="exercise exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-200">Let's add a third kind of move to Poker Nim: you can create a brand new nim heap on the board using beans in your personal cache. Does this change who wins the game?</p></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-201">Discover the secret to playing Northcott's Game.</p>
+<ol class="lower-alpha">
+<li id="li-62"><p id="p-202">Play Northcott's Game with one bLue checker and one Red checker on a single row. Who wins?</p></li>
+<li id="li-63"><p id="p-203">Play Northcott's Game using two rows. Who wins this game?</p></li>
+<li id="li-64"><p id="p-204">Prove that Northcott's Game is actually Nim in disguise (with bogus heaps). Be sure to explain what the heap sizes are, why they are bogus heaps, and how you can determine who the winner will be.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-205">In the previous question, you explained how to map a position in Northcott's Game to a position in Nim. Use nim sums to decide whether the positions of Northcott's Game in Figure \ref{fig:northcott-exercise} are \(\cN\)-positions or \(\cP\)-positions. <figure class="figure figure-like" id="fig-northcott-exercise"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-northcott-exercise.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span>Some positions in Northcott's Game.</figcaption></figure></p></article></section></section></div></main>
+</div>
+</body>
+</html>

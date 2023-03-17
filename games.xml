@@ -58,13 +58,21 @@ pull the name of the problem from the first line  of  the \item
 
     <part xml:id="nim">
         <title>The Game of Nim</title>
-        <chapter xml:id="games" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <chapter xml:id="ch-games" xmlns:xi="http://www.w3.org/2001/XInclude">
             <title>Combinatorical Games</title>
             <xi:include href="./sec11-nimble.xml" />   
             <xi:include href="./sec12-combgame.xml" />  
             <xi:include href="./sec13-gametrees.xml" />
             <xi:include href="./sec14-exercises.xml" />
-        </chapter>                     
+        </chapter>    
+        <chapter xml:id="ch-nim" xmlns:xi="http://www.w3.org/2001/XInclude">
+            <title>Nim</title>
+            <xi:include href="./sec21-nim.xml" />   
+            <xi:include href="./sec22-binary.xml" />  
+            <xi:include href="./sec23-nim-win.xml" />  
+            <xi:include href="./sec24-nim-bogus.xml" />    
+            <xi:include href="./sec25-nim-exercise.xml" />       
+        </chapter>                   
     </part>
  
 

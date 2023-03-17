@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Let's get back to the general case and show that we always decrease the size of the heap corresponding to the bad row. Suppose that our bad columns correspond to \(2^{k_1} &gt; 2^{k_2} &gt; \cdots &gt; 2^{k_r}\text{.}\) If the digit for  \(2^{k_i}\) was 1, we change it to 0, which corresponds to removing \(2^{k_i}\) beans from the \(i\)th heap. That is no problem. However, when the digit for \(2^{k_i}\) changes from a 0 to a 1, this corresponds to adding back \(2^{k_i}\) beans to the heap.   We must make sure that we take away more beans than we add. We need the following inequality</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+2^{k_1} &gt; 2^{k_1} -1 = \sum_{j=0}^{k_1 -1} 2^{j} \geq  \sum_{i=2}^{r} 2^{k_i}.\tag{2.3.1}
+\end{equation}
+</div>
+<p class="continuation">(The exercises in Section <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec-nim-exercises" missing or not unique]</code> ask you to prove the validity of  inequality <a class="xref" data-knowl="./knowl/eqn-sum-powers-of-2.html" title="Equation 2.3.1">(2.3.1)</a>.) The right  hand side is an upper bound on the number of beans that we must add back to the heap, after removing the \(2^{k_1}\) beans corresponding to the leftmost bad column. In other words, the size of the heap decreases. This completes the proof of Nim Rule 1.</p>
+<span class="incontext"><a href="sec-nim-win.html#p-146">in-context</a></span>
+</body>
+</html>

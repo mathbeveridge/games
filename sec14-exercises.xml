@@ -105,31 +105,31 @@
 \begin{scope}
 
 
-\node (G0)    {<m>\Box</m>}
-child { node (G1) {<m>\Box</m>}
-child { node (G1a) {<m>\Box</m>}
-child { node (G1a1) {<m>\Box</m>}
-child { node (G1a1a) { <m>\cP</m> }}
+\node (G0)    {$\Box$}
+child { node (G1) {$\Box$}
+child { node (G1a) {$\Box$}
+child { node (G1a1) {$\Box$}
+child { node (G1a1a) { $\cP$ }}
 }
 }
-child { node (G1b) {<m>\Box</m>}
-child { node (G1b1) { <m>\cP</m> }}
+child { node (G1b) {$\Box$}
+child { node (G1b1) { $\cP$ }}
 }
-child { node (G1c) {<m>\cP</m>}}
+child { node (G1c) {$\cP$}}
 }
-child { node (G2) {<m>\Box</m>}
-child { node (G2b) { <m>\Box</m> }
-child { node (G2b1) {<m>\Box</m>}
-child { node (G2b1a) {<m>\cP</m>}
+child { node (G2) {$\Box$}
+child { node (G2b) { $\Box$ }
+child { node (G2b1) {$\Box$}
+child { node (G2b1a) {$\cP$}
 }
 }
 }
-child { node (G2a) {<m>\Box</m>}
-child { node (G2a1) {<m>\Box</m>}
-child { node (G2a11) {<m>\cP</m>}}
+child { node (G2a) {$\Box$}
+child { node (G2a1) {$\Box$}
+child { node (G2a11) {$\cP$}}
 }
-child { node (G2a2) {<m>\Box</m>}
-child { node (G2a21) {<m>\cP</m>}}
+child { node (G2a2) {$\Box$}
+child { node (G2a21) {$\cP$}}
 }
 }
 };
@@ -143,20 +143,20 @@ child { node (G2a21) {<m>\cP</m>}}
 \begin{scope}[shift={(-10,0)}]
 
 
-\node (G2) {<m>\Box</m>}
-child { node (G2b) { <m>\Box</m> }
-child { node (G2b2) {<m> \cP</m>}}
-child { node (G2b1) {<m>\Box</m>}
-child { node (G2b1a) {<m> \cP</m>}}
+\node (G2) {$\Box$}
+child { node (G2b) { $\Box$ }
+child { node (G2b2) {$ \cP$}}
+child { node (G2b1) {$\Box$}
+child { node (G2b1a) {$ \cP$}}
 }
 }
-child { node (G2c) {<m>\Box </m>}
-child { node (G2c1) {<m> \cP</m>}}
+child { node (G2c) {$\Box $}
+child { node (G2c1) {$ \cP$}}
 }
-child { node (G2a) {<m>\Box</m>}
-child { node (G2a1) {<m>  \cP</m>}}
-child { node (G2a2) {<m> \Box</m>}
-child { node (G2a21) {<m>  \cP</m>}}
+child { node (G2a) {$\Box$}
+child { node (G2a1) {$  \cP$}}
+child { node (G2a2) {$ \Box$}
+child { node (G2a21) {$  \cP$}}
 }
 };
 

@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="nim-exercise">
+	<title>Exercises</title>
+
+
+	<exercises>
+		<title>Exercises</title>
+		<exercise>
+			<statement>
+				<p>
+ Create the game tree for single heap nim, when the heap contains (a) one bean (b) two beans (c) three beans (d) four beans.
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Create the game tree for the Nim position <m>\{2, 1 \}</m>. Indicate whether each position in the game tree is an <m>\cN</m>-position or a <m>\cP</m>-position.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Find the decimal representation of the following binary numbers:
+			<ol>
+				<li>
+					<p>
+ 1101
+					</p>
+				</li>
+				<li>
+					<p>
+ 110110
+					</p>
+				</li>
+				<li>
+					<p>
+ 10101
+					</p>
+				</li>
+			</ol>
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Find the binary representations of the following decimal numbers:
+			<ol>
+				<li>
+					<p>
+ 25
+					</p>
+				</li>
+				<li>
+					<p>
+ 100
+					</p>
+				</li>
+				<li>
+					<p>
+ 800
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Convert the numbers in equation \eqref{eqn:binary-addition} to decimal representations. Check that you get the same answer when you sum these decimal numbers.
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Calculate the following in binary
+			<ol>
+				<li>
+					<p>
+ <m>1011 + 1110</m>
+					</p>
+				</li>
+				<li>
+					<p>
+<m>1011 \oplus 1110</m>
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Here is a cool magician's trick. The magician gives the six cards in Figure \ref{fig:cards} to an audience member. The magician asks her to pick a number that appears on at least one of the cards, and then sort the cards into two piles: those that contain her number and those that do not. After some deep concentration, the magician reads her mind, and correctly guesses her number!
+
+Here are the cards.
+
+
+
+
+<me>
+\begin{array}{cc}
+\begin{array}{|cccccc|}
+\hline
+1 &amp; 11 &amp; 21 &amp; 31 &amp; 41 &amp; 51 \\
+3 &amp; 13 &amp; 23 &amp; 33 &amp; 43 &amp; 53 \\
+5 &amp; 15 &amp; 25 &amp; 35 &amp; 45 &amp; 55 \\
+7 &amp; 17 &amp; 27 &amp; 37 &amp; 47 &amp; 57 \\
+9 &amp; 19 &amp; 29 &amp; 39 &amp; 49 &amp; 59 \\
+\hline
+\end{array}
+&amp;
+\begin{array}{|cccccc|}
+\hline
+2 &amp; 11 &amp; 22 &amp; 31 &amp; 42 &amp; 51 \\
+3 &amp; 14 &amp; 23 &amp; 34 &amp; 43 &amp; 54 \\
+6 &amp; 15 &amp; 26 &amp; 35 &amp; 46 &amp; 55 \\
+7 &amp; 18 &amp; 27 &amp; 38 &amp; 47 &amp; 58 \\
+10 &amp; 19 &amp; 30 &amp; 39 &amp; 50 &amp; 59 \\
+\hline
+\end{array}
+\\
+\begin{array}{|cccccc|}
+\hline
+4 &amp; 13 &amp; 22 &amp; 31 &amp; 44 &amp; 53 \\
+5 &amp; 14 &amp; 23 &amp; 36 &amp; 45 &amp; 54 \\
+6 &amp; 15 &amp; 26 &amp; 37 &amp; 46 &amp; 55 \\
+7 &amp; 20 &amp; 29 &amp; 38 &amp; 47 &amp; 60 \\
+12 &amp; 21 &amp; 30 &amp; 39 &amp; 52 &amp; \clubsuit \\
+\hline
+\end{array}
+&amp;
+\begin{array}{|cccccc|}
+\hline
+8 &amp; 13 &amp; 26 &amp; 31 &amp; 44 &amp; 57 \\
+9 &amp; 14 &amp; 27 &amp; 40 &amp; 45 &amp; 58 \\
+10 &amp; 15 &amp; 28 &amp; 41 &amp; 46 &amp; 59 \\
+11 &amp; 24 &amp; 29 &amp; 42 &amp; 47 &amp; 60 \\
+12 &amp; 25 &amp; 30 &amp; 43 &amp; 46 &amp; \diamondsuit \\
+\hline
+\end{array}
+\\
+\begin{array}{|cccccc|}
+\hline
+16 &amp; 21 &amp; 26 &amp; 31 &amp; 52 &amp; 57 \\
+17 &amp; 22 &amp; 27 &amp; 48 &amp; 53 &amp; 58 \\
+18 &amp; 23 &amp; 28 &amp; 49 &amp; 54 &amp; 59 \\
+19 &amp; 24 &amp; 29 &amp; 50 &amp; 55 &amp; 60 \\
+20 &amp; 25 &amp; 30 &amp; 51 &amp; 56 &amp; \heartsuit \\
+\hline
+\end{array}
+&amp;
+\begin{array}{|cccccc|}
+\hline
+32 &amp; 37 &amp; 42 &amp; 47 &amp; 52 &amp; 57 \\
+33 &amp; 38 &amp; 43 &amp; 48 &amp; 53 &amp; 58 \\
+34 &amp; 39 &amp; 44 &amp; 49 &amp; 54 &amp; 59 \\
+35 &amp; 40 &amp; 45 &amp; 50 &amp; 55 &amp; 60 \\
+36 &amp; 41 &amp; 46 &amp; 51 &amp; 56 &amp; \spadesuit \\
+\hline
+\end{array}
+\end{array}
+</me>
+
+
+Here are some examples:
+
+</p>
+<tabular top="minor" left="minor" bottom="minor" right="minor">
+<row>
+<cell>
+if the audience member says <m>\ldots</m>
+</cell>
+<cell>
+then the magician says <m>\ldots</m>
+</cell>
+</row>
+<row>
+<cell>
+cards 1 and 3
+</cell>
+<cell>
+her number is 5
+</cell>
+</row>
+<row>
+<cell>
+cards 1, 3 and 5
+</cell>
+<cell>
+her number is 21
+</cell>
+</row>
+<row>
+<cell>
+cards  2, 3  and 6
+</cell>
+<cell>
+her number is 38
+</cell>
+</row>
+</tabular>
+<p>
+
+
+			<ol>
+				<li>
+					<p>
+ Explain how the magician's trick works. (Hint: look at the number in the upper left hand corner of each card.)
+					</p>
+				</li>
+				<li>
+					<p>
+ Explain <em>why</em> the magician's trick works. What do all of the numbers on a given card have in common? Why does a subset of cards uniquely determine a single number?
+					</p>
+				</li>
+				<li>
+					<p>
+ What number am I thinking of if...
+			<ol>
+				<li>
+					<p>
+ the number appears on cards 2, 3 and 4?
+					</p>
+				</li>
+				<li>
+					<p>
+ the number appears on cards 2, 4, and 6?
+					</p>
+				</li>
+				<li>
+					<p>
+ the number appears on cards 1, 2, 3, and 5?
+					</p>
+				</li>
+			</ol>
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+  In grade school, you had to create addition tables and times tables so that you could learn how these operations worked. We need to do the same with Nim addition. Here is the Nim addition table for the numbers 0 through 3.
+
+
+<me>
+\begin{array}{c||c|c|c|c}
+\oplus &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+\hline
+\hline
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+\hline
+1 &amp; 1 &amp; 0 &amp; 3 &amp; 2 \\
+\hline
+2 &amp; 2 &amp; 3 &amp; 0 &amp; 1 \\
+\hline
+3 &amp; 3 &amp; 2 &amp; 1 &amp; 0
+\end{array}
+</me>
+Create a nim sum addition table for the numbers 0 through 7. Comment on any patterns that you see.
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Extend the nim sum addition table from the previous problem to include the numbers 0 through 15.  Comment on the remarkable patterns that you see.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ In this problem, you will prove Lemma \ref{lemma:nimadd-rules}. For any integers <m>a,b,c</m>, prove that the following hold.
+			<ol>
+				<li>
+					<p>
+ Additive inverse law:  <m>a \oplus a = 0</m>,
+					</p>
+				</li>
+				<li>
+					<p>
+ Commutative law:  <m>a \oplus b = b \oplus a</m>,
+					</p>
+				</li>
+				<li>
+					<p>
+ Associative law:  <m>(a \oplus b) \oplus c = a \oplus (b \oplus c)</m>.
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Typically, the sum of two numbers <m>n + m</m> is not equal to their nim sum <m>n \nimsum m</m>. Under what conditions on <m>n</m> and <m>m</m> do we have the equality <m>n+m = n \nimsum m</m>? Explain.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ This problem fills in some details about powers of 2.
+			<ol>
+				<li>
+					<p>
+ Use induction to prove that
+<me>
+\sum_{i=0}^{n-1} 2^i = 2^{n} -1.
+</me>
+					</p>
+				</li>
+				<li>
+					<p>
+ Use part (a) to prove that if <m>k_1 &gt; k_2 &gt; \cdots k_r \geq 0</m> then
+<me>
+2^{k_1} &gt; \sum_{i=2}^{r} 2^{k_i}.
+</me>
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Determine whether each of these games of Nim is in an <m>\cN</m>-position or a <m>\cP</m>-position. If it is an <m>\cN</m>-position, then list every winning move for the Next player.
+
+			<ol>
+				<li>
+					<p>
+ <m> \{ 1, 3, 5, 7 \}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m> \{ 12, 7, 15 \}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m> \{ 20, 55, 12, 40 \}</m>
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Determine whether each of these games of Nim is in an <m>\cN</m>-position or a <m>\cP</m>-position. If it is an <m>\cN</m>-position, then list every winning move for the Next player.
+
+			<ol>
+				<li>
+					<p>
+ <m> \{ 13, 6, 21, 7 \}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m> \{ 8, 10, 12 \}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m> \{ 26, 15, 38, 21, 37 \}</m>
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Explain why there are always an odd number of winning moves from an <m>\cN</m>-position.
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Prove that the <m>\cN</m>-positions and <m>\cP</m>-positions of Poker Nim are exactly the same as the  <m>\cN</m>-positions and <m>\cP</m>-positions of Nim. In particular, be sure to explain how the winning player can prevent the game from going on forever.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Explain how two players of Poker Nim could work together to make the game last forever. What is the minimum number of beans that these players need to pull this off?
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Let's add a third kind of move to Poker Nim: you can create a brand new nim heap on the board using beans in your personal cache. Does this change who wins the game?
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Discover the secret to playing Northcott's Game.
+			<ol>
+				<li>
+					<p>
+ Play Northcott's Game with one bLue checker and one Red checker on a single row. Who wins?
+					</p>
+				</li>
+				<li>
+					<p>
+ Play Northcott's Game using two rows. Who wins this game?
+					</p>
+				</li>
+				<li>
+					<p>
+ Prove that Northcott's Game is actually Nim in disguise (with bogus heaps). Be sure to explain what the heap sizes are, why they are bogus heaps, and how you can determine who the winner will be.
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ In the previous question, you explained how to map a position in Northcott's Game to a position in Nim.
+Use nim sums to decide whether the positions of Northcott's Game in Figure \ref{fig:northcott-exercise} are <m>\cN</m>-positions or <m>\cP</m>-positions.
+
+
+<figure xml:id="fig-northcott-exercise">
+	<image width="100%" xml:id="fig-img-northcott-exercise">
+				<latex-image>
+\begin{tikzpicture}[scale=.5]
+
+\draw (-.1, -.1) -- (8.1,-.1) -- (8.1,8.1) -- (-.1, 8.1) -- cycle;
+
+\foreach \i in {0,1,2,3,4,5,6,7,8} {
+\draw (0,\i) -- (8,\i);
+\draw (\i,0) -- (\i,8);
+}
+
+\begin{scope}[shift={(-.5,-.5)}]
+
+\draw[very thick, blue, fill=blue] (3,1) circle (5pt);
+\draw[very thick, blue, fill=blue] (5,2) circle (5pt);
+\draw[very thick, blue, fill=blue] (2,3) circle (5pt);
+\draw[very thick, blue, fill=blue] (2,4) circle (5pt);
+\draw[very thick, blue, fill=blue] (1,5) circle (5pt);
+\draw[very thick, blue, fill=blue] (4,6) circle (5pt);
+\draw[very thick, blue, fill=blue] (7,7) circle (5pt);
+\draw[very thick, blue, fill=blue] (4,8) circle (5pt);
+
+
+\draw[very thick, crimson, fill=crimson!25] (6,1) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (8,2) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (4,3) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (6,4) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (5,5) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (7,6) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (8,7) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (6,8) circle (5pt);
+
+\node at (4,-1) {(a)};
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+\draw (-.1, -.1) -- (8.1,-.1) -- (8.1,8.1) -- (-.1, 8.1) -- cycle;
+
+\foreach \i in {0,1,2,3,4,5,6,7,8} {
+\draw (0,\i) -- (8,\i);
+\draw (\i,0) -- (\i,8);
+}
+
+\begin{scope}[shift={(-.5,-.5)}]
+
+\draw[very thick, blue, fill=blue] (1,1) circle (5pt);
+\draw[very thick, blue, fill=blue] (3,2) circle (5pt);
+\draw[very thick, blue, fill=blue] (1,3) circle (5pt);
+\draw[very thick, blue, fill=blue] (4,4) circle (5pt);
+\draw[very thick, blue, fill=blue] (6,5) circle (5pt);
+\draw[very thick, blue, fill=blue] (2,6) circle (5pt);
+\draw[very thick, blue, fill=blue] (1,7) circle (5pt);
+\draw[very thick, blue, fill=blue] (3,8) circle (5pt);
+
+
+\draw[very thick, crimson, fill=crimson!25] (6,1) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (8,2) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (5,3) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (6,4) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (7,5) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (7,6) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (5,7) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (5,8) circle (5pt);
+
+\end{scope}
+
+
+\node at (4,-1) {(b)};
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(20,0)}]
+
+\draw (-.1, -.1) -- (8.1,-.1) -- (8.1,8.1) -- (-.1, 8.1) -- cycle;
+
+\foreach \i in {0,1,2,3,4,5,6,7,8} {
+\draw (0,\i) -- (8,\i);
+\draw (\i,0) -- (\i,8);
+}
+
+\begin{scope}[shift={(-.5,-.5)}]
+
+\draw[very thick, blue, fill=blue] (4,1) circle (5pt);
+\draw[very thick, blue, fill=blue] (2,2) circle (5pt);
+\draw[very thick, blue, fill=blue] (6,3) circle (5pt);
+\draw[very thick, blue, fill=blue] (3,4) circle (5pt);
+\draw[very thick, blue, fill=blue] (4,5) circle (5pt);
+\draw[very thick, blue, fill=blue] (5,6) circle (5pt);
+\draw[very thick, blue, fill=blue] (2,7) circle (5pt);
+\draw[very thick, blue, fill=blue] (3,8) circle (5pt);
+
+
+\draw[very thick, crimson, fill=crimson!25] (7,1) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (6,2) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (7,3) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (8,4) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (7,5) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (7,6) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (4,7) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (4,8) circle (5pt);
+
+\end{scope}
+
+\node at (4,-1) {(c)};
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<caption>Some positions in Northcott's Game.</caption>
+
+
+</figure>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+</section>

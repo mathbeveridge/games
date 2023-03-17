@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="nim-bogus0">
+<title>Bogus Nim Heaps</title>
+<p>
+
+In this section, we introduce two variants of Nim, and explain what a bogus nim heap is.
+
+</p>
+<p>
+
+Let's play a variant of Nim called <term>Poker Nim</term>. Like regular Nim, 
+the game position consists of a set of nim heaps of sizes <m>\{ n_1, n_2, \ldots , n_k \}</m>. 
+In addition, the players have their own cache of beans, of sizes <m>\ell</m> and <m>r</m> 
+(for "left" and "right"). So there are <m>r+\ell + n_1 + n_2 + \cdots + n_k</m> beans in total.
+On your turn, you  now have two possible moves: (1) you can make a regular nim move as before, 
+taking some beans from one of the nim heaps and placing them into your personal cache, or 
+(2) you can add some of your own beans to one of the existing heaps.
+
+</p>
+
+
+<exploration>
+<title>Poker Nim</title>
+<p>Play some games of Poker Nim. Start with two heaps along with the private player caches. 
+	What effect do the caches have on the game? After you have mastered two-heap Poker Nim, try some larger games.
+</p>
+</exploration>
+
+<p>
+
+So who wins Poker Nim? It turns out that the winner is determined in the same way as 
+regular nim: take the nim sum
+<m>n_1 \oplus n_2 \oplus \cdots \oplus n_k</m> of the <m>k</m> heaps 
+(but do not include the player caches). You are asked to prove this in the exercises. 
+The key observation is that the type (2) move is a <term>reversible move</term>. 
+If Left adds 5 beans to a heap, then Right can immediately remove those 5 beans as a response. 
+This brings the game back into its previous position.
+
+</p>
+<p>
+
+A nim heap with some extra, reversible moves is called a  <term>bogus nim heap</term>. 
+We allow bogus nim heaps in our games, provided that there is always a winner. 
+This means that one player does have a winning strategy, and that winning player can 
+prevent the game from going on forever. (This is why the players in Poker Nim have a 
+limited supply of beans.) So Poker Nim is equivalent to Nim, but with bogus nim heaps.
+
+</p>
+<p>
+Our second variant of Nim is called <term>Northcott's Game</term>. 
+This game is played on a standard <m>8 \times 8</m> checkerboard. 
+Each row of the checkerboard contains one Blue checker and one Red checker. 
+The bLue checker must be to the left of the Red checker, but other than that, 
+the checkers can be anywhere on that row. On her move, Left is allowed to slide one 
+of her Blue checkers in its row (left or right), but she is not allowed to jump over 
+the Red checker in that row. The checker must remain in the row that it started in, 
+and cannot move off the board. Right is allowed to slide his Red checkers, again with 
+no jumping. The winner is the player to make the last move.
+
+</p>
+
+<p>
+
+			<figure xml:id="fig-northcott1">
+			<image width="50%" xml:id="fig-img-northcott1">
+				<latex-image>
+\begin{tikzpicture}[scale=.5]
+
+\draw (-.1, -.1) -- (8.1,-.1) -- (8.1,8.1) -- (-.1, 8.1) -- cycle;
+
+\foreach \i in {0,1,2,3,4,5,6,7,8} {
+\draw (0,\i) -- (8,\i);
+\draw (\i,0) -- (\i,8);
+}
+
+\begin{scope}[shift={(-.5,-.5)}]
+
+\draw[very thick, steelBlue, fill=steelBlue!25] (5,1) circle (5pt);
+\draw[very thick, steelBlue, fill=steelBlue!25]  (3,2) circle (5pt);
+\draw[very thick, steelBlue, fill=steelBlue!25]  (3,3) circle (5pt);
+\draw[very thick, steelBlue, fill=steelBlue!25] (1,4) circle (5pt);
+\draw[very thick, steelBlue, fill=steelBlue!25] (4,5) circle (5pt);
+\draw[very thick, steelBlue, fill=steelBlue!25] (6,6) circle (5pt);
+\draw[very thick, steelBlue, fill=steelBlue!25] (2,7) circle (5pt);
+\draw[very thick, steelBlue, fill=steelBlue!25] (4,8) circle (5pt);
+
+
+\draw[very thick, crimson, fill=crimson!25] (7,1) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (7,2) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (5,3) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (6,4) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (7,5) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25](8,6) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (4,7) circle (5pt);
+\draw[very thick, crimson, fill=crimson!25] (6,8) circle (5pt);
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<caption>A position in Northcott's Game.</caption>
+</figure>
+</p>
+<p>
+At this point, you should be a bit puzzled by this game: it is not impartial! Left can only move Blue checkers, and Right can only move Red checkers! In fact, Northcott's game is a clever disguise for Nim with bogus nim heaps. You will unmask the game in the exercises below.
+
+</p>
+
+<exploration>
+	<title>Northcott's Game</title>
+	<p>Play the Northcott's Game position shown in Figure <xref ref="fig-northcott1" />. 
+		Can you see how this game is related to Nim? Under optimal play, is this an 
+		<m>\cN</m>-position or a <m>\cP</m>-position?
+	</p>
+	</exploration>
+
+
+</section>
