@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>A crucial ingredient to this proof is that we know how to calculate the Sprague-Grundy values for \(T_1\) (by  <a class="xref" data-knowl="./knowl/lemma-tuft.html" title="Lemma 4.3.1">Lemma 4.3.1</a>) and \(T_2\) (because it is a bamboo stalk).  The methodology of our proof is quite elegant: we make clever use of the Tweedledum-Tweedledee Principle! We will prove that the sum of games</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+[G_y : T_1] \oplus [G_y : T_2]
+\end{equation*}
+</div>
+<p class="continuation">is a \(\cP\)-position. This means that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0 = \g \big( [G_y : T_1] \oplus [G_y : T_2] \big) = \g \big( [G_y : T_1] \big) \oplus \g \big( [G_y : T_2] \big).
+\end{equation*}
+</div>
+<p class="continuation">Of course, this last equation is equivalent to \(\g([G_y:T_1] )= \g([G_y:T_2]).\) So let's get started.</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/fig-img-tuft-proof.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.4<span class="period">.</span></span><span class="space"> </span>The Lumberjack position \([G_y:T_1] \oplus [G_y:T_2]\text{.}\) When \(\g(T_1) = \g(T_2)\text{,}\) this is a \(\cP\)-position.</figcaption></figure></p>
+<p>Consider the Lumberjack position \([G_y:T_1] \oplus [G_y:T_2]\) with Left to move, as shown in Figure <a class="xref" data-knowl="./knowl/fig-tuft-proof.html" title="Figure 4.3.4">Figure 4.3.4</a>. We show that this is a \(\cP\)-position by strong induction on \(m\text{,}\) t he maximum number of edges in the graphs \([G_y:T_1]\) and \([G_y:T_1]\text{.}\) We will show that for every possible Left move, Right has a countermove that puts the game into a \(\cP\)-position.</p>
+<p>Our base case is  \(m=0\text{,}\) where neither graph has any edges. Of course, this is a terminal position (hence a \(\cP\)-position). Futhermore, in this case, \([G_y:T_1]  = [G_y:T_2]\text{,}\) so this is not very satisfying. So let's look and the next values of \(m\text{.}\) If \(m=1\text{,}\) then once again, the graphs are identical: they must each be bamboo stalks of height 1. This is obviously a \(\cP\)-position by Tweedledum-Tweedledee. At \(m=2\text{,}\) we finally have a non-trivial example: there  are three possibilities for the position \([G_y:T_1] \oplus [G_y:T_2]\text{,}\) shown in  <a class="xref" data-knowl="./knowl/fig-tuft-proof2.html" title="Figure 4.3.5">Figure 4.3.5</a>. Each of these positions is a \(\cP\)-position. Only the third example has \(T_1 \neq T_2\text{.}\)</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-tuft-proof2.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.5<span class="period">.</span></span><span class="space"> </span>The two possible structures for  \([G_y:T_1] \oplus [G_y:T_2]\) when the larger of the two graphs has 2 edges. All three positions are \(\cP\)-positions.</figcaption></figure></p>
+<p>Next, assume by induction that the lemma holds when there are fewer than \(m\) edges in each of \([G_y:T_1]\) and \([G_y:T_2]\text{.}\)</p>
+<p>Consider a pair of trees  \([G_y:T_1]\) and \([G_y:T_2]\) where at least one of these trees has \(m\) edges. We handle the case where Left hacks an edge in \([G_y:T_1]\text{.}\) There are two kinds of moves available to Left.</p>
+<p>First, Left can hack off an edge in the \(G\)-part of \([G_y:T_1]\text{.}\) Right responds by hacking  that same edge in the \(G\)-part of \([G_y:T_2]\text{.}\) If these moves disconnect vertex \(y\text{,}\) then the branches \(T_1\) and \(T_2\) fall off; we are left with two identical subtrees of \(G\text{.}\) This is a \(\cP\)-position by Tweedledum-Tweedledee. If these moves do not disconnect \(y\text{,}\) then we are left with graphs \([G'_y:T_1]\) and \([G'_y:T_2]\) and each graph has fewer than \(m\) edges. By induction, this is a \(\cP\)-position with Left's turn to play.</p>
+<p>Second, Left can hack off an edge in the tuft \(T_1\) of \([G_y:T_1]\) to result in the graph \([G_y:T_1']\) where \(T_1'\) is a follower of \(T_1\text{.}\) There are two cases to consider, depending on whether  \(\g(T_1') &gt; \g(T_1)\) or \(\g(T_1') &lt; \g(T_1)\text{.}\) (Why do we know that \(\g(T_1') \neq \g(T_1)\text{?}\))</p>
+<ul class="disc">
+<li><p>If \(\g(T_1') &gt; \g(T_1)\text{,}\) then Right will respond by also playing in the same component. Since \(\g(T_1') &gt; \g(T_1)\text{,}\) we know that \(T_1'\) has a follower \(T_1"\) such that \(\g(T_1") = \g(T_1)\text{.}\) Right hacks the appropriate \(T_1"\) edge to get to \([G_y : T_1"]\text{.}\) This puts us in the game position \([G_y : T_1"] \oplus [G_y : T_2]\text{.}\) We have \(\g(T_1") = \g(T_1) = \g(T_2)\) and the total number of edges in this position is smaller than \(m\text{.}\) By induction, this is a \(\cP\)-position with Left's turn to play.</p></li>
+<li><p>If \(\g(T_1') &lt; \g(T_1)\) the Right will respond by hacking an edge in \(T_2\text{.}\) Indeed, \(T_2\) has a follower \(T_2'\) with \(\g(T_2') = \g(T_1')\text{,}\) so Right hacks the appropriate edge to create the position \([G_y : T_1'] \oplus [G_y : T_2']\text{.}\) This position satisfies the conditions of the Lemma, and has fewer than \(m\) edges. By induction this is a \(\cP\)-position with Left's turn to play.</p></li>
+</ul>
+<p class="continuation">We have now shown that Right can respond to any move of Left, putting the game into a \(\cP\)-position. Therefore the original position \([G_y:T_1] \oplus [G_y:T_2]\) is a \(\cP\)-position. This completes the proof of the Tuft Principle.</p></article></body>
+</html>

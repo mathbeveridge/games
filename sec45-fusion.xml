@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="hack-fusion">
+<title>Proof of the Fusion Principle</title>
+<p>
+
+In this section, we prove the Fusion Principle of  <xref ref="thm-fusion" />. 
+In order to prove the Fusion Principle, we will need two intermediate results. 
+Our first result is the <term>Parity Principle</term>. The term <em>parity</em> 
+simply means whether an integer is even or odd.
+
+</p>
+<p>
+<theorem xml:id="thm-parity">
+<statement>
+<p>
+The Sprague-Grundy value of any Lumberjack position has the same parity as 
+the total number of edges.
+</p>
+</statement>
+</theorem>
+</p>
+<p>
+
+</p>
+<p>
+<proof>
+<p>
+We leave the proof for the exercises.
+</p>
+</proof>
+</p>
+<p>
+
+Our second tool is  the  <term>Colon Principle</term>, which is a generalization of  <xref ref="thm-tuft" />, the Tuft Principle. The Colon Principle says that if two graphs have the same value "on the ground" then they have the same value "up in the air." The Tuft Principle is a special case: it states that this is true for <m>k</m>-tufts.
+
+</p>
+<p>
+<theorem xml:id="thm-colon">
+	<title>The Colon Principle</title>
+<statement>
+<p>
+Let <m>G</m> be a graph rooted at <m>x</m> and let <m>y</m> be a vertex of <m>G</m>. Let <m>H</m> and <m>K</m> be rooted graphs with <m>\g(H) = \g(K)</m>. Then
+<me>
+\g \left( [G_y : H] \right) = \g \left( [G_y : K] \right).
+</me>
+</p>
+</statement>
+</theorem>
+</p>
+<p>
+
+</p>
+<p>
+<proof>
+<p>
+The proof of the Colon Principle is very similar to the proof of the Tuft Principle (and the Loop Principle,  <xref ref="lemma-loop" />). Therefore, we leave this proof as an exercise.
+</p>
+</proof>
+</p>
+<p>
+
+With the Colon Principle in hand, we are ready to prove the Fusion Principle. For convenience, we state the fusion theorem again:
+
+</p><blockquote><p>
+Let <m>G</m> be a position in a game of Green Hackenbush. Let <m>H</m> be the position obtained by fusing together some (or all) of the vertices in a cycle of length <m>k \geq 2</m> in <m>G</m>. Then <m>\g(G)=\g(H)</m>.
+</p></blockquote><p>
+
+</p>
+<p>
+<proof>
+<title>Proof of <xref ref="thm-fusion" /></title>
+<p>
+
+The proof of  <xref ref="thm-fusion" /> is a <em>tour de force</em> of combinatorial game theory. It pulls together all the great themes we have seen up to now. It also requires some new and insightful tools of its own. The overall theme of the proof is a methodical proof by contradiction.  In particular, we slowly  characterize the structure of a smallest counterexample (also known as a "minimal criminal") and show that no such graph exists.
+
+			</p><p>
+
+This sophisticated proof is beyond the level of an introductory textbook. 
+Therefore, we break the proof into two pieces. We lay out the flow of the proof via a 
+series of claims 
+(and then prove these claims later on). This way you can appreciate the overall argument, 
+without getting lost in the details. 
+
+</p><p>
+The proof methodically places constraints on the structure of the minimal criminal. Eventually, we show that all of these constraints lead to a position that <em>does</em> obey the Fusion Principle. Therefore, there is no minimal criminal, which means that every graph obeys the Fusion Principle.
+
+			</p><p>
+
+The Fusion Principle says that we can fuse together some (or all) the vertices in a cycle without changing the Sprague-Grundy value. Let <m>\mathcal{A}</m> be the set of all counterexamples to the Fusion Principle.  Assume for the sake of contradiction that the Fusion Principle is false. This means that <m>\mathcal{A} \neq 0</m>. Each graph in <m>\mathcal{A}</m> contains a particular cycle <m>C</m> such that if you fuse this cycle, the Sprague-Grundy value changes.
+
+			</p><p>
+
+We will restrict ourselves to the subset <m>\mathcal{B} \subset \mathcal{A}</m> of  <em>minimal counterexamples</em> of the Fusion Principle. In other words, if we fuse <em>any</em> cycle in <m>G \in \mathcal{B}</m>, then the Sprague-Grundy value changes. Finally, we choose a graph <m>G \in \mathcal{B}</m> of smallest size: we choose <m>G</m> so that   the sum of the number of vertices and edges in <m>G</m> achieves the smallest such value among graphs in <m>\mathcal{B}</m>:
+<me>
+|V(G)| + |E(G)| = \min_{H \in \mathcal{B}} \big( |V(H)| + |E(H)| \big).
+</me>
+Choosing this "minimal criminal" <m>G</m> will be crucial in our proof. Let <m>n=|V(G)|</m> and <m>m=|E(G)|</m>.
+We prove the following statements, in order.
+
+	</p>
+	<p>
+	<ol>
+				<li>
+					<p>
+ <em>Claim 1:</em> <m>G</m> has a unique root vertex.
+					</p>
+				</li>
+				<li>
+					<p>
+ <em>Claim 2:</em> <m>G</m> does not contain any vertices <m>x,y</m> connected by 3 (or more) edge-disjoint paths.
+					</p>
+				</li>
+				<li>
+					<p>
+ <em>Claim 3:</em> Every cycle of <m>G</m> must include the unique root vertex.
+					</p>
+				</li>
+				<li>
+					<p>
+ <em>Claim 4:</em> <m>G</m> contains exactly one cycle through the root vertex.
+					</p>
+				</li>
+				<li>
+					<p>
+ <em>Claim 5:</em> <m>G</m> must look like the graph shown in  <xref ref="fig-minimal" />. This graph consists of a single cycle that includes the ground, along with a number of paths branching off of this cycle.
+					</p>
+				</li>
+				<li>
+					<p>
+ <em>Claim 6:</em> All graphs of the type shown in  <xref ref="fig-minimal" /> obey the Fusion Principle!
+					</p>
+				</li>
+			</ol>
+
+
+
+<figure xml:id="fig-minimal">
+
+	<caption>The minimal criminal that does not obey the Fusion Principle must look like this graph. But  graphs of this type  <em>do obey</em>  the Fusion Principle! So there are no counterexamples.</caption>
+
+			<image width="80%" xml:id="fig-img-minimal" source="images/minimal-criminal2.png" />
+	</figure>
+
+
+</p>
+<p>
+
+Of course, Claim 6 brings us to our contradiction: our (supposed)
+ minimal criminal actually obeys the Fusion Principle. This means that the minimal 
+ criminal does not exist, so the set <m>\mathcal{A}</m> of counterexamples is empty. 
+ Therefore the Fusion Principle holds for all graphs.
+</p>
+</proof>
+</p>
+<p>
+
+
+
+We now prove each of the six claims. We encourage you to work your way through the proofs of the first five claims. 
+The sixth claim is proven in two parts. 
+When our cycle has even length, the argument is straight forward. 
+When the cycle has odd length, we need a very technical argument, 
+so we only provide a sketch of this part of the proof.
+
+			</p><p>
+
+				<claim>
+					<statement><em>(Claim 1)</em>.  <m>G</m> has a unique root vertex.</statement>
+				</claim>
+			</p><p>
+				<proof><p>
+ If <m>G</m> had multiple 
+vertices at the ground level, we could join them together to get a single vertex without
+ changing the Sprague-Grundy value. This reduces the total number of vertices and edges. 
+ Since <m>G</m> is the minimal criminal, there can only be one root vertex at 
+ ground level. <m>\quad \Box</m>
+</p></proof>
+
+			</p><p>
+				<claim>
+					<statement><em>(Claim 2)</em>. <m>G</m> does not contain any vertices <m>x,y</m> connected by 3 (or more) edge-disjoint paths.
+					</statement>
+				</claim>
+
+			</p><p>
+				<proof><p>
+Assume for the sake of contradiction that <m>G</m> contains vertices <m>x,y</m> connected by 3 edge-disjoint paths. Let <m>H</m> be the graph obtained by merging the vertices <m>x</m> and <m>y</m> into a  single vertex <m>z</m>. We must have <m>g(H) \neq g(G)</m> because <m>G</m> is the minimal criminal. Therefore the sum of games <m>G \oplus H</m> is an <m>\cN</m>-position.
+
+			</p><p>
+
+Since <m>G \oplus H</m> is an <m>\cN</m>-position, Left must have a winning move.
+When Left hacks an edge in <m>G</m> (or <m>H</m>), Right responds by hacking the corresponding edge in <m>H</m> (or <m>G</m>). Call the resulting graphs <m>G'</m> and <m>H'</m>. Both graphs have <m>m-1</m> edges, so the fusion principle applies to each of them. The vertices <m>x,y</m> are still in a cycle in <m>G'</m> since we can only destroy one of the three edge-disjoint paths between them. So we can fuse <m>x</m> and <m>y</m> without changing the Sprague-Grundy value of <m>G'</m>. This fusion results in the graph <m>H'</m>, so
+<me>
+\g(G' \oplus H') = \g(G') \oplus \g(H') = \g(H') \oplus \g(H') = 0.
+</me>
+In other words, <m>G' \oplus H'</m> is a <m>\cP</m>-position. No matter what move Left make, Right can make a counter-move to put the game in a <m>\cP</m>-position. This contradicts the fact that <m>G \oplus H</m> is an <m>\cN</m>-position. Therefore, no vertices <m>x,y</m> can be connected by 3 edge-disjoint paths.
+<m> \quad \Box</m>
+</p></proof>
+</p><p>
+	<claim>
+		<statement><em>(Claim 3)</em>. Every cycle of <m>G</m> must include the unique root vertex.</statement>
+	</claim>
+</p><p>
+	<proof>
+		<p>
+Assume for the sake of contradiction that <m>G</m> contains a cycle <m>C</m> that does
+ not include the unique root vertex <m>x</m>.
+
+			</p><p>
+
+Let <m>P_1</m> be a path from <m>x</m> to <m>y \in V(C)</m> that does not contain any other vertex of <m>C</m>.
+We claim that <em>every</em> path from <m>x</m> to <m>C</m> goes through <m>y</m>. Suppose this is not the case.  Let <m>P_2</m> be a path from <m>x</m> to another vertex <m>z \in V(C)</m> that does not contain any other vertex of <m>C</m>.
+The walk <m>P_1 \cup P_2</m> contains a <m>(y,z)</m> path that 
+is edge disjoint from the cycle <m>C</m>. Meanwhile, the cycle <m>C</m> contains two more 
+edge disjoint <m>(y,z)</m> paths (by traversing <m>C</m> from <m>y</m> to <m>z</m> 
+clockwise and counterclockwise, respectively). This contradicts Claim 2. 
+So every path from <m>x</m> to <m>C</m> goes through a single vertex <m>y</m>.
+ The vertex <m>y</m> is called a <term>cutpoint</term> since its removal disconnects the graph.
+
+</p><p>
+
+			<figure xml:id="fig-claim3">
+				<caption>Splitting the graph <m>G</m> into subgraphs <m>H</m> and <m>K</m> at the cutpoint <m>y</m>.</caption>				
+			<image width="50%" xml:id="fig-img-claim3">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw[dashed] (-2,-.2) -- (2,-.2);
+
+\foreach \i in {0}
+{
+
+\begin{scope}[shift={(\i,0)}]
+
+
+
+\draw[thick] (0,1.3) ellipse (1 and 1.5);
+
+\draw[fill] (0,-.2) circle (3pt);
+\draw[fill] (.9, 2) circle (3pt);
+
+
+\draw[rotate around={-45:(1.85,2.8)},thick] (1.85,2.8) ellipse (.8 and 1.25);
+
+\node at (.2,.2) {$x$};
+\node at (.5,1.7) {$y$};
+\node at (-.25,1.25) {$H$};
+
+\end{scope}
+}
+
+\node at (1.8,2.75) {$K$};
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</figure>
+
+</p><p>
+
+We can now split the graph <m>G</m> into two subgraphs <m>H, K</m> at vertex <m>y</m>, as shown in  <xref ref="fig-claim3" />.
+The subgraph <m>K</m> contains the cycle <m>C</m>, and <m>K</m> contains strictly fewer vertices than <m>G</m>. Therefore, the fusion principle applies to <m>K</m>. Let <m>K'</m> be the graph obtained by fusing all of the vertices of <m>C</m> into one vertex. We have <m>\g(K) = \g(K')</m> and therefore
+<me>
+\g(G) = \g\left([H_y : K] \right) = \g \left([H_y : K'] \right)
+</me>
+by the Colon Principle,  <xref ref="thm-colon" />. The resulting graph <m>[H_y : K']</m> 
+has fewer vertices than <m>G</m>, so the Fusion Principle applies to <m>[H_y : K']</m>. 
+But this means that the Fusion Principle also applies to <m>G</m>, a contradiction. 
+Therefore, every cycle in our minimal criminal <m>G</m> must go through the root 
+vertex <m>x</m>. <m> \Box</m>
+</p>
+</proof>
+
+			</p>
+			<p>
+
+				<claim>
+					<statement><em>(Claim 4)</em>.  <m>G</m> contains exactly one cycle through the root vertex.</statement>
+				</claim>
+
+			</p><p>
+				<proof>
+					<p>
+Let <m>C</m> be a cycle through the root vertex <m>x</m>. Let <m>y \in V(C)</m>. By Claim 2, 
+there are exactly two  paths from <m>y</m> to <m>x</m>:  the clockwise and counterclockwise 
+paths along the cycle <m>C</m>. Suppose that <m>G</m> contained another cycle <m>C'</m> 
+through the root vertex <m>x</m>. The cycles <m>C</m> and <m>C'</m> cannot intersect at any 
+other points. Indeed, if <m>x \neq z \in V(C) \cap V(C')</m> then there would be three 
+edge-disjoint paths between <m>x</m> and <m>z</m>, contradicting Claim 2. Furthermore, 
+any path between <m>C</m> and <m>C'</m> must go through <m>x</m> for the same reason.
+Therefore, we can view <m>G</m> as the sum of two smaller graphs. The fusion principle 
+would apply to each of these smaller graphs, a contradiction. Therefore, <m>G</m> contains 
+exactly one vertex through the root vertex.  <m>\quad \Box</m>
+</p>
+</proof>
+
+			</p><p>
+
+				<claim>
+					<statement> <em>(Claim 5)</em>. <m>G</m> must look like the graph 
+						shown in  <xref ref="fig-minimal"/>.</statement>
+				</claim>
+
+			</p><p>
+				<proof>
+				<p>
+This graph consists of a single cycle that includes the ground, along with a number of 
+paths branching off of this cycle.
+Putting our first four claims together, we see that <m>G</m> must consist of a cycle 
+through the root vertex, along with trees branching off of the vertices of this cycle. 
+We can repeatedly use the Colon Principle,  <xref ref="thm-colon" />,  to turn each of 
+these trees into a path: such replacement cannot increase the number of vertices or edges 
+(and it might actually reduce these numbers).   <m> \Box</m>
+</p>
+</proof>
+
+			</p><p>
+
+				<claim>
+					<statement><em>(Claim 6)</em>. All graphs of the type shown in  <xref ref="fig-minimal" /> 
+						obey the Fusion Principle.</statement>
+				</claim>
+
+			</p><p>
+				<proof>
+				<p>
+We think of this graph as a cycle <m>C</m> along with a set of dangling paths, 
+which we call <term>strings</term>.
+Assume for the sake of contradiction that such a graph does not obey the Fusion Principle. 
+In other words:  
+fusing the cycle <m>C</m> changes the Sprague-Grundy value. There are two cases, depending 
+on the parity of 
+the cycle length.
+Let the strings of <m>G</m> have lengths <m>n_1, n_2, \ldots, n_k</m>. 
+
+</p><p>
+
+<figure xml:id="fig-fusion-even">
+	<caption>A minimal criminal with an even cycle, along with copies of its strings.</caption>
+			<image width="80%" xml:id="fig-img-hack-fusion2" source="images/criminal-even.png" />
+	</figure>
+
+</p><p>
+
+
+Suppose that <m>C</m> contains an even number of edges. Consider the sum of games consisting 
+of <m>G</m> along with a copy of all of the strings, as shown in  <xref ref="fig-fusion-even" />.
+We prove that Right has a winning strategy from this position (so it is a <m>\cP</m>-position). 
+If Left hacks a path edge, Right responds by hacking the analogous edge in the other graph.
+ Left must be the first player to hack an edge in the cycle. This creates a Lumberjack position 
+ with an odd number of edges.
+This position has an odd (and hence nonzero) Sprague-Grundy value by the Parity Principle,  
+<xref ref="thm-parity" />. So Right has a winning strategy from this point forward.
+
+
+</p><p>
+
+The above argument shows that the position in  <xref ref="fig-fusion-even" /> is 
+a <m>\cP</m>-position with Sprague-Grundy value 0. Therefore the Sprague-Grundy value of 
+<m>G</m> equals 
+<me>n_1 \oplus n_2 \oplus \cdots \oplus n_k.</me>
+But this means that the Fusion Principle holds for <m>G</m>:  
+fusing the cycle <m>C</m> results in an even number of loops at ground level. 
+These loops cancel one another out, so the Sprague-Grundy value is just the nim sum of 
+the lengths of the strings. In summary, <m>G</m> is not our minimal criminal.
+
+</p>
+<p>
+
+
+<figure xml:id="fig-fusion-odd">
+	<caption>A minimal criminal with an odd cycle, along with copies of its strings, and an extra path of length 1. This green hackenbush position has Sprague-Grundy value 0.</caption>
+			<image width="80%" xml:id="fig-img-hack-fusion3" source="images/criminal-odd.png" />
+</figure>
+
+</p>
+<p>
+
+Finally, we rule out the last suspected minimal criminal. This argument gets quite technical, and requires some new ingenuity. Therefore, we only sketch the final steps of this proof. Suppose that <m>C</m> contains an odd number of edges.  This time, we need a more intricate argument. As in the previous case, we consider position <m>H</m>  consisting of <m>G</m> and copies of each of the strings the cycle of <m>G</m>,
+as shown in  <xref ref="fig-fusion-odd" />. If we can show that <m>g(H)=1</m>, then this means that the Fusion Principle holds for <m>G</m>, since fusing the cycle creates an odd number of paths of height 1.
+
+			</p><p>
+
+We will prove that <m>g(H)=1</m> by showing that 
+<ol>
+<li>No follower of this position has value 1.</li>
+<li>There is a follower of value 0</li>
+</ol>
+
+
+
+The first statement is straight forward to prove. Hacking the cycle leads to a Lumberjack position with an even number of edges. By the Parity Principle, the Sprague-Grundy value of this position is even, so clearly it cannot be equal to 1. If Left hacks a path edge to obtain position <m>G'</m>, then Right responds by hacking the analogous path edge in the other part of the graph to obtain <m>G"</m>. The graph <m>G"</m> has fewer edges than <m>G</m>, so the Fusion Principle applies to <m>G"</m> and its Sprague-Grundy value is 1. This means that <m>\g(G') \neq 1</m> since its follower <m>G"</m> has <m>\g(G")=1</m>.
+
+			</p><p>
+
+Proving that <m>G</m> has a follower with value 0 is more challenging. It turns out that there is an edge we can hack in the cycle to reach a follower with value 0. We describe how to find such an edge.  
+
+</p><p>
+
+Starting clockwise from the root vertex, label each edge with <m>\alpha</m> or <m>\beta</m>, giving adjacent edges the <em>same</em> label if there is an <em>odd</em> length string between them, and <em>different</em> labels if there is an <em>even</em> length string. There are an odd number of edges in <m>C</m>, so one label occurs an odd number of times, and the other label occurs an even number of times. For simplicity, we assume that label <m>\alpha</m> appears an even number of times and that label <m>\beta</m> appears an odd number of times. It turns out that there exists  a <m>\beta</m>-edge such that hacking this edge results in a position with value 0.
+
+			</p><p>
+
+To find this good <m>\beta</m>-edge, we reduce the graph by picking any edge <m>e</m> labeled by <m>\alpha</m> and shrinking it to a single vertex. We replace the two strings from the endpoints of <m>e</m> by a single string whose length is their nim sum.  Next, we halve all of the string lengths of this component (rounding down if this length is odd). Call this resulting graph <m>G'</m>. It can be shown that <m>\g(G') = \frac{1}{2} \g(G)</m>. 
+
+</p>
+<p>
+
+Repeat this process on the graph <m>G'</m>: label the edges by <m>\alpha'</m> and <m>\beta'</m>, then contract an edge from the even-sized set of labeled edges and half the sizes of the strings. Continue this process (creating <m>G", G"'</m>, etc) until one of the sets of labeled edges contains exactly one edge <m>f</m> (this must happen eventually). This edge <m>f</m> is the one that we are looking for: removing the edge <m>f</m> from the original position results in a composite position with value 0. <m> \Box</m>
+</p>
+</proof>
+</p>
+<p>
+
+This brings us to the end of our series of claims. 
+With these details filled in, our proof of the Fusion Principle is complete. 
+
+</p>
+<p>
+This also means that we've solved Green Hackenbush! 
+We can calculate the Sprague-Grundy value of any Green Hackenbush position, and find a winning move
+when the Sprague-Grundy value is nonzero.
+
+</p>
+</section>

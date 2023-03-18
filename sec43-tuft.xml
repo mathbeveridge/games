@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="hack-tuft">
+<title>Proof of the Tuft Principle</title>
+<p>
+
+
+We now prove the Tuft Principle, <xref ref="thm-tuft" />. Our first step is to prove the following easy lemma. First, we define a <term><m>k</m>-tuft</term> to be a tree  whose only branching point is its root <m>x</m>. In other words, a <m>k</m>-tuft  consists of <m>k</m> paths  <m>B_1, B_2, \ldots, B_k</m> that all meet at vertex <m>x</m>.
+An example of a 4-tuft is shown in  <xref ref="fig-division" />.
+
+</p><lemma xml:id="lemma-tuft"><statement>
+Let <m>G</m> be a <m>k</m>-tuft rooted  at vertex <m>x</m>, which is at ground level.  Let <m>B_1, B_2, \ldots, B_k</m> be the paths that meet at vertex <m>x</m>. For <m>1 \leq i \leq k</m>, let <m>m_i</m> denote the number of edges in <m>B_i</m>. Then
+<me>
+\g(G) = \g(B_1) \oplus \g(B_2) \oplus \cdots \oplus \g(B_k) = m_1 \oplus m_2 \oplus \cdots \oplus m_k.
+</me>
+</statement></lemma>
+
+
+<p>
+
+<proof>
+<p>
+The idea of the proof is quite simple. We can think of the ground as one (very long) root vertex.
+ Hacking a particular branch does not affect any of the other branches of <m>G</m>. 
+ So we can simply divide the tree at its root and create <m>k</m> independent bamboo 
+ stalks of sizes <m>m_1, m_2, \ldots, m_k</m>  as shown in  <xref ref="fig-division" />. 
+ 
+</p>
+<p>
+ 
+ <figure xml:id="fig-division">
+	<caption>Dividing a 4-tuft at its root <m>x</m> results in a forest of bamboo stalks. 
+		These two positions in Lumberjack are equivalent.</caption>
+<image width="80%" xml:id="fig-img-division">
+	<latex-image>
+\begin{tikzpicture}[scale=.75] %mathbook width=80%
+
+\node at (0,-.5) {$x$};
+\node at (4,2) {$\longrightarrow$};
+
+\draw[dashed] (-2,0) -- (2,0);
+
+\foreach \i in {0,1,2,3} {
+\draw[fill] (\i * .1, \i ) circle (3pt);
+}
+
+\draw[thick] (0,0) -- (.3,3);
+
+\foreach \i in {0,1,2} {
+\draw[fill] (\i * -.4, \i *.9 ) circle (3pt);
+}
+
+\draw[thick] (0,0) -- (-.8, 1.8);
+
+
+\draw[fill] (.7,  .7) circle (3pt);
+\draw[fill] (1.2, 1.5) circle (3pt);
+\draw[fill] (1.4, 2.3) circle (3pt);
+\draw[fill] (1.4, 3.3) circle (3pt);
+\draw[fill] (1.4, 4.3) circle (3pt);
+
+
+
+\draw[thick] (0,0) -- (.7, .7) -- (1.2, 1.5) -- (1.4, 2.3) -- (1.4, 4.3);
+
+
+\draw[fill] (-.9,  .5) circle (3pt);
+\draw[fill] (-1.6, 1.2) circle (3pt);
+\draw[fill] (-2, 2.2) circle (3pt);
+\draw[fill] (-2, 3.2) circle (3pt);
+
+
+\draw[thick] (0,0) -- (-.9, .5) -- (-1.6, 1.2) -- (-2, 2.2) -- (-2, 3.2);
+
+
+
+\begin{scope}[shift={(6,0)}]
+
+\draw[dashed] (0,0) -- (8,0);
+
+\foreach \i in {0,1,2,3,4} {
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw (1,0) -- (1,4);
+
+\foreach \i in {0,1,2} {
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw (3,0) -- (3,2);
+
+
+\foreach \i in {0,1,2,3} {
+\draw[fill] (5,\i) circle (3pt);
+}
+\draw (5,0) -- (5,3);
+
+\foreach \i in {0,1,2,3,4,5} {
+\draw[fill] (7,\i) circle (3pt);
+}
+
+\draw (7,0) -- (7,5);
+
+\end{scope}
+
+\end{tikzpicture}
+	</latex-image>
+</image>
+
+</figure>
+
+</p>
+<p>
+ 
+ 
+ The Sprague-Grundy value of these independent bamboo stalks is just the nim sum of their individual Sprague-Grundy values by  <xref ref="thm-sg" />. Therefore
+<me>
+\g(G) = \g(B_1) \oplus \g(B_2) \oplus \cdots \oplus \g(B_k).
+</me>
+The Sprague-Grundy value of a bamboo stalk is equal to its height (see Exercise 1 below), so this simplifies to
+<me>
+\g(G) = m_1 \oplus m_2 \oplus \cdots \oplus m_k.
+</me>
+</p>
+</proof>
+</p>
+<p>
+
+
+
+<xref ref="lemma-tuft" /> is a special case of the Tuft Principle. It says that the Tuft Principle holds when the branching vertex is on the ground. We can now prove the Tuft Principle itself, which says that we can still take the nim sums of these branching paths when we are "up in the air."
+
+We introduce the following notation. Let <m>G</m> be a graph rooted at vertex <m>x</m>, and let <m>y</m> be another vertex of <m>G</m>. Let <m>H</m> be another rooted graph, with root <m>z</m>. We define the rooted graph
+<me>[G_y : H]</me>
+to be the graph obtained by starting with the rooted 
+graph <m>G</m> and then attaching the graph <m>H</m> to <m>G</m> so 
+that the root <m>z</m> of <m>H</m> is identified with the vertex <m>y</m> of <m>G</m>. 
+See  <xref ref="fig-tuft-ex" /> for an example.
+
+</p>
+<p>
+
+			<figure xml:id="fig-tuft-ex">
+				<caption>Joining the rooted trees <m>G</m> and <m>H</m> to obtain the graph
+					 <m>[G_y : H]</m> We identify the vertex <m>y</m> in <m>G</m> with the 
+					 root <m>z</m> of <m>H</m>.</caption>
+			<image width="80%" xml:id="fig-img-tuft-ex">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=80%
+
+\begin{scope}
+
+\draw[dashed] (-1,0) -- (1,0);
+\node at (-.75,1.5) {$G$};
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+
+\draw[fill] (.5,3) circle (3pt);
+\draw[fill] (-.5,3) circle (3pt);
+\draw[thick] (-1,4) -- (0,2) -- (.5,3);
+
+\draw[fill] (-1,4) circle (3pt);
+
+\node at (0, -.5) {$x$};
+\node at (1, 3) {$y$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(4,0)}]
+
+\draw[dashed] (-1,0) -- (3,0);
+\node at (-.75,1.5) {$H$};
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (\i*.8,\i*.3) circle (3pt);
+}
+\draw[thick] (0,0)--(2.4,.9);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (\i*.2,\i*.6) circle (3pt);
+}
+\draw[thick] (0,0)--(.4,1.2);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (\i*-.3,\i*.7) circle (3pt);
+}
+\draw[thick] (0,0)--(-.3,.7);
+
+\node at (0, -.5) {$z$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+\node at (1.5,1.75) {$[G_y:H]$};
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+
+\draw[fill] (.5,3) circle (3pt);
+\draw[fill] (-.5,3) circle (3pt);
+\draw[thick] (-1,4) -- (0,2) -- (.5,3);
+
+\draw[fill] (-1,4) circle (3pt);
+
+\node at (0, -.5) {$x$};
+
+
+\end{scope}
+
+\begin{scope}[shift={(10.5,3)}]
+
+
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (\i*.8,\i*.3) circle (3pt);
+}
+\draw[thick] (0,0)--(2.4,.9);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (\i*.2,\i*.6) circle (3pt);
+}
+\draw[thick] (0,0)--(.4,1.2);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (\i*-.3,\i*.7) circle (3pt);
+}
+\draw[thick] (0,0)--(-.3,.7);
+
+
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</figure>
+</p>
+<p>
+
+We are now ready to prove the Tuft Principle, which we restate here for convenience:
+</p><blockquote><p>
+If <m>k</m> paths <m>B_1, B_2, \ldots, B_k</m> come together at a vertex of the tree <m>G</m>, then we can replace this set of paths with a single path of length <m>\g(B_1) \oplus \g(B_2) \oplus \cdots \oplus \g(B_k)</m>.
+</p></blockquote><p>
+In order to prove  <xref ref="thm-tuft" />, we will rephrase it using our new notation. The Tuft Principle is equivalent to the following statement:
+</p><blockquote><p>
+Let <m>G</m> be a tree rooted at <m>x</m> and let <m>y</m> be a leaf of <m>G</m>.  Let <m>T_1</m> be a <m>k</m>-tuft with <m>\g(T_2)=\ell</m>, and let <m>T_2</m> be a bamboo stalk of height <m>\ell</m>. Then
+<me>\g([G_y:T_1]) = \g([G_y:T_2])</me> .
+</p></blockquote><p>
+
+		
+
+Let's interpret what this statement is saying (since there is a lot of notation).
+Returning to  <xref ref="fig-tuft-ex" />, we see that
+<me>
+\g(H) = *1 \oplus *2 \oplus *3 = 0.
+</me>
+Therefore, <m>\g(H)</m> is equivalent to <m>*0</m> (or equivalently, a bamboo stalk <m>P_1</m> of height 0). The Lemma tells us that
+<me>
+\g([G_y: H]) = \g([G_y: P_1]).
+</me>
+Of course, the graph <m>[G_y:P_1]</m> is the same as the graph <m>G</m>, so we conclude that <m>\g([G_y: H]) = \g(G)</m>. What does this mean? The addition of <m>H</m> to <m>G</m> does not change the outcome of the game: it merely adds some reversible moves. Indeed, if your opponent chooses to hack an edge in the <m>H</m>-part of the graph <m>[G_y:H]</m> then you can always find a counter-hack in the remaining <m>H</m>-part to return the value of the game back to its value prior to your opponent's move.
+
+</p>
+<p>
+We are now ready to prove the Tuft Principle!
+</p>
+<p>
+<proof>
+	<title>Proof of <xref ref="thm-tuft" /></title>
+<p>
+A crucial ingredient to this proof is that we know how to calculate the Sprague-Grundy values for <m>T_1</m> (by  <xref ref="lemma-tuft" />) and <m>T_2</m> (because it is a bamboo stalk).  The methodology of our proof is quite elegant: we make clever use of the Tweedledum-Tweedledee Principle! We will prove that the sum of games
+<me>
+[G_y : T_1] \oplus [G_y : T_2]
+</me>
+is a <m>\cP</m>-position. This means that
+<me>
+0 = \g \big( [G_y : T_1] \oplus [G_y : T_2] \big) = \g \big( [G_y : T_1] \big) \oplus \g \big( [G_y : T_2] \big).
+</me>
+Of course, this last equation is equivalent to
+ <m>\g([G_y:T_1] )= \g([G_y:T_2]).</m> So let's get started.
+
+</p><p>
+
+
+			<figure xml:id="fig-tuft-proof">
+				<caption>The Lumberjack position <m>[G_y:T_1] \oplus [G_y:T_2]</m>. 
+					When <m>\g(T_1) = \g(T_2)</m>, this is a <m>\cP</m>-position.</caption>
+			<image width="60%" xml:id="fig-img-tuft-proof">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=60%
+
+
+\draw[dashed] (-2,0) -- (8,0);
+
+\foreach \i in {0,5}
+{
+
+\begin{scope}[shift={(\i,0)}]
+
+
+
+\draw[thick] (0,1.3) ellipse (1 and 1.5);
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (.7, 2) circle (3pt);
+
+
+\draw[rotate around={-45:(1.5,2.6)},thick] (1.5,2.6) ellipse (.8 and 1.25);
+
+\node at (.2,.4) {$x$};
+\node at (.3,1.7) {$y$};
+\node at (-.5,1.25) {$G$};
+
+\end{scope}
+}
+
+\node at (1.5,2.5) {$T_{1}$};
+\node at (6.5,2.5) {$T_{2}$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</figure>
+</p>
+
+<p>
+
+
+Consider the Lumberjack position <m>[G_y:T_1] \oplus [G_y:T_2]</m> with Left to move, 
+as shown in Figure <xref ref="fig-tuft-proof" />. 
+We show that this is a <m>\cP</m>-position by strong induction on <m>m</m>, t
+he maximum number of edges in the graphs <m>[G_y:T_1]</m> and <m>[G_y:T_1]</m>. 
+We will show that for every possible Left move, Right has a countermove that puts 
+the game into a <m>\cP</m>-position.
+
+			</p><p>
+
+Our base case is  <m>m=0</m>, where neither graph has any edges. Of course, this is a terminal position (hence a <m>\cP</m>-position). Futhermore, in this case, <m>[G_y:T_1]  = [G_y:T_2]</m>, so this is not very satisfying. So let's look and the next values of <m>m</m>. If <m>m=1</m>, then once again, the graphs are identical: they must each be bamboo stalks of height 1. This is obviously a <m>\cP</m>-position by Tweedledum-Tweedledee. At <m>m=2</m>, we finally have a non-trivial example: there  are three possibilities for the position <m>[G_y:T_1] \oplus [G_y:T_2]</m>, shown in  <xref ref="fig-tuft-proof2" />. Each of these positions is a <m>\cP</m>-position. Only the third example has <m>T_1 \neq T_2</m>.
+
+</p><p>
+
+
+			<figure xml:id="fig-tuft-proof2">
+				<caption>The two possible structures for  <m>[G_y:T_1] \oplus [G_y:T_2]</m> when the larger of the two graphs has 2 edges. All three positions are <m>\cP</m>-positions.</caption>
+				
+			<image width="80%" xml:id="fig-img-tuft-proof2">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=80%
+
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[dashed] (-1,0) -- (2,0);
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (0,1) circle (3pt);
+\draw[fill] (0,2) circle (3pt);
+\draw[fill] (1,0) circle (3pt);
+\draw[fill] (1,1) circle (3pt);
+\draw[fill] (1,2) circle (3pt);
+
+\draw[thick] (0,0) -- (0,2);
+\draw[thick] (1,0) -- (1,2);
+
+\end{scope}
+
+\begin{scope}[shift={(5,0)}]
+
+\draw[dashed] (-1,0) -- (3,0);
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (-.5,1) circle (3pt);
+\draw[fill] (.5,1) circle (3pt);
+
+\draw[fill] (1.5,1) circle (3pt);
+\draw[fill] (2,0) circle (3pt);
+\draw[fill] (2.5,1) circle (3pt);
+
+\draw[thick] (-.5,1) -- (0,0) -- (.5,1);
+
+\draw[thick] (1.5,1) -- (2,0) -- (2.5,1);
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+\draw[dashed] (-1,0) -- (3,0);
+
+\draw[fill] (0,0) circle (3pt);
+
+
+\draw[fill] (1.5,1) circle (3pt);
+\draw[fill] (2,0) circle (3pt);
+\draw[fill] (2.5,1) circle (3pt);
+
+
+
+\draw[thick] (1.5,1) -- (2,0) -- (2.5,1);
+
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</figure>
+
+</p>
+<p>
+
+Next, assume by induction that the lemma holds when there are fewer than <m>m</m> edges in each of <m>[G_y:T_1]</m> and <m>[G_y:T_2]</m>.
+
+			</p><p>
+
+Consider a pair of trees  <m>[G_y:T_1]</m> and <m>[G_y:T_2]</m> where at least one of these trees has <m>m</m> edges.
+We handle the case where Left hacks an edge in <m>[G_y:T_1]</m>. There are two kinds of moves available to Left.
+
+			</p><p>
+
+First, Left can hack off an edge in the <m>G</m>-part of <m>[G_y:T_1]</m>.
+Right responds by hacking  that same edge in the <m>G</m>-part of <m>[G_y:T_2]</m>. If these moves disconnect vertex <m>y</m>, then the branches <m>T_1</m> and <m>T_2</m> fall off; we are left with two identical subtrees of <m>G</m>. This is a <m>\cP</m>-position by Tweedledum-Tweedledee. If these moves do not disconnect <m>y</m>, then we are left with graphs
+<m>[G'_y:T_1]</m> and <m>[G'_y:T_2]</m> and each graph has fewer than <m>m</m> edges. By induction, this is a <m>\cP</m>-position with Left's turn to play.
+
+			</p><p>
+
+Second, Left can hack off an edge in the tuft <m>T_1</m> of <m>[G_y:T_1]</m> to result in the graph <m>[G_y:T_1']</m> where <m>T_1'</m> is a follower of <m>T_1</m>. There are two cases to consider, depending on whether  <m>\g(T_1') &gt; \g(T_1)</m> or <m>\g(T_1') &lt; \g(T_1)</m>. (Why do we know that <m>\g(T_1') \neq \g(T_1)</m>?)
+		<ul>
+			<li>
+			<p>
+ If <m>\g(T_1') &gt; \g(T_1)</m>, then Right will respond by also playing in the same component. Since <m>\g(T_1') &gt; \g(T_1)</m>, we know that
+<m>T_1'</m> has a follower <m>T_1"</m> such that <m>\g(T_1") = \g(T_1)</m>. Right hacks the appropriate <m>T_1"</m> edge to get to <m>[G_y : T_1"]</m>. This puts us in the game position <m>[G_y : T_1"] \oplus [G_y : T_2]</m>. We have <m>\g(T_1") = \g(T_1) = \g(T_2)</m> and the total number of edges in this position is smaller than <m>m</m>. By induction, this is a <m>\cP</m>-position with Left's turn to play.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ If <m>\g(T_1') &lt; \g(T_1)</m> the Right will respond by hacking an edge in <m>T_2</m>. Indeed, <m>T_2</m> has a follower <m>T_2'</m> with <m>\g(T_2') = \g(T_1')</m>, so Right hacks the appropriate edge to create the position
+<m>[G_y : T_1'] \oplus [G_y : T_2']</m>. This position satisfies the conditions of the Lemma, and has fewer than <m>m</m> edges. By induction this is a <m>\cP</m>-position with Left's turn to play.
+
+			</p>
+			</li>
+		</ul>
+We have now shown that Right can respond to any move of Left, putting the game into a <m>\cP</m>-position. Therefore the original position <m>[G_y:T_1] \oplus [G_y:T_2]</m> is a <m>\cP</m>-position. This completes the proof of the Tuft Principle.
+</p>
+</proof>
+</p>
+<p>
+
+Finally we summarize why the Tuft Principle enables us to find the Sprague-Grundy value of any tree. 
+Starting from the leaves of the tree, we work our way towards the root. 
+Every time we encounter a vertex of degree 3 or larger, we have found a tuft. 
+We apply the Tuft Principle to replace that tuft with a path of the appropriate length. 
+This operation preserves the Sprague-Grundy value of the tree.  
+</p>
+<p>
+
+We continue this process until we are left with a rooted path (otherwise known as a bamboo stalk). The Sprague Grundy value of a bamboo stalk is equal to its height. Therefore, the height of the resulting path is the Sprague-Grundy value of the original tree.
+
+			</p><p>
+
+
+
+			<figure xml:id="fig-big-tuft-example">
+
+
+				<caption>Each tree is obtained from the previous one via the Tuft Principle. Each of the trees has Sprague-Grundy value of 4.</caption>
+
+
+				
+				
+			<image width="90%" xml:id="fig-img-big-tuft-example">
+				<latex-image>
+\begin{tikzpicture}[scale=.6] %mathbook width=90%
+
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.5,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (0, \i) circle (3pt);
+}
+
+\draw[thick] (0,0) -- (0,4);
+
+\draw[fill] (-.8, 1.6) circle (3pt);
+\draw[fill] (.8, 2.6) circle (3pt);
+\draw[fill] (1.6, 3.2) circle (3pt);
+
+\draw[thick] (0,1) -- (-.8,1.6);
+\draw[thick] (0,2) -- (1.6,3.2);
+
+\draw[fill] (-.8, 1.6) circle (3pt);
+\draw[fill] (.8, 2.6) circle (3pt);
+\draw[fill] (1.6, 3.2) circle (3pt);
+
+\draw[fill] (.8, 3.6) circle (3pt);
+\draw[fill] (1.6, 4.2) circle (3pt);
+
+\draw[thick] (-1.6, 4.2) -- (0,3) -- (1.6,4.2);
+
+\draw[fill] (-.8, 3.6) circle (3pt);
+\draw[fill] (-1.6, 4.2) circle (3pt);
+
+\draw[fill] (-1, 4.5) circle (3pt);
+
+\draw[thick] (-.8, 3.6) -- (-1, 4.5);
+
+
+\end{scope}
+
+\begin{scope}[shift={(5,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.5,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (0, \i) circle (3pt);
+}
+
+\draw[thick] (0,0) -- (0,4);
+
+\draw[fill] (-.8, 1.6) circle (3pt);
+\draw[fill] (.8, 2.6) circle (3pt);
+\draw[fill] (1.6, 3.2) circle (3pt);
+
+\draw[thick] (0,1) -- (-.8,1.6);
+\draw[thick] (0,2) -- (1.6,3.2);
+
+\draw[fill] (-.8, 1.6) circle (3pt);
+\draw[fill] (.8, 2.6) circle (3pt);
+\draw[fill] (1.6, 3.2) circle (3pt);
+
+\draw[fill] (.8, 3.6) circle (3pt);
+\draw[fill] (1.6, 4.2) circle (3pt);
+
+\draw[thick] (-.8, 3.6) -- (0,3) -- (1.6,4.2);
+
+\draw[fill] (-.8, 3.6) circle (3pt);
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.5,0);
+
+\foreach \i in {0,1,2,3,4,5}
+{
+\draw[fill] (0, \i) circle (3pt);
+}
+
+\draw[thick] (0,0) -- (0,5);
+
+\draw[fill] (-.8, 1.6) circle (3pt);
+\draw[fill] (.8, 2.6) circle (3pt);
+\draw[fill] (1.6, 3.2) circle (3pt);
+
+\draw[thick] (0,1) -- (-.8,1.6);
+\draw[thick] (0,2) -- (1.6,3.2);
+
+\draw[fill] (-.8, 1.6) circle (3pt);
+\draw[fill] (.8, 2.6) circle (3pt);
+\draw[fill] (1.6, 3.2) circle (3pt);
+
+\end{scope}
+
+\begin{scope}[shift={(15,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.5,0);
+
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (0, \i) circle (3pt);
+}
+
+\draw[thick] (0,0) -- (0,3);
+
+\draw[fill] (-.8, 1.6) circle (3pt);
+
+
+\draw[thick] (0,1) -- (-.8,1.6);
+
+\draw[fill] (-.8, 1.6) circle (3pt);
+
+\end{scope}
+
+\begin{scope}[shift={(20,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.5,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (0, \i) circle (3pt);
+}
+
+\draw[thick] (0,0) -- (0,4);
+
+
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+</figure>
+
+
+</p>
+<p>
+<xref ref="fig-big-tuft-example" /> shows a complicated example. 
+The original tree has 4 vertices of degree 3 or more, so it takes 4 applications 
+of the Tuft Principle to find the Sprague-Grundy value.
+
+</p>
+<p>
+So we've solved the game of Lumberjack, just as we solved the game of Nim. 
+After calculating the Sprague-Grundy value, we know if we are in a winning <m>\cN</m>-position, 
+or a losing <m>\cP</m>-position. When the Sprague-Grundy value is positive, then a winning move 
+is to create a position with a Sprague-Grundy value of zero.
+
+</p>
+</section>

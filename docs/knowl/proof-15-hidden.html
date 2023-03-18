@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>The proof of  <a class="xref" data-knowl="./knowl/thm-fusion.html" title="Theorem 4.4.3">Theorem 4.4.3</a> is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">tour de force</em> of combinatorial game theory. It pulls together all the great themes we have seen up to now. It also requires some new and insightful tools of its own. The overall theme of the proof is a methodical proof by contradiction.  In particular, we slowly  characterize the structure of a smallest counterexample (also known as a "minimal criminal") and show that no such graph exists.</p>
+<p>This sophisticated proof is beyond the level of an introductory textbook. Therefore, we break the proof into two pieces. We lay out the flow of the proof via a series of claims (and then prove these claims later on). This way you can appreciate the overall argument, without getting lost in the details.</p>
+<p>The proof methodically places constraints on the structure of the minimal criminal. Eventually, we show that all of these constraints lead to a position that <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">does</em> obey the Fusion Principle. Therefore, there is no minimal criminal, which means that every graph obeys the Fusion Principle.</p>
+<p>The Fusion Principle says that we can fuse together some (or all) the vertices in a cycle without changing the Sprague-Grundy value. Let \(\mathcal{A}\) be the set of all counterexamples to the Fusion Principle.  Assume for the sake of contradiction that the Fusion Principle is false. This means that \(\mathcal{A} \neq 0\text{.}\) Each graph in \(\mathcal{A}\) contains a particular cycle \(C\) such that if you fuse this cycle, the Sprague-Grundy value changes.</p>
+<p>We will restrict ourselves to the subset \(\mathcal{B} \subset \mathcal{A}\) of  <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">minimal counterexamples</em> of the Fusion Principle. In other words, if we fuse <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">any</em> cycle in \(G \in \mathcal{B}\text{,}\) then the Sprague-Grundy value changes. Finally, we choose a graph \(G \in \mathcal{B}\) of smallest size: we choose \(G\) so that   the sum of the number of vertices and edges in \(G\) achieves the smallest such value among graphs in \(\mathcal{B}\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|V(G)| + |E(G)| = \min_{H \in \mathcal{B}} \big( |V(H)| + |E(H)| \big).
+\end{equation*}
+</div>
+<p class="continuation">Choosing this "minimal criminal" \(G\) will be crucial in our proof. Let \(n=|V(G)|\) and \(m=|E(G)|\text{.}\) We prove the following statements, in order.</p>
+<ol class="decimal">
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Claim 1:</em> \(G\) has a unique root vertex.</p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Claim 2:</em> \(G\) does not contain any vertices \(x,y\) connected by 3 (or more) edge-disjoint paths.</p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Claim 3:</em> Every cycle of \(G\) must include the unique root vertex.</p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Claim 4:</em> \(G\) contains exactly one cycle through the root vertex.</p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Claim 5:</em> \(G\) must look like the graph shown in  <a class="xref" data-knowl="./knowl/fig-minimal.html" title="Figure 4.5.3">Figure 4.5.3</a>. This graph consists of a single cycle that includes the ground, along with a number of paths branching off of this cycle.</p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Claim 6:</em> All graphs of the type shown in  <a class="xref" data-knowl="./knowl/fig-minimal.html" title="Figure 4.5.3">Figure 4.5.3</a> obey the Fusion Principle!</p></li>
+</ol>
+<p class="continuation"><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/minimal-criminal2.png" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.3<span class="period">.</span></span><span class="space"> </span>The minimal criminal that does not obey the Fusion Principle must look like this graph. But  graphs of this type  <em class="emphasis">do obey</em>  the Fusion Principle! So there are no counterexamples.</figcaption></figure></p>
+<p>Of course, Claim 6 brings us to our contradiction: our (supposed) minimal criminal actually obeys the Fusion Principle. This means that the minimal criminal does not exist, so the set \(\mathcal{A}\) of counterexamples is empty. Therefore the Fusion Principle holds for all graphs.</p></article></body>
+</html>

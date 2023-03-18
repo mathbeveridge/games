@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>We think of this graph as a cycle \(C\) along with a set of dangling paths, which we call <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">strings</dfn>. Assume for the sake of contradiction that such a graph does not obey the Fusion Principle. In other words: fusing the cycle \(C\) changes the Sprague-Grundy value. There are two cases, depending on the parity of the cycle length. Let the strings of \(G\) have lengths \(n_1, n_2, \ldots, n_k\text{.}\)</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/criminal-even.png" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.11<span class="period">.</span></span><span class="space"> </span>A minimal criminal with an even cycle, along with copies of its strings.</figcaption></figure></p>
+<p>Suppose that \(C\) contains an even number of edges. Consider the sum of games consisting of \(G\) along with a copy of all of the strings, as shown in  <a class="xref" data-knowl="./knowl/fig-fusion-even.html" title="Figure 4.5.11">Figure 4.5.11</a>. We prove that Right has a winning strategy from this position (so it is a \(\cP\)-position). If Left hacks a path edge, Right responds by hacking the analogous edge in the other graph. Left must be the first player to hack an edge in the cycle. This creates a Lumberjack position with an odd number of edges. This position has an odd (and hence nonzero) Sprague-Grundy value by the Parity Principle, <a class="xref" data-knowl="./knowl/thm-parity.html" title="Theorem 4.5.1">Theorem 4.5.1</a>. So Right has a winning strategy from this point forward.</p>
+<p>The above argument shows that the position in  <a class="xref" data-knowl="./knowl/fig-fusion-even.html" title="Figure 4.5.11">Figure 4.5.11</a> is a \(\cP\)-position with Sprague-Grundy value 0. Therefore the Sprague-Grundy value of \(G\) equals</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+n_1 \oplus n_2 \oplus \cdots \oplus n_k.
+\end{equation*}
+</div>
+<p class="continuation">But this means that the Fusion Principle holds for \(G\text{:}\) fusing the cycle \(C\) results in an even number of loops at ground level. These loops cancel one another out, so the Sprague-Grundy value is just the nim sum of the lengths of the strings. In summary, \(G\) is not our minimal criminal.</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/criminal-odd.png" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.12<span class="period">.</span></span><span class="space"> </span>A minimal criminal with an odd cycle, along with copies of its strings, and an extra path of length 1. This green hackenbush position has Sprague-Grundy value 0.</figcaption></figure></p>
+<p>Finally, we rule out the last suspected minimal criminal. This argument gets quite technical, and requires some new ingenuity. Therefore, we only sketch the final steps of this proof. Suppose that \(C\) contains an odd number of edges.  This time, we need a more intricate argument. As in the previous case, we consider position \(H\)  consisting of \(G\) and copies of each of the strings the cycle of \(G\text{,}\) as shown in  <a class="xref" data-knowl="./knowl/fig-fusion-odd.html" title="Figure 4.5.12">Figure 4.5.12</a>. If we can show that \(g(H)=1\text{,}\) then this means that the Fusion Principle holds for \(G\text{,}\) since fusing the cycle creates an odd number of paths of height 1.</p>
+<p>We will prove that \(g(H)=1\) by showing that</p>
+<ol class="decimal">
+<li><p>No follower of this position has value 1.</p></li>
+<li><p>There is a follower of value 0</p></li>
+</ol>
+<p class="continuation">The first statement is straight forward to prove. Hacking the cycle leads to a Lumberjack position with an even number of edges. By the Parity Principle, the Sprague-Grundy value of this position is even, so clearly it cannot be equal to 1. If Left hacks a path edge to obtain position \(G'\text{,}\) then Right responds by hacking the analogous path edge in the other part of the graph to obtain \(G"\text{.}\) The graph \(G"\) has fewer edges than \(G\text{,}\) so the Fusion Principle applies to \(G"\) and its Sprague-Grundy value is 1. This means that \(\g(G') \neq 1\) since its follower \(G"\) has \(\g(G")=1\text{.}\)</p>
+<p>Proving that \(G\) has a follower with value 0 is more challenging. It turns out that there is an edge we can hack in the cycle to reach a follower with value 0. We describe how to find such an edge.</p>
+<p>Starting clockwise from the root vertex, label each edge with \(\alpha\) or \(\beta\text{,}\) giving adjacent edges the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">same</em> label if there is an <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">odd</em> length string between them, and <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">different</em> labels if there is an <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">even</em> length string. There are an odd number of edges in \(C\text{,}\) so one label occurs an odd number of times, and the other label occurs an even number of times. For simplicity, we assume that label \(\alpha\) appears an even number of times and that label \(\beta\) appears an odd number of times. It turns out that there exists  a \(\beta\)-edge such that hacking this edge results in a position with value 0.</p>
+<p>To find this good \(\beta\)-edge, we reduce the graph by picking any edge \(e\) labeled by \(\alpha\) and shrinking it to a single vertex. We replace the two strings from the endpoints of \(e\) by a single string whose length is their nim sum.  Next, we halve all of the string lengths of this component (rounding down if this length is odd). Call this resulting graph \(G'\text{.}\) It can be shown that \(\g(G') = \frac{1}{2} \g(G)\text{.}\)</p>
+<p>Repeat this process on the graph \(G'\text{:}\) label the edges by \(\alpha'\) and \(\beta'\text{,}\) then contract an edge from the even-sized set of labeled edges and half the sizes of the strings. Continue this process (creating \(G", G"'\text{,}\) etc) until one of the sets of labeled edges contains exactly one edge \(f\) (this must happen eventually). This edge \(f\) is the one that we are looking for: removing the edge \(f\) from the original position results in a composite position with value 0. \(\Box\)</p></article><span class="incontext"><a href="hack-fusion.html#proof-21">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+\subsection{Exercises}
+
+	<exercises>
+		<title>Exercise</title>
+		<exercise>
+			<statement>
+				<p>
+ Prove that Nim and Bamboo Stalks are equivalent games by explaining how to turn one game into the other. More specifically, explain why a bamboo stalk of height <m>n</m> is equivalent to the nim heap <m>*n</m>.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Determine whether each of the following Bamboo Stalk positions is an \Npos~or a \Ppos. If it is an \Npos, list all of the winning moves.
+
+			</p><p>
+
+
+			<image width="90%" xml:id="fig-img-hack-exercise0">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=90%
+
+
+\begin{scope}
+
+\node at (-1,2) {(a)};
+
+\draw[dashed] (0,0) -- (5,0);
+
+\foreach \i in {0,1,2,3,4,5}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0) -- (1,5);
+
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0) -- (2,3);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0) -- (3,2);
+
+\foreach \i in {0,1,2,3,4,5,6}
+{
+\draw[fill] (4,\i) circle (3pt);
+}
+\draw[thick] (4,0) -- (4,6);
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+\node at (-1,2) {(b)};
+
+\draw[dashed] (0,0) -- (5,0);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0) -- (1,1);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0) -- (2,4);
+
+\foreach \i in {0,1,2,3,4,5}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0) -- (3,5);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (4,\i) circle (3pt);
+}
+\draw[thick] (4,0) -- (4,2);
+
+\end{scope}
+
+
+\begin{scope}[shift={(20,0)}]
+
+\node at (-1,2) {(c)};
+
+\draw[dashed] (0,0) -- (5,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0) -- (1,4);
+
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0) -- (2,3);
+
+
+
+\foreach \i in {0,1,2,3,4,5}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0) -- (3,5);
+
+\foreach \i in {0,1,2,3,4,5,6,7}
+{
+\draw[fill] (4,\i) circle (3pt);
+}
+\draw[thick] (4,0) -- (4,7);
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Equation \eqref{eqn:lumberjack}  shows that the Sprague-Grundy value of the Lumberjack position in Figure \ref{fig:lumberjack} is <m>\g(G_1 \oplus G_2 \oplus G_3) =2</m>.  There is a winning move for  <m>G_1 \oplus G_2 \oplus G_3</m> in <m>G-1</m> and three winning moves for <m>G_1 \oplus G_2 \oplus G_3</m> in <m>G_2</m>. Find all of these  winning moves.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Give an example of a Lumberjack position <m>G</m> that has a follower <m>G'</m> with <m>\g(G') &lt; \g(G)</m>.
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Find the Sprague-Grundy value of each of these Lumberjack trees.
+
+			<ol>
+
+				<li>
+					<p>
+ This tree:
+
+			<image width="30%" xml:id="fig-img-hack-exercise1" source="hack/tree1.png" />
+
+					</p>
+				</li>
+				<li>
+					<p>
+ This other tree:
+
+			<image width="30%" xml:id="fig-img-hack-exercise2" source="hack/tree2.png" />
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Show that the following Lumberjack forest is an \Npos. For each of the three trees, find a winning move, or explain why no such move exists.
+
+			<image width="50%" xml:id="fig-img-hack-exercise3" source="hack/forest.png" />
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ This exercise guides you through the proof of Lemma \ref{lemma-loop}. Let <m>G</m> be a multigraph rooted at vertex <m>x</m> with a loop edge  <m>e</m> incident with vertex <m>y</m>. Let <m>H</m> be the multigraph obtained by replacing this loop by a twig edge <m>f</m> from <m>y</m> to a new vertex <m>z</m>. You will show that the Green Hackenbush game position <m>G \oplus H</m> satisfies <m>\g(G \oplus H) = 0</m>.
+
+
+
+			<image width="50%" xml:id="fig-img-hack-exercise4">
+				<latex-image>
+\begin{tikzpicture}[scale=.8]
+
+
+\draw[dashed] (-2,0) -- (8,0);
+
+\foreach \i in {0,5}
+{
+
+\begin{scope}[shift={(\i,0)}]
+
+
+
+\draw (0,1.3) ellipse (.8 and 1.5);
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (.7, 2) circle (3pt);
+
+
+
+
+\node at (.2,.4) {<m>x</m>};
+\node at (.3,1.7) {<m>y</m>};
+
+
+\end{scope}
+}
+
+\draw[thick] (.95, 2.15) circle (.25);
+
+\node at (1.45,2.15) {<m>e</m>};
+
+\draw[thick] (5.7, 2) -- (6.4, 2.2);
+\draw[fill] (6.4, 2.2) circle (3pt);
+
+\node at (6.05,2.5) {<m>f</m>};
+
+\node at (0,-.75) {<m>G</m>};
+
+\node at (5,-.75) {<m>H</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+			<ol>
+				<li>
+					<p>
+ Suppose that Left hacks the loop <m>e</m> in <m>G</m>. What should Right do? How do you know that this results in a \Ppos?
+					</p>
+				</li>
+				<li>
+					<p>
+ Suppose that Left hacks  an edge in <m>G</m> that disconnects the loop <m>e</m> from the root of <m>G</m>. What should Right do?
+					</p>
+				</li>
+				<li>
+					<p>
+ Use induction on the number of edges <m>m</m> in <m>G</m> to prove that if Left hacks an edge in <m>G</m> that does not disconnect the loop <m>e</m> from the root, then Right has a move in <m>H</m> to create a \Ppos. Your base case is <m>m=0</m>, in which <m>G</m> consists of a single root vertex <m>x</m> with no edges. (This means that for the base case, we have <m>y=x</m> since this is the only vertex in <m>G</m>.)
+					</p>
+				</li>
+				<li>
+					<p>
+ What if Left makes his first move in <m>H</m> instead of in <m>G</m>?
+					</p>
+				</li>
+				<li>
+					<p>
+ Explain why <m>\g(G \oplus H) = 0</m> means that <m>\g(G) = \g(H)</m>.
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ In this problem, we confirm that there are no winning moves in Figure \ref{fig-hack-example} that hack an edge in either the evergreen <m>G_1</m> or the snowman <m>G_3</m>
+
+			<ol>
+				<li>
+					<p>
+ List the followers of the evergreen <m>G_1</m>, and find their Sprague-Grundy values using the Tuft, Loop and Fusion Principles.
+					</p>
+				</li>
+				<li>
+					<p>
+ List the followers of <m>G_3</m>, and find their Sprague-Grundy values using the Tuft, Loop and Fusion Principles.
+					</p>
+				</li>
+				<li>
+					<p>
+ The Sprague-Grundy value of the wintery position of Figure \ref{fig:hack-example} is
+<m>\g(G) = \g(G_1) \oplus \g(G_2) \oplus \g(G_3) = 2 \oplus 5 \oplus 1 = 6.</m> Explain why your answers to parts (a) and (b) show that the winning move for <m>G</m> must involving hacking an edge in the reindeer <m>G_2</m>.
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Determine the Sprague-Grundy value of each of the following sporty Green Hackenbush pictures.
+
+			<ol>
+
+				<li>
+					<p>
+ This quarterback:
+
+			<image width="40%" xml:id="fig-img-hack-exercise5" source="hack/football.png" />
+
+					</p>
+				</li>
+				<li>
+					<p>
+  This fisher:
+
+			<image width="40%" xml:id="fig-img-hack-exercise6" source="hack/fishing.png" />
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Determine the Sprague-Grundy value of each of the following speedy Green Hackenbush pictures.
+
+
+			<ol>
+
+				<li>
+					<p>
+ This biker:
+
+			<image width="40%" xml:id="fig-img-hack-exercise7" source="hack/biking.png" />
+
+					</p>
+				</li>
+				<li>
+					<p>
+ This horse and rider:
+
+			<image width="40%" xml:id="fig-img-hack-exercise8" source="hack/riding.png" />
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Consider the following Green Hackenbush volleyball game.
+
+			<image width="100%" xml:id="fig-img-hack-exercise9" source="hack/volleyball.png" />
+
+			<ol>
+				<li>
+					<p>
+ Find its Sprague-Grundy value.
+					</p>
+				</li>
+				<li>
+					<p>
+ Find all of the winning moves for Left.
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ In this problem, you will prove the Parity Principle of Theorem \ref{thm-parity}:
+the Sprague-Grundy value of any Lumberjack position has the same parity as the total number of edges.
+
+The key idea behind this proof is the following simple observation:
+<me>
+\begin{array}{rcccl}
+\mbox{even} + \mbox{even} &amp;=&amp; \mbox{odd} + \mbox{odd} &amp;=&amp; \mbox{even} \\
+\mbox{even} + \mbox{odd} &amp;=&amp; \mbox{odd} + \mbox{even} &amp;=&amp; \mbox{odd} \\
+\\
+\mbox{even} \oplus \mbox{even} &amp;=&amp; \mbox{odd} \oplus \mbox{odd} &amp;=&amp; \mbox{even} \\
+\mbox{even} \oplus \mbox{odd} &amp;=&amp; \mbox{odd} \oplus \mbox{even} &amp;=&amp; \mbox{odd} \\
+\end{array}
+</me>
+
+
+			<ol>
+				<li>
+					<p>
+ Prove that the Parity Principle holds for <m>k</m>-tufts.
+					</p>
+				</li>
+				<li>
+					<p>
+ Let <m>G</m> be a tree, and let <m>m</m> be the number vertices of degree greater than 2. Use induction on <m>m</m> to prove that the Parity Principle holds for <m>G</m>. You will need to use part (a) during your inductive step.
+					</p>
+				</li>
+				<li>
+					<p>
+ Use part (b) to prove that if <m>H</m> is a forest, then the Parity Principle holds.
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Find the Sprague-Grundy value of this classic movie scene. Then find all of the winning moves.
+
+			<image width="100%" xml:id="fig-img-hack-exercise10" source="img/oz-gang.png" />
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Prove that the Parity Principle also holds for Green Hackenbush.
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ The Tuft Principle (Theorem \ref{thm:tuft}) says that we can replace a tuft consisting of paths <m>B_1, B_2, \ldots, B_k</m> with a single path of length <m>B_1 \oplus B_2 \oplus \cdots B_k</m>. Using the proof of Theorem \ref{thm:tuft} as a guide, prove the following <term>Branch Principle</term>:
+
+		<ul>
+\item
+<em>Branch Principle:</em> Let <m>G</m> be a tree rooted at <m>x</m> and let <m>y</m> be a leaf of <m>G</m>. Let <m>H_1</m> be tree rooted at <m>z</m> with <m>g(H_1)=\ell</m>, and let <m>H_2</m> be a bamboo stalk of height <m>\ell</m>. Then
+<me>
+g([G_y:H_1]) = g([G_y:H_2]).
+</me>
+			</p>
+			</li>
+		</ul>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Consider the following family of graphs
+
+			<image width="50%" xml:id="fig-img-hack-exercise11">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=50%
+
+
+\begin{scope}
+
+\foreach \x in {0,1,2}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[thick] (0,\y) -- (1,\y);
+}
+
+\draw[thick] (0,0) -- (0,2);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+
+\node at (0, -.5) <em>riptsize <m>G_1</m></em>;
+
+\end{scope}
+
+\begin{scope}[shift={(3,0)}]
+
+\foreach \x in {0,1,2,3}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+
+\foreach \y in {1,2}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[thick] (0,\y) -- (1,\y);
+}
+
+\draw[thick] (0,0) -- (0,3);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>G_2</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(6,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[thick] (0,\y) -- (1,\y);
+}
+
+\draw[thick] (0,0) -- (0,4);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>G_3</m></em>;
+\end{scope}
+
+
+\begin{scope}[shift={(9,0)}]
+
+\foreach \x in {0,1,2,3,4,5}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[thick] (0,\y) -- (1,\y);
+}
+
+\draw[thick] (0,0) -- (0,5);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>G_4</m></em>;
+\end{scope}
+
+\draw[fill] (11.5,2.5) circle (2pt);
+\draw[fill] (12,2.5) circle (2pt);
+\draw[fill] (12.5,2.5) circle (2pt);
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+Calculate the Sprague-Grundy values for the first four trees in this family. Make a conjecture about the Sprague-Grundy value <m>g(G_k)</m> and then use the Branch Principle to prove that your answer is correct.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Consider the following family of graphs
+
+			<image width="50%" xml:id="fig-img-hack-exercise12">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=50%
+
+
+\begin{scope}
+
+\foreach \x in {0,1}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[thick] (0,\y) -- (1,\y);
+}
+
+\draw[thick] (0,0) -- (0,1);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+
+\node at (0, -.5) <em>riptsize <m>H_1</m></em>;
+
+\end{scope}
+
+\begin{scope}[shift={(3,0)}]
+
+\foreach \x in {0,1,2}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+
+\foreach \y in {1,2}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[thick] (0,\y) -- (1,\y);
+}
+
+\draw[thick] (0,0) -- (0,2);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_2</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(6,0)}]
+
+\foreach \x in {0,1,2,3}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[thick] (0,\y) -- (1,\y);
+}
+
+\draw[thick] (0,0) -- (0,3);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_3</m></em>;
+\end{scope}
+
+
+\begin{scope}[shift={(9,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[thick] (0,\y) -- (1,\y);
+}
+
+\draw[thick] (0,0) -- (0,4);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_4</m></em>;
+\end{scope}
+
+\draw[fill] (11.5,2.5) circle (2pt);
+\draw[fill] (12,2.5) circle (2pt);
+\draw[fill] (12.5,2.5) circle (2pt);
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+Calculate the Sprague-Grundy values for the first four trees in this family. Make a conjecture about the Sprague-Grundy value <m>g(G_k)</m> and then use induction and the Branch Principle to prove that your answer is correct.
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Consider the following family of graphs
+
+			<image width="90%" xml:id="fig-img-hack-exercise13">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=90%
+
+
+\begin{scope}
+
+\foreach \x in {0,1}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,1);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+
+\node at (0, -.5) <em>riptsize <m>H_1</m></em>;
+
+\end{scope}
+
+\begin{scope}[shift={(3,0)}]
+
+\foreach \x in {0,1,2}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+
+\foreach \y in {1,2}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+
+}
+
+\draw[thick] (0,0) -- (0,2);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_2</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(6,0)}]
+
+\foreach \x in {0,1,2,3}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,3);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_3</m></em>;
+\end{scope}
+
+
+\begin{scope}[shift={(9,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,4);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_4</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(12,0)}]
+
+\foreach \x in {0,1,2,3,4,5}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4,5}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,5);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_5</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(15,0)}]
+
+\foreach \x in {0,1,2,3,4,5,6}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4,5,6}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,6);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_6</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(18,0)}]
+
+\foreach \x in {0,1,2,3,4,5,6,7}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4,5,6,7}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,7);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_7</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(21,0)}]
+
+\foreach \x in {0,1,2,3,4,5,6,7,8}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4,5,6,7,8}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,8);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_8</m></em>;
+\end{scope}
+
+\draw[fill] (24,2.5) circle (2pt);
+\draw[fill] (24.5,2.5) circle (2pt);
+\draw[fill] (25,2.5) circle (2pt);
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+Calculate the Sprague-Grundy values for the first eight trees in this family. Make a conjecture about the Sprague-Grundy value <m>g(G_k)</m> and then use induction and the Branch Principle to prove that your answer is correct.
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Consider the following family of graphs
+
+			<image width="90%" xml:id="fig-img-hack-exercise14">
+				<latex-image>
+\begin{tikzpicture}[scale=.5]  %mathbook width=90%
+
+
+\begin{scope}
+
+\foreach \x in {0,1,2}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,2);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+
+\node at (0, -.5) <em>riptsize <m>H_1</m></em>;
+
+\end{scope}
+
+\begin{scope}[shift={(3,0)}]
+
+\foreach \x in {0,1,2,3}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+
+\foreach \y in {1,2}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+
+}
+
+\draw[thick] (0,0) -- (0,3);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_2</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(6,0)}]
+
+\foreach \x in {0,1,2,3,4}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,4);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_3</m></em>;
+\end{scope}
+
+
+\begin{scope}[shift={(9,0)}]
+
+\foreach \x in {0,1,2,3,4,5}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,5);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_4</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(12,0)}]
+
+\foreach \x in {0,1,2,3,4,5,6}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4,5}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,6);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_5</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(15,0)}]
+
+\foreach \x in {0,1,2,3,4,5,6,7}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4,5,6}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,7);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_6</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(18,0)}]
+
+\foreach \x in {0,1,2,3,4,5,6,7,8}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4,5,6,7}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,8);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_7</m></em>;
+\end{scope}
+
+\begin{scope}[shift={(21,0)}]
+
+\foreach \x in {0,1,2,3,4,5,6,7,8,9}
+{
+\draw[fill] (0,\x) circle (3pt);
+}
+
+\foreach \y in {1,2,3,4,5,6,7,8}
+{
+\draw[fill] (1,\y) circle (3pt);
+\draw[fill] (2,\y) circle (3pt);
+\draw[thick] (0,\y) -- (2,\y);
+}
+
+\draw[thick] (0,0) -- (0,9);
+\draw[dashed,thick] (-.75,0) -- (.75,0);
+\node at (0, -.5) <em>riptsize <m>H_8</m></em>;
+\end{scope}
+
+\draw[fill] (24,2.5) circle (2pt);
+\draw[fill] (24.5,2.5) circle (2pt);
+\draw[fill] (25,2.5) circle (2pt);
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+Calculate the Sprague-Grundy values for the first eight trees in this family. Make a conjecture about the Sprague-Grundy value <m>g(G_k)</m> and then use induction and the Branch Principle to prove that your answer is correct.
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Recall that an even cycle is a cycle with an even number of edges, and an odd cycle is a cycle with an odd number of edges. In Green Hackenbush, show that we can simply our fusion process as follows.
+		<ul>
+			<li>
+			<p>
+ An even cycle can be replaced by a single fused vertex.
+			</p>
+			</li>
+			<li>
+			<p>
+ An odd cycle can be replaced by a single fused vertex with one leaf attached to it.
+			</p>
+			</li>
+		</ul>
+Proving these two statements requires that you combine three principles. You must mention them all, in order.
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+</chapter>

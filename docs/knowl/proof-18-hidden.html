@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Assume for the sake of contradiction that \(G\) contains a cycle \(C\) that does not include the unique root vertex \(x\text{.}\)</p>
+<p>Let \(P_1\) be a path from \(x\) to \(y \in V(C)\) that does not contain any other vertex of \(C\text{.}\) We claim that <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">every</em> path from \(x\) to \(C\) goes through \(y\text{.}\) Suppose this is not the case.  Let \(P_2\) be a path from \(x\) to another vertex \(z \in V(C)\) that does not contain any other vertex of \(C\text{.}\) The walk \(P_1 \cup P_2\) contains a \((y,z)\) path that is edge disjoint from the cycle \(C\text{.}\) Meanwhile, the cycle \(C\) contains two more edge disjoint \((y,z)\) paths (by traversing \(C\) from \(y\) to \(z\) clockwise and counterclockwise, respectively). This contradicts Claim 2. So every path from \(x\) to \(C\) goes through a single vertex \(y\text{.}\) The vertex \(y\) is called a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">cutpoint</dfn> since its removal disconnects the graph.</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-claim3.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.7<span class="period">.</span></span><span class="space"> </span>Splitting the graph \(G\) into subgraphs \(H\) and \(K\) at the cutpoint \(y\text{.}\)</figcaption></figure></p>
+<p>We can now split the graph \(G\) into two subgraphs \(H, K\) at vertex \(y\text{,}\) as shown in  <a class="xref" data-knowl="./knowl/fig-claim3.html" title="Figure 4.5.7">Figure 4.5.7</a>. The subgraph \(K\) contains the cycle \(C\text{,}\) and \(K\) contains strictly fewer vertices than \(G\text{.}\) Therefore, the fusion principle applies to \(K\text{.}\) Let \(K'\) be the graph obtained by fusing all of the vertices of \(C\) into one vertex. We have \(\g(K) = \g(K')\) and therefore</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(G) = \g\left([H_y : K] \right) = \g \left([H_y : K'] \right)
+\end{equation*}
+</div>
+<p class="continuation">by the Colon Principle,  <a class="xref" data-knowl="./knowl/thm-colon.html" title="Theorem 4.5.2: The Colon Principle">Theorem 4.5.2</a>. The resulting graph \([H_y : K']\) has fewer vertices than \(G\text{,}\) so the Fusion Principle applies to \([H_y : K']\text{.}\) But this means that the Fusion Principle also applies to \(G\text{,}\) a contradiction. Therefore, every cycle in our minimal criminal \(G\) must go through the root vertex \(x\text{.}\) \(\Box\)</p></article></body>
+</html>

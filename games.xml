@@ -82,6 +82,15 @@ pull the name of the problem from the first line  of  the \item
             <xi:include href="./sec35-sg-sumgames.xml" />   
             <xi:include href="./sec36-sg-exercise.xml" />     
         </chapter> 
+        <chapter xml:id="ch-hack" xmlns:xi="http://www.w3.org/2001/XInclude">
+            <title>Green Hackenbush</title>
+            <xi:include href="./sec41-bamboo.xml" />   
+            <xi:include href="./sec42-lumberjack.xml" />  
+            <xi:include href="./sec43-tuft.xml" />   
+            <xi:include href="./sec44-hackenbush.xml" /> 
+            <xi:include href="./sec45-fusion.xml" /> 
+            <xi:include href="./sec46-exercise.xml" /> 
+        </chapter>         
     </part>
  
 

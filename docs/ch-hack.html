@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Games: Green Hackenbush</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+
+    \definecolor{orange}{RGB}{255, 165,   0}
+    \definecolor{crimson}{RGB}{220,20,60}
+    \definecolor{pink}{RGB}{255,20,147}
+    \definecolor{darkGreen}{RGB}{34,139,34}
+    \definecolor{olive}{RGB}{128,128,0}
+    \definecolor{teal}{RGB}{0,128,128}
+    \definecolor{turquoise}{RGB}{64,224,208}
+    \definecolor{navy}{RGB}{30, 144, 255}
+    \definecolor{purple}{RGB}{128,0,128}
+    \definecolor{indigo}{RGB}{216, 191, 216}
+    \definecolor{maroon}{RGB}{128,0,0}
+    \definecolor{gold}{RGB}{255,215,0}
+    \definecolor{lemon}{RGB}{255, 250, 205}
+    \definecolor{peru}{RGB}{205, 133,  63}
+
+    \definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+    \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+    \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+    \definecolor{tuscanred}{rgb}{0.51, 0.21, 0.21}
+    \definecolor{steelBlue}{rgb}{0.27, 0.51, 0.71}
+    \definecolor{tyrianpurple}{rgb}{0.4, 0.01, 0.24}
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+
+\newcommand{\pile}[1]{\bullet{#1}}
+\newcommand{\ppile}[1]{\bullet({#1})}
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+
+\def\nimsum{\, \oplus \,}
+\def\mex{{\mathrm{mex}}}
+\def\g{g}
+
+\newcommand{\inter}{{\mathrm{int}}}
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="game.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="exercises-3.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="nim.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="hack-bamboo.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="exercises-3.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="nim.html" title="Up">Up</a><a class="next-button button toolbar-item" href="hack-bamboo.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="nim.html" data-scroll="nim"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+<li class="link">
+<a href="ch-games.html" data-scroll="ch-games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="comb-games.html" data-scroll="comb-games">Combinatorial Games</a></li>
+<li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-nim.html" data-scroll="ch-nim"><span class="codenumber">2</span> <span class="title">Nim</span></a><ul>
+<li><a href="sec-nim.html" data-scroll="sec-nim">The Game of Nim</a></li>
+<li><a href="sec-binary.html" data-scroll="sec-binary">Binary Representation of Numbers</a></li>
+<li><a href="sec-nim-win.html" data-scroll="sec-nim-win">Who wins at Nim?</a></li>
+<li><a href="nim-bogus0.html" data-scroll="nim-bogus0">Bogus Nim Heaps</a></li>
+<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-sg.html" data-scroll="ch-sg"><span class="codenumber">3</span> <span class="title">Sprague-Grundy Values</span></a><ul>
+<li><a href="sg-mex.html" data-scroll="sg-mex">Mex</a></li>
+<li><a href="sg-subtract.html" data-scroll="sg-subtract">Subtraction Games</a></li>
+<li><a href="sg-nim.html" data-scroll="sg-nim">Sprague-Grundy Values for Nim</a></li>
+<li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
+<li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
+<li><a href="exercises-3.html" data-scroll="exercises-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link active">
+<a href="ch-hack.html" data-scroll="ch-hack"><span class="codenumber">4</span> <span class="title">Green Hackenbush</span></a><ul>
+<li><a href="hack-bamboo.html" data-scroll="hack-bamboo">Bamboo Stalks</a></li>
+<li><a href="hack-lumberjack.html" data-scroll="hack-lumberjack">Lumberjack</a></li>
+<li><a href="hack-tuft.html" data-scroll="hack-tuft">Proof of the Tuft Principle</a></li>
+<li><a href="hack-green0.html" data-scroll="hack-green0">Green Hackenbush</a></li>
+<li><a href="hack-fusion.html" data-scroll="hack-fusion">Proof of the Fusion Principle</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="ch-hack"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">4</span> <span class="title">Green Hackenbush</span>
+</h2>
+<nav class="summary-links"><ul>
+<li><a href="hack-bamboo.html"><span class="codenumber">4.1</span> <span class="title">Bamboo Stalks</span></a></li>
+<li><a href="hack-lumberjack.html"><span class="codenumber">4.2</span> <span class="title">Lumberjack</span></a></li>
+<li><a href="hack-tuft.html"><span class="codenumber">4.3</span> <span class="title">Proof of the Tuft Principle</span></a></li>
+<li><a href="hack-green0.html"><span class="codenumber">4.4</span> <span class="title">Green Hackenbush</span></a></li>
+<li><a href="hack-fusion.html"><span class="codenumber">4.5</span> <span class="title">Proof of the Fusion Principle</span></a></li>
+<li><a href="nimble-exercise.html"><span class="codenumber">4.6</span> <span class="title">Exercises</span></a></li>
+</ul></nav></section></div></main>
+</div>
+</body>
+</html>

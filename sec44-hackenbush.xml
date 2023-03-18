@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<section xml:id="hack-green0">
+<title>Green Hackenbush</title>
+<p>
+
+In this section, we take the game of Lumberjack to its full generalization: 
+<term>Green Hackenbush</term>.<fn>The "Green" of Green Hackenbush is a reference to 
+	the fact that this is an impartial game. The game called Hackenbush is a partizan game. 
+	Hackenbush is played with Red and Blue edges, and each player can only hack away edges of
+	 her own color. The "Green" edges of Green Hackenbush are available to both players.</fn>
+In this game, we allow any type of rooted <term>multi-graph</term>, not just trees. In other words, our picture now consists of rooted graph components that  are allowed to have  loops and multiple edges.
+
+			</p><p>
+
+A move still consists of hacking away an edge in one of the rooted graphs. When the removal of an edge disconnects part of the graph from the ground, that part of the graph is removed from play.  <xref ref="fig-hack-example" /> shows an example game position of Green Hackenbush with three components.
+
+
+			<figure xml:id="fig-hack-example">
+				<caption>A wintery position <m>G=G_1 \oplus G_2 \oplus G_3</m> in Green Hackenbush.</caption>
+			<image width="80%" xml:id="fig-img-hack-example">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=80%
+
+
+\draw[dashed] (-1.5,0) -- (12.5,0);
+
+
+\node at (0,-.6) {$G_1$};
+
+\draw[thick] (0,0) -- (0,1.5) -- (-1,1.5) -- (0,4.5) -- (1,1.5) -- (0,1.5);
+
+\foreach \dot in { (0,0), (0,.75),(0,1.5), (-1,1.5), (0,4.5), (1,1.5) } {
+\draw[fill] \dot circle (3pt);
+}
+
+
+
+
+\node at (5,-.6) {$G_2$};
+
+\draw[thick] (4,0) -- (3.5,1.5) -- (3,.75) -- (2.25, .75);
+
+\foreach \dot in { (4,0), (3.5,1.5), (3,.75), (2.25, .75) } {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (3, 2) -- (3.5, 1.5);
+\draw (3.5, 1.5) -- (6,1.5);
+\draw (3.5, 1.5) to [bend right=55] (6,1.5);
+\draw[thick] (6, 1.5) -- (5.5, 0);
+
+
+\draw[thick] (6.25, .5) -- (6.75, 1) -- (6, 1.5) -- (6.75, 2.25);
+
+\draw[thick] (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+\foreach \dot in { (3, 2),  (6, 1.5) ,(5.5, 0),  (6.25, .5) ,(6.75, 1) , (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (6.75, 2.25) -- (6.4, 2.75);
+\draw[thick]  (6.2, 3.5) -- (6.4, 2.75);
+\draw[thick]  (5.9, 2.9) -- (6.4, 2.75) -- (6.7, 3.25);
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75), (5.9, 2.9) ,(6.7, 3.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw[thick]  (7.5, 2.5) -- (7.6, 3.25) -- (7.3, 3.75);
+\draw[thick]  (7.6, 3.25) -- (8, 3.75);
+\draw[thick]  (8, 4.3) -- (8, 3.75) -- (8.5, 4.25);
+
+
+\foreach \dot in {(7.6, 3.25), (7.3, 3.75), (8, 4.3), (8, 3.75), (8.5, 4.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick] (7.425, 1.1) circle (4pt);
+
+\node at (11,-.6) {$G_3$};
+
+\draw[thick] (11,.75) circle (.75);
+\draw[thick] (11,2) circle (.5);
+\draw[thick] (11,2.85) circle (.35);
+
+\foreach \dot in {(11,0), (11,1.5), (11,2.5)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+	</figure>
+
+
+
+</p><p>
+
+Just as in Lumberjack, we will find the Sprague-Grundy value of a complicated position (like that in <xref ref="fig-hack-example" />) by replacing it with a series of simpler Green Hackenbush positions. In fact, we can find a forest whose Sprague-Grundy value is identical to the original game. So we can solve Green Hackenbush by turning it into Lumberjack!
+
+			</p><p>
+
+First, we deal with loops. Recall that a <term>loop</term> is an edge that connects a vertex to itself, a <term>leaf</term> is a vertex of degree 1, and a <term>twig</term> is an edge that is incident with a leaf. We can use the elementary <term>Loop Principle</term> to simplify our graph.
+
+</p><lemma xml:id="lemma-loop"><statement>
+<title>Loop Principle</title>
+Let <m>G</m> be a multigraph rooted at vertex <m>x</m> with a loop edge incident with vertex <m>y</m>. Let <m>H</m> be the multigraph obtained by replacing this loop by a twig edge from <m>y</m> to a new vertex <m>z</m>. Then <m>\g(G) = \g(H)</m>.
+</statement></lemma><p>
+
+</p>
+<p>
+<proof>
+<p>
+A graph consisting of a single vertex with a loop has Sprague-Grundy value 1. More generally, it should make sense that replacing a loop by a twig does not change the Sprague-Grundy value of the graph: both represent  a single move. This proof is actually a simpler version of the proof of  <xref ref="thm-tuft" />, the Tuft Principle. An outline of the full proof of the Lemma is found in the exercises.
+</p>
+</proof>
+</p>
+<p>
+
+Next, we deal with cycles. Recall that a <term>cycle</term> is a sequence of successive edges such that (1) no edges repeat and (2) the only repeating vertices are the first and last vertices. In particular, a loop is actually a cycle of length 1. If there are two edges between vertices <m>x</m> and <m>y</m>, then they form a cycle of length 2.
+We can deal with cycles using the marvelous <term>Fusion Principle</term>. You <term>fuse</term> two vertices <m>x,y</m> together by joining them together into a single vertex. Each edge joining <m>x</m> and <m>y</m> is bent into a loop. (And a loop is equivalent to a twig by  <xref ref="lemma:loop" />.)
+
+</p>
+<p>
+<theorem xml:id="thm-fusion">
+<statement>
+<p>
+Let <m>G</m> be a position in a game of Green Hackenbush. Let <m>H</m> be the position obtained by fusing together some (or all) of the vertices in a cycle of length <m>k \geq 2</m> in <m>G</m>. Then <m>\g(G)=\g(H)</m>.
+</p>
+</statement>
+</theorem>
+</p>
+<p>
+
+We delay the proof of the the Fusion Principle until the next section. 
+For now, let's use it to determine the Sprague-Grundy value of the position in 
+ <xref ref="fig-hack-example" />. We deal with this position one component at a time. 
+First, we prune the evergreen component into a bamboo shoot in  
+<xref ref="fig-evergreen" />. This evergreen has a single cycle of length 4.  
+We fuse all of these vertices together,  creating a flower with 4 loops for petals.
+ We then replace these loops with twigs by the Loop Principle. 
+ Finally, we use the Tuft Principle to find that <m>\g(G_1)=2</m>.
+
+
+
+			<figure xml:id="fig-evergreen">
+				<caption>The evergreen <m>G_1</m> has Sprague-Grundy value 2</caption>
+
+			<image width="60%" xml:id="fig-img-evergreen">
+				<latex-image>
+\begin{tikzpicture}[scale=.6] %mathbook width=60%
+
+
+\begin{scope}
+\draw[dashed] (-1.5,0) -- (1.5,0);
+\draw[thick] (0,0) -- (0,1.5) -- (-1,1.5) -- (0,4.5) -- (1,1.5) -- (0,1.5);
+
+\foreach \dot in { (0,0), , (0,.75),(0,1.5), (-1,1.5), (0,4.5), (1,1.5) } {
+\draw[fill] \dot circle (3pt);
+}
+
+\node at (2,1) {$\longrightarrow$};
+
+\end{scope}
+
+\begin{scope}[shift={(4,0)}]
+\draw[dashed] (-1.5,0) -- (1.5,0);
+
+\draw[thick] (0,0) -- (0,1.5) ;
+
+\foreach \dot in { (0,0), , (0,.75),(0,1.5) } {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[rotate around={-45:(.5,1)},thick] (.5,1) ellipse (.7 and .1);
+\draw[rotate around={45:(-.5,1)},thick] (-.5,1) ellipse (.7 and .1);
+\draw[rotate around={45:(.5,2)},thick] (.5,2) ellipse (.7 and .1);
+\draw[rotate around={-45:(-.5,2)},thick] (-.5,2) ellipse (.7 and .1);
+
+\node at (2,1) {$\longrightarrow$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,0)}]
+\draw[dashed] (-1.5,0) -- (1.5,0);
+\draw[thick] (0,0) -- (0,1.5) ;
+
+\foreach \dot in { (0,0),, (0,.75), (0,1.5), (.75,.75), (-.75,.75), (.75, 2.25), (-.75, 2.25) } {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick] (.75, .75) -- (-.75, 2.25);
+\draw[thick] (-.75, .75) -- (.75, 2.25);
+
+\node at (2,1) {$\longrightarrow$};
+
+\end{scope}
+
+\begin{scope}[shift={(12,0)}]
+\draw[dashed] (-1.5,0) -- (1.5,0);
+\draw[thick] (0,0) -- (0,1.5) ;
+
+\foreach \dot in { (0,0), , (0,.75),(0,1.5) } {
+\draw[fill] \dot circle (3pt);
+}
+
+
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+			</figure>
+		</p>
+		<p>
+
+
+Next, we melt the snowman in  <xref ref="fig-snowman" />. This graph has multiple edges, and one loop. We apply the Fusion Principle twice and the Loop Principle five times to get a tuft with 5 twigs. Taking the nim sum of these branches, we find that <m>\g(G_3)=1</m>.
+
+		</p>
+		<p>
+
+			<figure xml:id="fig-snowman">
+				<caption>The snowman <m>G_3</m> also has Sprague-Grundy value 1</caption>
+			<image width="90%" xml:id="fig-img-snowman">
+				<latex-image>
+\begin{tikzpicture}[scale=.7] %mathbook width=90%
+
+
+\begin{scope}
+
+\draw[dashed] (-1.5,0) -- (1.5,0);
+
+\draw[thick] (0,.75) circle (.75);
+\draw[thick] (0,2) circle (.5);
+\draw[thick] (0,2.85) circle (.35);
+
+\foreach \dot in {(0,0), (0,1.5), (0,2.5)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\node at (2,1) {$\longrightarrow$};
+
+\end{scope}
+
+\begin{scope}[shift={(4,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.5,0);
+
+
+\draw[thick] (0,.55) ellipse (.25 and .5);
+\draw[thick] (0,1.4) ellipse (.2 and .35);
+
+\foreach \dot in {(0,0), (0,1.05)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[rotate around={15:(.6,.2)},thick] (.6,.2) ellipse (.6 and .075);
+\draw[rotate around={-15:(-.6,.2)},thick] (-.6,.2) ellipse (.6 and .075);
+
+\node at (2,1) {$\longrightarrow$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.25,0);
+
+
+\draw[thick] (0,.65) ellipse (.075 and .6);
+
+\draw[fill] (0,0) circle (3pt);
+
+
+\draw[rotate around={15:(.6,.2)},thick] (.6,.2) ellipse (.6 and .075);
+\draw[rotate around={-15:(-.6,.2)},thick] (-.6,.2) ellipse (.6 and .075);
+
+\draw[rotate around={50:(.35,.5)},thick] (.35,.5) ellipse (.6 and .075);
+\draw[rotate around={-50:(-.35,.5)},thick] (-.35,.5) ellipse (.6 and .075);
+
+\node at (2,1) {$\longrightarrow$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.25,0);
+
+
+
+
+\draw[fill] (0,0) circle (3pt);
+
+\foreach \dot in {(15:1), (50:1), (90:1), (130:1) ,(165:1) } {
+\draw[fill] \dot circle (3pt);
+\draw[thick] (0,0) -- \dot;
+}
+
+
+
+\node at (2,1) {$\longrightarrow$};
+
+\end{scope}
+
+\begin{scope}[shift={(16,0)}]
+
+\draw[dashed] (-1.5,0) -- (1.25,0);
+
+
+
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (0,1) circle (3pt);
+
+\draw[thick] (0,0) -- (0,1);
+
+
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+			</figure>
+		</p>
+		<p>
+
+
+This brings us to the reindeer, which is obviously more complicated.
+The only new move of note is that we should immediately merge the two grounded hoofs since the ground (dashed line) is really one large vertex. Beyond that, we alternately apply the Tuft, Fusion, and Loop Principles. In  <xref ref="fig-reindeer" />, we immediately replace loops with twigs when we apply the Fusion Principle. Our transformation of the reindeer requires patience, as we alternately fuse vertices and use the Tuft principle to simplify tree-like branches. Ultimately, we find that <m>\g(G_2)=5</m>.
+</p>
+<p>
+
+
+			<figure xml:id="fig-reindeer">
+				<caption>The reindeer <m>G_2</m> has Sprague-Grundy value 5</caption>
+				
+			<image width="80%" xml:id="fig-img-reindeer">
+				<latex-image>
+\begin{tikzpicture}[scale=.6] %mathbook width=80%
+
+\begin{scope}
+
+
+\draw[dashed] (2,0) -- (8,0);
+
+\draw[thick] (4,0) -- (3.5,1.5) -- (3,.75) -- (2.25, .75);
+
+\foreach \dot in { (4,0), (3.5,1.5), (3,.75), (2.25, .75) } {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (3, 2) -- (3.5, 1.5);
+\draw (3.5, 1.5) -- (6,1.5);
+\draw (3.5, 1.5) to [bend right=55] (6,1.5);
+\draw[thick] (6, 1.5) -- (5.5, 0);
+
+
+\draw[thick] (6.25, .5) -- (6.75, 1) -- (6, 1.5) -- (6.75, 2.25);
+
+\draw[thick] (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+\foreach \dot in { (3, 2),  (6, 1.5) ,(5.5, 0),  (6.25, .5) ,(6.75, 1) , (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (6.75, 2.25) -- (6.4, 2.75);
+\draw[thick]  (6.2, 3.5) -- (6.4, 2.75);
+\draw[thick]  (5.9, 2.9) -- (6.4, 2.75) -- (6.7, 3.25);
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75), (5.9, 2.9) ,(6.7, 3.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw[thick]  (7.5, 2.5) -- (7.6, 3.25) -- (7.3, 3.75);
+\draw[thick]  (7.6, 3.25) -- (8, 3.75);
+\draw[thick]  (8, 4.3) -- (8, 3.75) -- (8.5, 4.25);
+
+
+\foreach \dot in {(7.6, 3.25), (7.3, 3.75), (8, 4.3), (8, 3.75), (8.5, 4.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick] (7.425, 1.1) circle (4pt);
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,0)}]
+
+
+\node at (1.5,1) {$\longrightarrow$};
+
+\draw[dashed] (2,0) -- (8,0);
+
+\draw[thick] (4.75,0) -- (3.5,1.5);
+
+\foreach \dot in { (4.75,0), (3.5,1.5) } {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (3, 3) -- (3.5, 1.5);
+\draw (3.5, 1.5) to [bend left=25] (6,1.5);
+\draw (3.5, 1.5) to [bend right=25] (6,1.5);
+\draw[thick] (6, 1.5) -- (4.75, 0);
+
+
+\draw[thick] (6.25, .5) -- (6.75, 1) -- (6, 1.5) -- (6.75, 2.25);
+
+\draw[thick] (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+\foreach \dot in { (3.33, 2), (3.16,2.5), (3,3)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\foreach \dot in {  (6, 1.5) ,  (6.25, .5) ,(6.75, 1) , (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25), (7.55, .65)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (6.75, 2.25) -- (6.4, 2.75);
+\draw[thick]  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw[thick]  (7.5, 2.5) -- (7.6, 3.25) -- (7.3, 3.75);
+\draw[thick]  (7.6, 3.25) -- (8, 3.75);
+
+
+
+\foreach \dot in {(7.6, 3.25), (7.3, 3.75),(8, 3.75)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick] (7.4, 1.25) -- (7.55, .65);
+
+
+\end{scope}
+
+
+
+
+\begin{scope}[shift={(14,0)}]
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+\draw[thick] (6,0) to [bend left=25]  (6,1.5);
+\draw[thick] (6,0) to [bend right=25]  (6,1.5);
+
+
+\foreach \dot in { (6,0) , (5.5, 2.5), (5.75, 2)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw[thick]  (5.5, 2.5) -- (6, 1.5) -- (6.75, 2.25);
+\draw[thick]  (4.5, 2.25) -- (6, 1.5) ;
+
+
+\draw[thick] (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+\foreach \dot in { (5.5, 1.75), (5,2), (4.5,2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\foreach \dot in {  (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25), (7.55, .65)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (6.75, 2.25) -- (6.4, 2.75);
+\draw[thick]  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75), (5,1.25), (5.25,.75)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\draw[thick] (5,1.25) -- (6,1.5) -- (5.25,.75);
+
+\draw[thick]  (7.5, 2.5) -- (7.6, 3.25);
+
+
+
+
+\foreach \dot in {(7.6, 3.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick] (7.4, 1.25) -- (7.55, .65);
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(0,-5)}]
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+\draw[thick] (6,0) to [bend left=25]  (6,1.5);
+\draw[thick] (6,0) to [bend right=25]  (6,1.5);
+
+
+\foreach \dot in { (6,0), (5.25, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw[thick]  (6, 1.5) -- (6.75, 2.25);
+\draw[thick]  (5.25, 2.25) -- (6, 1.5) ;
+
+
+\draw[thick] (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+
+
+\foreach \dot in {  (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25), (7.55, .65)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (6.75, 2.25) -- (6.4, 2.75);
+\draw[thick]  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\draw[thick]  (7.5, 2.5) -- (7.6, 3.25);
+
+
+\foreach \dot in {(7.6, 3.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick] (7.4, 1.25) -- (7.55, .65);
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(6,-5)}]
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+\draw[thick] (6,0) to [bend left=25]  (6,1.5);
+\draw[thick] (6,0) to [bend right=25]  (6,1.5);
+
+
+\foreach \dot in { (6,0), (5.25, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw[thick]  (6, 1.5) -- (6.75, 2.25);
+\draw[thick]  (5.25, 2.25) -- (6, 1.5) ;
+
+
+
+\foreach \dot in { (6.85,3), (6.6,1.5), (7.2, 1.5), (7.4, 2.7), (7.5, 2)} {
+\draw[fill] \dot circle (3pt);
+\draw[thick] (6.75,2.25) -- \dot;
+}
+
+
+
+\foreach \dot in {  (6, 1.5) , (6.75, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (6.75, 2.25) -- (6.4, 2.75);
+\draw[thick]  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,-5)}]
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+\draw[thick] (6,0) to [bend left=25]  (6,1.5);
+\draw[thick] (6,0) to [bend right=25]  (6,1.5);
+
+
+\foreach \dot in { (6,0), (5.25, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw[thick]  (6, 1.5) -- (6.75, 2.25);
+\draw[thick]  (5.25, 2.25) -- (6, 1.5) ;
+
+
+
+\foreach \dot in { (7,3)} {
+\draw[fill] \dot circle (3pt);
+\draw[thick] (6.75,2.25) -- \dot;
+}
+
+
+
+\foreach \dot in {  (6, 1.5) , (6.75, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (6.75, 2.25) -- (6.4, 2.75);
+\draw[thick]  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(0,-9)}]
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+
+
+\foreach \dot in { (6,0), (5.15, 0.9), (5.75, 1.1), (4.75, .45)} {
+\draw[fill] \dot circle (3pt);
+\draw[thick]  \dot-- (6, 0) ;
+}
+
+
+\draw[thick]  (6, 0) -- (6.75, 0.75);
+
+
+
+\foreach \dot in { (7,1.5)} {
+\draw[fill] \dot circle (3pt);
+\draw[thick] (6.75,.75) -- \dot;
+}
+
+
+
+\foreach \dot in { (6.75, 0.75)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw[thick]  (6.75, .75) -- (6.4, 1.25);
+\draw[thick]  (6.2, 2) -- (6.4, 1.25);
+
+
+\foreach \dot in {(6.2, 2), (6.4, 1.25)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,-9)}]
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+
+
+\foreach \dot in { (6,0), (6.75, .5), (7.4,1), (7.8, 1.6), (8.4, 2.2), (8.7, 2.9)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\draw[thick]  (6,0) -- (6.75, .5) --(7.4,1) --(7.8, 1.6)-- (8.4, 2.2) -- (8.7, 2.9);
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(6,-9)}]
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+
+
+\foreach \dot in { (5.15, 0.9), (6,0), (6.75, .5), (7.4,1), (7.8, 1.6), (8.4, 2.2)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\draw[thick] (5.15,0.9) -- (6,0) -- (6.75, .5) --(7.4,1) --(7.8, 1.6)-- (8.4, 2.2);
+
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			</figure>
+
+
+</p><p>
+
+Note that we perform this reindeer transformation very slowly: we show  eight intermediate transformations. <em>Likewise, you should be methodical so that you do not make any mistakes.</em> Make incremental changes, and do not skip steps. It is okay to work on independent parts of the graph simultaneously. For example, we actually make 4 different changes to get from the reindeer to the next graph:  we join the root vertices into one and also apply the Tuft Principle three times.
+
+			</p><p>
+
+Finally, we can determine the Sprague-Grundy value of the game position <m>G</m> in  <xref ref="fig-hack-example" />. We use the Sprague-Grundy Theorem to  find that the position  satisfies
+<me>
+\g(G) = \g(G_1 \oplus G_2 \oplus G_3) =
+\g(G_1) \oplus \g(G_2) \oplus \g(G_3) = 2 \oplus 5 \oplus 1 = 6.
+</me>
+
+			</p><p>
+
+Between the Fusion Principle, the Loop Principle and the Tuft Principle, we can determine the Sprague-Grundy value of any Green Hackenbush position. This often requires care and perseverance.  As noted above, you should only apply one principle at a time (to a given part of the graph). Skipping steps is the easiest way to make mistakes. Take your time, and enjoy the metamorphosis from rooted graph to bamboo shoot.
+
+			</p><p>
+
+There is a more important reason to take your time during this process: finding the winning move! Our wintery scene in  <xref ref="fig-hack-example" /> has Sprague-Grundy value of 6. There must be at least one move to a position with Sprague-Grundy value 0. How do we find it? It turns out that the only winning move must occur in the reindeer component <m>G_2</m> (see the exercises for why).
+
+			</p><p>
+
+We must change the Sprague-Grundy value of that component from 5 to 3 so that the nim sum of the components becomes <m>2 \oplus 3 \oplus 1 = 0</m>.  <xref ref="fig-reindeer" /> shows nine equivalent positions. It is clear which edge we should hack in the ninth picture: removing the edge at height 4 gives the bamboo stalk <m>*3</m>. We can now rewind our process and figure out which edge in the original reindeer corresponds to the edge of height 4. Once again, we must be meticulous in this process. We do this in  <xref ref="fig-reindeer-rewind" />, which tracks our desired edge through the reversed process. We find that there are actually five different edges that we can hack to achieve a Sprague-Grundy value of 3 for our reindeer.
+
+
+
+			<figure xml:id="fig-reindeer-rewind">
+
+				<caption>Finding the reindeer edge whose removal gives a graph with Sprague-Grundy value 3. Hacking any of the five thick maroon edges of the reindeer's head will do. All other hacking moves do not lead to value 3.</caption>
+
+			<image width="90%" xml:id="fig-img-reindeer-rewind">
+				<latex-image>
+\begin{tikzpicture}[scale=.6] %mathbook width=90%
+
+\begin{scope}[shift={(16,-10)}]
+
+\node at (1,1) {$\longrightarrow$};
+
+\draw[ultra thick, color=maroon] (7.425, 1.1) circle (4pt);
+\draw[ultra thick, color=maroon]  (7.5, 2.5) -- (7.6, 3.25);
+
+\draw[dashed] (2,0) -- (8,0);
+
+\draw (4,0) -- (3.5,1.5) -- (3,.75) -- (2.25, .75);
+
+\foreach \dot in { (4,0), (3.5,1.5), (3,.75), (2.25, .75) } {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (3, 2) -- (3.5, 1.5);
+\draw (3.5, 1.5) -- (6,1.5);
+\draw (3.5, 1.5) to [bend right=55] (6,1.5);
+\draw (6, 1.5) -- (5.5, 0);
+
+
+\draw (6.25, .5) -- (6.75, 1) -- (6, 1.5) -- (6.75, 2.25);
+
+\draw[ultra thick, color=maroon] (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+\foreach \dot in { (3, 2),  (6, 1.5) ,(5.5, 0),  (6.25, .5) ,(6.75, 1) , (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (6.75, 2.25) -- (6.4, 2.75);
+\draw  (6.2, 3.5) -- (6.4, 2.75);
+\draw  (5.9, 2.9) -- (6.4, 2.75) -- (6.7, 3.25);
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75), (5.9, 2.9) ,(6.7, 3.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw  (7.3, 3.75) -- (7.6, 3.25) -- (8, 3.75);
+\draw  (8, 4.3) -- (8, 3.75) -- (8.5, 4.25);
+
+
+\foreach \dot in {(7.6, 3.25), (7.3, 3.75), (8, 4.3), (8, 3.75), (8.5, 4.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(8,-10)}]
+
+
+\node at (1.5,1) {$\longrightarrow$};
+
+\draw[ultra thick, color=maroon]  (7.4, 1.25) -- (7.55, .65);
+\draw[ultra thick, color=maroon]   (7.5, 2.5) -- (7.6, 3.25);
+
+\draw[dashed] (2,0) -- (8,0);
+
+\draw (4.75,0) -- (3.5,1.5);
+
+\foreach \dot in { (4.75,0), (3.5,1.5) } {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (3, 3) -- (3.5, 1.5);
+\draw (3.5, 1.5) to [bend left=25] (6,1.5);
+\draw (3.5, 1.5) to [bend right=25] (6,1.5);
+\draw (6, 1.5) -- (4.75, 0);
+
+
+\draw (6.25, .5) -- (6.75, 1) -- (6, 1.5) -- (6.75, 2.25);
+
+\draw[ultra thick, color=maroon] (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+\foreach \dot in { (3.33, 2), (3.16,2.5), (3,3)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\foreach \dot in {  (6, 1.5) ,  (6.25, .5) ,(6.75, 1) , (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25), (7.55, .65)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (6.75, 2.25) -- (6.4, 2.75);
+\draw  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+
+\draw  (7.3, 3.75) -- (7.6, 3.25) -- (8, 3.75);
+
+
+
+\foreach \dot in {(7.6, 3.25), (7.3, 3.75),(8, 3.75)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+
+
+\end{scope}
+
+
+
+
+\begin{scope}[shift={(0,-10)}]
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[ultra thick, color=maroon]   (7.5, 2.5) -- (7.6, 3.25);
+\draw[ultra thick, color=maroon]  (7.4, 1.25) -- (7.55, .65);
+
+
+\draw[dashed] (4,0) -- (8,0);
+
+\draw (6,0) to [bend left=25]  (6,1.5);
+\draw (6,0) to [bend right=25]  (6,1.5);
+
+
+\foreach \dot in { (6,0) , (5.5, 2.5), (5.75, 2)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw  (5.5, 2.5) -- (6, 1.5) -- (6.75, 2.25);
+\draw  (4.5, 2.25) -- (6, 1.5) ;
+
+
+\draw[ultra thick, color=maroon]  (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+\foreach \dot in { (5.5, 1.75), (5,2), (4.5,2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\foreach \dot in {  (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25), (7.55, .65)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (6.75, 2.25) -- (6.4, 2.75);
+\draw  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75), (5,1.25), (5.25,.75)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\draw (5,1.25) -- (6,1.5) -- (5.25,.75);
+
+
+
+
+\foreach \dot in {(7.6, 3.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(12,-5)}]
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+
+\draw[ultra thick, color=maroon]   (7.5, 2.5) -- (7.6, 3.25);
+\draw[ultra thick, color=maroon]  (7.4, 1.25) -- (7.55, .65);
+
+
+\draw[dashed] (4,0) -- (8,0);
+
+\draw (6,0) to [bend left=25]  (6,1.5);
+\draw (6,0) to [bend right=25]  (6,1.5);
+
+
+\foreach \dot in { (6,0), (5.25, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw  (6, 1.5) -- (6.75, 2.25);
+\draw  (5.25, 2.25) -- (6, 1.5) ;
+
+
+\draw[ultra thick, color=maroon]  (6.75, 2.25) -- (7.5, 2.5) -- (7.4, 1.25) -- cycle;
+
+
+
+\foreach \dot in {  (6, 1.5) , (6.75, 2.25), (7.5, 2.5), (7.4, 1.25), (7.55, .65)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (6.75, 2.25) -- (6.4, 2.75);
+\draw  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+
+\foreach \dot in {(7.6, 3.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(6,-5)}]
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+\draw (6,0) to [bend left=25]  (6,1.5);
+\draw (6,0) to [bend right=25]  (6,1.5);
+
+
+\foreach \dot in { (6,0), (5.25, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw  (6, 1.5) -- (6.75, 2.25);
+\draw  (5.25, 2.25) -- (6, 1.5) ;
+
+
+
+\foreach \dot in { (6.85,3), (6.6,1.5), (7.2, 1.5), (7.4, 2.7), (7.5, 2)} {
+\draw[ultra thick, color=maroon]  (6.75,2.25) -- \dot;
+\draw[fill] \dot circle (3pt);
+}
+
+
+
+\foreach \dot in {  (6, 1.5) , (6.75, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (6.75, 2.25) -- (6.4, 2.75);
+\draw  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-5)}]
+
+\draw[ultra thick, color=maroon] (6.75, 2.25) -- (7, 3);
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+\draw (6,0) to [bend left=25]  (6,1.5);
+\draw (6,0) to [bend right=25]  (6,1.5);
+
+
+\foreach \dot in { (6,0), (5.25, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+
+\draw  (6, 1.5) -- (6.75, 2.25);
+\draw  (5.25, 2.25) -- (6, 1.5) ;
+
+
+
+\foreach \dot in { (7,3)} {
+\draw[fill] \dot circle (3pt);
+\draw (6.75,2.25) -- \dot;
+}
+
+
+
+\foreach \dot in {  (6, 1.5) , (6.75, 2.25)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (6.75, 2.25) -- (6.4, 2.75);
+\draw  (6.2, 3.5) -- (6.4, 2.75);
+
+
+\foreach \dot in {(6.2, 3.5), (6.4, 2.75)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[ultra thick, color=maroon] (6.75, .75) -- (7, 1.5);
+
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+
+
+\foreach \dot in { (6,0), (5.15, 0.9), (5.75, 1.1), (4.75, .45)} {
+\draw[fill] \dot circle (3pt);
+\draw  \dot-- (6, 0) ;
+}
+
+
+\draw  (6, 0) -- (6.75, 0.75);
+
+
+
+\foreach \dot in { (7,1.5)} {
+\draw[fill] \dot circle (3pt);
+\draw (6.75,.75) -- \dot;
+}
+
+
+
+\foreach \dot in { (6.75, 0.75)} {
+\draw[fill] \dot circle (3pt);
+}
+
+\draw  (6.75, .75) -- (6.4, 1.25);
+\draw  (6.2, 2) -- (6.4, 1.25);
+
+
+
+
+\foreach \dot in {(6.2, 2), (6.4, 1.25)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\end{scope}
+
+
+
+
+
+\begin{scope}[shift={(6,0)}]
+
+\draw[ultra thick, color=maroon] (7.8, 1.6)-- (8.4, 2.2);
+
+\node at (3.5,1) {$\longrightarrow$};
+
+\draw[dashed] (4,0) -- (8,0);
+
+
+
+\foreach \dot in { (5.15, 0.9), (6,0), (6.75, .5), (7.4,1), (7.8, 1.6), (8.4, 2.2)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\draw (5.15,0.9) -- (6,0) -- (6.75, .5) --(7.4,1) --(7.8, 1.6)-- (8.4, 2.2);
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[ultra thick, color=maroon] (7.8, 1.6)-- (8.4, 2.2);
+
+
+
+\draw[dashed] (4,0) -- (8,0);
+
+\foreach \dot in { (6,0), (6.75, .5), (7.4,1), (7.8, 1.6), (8.4, 2.2), (8.7, 2.9)} {
+\draw[fill] \dot circle (3pt);
+
+}
+
+\draw  (6,0) -- (6.75, .5) --(7.4,1) --(7.8, 1.6)-- (8.4, 2.2) -- (8.7, 2.9);
+
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			</figure>
+
+</p>
+</section>

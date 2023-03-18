@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>The idea of the proof is quite simple. We can think of the ground as one (very long) root vertex. Hacking a particular branch does not affect any of the other branches of \(G\text{.}\) So we can simply divide the tree at its root and create \(k\) independent bamboo stalks of sizes \(m_1, m_2, \ldots, m_k\)  as shown in  <a class="xref" data-knowl="./knowl/fig-division.html" title="Figure 4.3.2">Figure 4.3.2</a>.</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-division.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.2<span class="period">.</span></span><span class="space"> </span>Dividing a 4-tuft at its root \(x\) results in a forest of bamboo stalks. These two positions in Lumberjack are equivalent.</figcaption></figure></p>
+<p>The Sprague-Grundy value of these independent bamboo stalks is just the nim sum of their individual Sprague-Grundy values by  <a class="xref" data-knowl="./knowl/thm-sg.html" title="Theorem 3.5.1">Theorem 3.5.1</a>. Therefore</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(G) = \g(B_1) \oplus \g(B_2) \oplus \cdots \oplus \g(B_k).
+\end{equation*}
+</div>
+<p class="continuation">The Sprague-Grundy value of a bamboo stalk is equal to its height (see Exercise 1 below), so this simplifies to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(G) = m_1 \oplus m_2 \oplus \cdots \oplus m_k.
+\end{equation*}
+</div></article><span class="incontext"><a href="hack-tuft.html#proof-10">in-context</a></span>
+</body>
+</html>

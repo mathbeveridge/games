@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>Assume for the sake of contradiction that \(G\) contains vertices \(x,y\) connected by 3 edge-disjoint paths. Let \(H\) be the graph obtained by merging the vertices \(x\) and \(y\) into a  single vertex \(z\text{.}\) We must have \(g(H) \neq g(G)\) because \(G\) is the minimal criminal. Therefore the sum of games \(G \oplus H\) is an \(\cN\)-position.</p>
+<p>Since \(G \oplus H\) is an \(\cN\)-position, Left must have a winning move. When Left hacks an edge in \(G\) (or \(H\)), Right responds by hacking the corresponding edge in \(H\) (or \(G\)). Call the resulting graphs \(G'\) and \(H'\text{.}\) Both graphs have \(m-1\) edges, so the fusion principle applies to each of them. The vertices \(x,y\) are still in a cycle in \(G'\) since we can only destroy one of the three edge-disjoint paths between them. So we can fuse \(x\) and \(y\) without changing the Sprague-Grundy value of \(G'\text{.}\) This fusion results in the graph \(H'\text{,}\) so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(G' \oplus H') = \g(G') \oplus \g(H') = \g(H') \oplus \g(H') = 0.
+\end{equation*}
+</div>
+<p class="continuation">In other words, \(G' \oplus H'\) is a \(\cP\)-position. No matter what move Left make, Right can make a counter-move to put the game in a \(\cP\)-position. This contradicts the fact that \(G \oplus H\) is an \(\cN\)-position. Therefore, no vertices \(x,y\) can be connected by 3 edge-disjoint paths. \(\quad \Box\)</p></article><span class="incontext"><a href="hack-fusion.html#proof-17">in-context</a></span>
+</body>
+</html>

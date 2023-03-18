@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<section xml:id="hack-bamboo">
+<title>Bamboo Stalks</title>
+<p>
+
+In this chapter, we explore three generalizations of Nim: 
+<em>Bamboo Stalks</em>, <em>Lumberjack</em>, and <em> Green Hackenbush.</em> 
+Each game is played by hacking away edges from a graph. 
+
+</p><p>
+
+In the  previous chapter, 
+we considered variations of Nim that still dealt with heaps of beans 
+(or tokens or coins or pins). We considered more restricted "taking rules" 
+and added "breaking rules" that split heaps apart. 
+But still, the components of our game were heaps of things. 
+In this chapter, we explore ways to generalize heaps into more exotic structures.
+
+			</p><p>
+
+The game of <term>Bamboo Stalks</term> starts with a set of bamboo stalks planted in the ground. We represent the ground by a horizontal dashed line. A \bf bamboo stalk of height <m>n</m> is a path with <m>n</m> edges (and <m>n+1</m> vertices) where one of the endpoints is planted on the ground. <xref ref="fig-stalks" /> shows the Bamboo Stalks position consisting of stalks of heights 4, 1 and 2.
+
+</p><p>
+
+			<figure xml:id="fig-stalks">
+				<caption>The Bamboo Stalks position <m>\pile{4} \oplus \pile{1}  \oplus \pile{2}</m></caption>
+			<image width="30%" xml:id="fig-img-stalks">
+				<latex-image>
+\begin{tikzpicture}[scale=.7]
+
+\draw[dashed] (0,0) -- (4,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+
+\draw[thick] (1,0)--(1,4);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+
+\draw[thick] (3,0)--(3,2);
+
+
+\foreach \i in {0,1}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+
+\draw[thick] (2,0)--(2,1);
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</figure>
+
+</p>
+<p>
+
+To  move in Bamboo Stalks, you  hack away one of the edges of the graph. You remove the hacked edge, along with the part of the stalk that is no longer connected to the ground. As always, the last player to move wins. For example, there are seven edges in the position of <xref ref="fig-stalks" />, so there are seven followers for this position. These followers are shown in <xref ref="fig-stalk-follow" />.
+
+</p>
+<p>
+
+
+			<figure xml:id="fig-stalk-follow">
+				<caption>The followers <m>\cF(\pile{4} \oplus \pile{1}  \oplus \pile{2})</m></caption>
+			<image width="90%" xml:id="fig-img-stalk-follow">
+				<latex-image>
+\begin{tikzpicture}[scale=.5]
+
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[dashed] (.5,0) -- (3.5,0);
+
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0)--(1,3);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0)--(3,2);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0)--(2,1);
+
+\end{scope}
+
+
+\begin{scope}[shift={(4,0)}]
+
+\draw[dashed] (.5,0) -- (3.5,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0)--(1,2);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0)--(3,2);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0)--(2,1);
+
+\end{scope}
+
+
+\begin{scope}[shift={(8,0)}]
+
+\draw[dashed] (.5,0) -- (3.5,0);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0)--(1,1);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0)--(3,2);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0)--(2,1);
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[dashed] (.5,0) -- (3.5,0);
+
+\foreach \i in {0}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0)--(3,2);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0)--(2,1);
+
+\end{scope}
+
+
+\begin{scope}[shift={(16,0)}]
+
+\draw[dashed] (.5,0) -- (3.5,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0)--(1,4);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0)--(3,2);
+
+\foreach \i in {0}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(20,0)}]
+
+\draw[dashed] (.5,0) -- (3.5,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0)--(1,4);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+\draw[thick] (3,0)--(3,1);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0)--(2,1);
+
+\end{scope}
+
+
+\begin{scope}[shift={(24,0)}]
+
+\draw[dashed] (.5,0) -- (3.5,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+\draw[thick] (1,0)--(1,4);
+
+\foreach \i in {0}
+{
+\draw[fill] (3,\i) circle (3pt);
+}
+
+
+\foreach \i in {0,1}
+{
+\draw[fill] (2,\i) circle (3pt);
+}
+\draw[thick] (2,0)--(2,1);
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</figure>
+
+
+
+
+</p><p>
+The game of Bamboo Stalks is actually the game of Nim in a very thin disguise. We leave this unmasking as an exercise.
+
+</p>
+</section>

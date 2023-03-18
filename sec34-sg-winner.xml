@@ -15,7 +15,7 @@ and only if the Sprague-Grundy value is nonzero.
 
 </p>
 <p>
-<theorem xml:id="thm:-grundy">
+<theorem xml:id="thm-sprague-grundy">
 <statement>
 <p>
 The <m>\cG</m> be any combinatorial game. The game position <m>X \in \cG</m> is

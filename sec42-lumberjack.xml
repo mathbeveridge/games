@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<section xml:id="hack-lumberjack">
+<title>Lumberjack</title>
+<p>
+
+
+
+In the game of Bamboo Stalks, we progressively chop down a bamboo forest. 
+Bamboo Stalks is equivalent to multi-heap nim. What if we play this game 
+in a more interesting forest?
+
+			</p><p>
+
+The game of <term>Lumberjack</term> is a generalization of Bamboo Stalks.
+ Once again, we have the ground, denoted by a dashed line. We then have a collection 
+ of trees (acyclic graphs) planted on the ground. The grounded vertex is special, and 
+ we call this vertex the <term>root</term> of the tree. Therefore, we are playing on a 
+ <term>rooted forest</term>, in which every tree has a root. A move consists of picking a 
+ tree and then hacking off one edge. We remove the edge, as well as the branch of the tree 
+ that is no longer connected to the ground (or equivalently: no longer connected to 
+ the root of the tree). Once again, the last person to move wins.
+
+
+</p><p>
+
+
+			<figure xml:id="fig-lumberjack">
+				<caption>A Lumberjack position for a rooted forest with 3 rooted trees.</caption>
+			<image width="70%" xml:id="fig-img-lumberjack">
+				<latex-image>
+\begin{tikzpicture}[scale=.7] %mathbook width=70%
+
+\draw[dashed] (-1,0) -- (11,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (1,4) circle (3pt);
+\draw[fill] (.5,3) circle (3pt);
+\draw[fill] (-.5,3) circle (3pt);
+\draw[thick] (-.5,3) -- (0,2) -- (1,4);
+
+
+
+\draw[fill] (1.2,1.25) circle (3pt);
+\draw[fill] (-1.2,1.25) circle (3pt);
+\draw[fill] (2,2.15) circle (3pt);
+\draw[fill] (-2,2.15) circle (3pt);
+
+\draw[thick] (2, 2.15) -- (1.2, 1.25) -- (0,1) -- (-1.2,1.25) -- (-2, 2.15);
+
+
+\draw[fill] (-1,4) circle (3pt);
+\draw[fill] (0,4) circle (3pt);
+
+\draw[thick] (0,4) -- (-.5,3) -- (-1,4);
+
+\node at (0,-1) {$G_1$};
+
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (5,\i) circle (3pt);
+}
+
+\draw[thick] (5,0)--(5,3);
+
+\draw[fill] (3.5,2) circle (3pt);
+\draw[fill] (4,1) circle (3pt);
+\draw[fill] (6.5,1) circle (3pt);
+\draw[fill] (6,2) circle (3pt);
+\draw[fill] (6.5,2) circle (3pt);
+\draw[fill] (7,2) circle (3pt);
+
+
+\draw[thick] (3.5, 2) --  (4,1) -- (5,0) -- (6.5,1) -- (6,2);
+\draw[thick] (7, 2) --  (6.5,1) -- (6.5, 2);
+
+\node at (5,-1) {$G_2$};
+
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[fill] (10,\i) circle (3pt);
+}
+
+\draw[thick] (10,0)--(10,4);
+
+\node at (10,-1) {$G_3$};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</figure>
+
+</p><p>
+
+ <xref ref="fig-lumberjack" /> shows a game position of Lumberjack with three rooted trees. The root vertex of each tree lies on the dashed ground. Note that the middle tree in this position is more of a bush than a tree, since it does not have a single "trunk" leading up from its root. Clearly, this position of Lumberjack is just the sum of the games played on the individual trees of the forest. By <xref ref="thm-sg" />, the Sprague-Grundy value of this game is just the nim sum of the Sprague Grundy values of the three trees:
+<me>
+\g(G_1 \oplus G_2 \oplus G_3) = \g(G_1) \oplus \g(G_2) \oplus g(G_3).
+</me>
+
+
+The rightmost tree in this forest is a bamboo stalk, so it is equivalent to the nim heap <m>*4</m>. What about the other two trees? As always, we could find the Sprague-Grundy value the hard way: recursively find the values of all the followers and then take the mex of those values. You can imagine how tedious this process would be: the leftmost tree has seven followers and the middle tree has nine followers. In this section, we will describe the <em>Tuft Principle</em> which gives a much quicker way to calculate the Sprague-Grundy value of rooted trees. The Tuft Principle is, in fact, a variation of <xref ref="thm-sg" /> about the sum of games.
+
+
+</p><p>
+
+			<figure xml:id="fig-tree-family">
+				<caption>A family of rooted trees.</caption>
+			<image width="90%" xml:id="fig-img-tree-family">
+				<latex-image>
+\begin{tikzpicture}[scale=.7] %mathbook width=90%
+
+\begin{scope}
+\draw[dashed] (-.5,0) -- (.5,0);
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\node at (0, -.75) {$T_1$};
+
+\end{scope}
+
+\begin{scope}[shift={(2,0)}]
+\draw[dashed] (-.5,0) -- (.5,0);
+\foreach \i in {0,1}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,1);
+
+\draw[fill] (-.5,2) circle (3pt);
+\draw[fill] (.5,2) circle (3pt);
+\draw[thick] (-.5,2) -- (0,1) -- (.5,2);
+
+\node at (0, -.75) {$T_2$};
+
+\end{scope}
+
+\begin{scope}[shift={(4,0)}]
+\draw[dashed] (-.5,0) -- (.5,0);
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (-.5,2) circle (3pt);
+\draw[fill] (.5,2) circle (3pt);
+\draw[thick] (-.5,2) -- (0,1) -- (.5,2);
+
+\node at (0, -.75) {$T_3$};
+
+\end{scope}
+
+\begin{scope}[shift={(6.5,0)}]
+\draw[dashed] (-.5,0) -- (.5,0);
+\foreach \i in {0,1}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,1);
+
+\draw[fill] (-.3,2) circle (3pt);
+\draw[fill] (.3,2) circle (3pt);
+\draw[thick] (-.3,2) -- (0,1) -- (.3,2);
+
+\draw[fill] (-1,2) circle (3pt);
+\draw[fill] (1,2) circle (3pt);
+\draw[thick] (-1,2) -- (0,1) -- (1,2);
+
+\node at (0, -.75) {$T_4$};
+
+\end{scope}
+
+\begin{scope}[shift={(9.5,0)}]
+\draw[dashed] (-.5,0) -- (.5,0);
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (-.5,2) circle (3pt);
+\draw[fill] (.5,2) circle (3pt);
+\draw[thick] (-.5,2) -- (0,1) -- (.5,2);
+
+\draw[fill] (-1,2) circle (3pt);
+\draw[fill] (1,2) circle (3pt);
+\draw[thick] (-1,2) -- (0,1) -- (1,2);
+
+\node at (0, -.75) {$T_5$};
+
+\end{scope}
+
+\begin{scope}[shift={(14,0)}]
+\draw[dashed] (-.5,0) -- (.5,0);
+\foreach \i in {0,1}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,1);
+
+\draw[fill] (-.5,2) circle (3pt);
+
+\draw[thick] (-.5,2) -- (0,1);
+
+\draw[fill] (-1,2) circle (3pt);
+\draw[fill] (1,2) circle (3pt);
+\draw[thick] (-1,2) -- (0,1) -- (1,2);
+
+
+\foreach \i in {-2.66,-2.33, -2} {
+\draw[fill] (\i, 1) circle (1pt);
+}
+
+\foreach \i in {2.66,2.33,2} {
+\draw[fill] (\i, 1) circle (1pt);
+}
+
+\foreach \i in {0,.25, .5} {
+\draw[fill] (\i, 1.95) circle (1pt);
+}
+
+\node at (0, -.75) {$T_k$};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+</figure>
+
+
+</p><p>
+
+Before we get to the Tuft Principle, let's look at a family of examples. We  find the Sprague-Grundy values of the rooted trees <m>T_1, T_2, \ldots, T_k, \ldots </m> shown in <xref ref="fig-tree-family" />. We recognize that <m>T_1</m> is equivalent to the nim heap <m>*2</m>, so <m>\g(T_1)=2</m>. To calculate <m>\g(T_2)</m>, we observe that there are two distinct followers of <m>T_2</m>: a bamboo stalk of height 2 and an empty tree. These positions are equivalent to <m>*2</m> and <m>*0</m>, and therefore
+<m></m>\g(T_2) = \mex \{ \g(*2) , g(*0) \} = \mex \{ 2, 0 \} = 1.<m></m>
+So <m>T_2</m> is equivalent to the nim heap <m>*1</m>, which is the same as a bamboo stalk of height 1. If this is really the case, then the game <m>T_2 \oplus * 1</m> must be a <m>\cP</m>-position. Sure enough, Right has a winning response to each of Left's moves, as shown in the partial game tree of <xref ref="fig-lumber-ex1" />
+
+
+</p><p>
+
+
+
+
+			<figure xml:id="fig-lumber-ex1">
+				<caption>A partial game tree for the position <m>T_2 \oplus *1</m> which shows that <m>T_2 \oplus *1</m> is a <m>\cP</m>-position.</caption>			
+			<image width="70%" xml:id="fig-img-lumber-ex1">
+				<latex-image>
+\begin{tikzpicture}[scale=.5] %mathbook width=70%
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[dashed] (-.5,0) -- (1.5,0);
+\foreach \i in {0,1}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,1);
+
+\draw[fill] (-.5,2) circle (3pt);
+\draw[fill] (.5,2) circle (3pt);
+\draw[thick] (-.5,2) -- (0,1) -- (.5,2);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+
+\draw[thick] (1,0) -- (1,1);
+
+
+\node at (.5, -.75) {$T_2 \oplus *1$};
+
+\node at (-1.5,1) {$\cP$};
+
+\end{scope}
+
+\begin{scope}[shift={(-7,-5)}]
+
+\draw[dashed] (-.5,0) -- (1.5,0);
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+
+
+\foreach \i in {0,1}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+
+\draw[thick] (1,0) -- (1,1);
+
+
+\node at (.5, -.75) {$*2 \oplus *1$};
+\node at (-1.5,1) {$\cN$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-5)}]
+
+\draw[dashed] (-.5,0) -- (1.5,0);
+
+\foreach \i in {0,1}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+
+\draw[thick] (1,0) -- (1,1);
+
+\draw[fill] (0,0) circle (3pt);
+
+\node at (.5, -.75) {$*0 \oplus *1$};
+
+\node at (-1.5,1) {$\cN$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(7,-5)}]
+
+\draw[dashed] (-.5,0) -- (1.5,0);
+\foreach \i in {0,1}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,1);
+
+\draw[fill] (-.5,2) circle (3pt);
+\draw[fill] (.5,2) circle (3pt);
+\draw[thick] (-.5,2) -- (0,1) -- (.5,2);
+
+
+\draw[fill] (1,0) circle (3pt);
+
+\node at (.5, -.75) {$T_2 \oplus *0$};
+
+\node at (-1.5,1) {$\cN$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(-7,-10)}]
+
+\draw[dashed] (-.5,0) -- (1.5,0);
+\foreach \i in {0,1}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,1);
+
+
+
+\foreach \i in {0,1}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+
+\draw[thick] (1,0) -- (1,1);
+
+
+\node at (.5, -.75) {$*1 \oplus *1$};
+
+\node at (-1.5,1) {$\cP$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(0,-10)}]
+
+\draw[dashed] (-.5,0) -- (1.5,0);
+
+\foreach \i in {0}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+
+\draw[fill] (0,0) circle (3pt);
+
+\node at (.5, -.75) {$*0 \oplus *0$};
+
+\node at (-1.5,1) {$\cP$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(7,-10)}]
+
+\draw[dashed] (-.5,0) -- (1.5,0);
+
+\foreach \i in {0}
+{
+\draw[fill] (1,\i) circle (3pt);
+}
+
+\draw[fill] (0,0) circle (3pt);
+
+\node at (.5, -.75) {$*0 \oplus *0$};
+\node at (-1.5,1) {$\cP$};
+
+\end{scope}
+
+
+\draw[very thick]  (.5,-1.5) -- (.5,-3);
+\draw[very thick]  (-.5,-1.5) -- (-5.5,-3);
+\draw[very thick]  (1.5,-1.5) -- (6,-3);
+
+\draw[very thick]  (.5,-6.5) -- (.5,-8.5);
+\draw[very thick]  (-6.5,-6.5) -- (-6.5,-8.5);
+\draw[very thick]  (7.5,-6.5) -- (7.5,-8.5);
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+</figure>
+
+</p><p>
+
+Now let's consider the position <m>T_3</m>. We have <m>\cF(T_3) = \{ *0, T_2 \}</m> and therefore
+<me>
+\g(T_3) = \mex \{ \g(*0), \g(T_2) \} = \mex \{ 0, 1 \} = 2.
+</me>
+Continuing on, we have
+<me>
+\g(T_4) = \mex \{ \g(*0), \g(T_3) \} = \mex \{ 0, 2 \} = 1
+</me>
+and
+<me>
+\g(T_5) = \mex \{ \g(*0), \g(T_4) \} = \mex \{ 0, 1 \} = 2.
+	</me>
+From here, the pattern is clear (and can be proven by induction): for <m>k \geq 1</m>, we have <m>\g(T_{2k-1})=2</m>
+and <m>\g(T_{2k})=1</m>. In other words, pairs of leaves adjacent to the same vertex cancel one another out!
+This is very much like the nim sum (where 1+1=0), except this cancelation is happening in the tree tops.
+This phenomenon is a simple example of the <term>Tuft Principle</term>.
+
+</p>
+<p>
+<theorem xml:id="thm-tuft">
+	<title>The Tuft Principle</title>
+<statement>
+<p>
+
+Consider a rooted tree in the game of Lumberjack. 
+When <m>k</m> paths <m>B_1, B_2, \ldots , B_k</m> come together at a single vertex, 
+you can replace them with a single path of length 
+<m>\g(B_1) \oplus \g(B_2) \oplus \cdots \g(B_k)</m>.
+</p>
+</statement>
+</theorem>
+</p>
+<p>
+
+We delay the proof of the Tuft Principle until the next section. 
+For now, we explain how the Tuft Principle allows us to find the 
+Sprague-Grundy value of any Lumberjack position.
+</p>
+<p>
+
+
+
+
+
+
+
+The Tuft Principle lets us replace a given tree with a slightly simpler tree. Before we prove the Tuft Principle, let's see it in action.
+We return to the example in <xref ref="fig-lumberjack" />, where we can now determine the Sprague-Grundy values of <m>G_1</m> and <m>G_2</m>. First, we handle <m>G_1</m>, and our calculation is shown in <xref ref="fig-lumberjack1" />. 
+
+
+</p><p>
+
+
+
+
+	<figure xml:id="fig-lumberjack1">
+		<caption>Using the Tuft Principle on <m>G_1</m>.</caption>				
+	<image width="90%" xml:id="fig-img-lumberjack1">
+		<latex-image>
+\begin{tikzpicture}[scale=.7]
+
+\tikzstyle{every node}=[font=\scriptsize]
+
+\begin{scope}[shift={(0,0)}]
+
+
+\node at (-.75, 4.75) {$*1 \oplus *1$};
+
+\draw[fill=gray!25] (0,4.25) -- (0,2.75) -- (-1.5, 2.75) -- (-1.5, 4.25) -- cycle;
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (1.25,4) circle (3pt);
+\draw[fill] (.625,3) circle (3pt);
+\draw[fill] (-.75,3) circle (3pt);
+\draw[thick] (-.75,3) -- (0,2) -- (1.25,4);
+
+\draw[fill] (-1.25,4) circle (3pt);
+\draw[fill] (-.25,4) circle (3pt);
+
+\draw[thick] (-.25,4) -- (-.75,3) -- (-1.25,4);
+
+
+\draw[fill] (1.2,1.25) circle (3pt);
+\draw[fill] (-1.2,1.25) circle (3pt);
+\draw[fill] (2,2.15) circle (3pt);
+\draw[fill] (-2,2.15) circle (3pt);
+
+\draw[thick] (2, 2.15) -- (1.2, 1.25) -- (0,1) -- (-1.2,1.25) -- (-2, 2.15);
+
+
+\node at (0,-1) {$G_1$};
+
+\node at (3,2) {$\longrightarrow$};
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(6,0)}]
+
+
+\node at (.25, 4.75) {$*1 \oplus *2$};
+\draw[fill=gray!25] (-1,4.25) -- (-1,1.75) -- (1.5, 1.75) -- (1.5, 4.25) -- cycle;
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (1.25,4) circle (3pt);
+\draw[fill] (.625,3) circle (3pt);
+\draw[fill] (-.75,3) circle (3pt);
+\draw[thick] (-.75,3) -- (0,2) -- (1.25,4);
+
+\draw[fill] (1.2,1.25) circle (3pt);
+\draw[fill] (-1.2,1.25) circle (3pt);
+\draw[fill] (2,2.15) circle (3pt);
+\draw[fill] (-2,2.15) circle (3pt);
+
+\draw[thick] (2, 2.15) -- (1.2, 1.25) -- (0,1) -- (-1.2,1.25) -- (-2, 2.15);
+
+
+
+\node at (0,-1) {$G_1'$};
+
+
+\node at (3.5,2) {$\longrightarrow$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(12.5,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\node at (0, 5.75) {$*2 \oplus  *4 \oplus *2$};
+
+\draw[fill=gray!25] (-2.3,.8) -- (-2.3,5.2) -- (2.3, 5.2) -- (2.3, .8) -- cycle;
+
+\foreach \i in {0,1,2,3,4,5}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,5);
+
+\draw[fill] (1.2,1.25) circle (3pt);
+\draw[fill] (-1.2,1.25) circle (3pt);
+\draw[fill] (2,2.15) circle (3pt);
+\draw[fill] (-2,2.15) circle (3pt);
+
+\draw[thick] (2, 2.15) -- (1.2, 1.25) -- (0,1) -- (-1.2,1.25) -- (-2, 2.15);
+
+\node at (0,-1) {$G_1"$};
+
+\node at (3.5,2) {$\longrightarrow$};
+
+\end{scope}
+
+\begin{scope}[shift={(18,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2,3,4,5}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,5);
+
+
+
+\node at (0,-1) {$G_1"'$};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+		</latex-image>
+	</image>
+
+
+</figure>
+
+
+</p><p>
+
+We start at the tree top and look for a join that only involves straight branches. We find one in the upper left part of the tree and replace these two branches of length 1 with one branch of length 0 because
+<me>
+\g(*1) \oplus \g(*1) = 1 \oplus 1 = 0.
+</me>
+In other words, these two branches cancel one another. This gives tree <m>G_1'</m>, which has the same value as <m>G_1</m>. Next, we use the Tuft Principle on the highest remaining join, and calculate <m>g(*1) \oplus g(*2)= 1 \oplus 2 = 3</m>. Therefore we replace these two branches with a single branch of length 3. This results in <m>G_1''</m>,
+and we use the tuft principle on the last remaining join. This gives 
+<me>g(*2) \oplus g(*4) \oplus g(*2)= 2 \oplus 4 \oplus 2= 4.</me> 
+Finally, we have <m>{G'''}_1</m>,
+which is a bamboo stalk of height 5. This means that 
+<me>\g(G_1) = \g({G_1}') = \g({G_1}'') =g({G_1}''')= 5.</me>
+
+
+
+
+
+			<figure xml:id="fig-lumberjack2">
+				<caption>Using the Tuft Principle on <m>G_2</m>.</caption>
+
+			<image width="70%" xml:id="fig-img-lumberjack2">
+				<latex-image>
+\begin{tikzpicture}[scale=.7] 
+
+\tikzstyle{every node}=[font=\scriptsize]
+
+\begin{scope}[shift={(0,0)}]
+
+
+\node at (1.75, 2.75) {$*1 \oplus *1 \oplus *1$};
+
+\draw[fill=gray!25] (.75,.75) -- (2.25,.75) -- (2.25, 2.25) -- (.75, 2.25) -- cycle;
+\draw[dashed] (-1,0) -- (1,0);
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+
+\draw[thick] (0,0)--(0,3);
+
+\draw[fill] (-1.5,2) circle (3pt);
+\draw[fill] (-1,1) circle (3pt);
+\draw[fill] (1.5,1) circle (3pt);
+\draw[fill] (1,2) circle (3pt);
+\draw[fill] (1.5,2) circle (3pt);
+\draw[fill] (2,2) circle (3pt);
+
+
+\draw[thick] (-1.5, 2) --  (-1,1) -- (0,0) -- (1.5,1) -- (1,2);
+\draw[thick] (2, 2) --  (1.5,1) -- (1.5, 2);
+\node at (0,-1) {$G_2$};
+
+\node at (3.25,2) {$\longrightarrow$};
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(6,0)}]
+
+
+\node at (0, 3.75) {$*2 \oplus *3 \oplus *2$};
+
+
+\draw[fill=gray!25] (-1.75,-.5) -- (1.75,-.5) -- (1.75, 3.25) -- (-1.75, 3.25) -- cycle;
+
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+
+\draw[thick] (0,0)--(0,3);
+
+\draw[fill] (-1.5,2) circle (3pt);
+\draw[fill] (-1,1) circle (3pt);
+\draw[fill] (1,1) circle (3pt);
+\draw[fill] (1.5,2) circle (3pt);
+
+
+
+\draw[thick] (-1.5, 2) --  (-1,1) -- (0,0) -- (1,1) -- (1.5,2);
+
+\node at (0,-1) {$G_2'$};
+
+
+
+\node at (3.5,2) {$\longrightarrow$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+\foreach \i in {0,1,2,3}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+
+\draw[thick] (0,0)--(0,3);
+
+
+\node at (0,-1) {$G_2''$};
+
+
+\end{scope}
+
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			</figure>
+
+		</p><p>
+
+Similarly, we can use the Tuft Principle to show that <m>\g(G_2) = 3</m>. The calculation is shown in <xref ref="fig-lumberjack2" />. With these calculations complete, we can find the Sprague-Grundy value of the Lumberjack position in <xref ref="fig-lumberjack" />:
+<men xml:id="eqn-lumberjack">
+\g(G_1 \oplus G_2 \oplus G_3) = \g(G_1) \oplus \g(G_2) \oplus \g(G_3) = 5 \oplus 3 \oplus 4 = 2.
+</men>
+So this Lumberjack position <m>G_1 \oplus G_2 \oplus G_3</m> is an <m>\cN</m>-position. 
+There are actually four winning moves for this position: there is one winning move 
+in <m>G_1</m> and there are three winning moves in <m>G_2</m>.  
+We leave finding these winning moves as an exercise.
+
+			</p><p>
+
+Let's consider the tree <m>G_1</m> from  <xref ref="fig-lumberjack" /> one more time. 
+We now know that <m>\g(G_1)=5</m>. This means that the followers <m>\cF(G_1)</m> 
+must contain trees with Sprague-Grundy values of <m>0,1,2,3</m> and <m>4</m>, but not <m>5</m>. 
+In <xref ref="fig-lumb-follow" />, we confirm that this is the case. 
+(You should use the Tuft Principle to confirm the calculations of 
+the Sprague-Grundy value for each of  the seven followers of <m>G_1</m>.) 
+
+</p><p>
+			<figure xml:id="fig-lumb-follow">
+				<caption>The followers <m>\cF(G_1)</m> of the tree <m>G_1</m> from <xref ref="fig-lumberjack" />.</caption>
+
+
+			<image width="90%" xml:id="fig-img-lumb-follow">
+				<latex-image>
+\begin{tikzpicture}[scale=.5]
+
+
+
+\begin{scope}[shift={(-4,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (1.25,4) circle (3pt);
+\draw[fill] (.625,3) circle (3pt);
+\draw[fill] (-.75,3) circle (3pt);
+\draw[thick] (-.75,3) -- (0,2) -- (1.25,4);
+
+\draw[fill] (-1.25,4) circle (3pt);
+
+
+\draw[thick] (-.75,3) -- (-1.25,4);
+
+\node at (0,-1) {$\g=2$};
+
+\end{scope}
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (1.25,4) circle (3pt);
+\draw[fill] (.625,3) circle (3pt);
+\draw[fill] (-.75,3) circle (3pt);
+\draw[thick] (-.75,3) -- (0,2) -- (1.25,4);
+
+
+\draw[fill] (-.25,4) circle (3pt);
+
+\draw[thick] (-.25,4) -- (-.75,3);
+
+
+\node at (0,-1) {$\g=2$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(4,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (1.25,4) circle (3pt);
+\draw[fill] (.625,3) circle (3pt);
+
+\draw[thick] (0,2) -- (1.25,4);
+
+
+
+\node at (0,-1) {$\g=4$};
+
+\end{scope}
+
+\begin{scope}[shift={(8,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+
+\draw[fill] (.625,3) circle (3pt);
+\draw[fill] (-.75,3) circle (3pt);
+\draw[thick] (-.75,3) -- (0,2) -- (.625,3);
+
+\draw[fill] (-1.25,4) circle (3pt);
+\draw[fill] (-.25,4) circle (3pt);
+
+\draw[thick] (-.25,4) -- (-.75,3) -- (-1.25,4);
+
+\node at (0,-1) {$\g=2$};
+
+\end{scope}
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,2}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,2);
+
+\draw[fill] (-.75,3) circle (3pt);
+\draw[thick] (-.75,3) -- (0,2);
+
+\draw[fill] (-1.25,4) circle (3pt);
+\draw[fill] (-.25,4) circle (3pt);
+
+\draw[thick] (-.25,4) -- (-.75,3) -- (-1.25,4);
+
+\node at (0,-1) {$\g=3$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(16,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0,1,1}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+\draw[thick] (0,0)--(0,1);
+
+
+
+\node at (0,-1) {$\g=1$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(20,0)}]
+
+\draw[dashed] (-1,0) -- (1,0);
+
+\foreach \i in {0}
+{
+\draw[fill] (0,\i) circle (3pt);
+}
+
+\node at (0,-1) {$\g=0$};
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</figure>
+
+
+</p>
+<p>
+This example gives us confidence that the Tuft Principle does give the correct Sprague-Grundy values.
+
+</p>
+</section>

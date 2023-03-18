@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Games: Green Hackenbush</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+
+    \definecolor{orange}{RGB}{255, 165,   0}
+    \definecolor{crimson}{RGB}{220,20,60}
+    \definecolor{pink}{RGB}{255,20,147}
+    \definecolor{darkGreen}{RGB}{34,139,34}
+    \definecolor{olive}{RGB}{128,128,0}
+    \definecolor{teal}{RGB}{0,128,128}
+    \definecolor{turquoise}{RGB}{64,224,208}
+    \definecolor{navy}{RGB}{30, 144, 255}
+    \definecolor{purple}{RGB}{128,0,128}
+    \definecolor{indigo}{RGB}{216, 191, 216}
+    \definecolor{maroon}{RGB}{128,0,0}
+    \definecolor{gold}{RGB}{255,215,0}
+    \definecolor{lemon}{RGB}{255, 250, 205}
+    \definecolor{peru}{RGB}{205, 133,  63}
+
+    \definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+    \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+    \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+    \definecolor{tuscanred}{rgb}{0.51, 0.21, 0.21}
+    \definecolor{steelBlue}{rgb}{0.27, 0.51, 0.71}
+    \definecolor{tyrianpurple}{rgb}{0.4, 0.01, 0.24}
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+
+\newcommand{\pile}[1]{\bullet{#1}}
+\newcommand{\ppile}[1]{\bullet({#1})}
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+
+\def\nimsum{\, \oplus \,}
+\def\mex{{\mathrm{mex}}}
+\def\g{g}
+
+\newcommand{\inter}{{\mathrm{int}}}
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="game.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="hack-tuft.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-hack.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="hack-fusion.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="hack-tuft.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-hack.html" title="Up">Up</a><a class="next-button button toolbar-item" href="hack-fusion.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="nim.html" data-scroll="nim"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+<li class="link">
+<a href="ch-games.html" data-scroll="ch-games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="comb-games.html" data-scroll="comb-games">Combinatorial Games</a></li>
+<li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-nim.html" data-scroll="ch-nim"><span class="codenumber">2</span> <span class="title">Nim</span></a><ul>
+<li><a href="sec-nim.html" data-scroll="sec-nim">The Game of Nim</a></li>
+<li><a href="sec-binary.html" data-scroll="sec-binary">Binary Representation of Numbers</a></li>
+<li><a href="sec-nim-win.html" data-scroll="sec-nim-win">Who wins at Nim?</a></li>
+<li><a href="nim-bogus0.html" data-scroll="nim-bogus0">Bogus Nim Heaps</a></li>
+<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-sg.html" data-scroll="ch-sg"><span class="codenumber">3</span> <span class="title">Sprague-Grundy Values</span></a><ul>
+<li><a href="sg-mex.html" data-scroll="sg-mex">Mex</a></li>
+<li><a href="sg-subtract.html" data-scroll="sg-subtract">Subtraction Games</a></li>
+<li><a href="sg-nim.html" data-scroll="sg-nim">Sprague-Grundy Values for Nim</a></li>
+<li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
+<li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
+<li><a href="exercises-3.html" data-scroll="exercises-3">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-hack.html" data-scroll="ch-hack"><span class="codenumber">4</span> <span class="title">Green Hackenbush</span></a><ul>
+<li><a href="hack-bamboo.html" data-scroll="hack-bamboo">Bamboo Stalks</a></li>
+<li><a href="hack-lumberjack.html" data-scroll="hack-lumberjack">Lumberjack</a></li>
+<li><a href="hack-tuft.html" data-scroll="hack-tuft">Proof of the Tuft Principle</a></li>
+<li><a href="hack-green0.html" data-scroll="hack-green0" class="active">Green Hackenbush</a></li>
+<li><a href="hack-fusion.html" data-scroll="hack-fusion">Proof of the Fusion Principle</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="hack-green0"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">Green Hackenbush</span>
+</h2>
+<p id="p-356">In this section, we take the game of Lumberjack to its full generalization: <dfn class="terminology">Green Hackenbush</dfn>.<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-4" id="fn-4"><sup> 1 </sup></a> In this game, we allow any type of rooted <dfn class="terminology">multi-graph</dfn>, not just trees. In other words, our picture now consists of rooted graph components that  are allowed to have  loops and multiple edges.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-4"><div class="fn">The "Green" of Green Hackenbush is a reference to the fact that this is an impartial game. The game called Hackenbush is a partizan game. Hackenbush is played with Red and Blue edges, and each player can only hack away edges of her own color. The "Green" edges of Green Hackenbush are available to both players.</div></div>
+<p id="p-357">A move still consists of hacking away an edge in one of the rooted graphs. When the removal of an edge disconnects part of the graph from the ground, that part of the graph is removed from play.  <a class="xref" data-knowl="./knowl/fig-hack-example.html" title="Figure 4.4.1">Figure 4.4.1</a> shows an example game position of Green Hackenbush with three components. <figure class="figure figure-like" id="fig-hack-example"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-hack-example.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.1<span class="period">.</span></span><span class="space"> </span>A wintery position \(G=G_1 \oplus G_2 \oplus G_3\) in Green Hackenbush.</figcaption></figure></p>
+<p id="p-358">Just as in Lumberjack, we will find the Sprague-Grundy value of a complicated position (like that in <a class="xref" data-knowl="./knowl/fig-hack-example.html" title="Figure 4.4.1">Figure 4.4.1</a>) by replacing it with a series of simpler Green Hackenbush positions. In fact, we can find a forest whose Sprague-Grundy value is identical to the original game. So we can solve Green Hackenbush by turning it into Lumberjack!</p>
+<p id="p-359">First, we deal with loops. Recall that a <dfn class="terminology">loop</dfn> is an edge that connects a vertex to itself, a <dfn class="terminology">leaf</dfn> is a vertex of degree 1, and a <dfn class="terminology">twig</dfn> is an edge that is incident with a leaf. We can use the elementary <dfn class="terminology">Loop Principle</dfn> to simplify our graph.</p>
+<article class="lemma theorem-like" id="lemma-loop"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="period">.</span>
+</h6> Let \(G\) be a multigraph rooted at vertex \(x\) with a loop edge incident with vertex \(y\text{.}\) Let \(H\) be the multigraph obtained by replacing this loop by a twig edge from \(y\) to a new vertex \(z\text{.}\) Then \(\g(G) = \g(H)\text{.}\)</article><p id="p-360"></p>
+<p id="p-361"><article class="hiddenproof" id="proof-12"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><p id="p-362">A graph consisting of a single vertex with a loop has Sprague-Grundy value 1. More generally, it should make sense that replacing a loop by a twig does not change the Sprague-Grundy value of the graph: both represent  a single move. This proof is actually a simpler version of the proof of  <a class="xref" data-knowl="./knowl/thm-tuft.html" title="Theorem 4.2.4: The Tuft Principle">Theorem 4.2.4</a>, the Tuft Principle. An outline of the full proof of the Lemma is found in the exercises.</p></article></div></p>
+<p id="p-363">Next, we deal with cycles. Recall that a <dfn class="terminology">cycle</dfn> is a sequence of successive edges such that (1) no edges repeat and (2) the only repeating vertices are the first and last vertices. In particular, a loop is actually a cycle of length 1. If there are two edges between vertices \(x\) and \(y\text{,}\) then they form a cycle of length 2. We can deal with cycles using the marvelous <dfn class="terminology">Fusion Principle</dfn>. You <dfn class="terminology">fuse</dfn> two vertices \(x,y\) together by joining them together into a single vertex. Each edge joining \(x\) and \(y\) is bent into a loop. (And a loop is equivalent to a twig by  <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "lemma:loop" missing or not unique]</code>.)</p>
+<p id="p-364"><article class="theorem theorem-like" id="thm-fusion"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="period">.</span>
+</h6>
+<p id="p-365">Let \(G\) be a position in a game of Green Hackenbush. Let \(H\) be the position obtained by fusing together some (or all) of the vertices in a cycle of length \(k \geq 2\) in \(G\text{.}\) Then \(\g(G)=\g(H)\text{.}\)</p></article></p>
+<p id="p-366">We delay the proof of the the Fusion Principle until the next section. For now, let's use it to determine the Sprague-Grundy value of the position in <a class="xref" data-knowl="./knowl/fig-hack-example.html" title="Figure 4.4.1">Figure 4.4.1</a>. We deal with this position one component at a time. First, we prune the evergreen component into a bamboo shoot in <a class="xref" data-knowl="./knowl/fig-evergreen.html" title="Figure 4.4.4">Figure 4.4.4</a>. This evergreen has a single cycle of length 4. We fuse all of these vertices together,  creating a flower with 4 loops for petals. We then replace these loops with twigs by the Loop Principle. Finally, we use the Tuft Principle to find that \(\g(G_1)=2\text{.}\) <figure class="figure figure-like" id="fig-evergreen"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/fig-img-evergreen.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.4<span class="period">.</span></span><span class="space"> </span>The evergreen \(G_1\) has Sprague-Grundy value 2</figcaption></figure></p>
+<p id="p-367">Next, we melt the snowman in  <a class="xref" data-knowl="./knowl/fig-snowman.html" title="Figure 4.4.5">Figure 4.4.5</a>. This graph has multiple edges, and one loop. We apply the Fusion Principle twice and the Loop Principle five times to get a tuft with 5 twigs. Taking the nim sum of these branches, we find that \(\g(G_3)=1\text{.}\)</p>
+<p id="p-368"><figure class="figure figure-like" id="fig-snowman"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-snowman.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.5<span class="period">.</span></span><span class="space"> </span>The snowman \(G_3\) also has Sprague-Grundy value 1</figcaption></figure></p>
+<p id="p-369">This brings us to the reindeer, which is obviously more complicated. The only new move of note is that we should immediately merge the two grounded hoofs since the ground (dashed line) is really one large vertex. Beyond that, we alternately apply the Tuft, Fusion, and Loop Principles. In  <a class="xref" data-knowl="./knowl/fig-reindeer.html" title="Figure 4.4.6">Figure 4.4.6</a>, we immediately replace loops with twigs when we apply the Fusion Principle. Our transformation of the reindeer requires patience, as we alternately fuse vertices and use the Tuft principle to simplify tree-like branches. Ultimately, we find that \(\g(G_2)=5\text{.}\)</p>
+<p id="p-370"><figure class="figure figure-like" id="fig-reindeer"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-reindeer.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.6<span class="period">.</span></span><span class="space"> </span>The reindeer \(G_2\) has Sprague-Grundy value 5</figcaption></figure></p>
+<p id="p-371">Note that we perform this reindeer transformation very slowly: we show  eight intermediate transformations. <em class="emphasis">Likewise, you should be methodical so that you do not make any mistakes.</em> Make incremental changes, and do not skip steps. It is okay to work on independent parts of the graph simultaneously. For example, we actually make 4 different changes to get from the reindeer to the next graph:  we join the root vertices into one and also apply the Tuft Principle three times.</p>
+<p id="p-372">Finally, we can determine the Sprague-Grundy value of the game position \(G\) in  <a class="xref" data-knowl="./knowl/fig-hack-example.html" title="Figure 4.4.1">Figure 4.4.1</a>. We use the Sprague-Grundy Theorem to  find that the position  satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+\g(G) = \g(G_1 \oplus G_2 \oplus G_3) =
+\g(G_1) \oplus \g(G_2) \oplus \g(G_3) = 2 \oplus 5 \oplus 1 = 6.
+\end{equation*}
+</div>
+<p id="p-373">Between the Fusion Principle, the Loop Principle and the Tuft Principle, we can determine the Sprague-Grundy value of any Green Hackenbush position. This often requires care and perseverance.  As noted above, you should only apply one principle at a time (to a given part of the graph). Skipping steps is the easiest way to make mistakes. Take your time, and enjoy the metamorphosis from rooted graph to bamboo shoot.</p>
+<p id="p-374">There is a more important reason to take your time during this process: finding the winning move! Our wintery scene in  <a class="xref" data-knowl="./knowl/fig-hack-example.html" title="Figure 4.4.1">Figure 4.4.1</a> has Sprague-Grundy value of 6. There must be at least one move to a position with Sprague-Grundy value 0. How do we find it? It turns out that the only winning move must occur in the reindeer component \(G_2\) (see the exercises for why).</p>
+<p id="p-375">We must change the Sprague-Grundy value of that component from 5 to 3 so that the nim sum of the components becomes \(2 \oplus 3 \oplus 1 = 0\text{.}\)  <a class="xref" data-knowl="./knowl/fig-reindeer.html" title="Figure 4.4.6">Figure 4.4.6</a> shows nine equivalent positions. It is clear which edge we should hack in the ninth picture: removing the edge at height 4 gives the bamboo stalk \(*3\text{.}\) We can now rewind our process and figure out which edge in the original reindeer corresponds to the edge of height 4. Once again, we must be meticulous in this process. We do this in  <a class="xref" data-knowl="./knowl/fig-reindeer-rewind.html" title="Figure 4.4.7">Figure 4.4.7</a>, which tracks our desired edge through the reversed process. We find that there are actually five different edges that we can hack to achieve a Sprague-Grundy value of 3 for our reindeer. <figure class="figure figure-like" id="fig-reindeer-rewind"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-reindeer-rewind.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.7<span class="period">.</span></span><span class="space"> </span>Finding the reindeer edge whose removal gives a graph with Sprague-Grundy value 3. Hacking any of the five thick maroon edges of the reindeer's head will do. All other hacking moves do not lead to value 3.</figcaption></figure></p></section></div></main>
+</div>
+</body>
+</html>
