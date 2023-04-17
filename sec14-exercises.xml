@@ -168,7 +168,7 @@ child { node (G2a21) {$  \cP$}}
 \end{tikzpicture}
 				</latex-image>
 			</image>
-            <caption>Is the root position an <m>\cN</m>-position or a <m>\cN</m>-position ?</caption>
+            <caption>Is the root position an <m>\cN</m>-position or a <m>\cP</m>-position ?</caption>
 </figure>
 
 
