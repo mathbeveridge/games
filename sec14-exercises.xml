@@ -9,28 +9,28 @@
 		<exercise>
 			<statement>
 				<p>
- How many distinct first moves are there in the Nimble position of Figure <xref ref="fig-nimble"/>? (Don't worry about whether these moves are winning or losing; just count the total number of possible first moves.)
+ How many distinct first moves are there in the Nimble position of  <xref ref="fig-nimble"/>? (Don't worry about whether these moves are winning or losing; just count the total number of possible first moves.)
 				</p>
 			</statement>
 		</exercise>
 		<exercise>
 			<statement>
 				<p>
- Explain why Position 5 in Figure <xref ref="fig-nimble-examples" /> is Bob-win.
+ Explain why Position 5 in  <xref ref="fig-nimble-examples" /> is Bob-win.
 				</p>
 			</statement>
 		</exercise>
 		<exercise>
 			<statement>
 				<p>
- Should Alice have lost the game in Figure <xref ref="fig-nimbleplay"/>? Why or why not?
+ Should Alice have lost the game in  <xref ref="fig-nimbleplay"/>? Why or why not?
 				</p>
 			</statement>
 		</exercise>
 		<exercise>
 			<statement>
 				<p>
- Consider the  Nimble position in Figure <xref ref="fig-nimble4"/>, where it is Alice's turn to move. Who is the winner: Alice or Bob? Explain.
+ Consider the  Nimble position in  <xref ref="fig-nimble4"/>, where it is Alice's turn to move. Who is the winner: Alice or Bob? Explain.
 
 
 </p>
@@ -62,7 +62,7 @@
 		<exercise>
 			<statement>
 				<p>
- Who wins the Nimble position in Figure <xref ref="fig-nimble" />? Explain. (Hint: your answer to exercise 2 will be helpful.)
+ Who wins the Nimble position in  <xref ref="fig-nimble" />? Explain. (Hint: your answer to exercise 2 will be helpful.)
 
 				</p>
 			</statement>
@@ -86,7 +86,7 @@
 		<exercise>
 			<statement>
 				<p>
- For each of the  game trees in Figure <xref ref="fig-tree-exercise"/>, recursively determine whether each position is an  <m>\cN</m>-position or a  <m>\cP</m>-position.   Who wins the root game position, Alice or Bob?
+ For each of the  game trees in  <xref ref="fig-tree-exercise"/>, recursively determine whether each position is an  <m>\cN</m>-position or a  <m>\cP</m>-position.   Who wins the root game position, Alice or Bob?
 
 </p>
 <p>

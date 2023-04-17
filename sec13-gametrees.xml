@@ -180,11 +180,11 @@ child { node (H1b1) { $\emptyset$ }}
 </p>
 <p>
 
-Next, we add the symbol <m>\cN</m> or <m>\cP</m> next to each position, according to the outcome of the game (under optimal play). This is shown in Figure <xref ref="fig-gametree2"/>. We know that <m>\{ 1, 3 \}</m> is an <m>\cN</m>-position because Alice can set up the Tweedle position <m>\{ 1,1\}</m>. 
+Next, we add the symbol <m>\cN</m> or <m>\cP</m> next to each position, according to the outcome of the game (under optimal play). This is shown in  <xref ref="fig-gametree2"/>. We know that <m>\{ 1, 3 \}</m> is an <m>\cN</m>-position because Alice can set up the Tweedle position <m>\{ 1,1\}</m>. 
 
 </p>
 <p>
-Figure <xref ref="fig-gametree2" /> shows that this is the <em>only</em> winning move for the Next player: all other moves lead to <m>\cN</m>-positions and Bob gets to play from this position. Having a winning strategy means that there is at least one winning move. We have observed the following general fact:
+ <xref ref="fig-gametree2" /> shows that this is the <em>only</em> winning move for the Next player: all other moves lead to <m>\cN</m>-positions and Bob gets to play from this position. Having a winning strategy means that there is at least one winning move. We have observed the following general fact:
 </p>
 <fact>
 	<p><em>Rule 1</em>: An <m>\cN</m>-position must have at least one follower that is a <m>\cP</m>-position.

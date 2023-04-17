@@ -53,7 +53,7 @@ We can have empty squares, as well as multiple coins on a single square.
 </exploration>
 </p>
 
-<p>Now that you've played Nimble, let's try to analyze the game. We name our two players Alice and Bob, where Alice plays first. Who wins the Nimble positions in Figure <xref ref="fig-nimble-examples" />, Alice or Bob? Try to determine the winner of these games before you continue reading. We encourage you to actually play the games against a real opponent!
+<p>Now that you've played Nimble, let's try to analyze the game. We name our two players Alice and Bob, where Alice plays first. Who wins the Nimble positions in <xref ref="fig-nimble-examples" />, Alice or Bob? Try to determine the winner of these games before you continue reading. We encourage you to actually play the games against a real opponent!
 </p>
 
 

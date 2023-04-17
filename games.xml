@@ -3,7 +3,7 @@
 <!--********************************************************************
 Copyright 2023 Andrew Beveridge
 
-xsltproc -xinclude /Users/abeverid/mathbook/xsl/pretext-html.xsl ../discrete.xml
+xsltproc -xinclude /Users/abeverid/mathbook/xsl/pretext-html.xsl ../games.xml
 python3 /Users/abeverid/mathbook/pretext/pretext -vv -c latex-image -f svg -d images  ../discrete.xml
 
 write a  python script to handle:
@@ -72,7 +72,10 @@ pull the name of the problem from the first line  of  the \item
             <xi:include href="./sec23-nim-win.xml" />  
             <xi:include href="./sec24-nim-bogus.xml" />    
             <xi:include href="./sec25-nim-exercise.xml" />       
-        </chapter>                   
+        </chapter> 
+    </part> 
+    <part xml:id="games">
+        <title>Impartial Games</title>                 
         <chapter xml:id="ch-sg" xmlns:xi="http://www.w3.org/2001/XInclude">
             <title>Sprague-Grundy Values</title>
             <xi:include href="./sec31-mex.xml" />       

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
+<section xml:id="nim-exercise">
+	<title>Exercises</title>
 
 	<exercises>
 		<title>Exercises</title>
@@ -168,3 +170,5 @@ The <em>rows</em> of your table should correspond to <m>S(1,2)</m> moves on the 
 			</statement>
 		</exercise>
 	</exercises>
+
+	</section>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 
-<section xml:id="nimble-exercise">
+<section xml:id="hackenbush-exercise">
 	<title>Exercises</title>
 
 	<exercises>
@@ -17,7 +17,8 @@
 		<exercise>
 			<statement>
 				<p>
- Determine whether each of the following Bamboo Stalk positions is an \Npos~or a \Ppos. If it is an \Npos, list all of the winning moves.
+ Determine whether each of the following Bamboo Stalk positions is an <m>\cN</m>-position or a <m>\cP</m>-position.
+  If it is an <m>\cN</m>-position, list all of the winning moves.
 
 			</p><p>
 

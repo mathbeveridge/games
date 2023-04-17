@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Games: Exercises</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(    \newcommand{\identity}{\mathrm{id}}
+    \newcommand{\notdivide}{{\not{\mid}}}
+    \newcommand{\notsubset}{\not\subset}
+    \newcommand{\lcm}{\operatorname{lcm}}
+    \newcommand{\gf}{\operatorname{GF}}
+    \newcommand{\inn}{\operatorname{Inn}}
+    \newcommand{\aut}{\operatorname{Aut}}
+    \newcommand{\Hom}{\operatorname{Hom}}
+    \newcommand{\cis}{\operatorname{cis}}
+    \newcommand{\chr}{\operatorname{char}}
+    \newcommand{\Null}{\operatorname{Null}}
+
+
+
+    \definecolor{orange}{RGB}{255, 165,   0}
+    \definecolor{crimson}{RGB}{220,20,60}
+    \definecolor{pink}{RGB}{255,20,147}
+    \definecolor{darkGreen}{RGB}{34,139,34}
+    \definecolor{olive}{RGB}{128,128,0}
+    \definecolor{teal}{RGB}{0,128,128}
+    \definecolor{turquoise}{RGB}{64,224,208}
+    \definecolor{navy}{RGB}{30, 144, 255}
+    \definecolor{purple}{RGB}{128,0,128}
+    \definecolor{indigo}{RGB}{216, 191, 216}
+    \definecolor{maroon}{RGB}{128,0,0}
+    \definecolor{gold}{RGB}{255,215,0}
+    \definecolor{lemon}{RGB}{255, 250, 205}
+    \definecolor{peru}{RGB}{205, 133,  63}
+
+    \definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+    \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+    \definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+    \definecolor{tuscanred}{rgb}{0.51, 0.21, 0.21}
+    \definecolor{steelBlue}{rgb}{0.27, 0.51, 0.71}
+    \definecolor{tyrianpurple}{rgb}{0.4, 0.01, 0.24}
+
+    \def\Z{\mathbb Z}
+    \def\R{\mathbb R}
+    \def\Q{\mathbb Q}
+    \def\N{\mathbb N}
+    \def\C{\mathbb C}
+
+    \def\ba{{\mathbf{a}}}
+    \def\bb{\mathbf{b}}
+    \def\bh{{\mathbf{h}}}
+    \def\bu{{\mathbf{u}}}
+    \def\bv{{\mathbf{v}}}
+    \def\bw{{\mathbf{w}}}   
+    \def\bx{{\mathbf{x}}}
+    \def\by{\mathbf{y}}    
+    \def\bone{{\mathbf{1}}}
+    \def\bzero{\mathbf{0}}
+
+    \def\var{{\mbox{var}}}
+    \def\P{{\mathbb{P}}}
+    \def\E{{\mathbb{E}}}
+
+    \def\cA{{\mathcal{A}}}
+    \def\cB{{\mathcal{B}}}
+    \def\cC{{\mathcal{C}}}
+    \def\cP{\mathcal P}
+    \def\cE{\mathcal E}
+    \def\cO{\mathcal O}
+
+
+   
+
+    \def\kin{k^{\mathrm{in}}}
+    \def\kout{k^{\mathrm{out}}}
+
+    \newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+    \newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+    \tikzset{-&gt;-/.style={decoration={
+     markings,
+     mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+
+
+
+
+
+\newcommand{\pile}[1]{\bullet{#1}}
+\newcommand{\ppile}[1]{\bullet({#1})}
+
+\newcommand{\nim}[1]{*{#1}}
+
+\newcommand{\bc}{C}
+
+\newcommand{\R}{{\mathbb R}}
+
+
+
+\def\nimsum{\, \oplus \,}
+\def\mex{{\mathrm{mex}}}
+\def\g{g}
+
+\newcommand{\inter}{{\mathrm{int}}}
+
+
+\def\cA{{\mathcal A}}
+\def\cB{{\mathcal B}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cN{{\mathcal N}}
+\def\cQ{{\mathcal Q}}
+\def\cP{{\mathcal P}}
+\def\W{{\mathbb W}}
+
+     
+
+
+
+\newcommand{\nimbleboard}[1]{
+
+\begin{scope}[shift={(.25, .4)}]
+\draw (0,-.3) -- (#1,-.3) -- (#1+.45, .7) -- (#1+.45, 1);
+\draw (0,0) -- (#1,0);
+\draw (.45,1) -- (#1+.45,1);
+
+\foreach \i in {0, ..., #1} {
+  \draw (\i, -.3) -- (\i, 0) -- (\i+.45,1);
+}
+
+\foreach \i in {1, ..., #1} {
+  \node[style={font=\sffamily\scriptsize}] at (\i - .5, -.15) {\i};
+}
+
+\end{scope}
+
+}
+\newcommand{\coin}[1]{
+\begin{scope}[shift={#1}]
+
+\draw[color=white, fill=white] (-.4, 0) -- (-.4, -.1) -- (.4,-.1) --  (.4,0) -- cycle;
+\draw[thick, fill=white] (0,0) ellipse (0.4 and 0.10);
+\draw[thick, fill=white] (.4,-.1) arc (0:-180:0.4 and 0.10);
+\draw[thick] (0.4,0) -- (0.4, -.1);
+\draw[thick] (-0.4,0) -- (-0.4, -.1);
+
+\end{scope}
+
+}
+
+\newcommand{\bean}[2]{
+\begin{scope}[shift={#1}, rotate={#2}]
+
+\draw [very thick, fill=gray!50] plot [smooth cycle] coordinates {(-.2,0) (-.175, .07) (-.1,.1) (0,.075) (.1,.1) (.175, .07) (.2,0) (.15, -.07) (0,-.1) (-.15, -.07)};
+
+\end{scope}
+
+}
+
+\newcommand{\heap}[2]{
+\begin{scope}[shift={#1}]
+
+\draw[very thick] (0,0) circle ({#2});
+
+\end{scope}
+
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="game.html"><span class="title">How to Be a Player:</span> <span class="subtitle">Impartial Combinatorial Games</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="hack-fusion.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-hack.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="hack-fusion.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-hack.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="nim.html" data-scroll="nim"><span class="codenumber">I</span> <span class="title">The Game of Nim</span></a></li>
+<li class="link">
+<a href="ch-games.html" data-scroll="ch-games"><span class="codenumber">1</span> <span class="title">Combinatorical Games</span></a><ul>
+<li><a href="nimble.html" data-scroll="nimble">Nimble</a></li>
+<li><a href="comb-games.html" data-scroll="comb-games">Combinatorial Games</a></li>
+<li><a href="game-trees.html" data-scroll="game-trees">Game Trees</a></li>
+<li><a href="nimble-exercise.html" data-scroll="nimble-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-nim.html" data-scroll="ch-nim"><span class="codenumber">2</span> <span class="title">Nim</span></a><ul>
+<li><a href="sec-nim.html" data-scroll="sec-nim">The Game of Nim</a></li>
+<li><a href="sec-binary.html" data-scroll="sec-binary">Binary Representation of Numbers</a></li>
+<li><a href="sec-nim-win.html" data-scroll="sec-nim-win">Who wins at Nim?</a></li>
+<li><a href="nim-bogus0.html" data-scroll="nim-bogus0">Bogus Nim Heaps</a></li>
+<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link part"><a href="games.html" data-scroll="games"><span class="codenumber">II</span> <span class="title">Impartial Games</span></a></li>
+<li class="link">
+<a href="ch-sg.html" data-scroll="ch-sg"><span class="codenumber">3</span> <span class="title">Sprague-Grundy Values</span></a><ul>
+<li><a href="sg-mex.html" data-scroll="sg-mex">Mex</a></li>
+<li><a href="sg-subtract.html" data-scroll="sg-subtract">Subtraction Games</a></li>
+<li><a href="sg-nim.html" data-scroll="sg-nim">Sprague-Grundy Values for Nim</a></li>
+<li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
+<li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
+<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-hack.html" data-scroll="ch-hack"><span class="codenumber">4</span> <span class="title">Green Hackenbush</span></a><ul>
+<li><a href="hack-bamboo.html" data-scroll="hack-bamboo">Bamboo Stalks</a></li>
+<li><a href="hack-lumberjack.html" data-scroll="hack-lumberjack">Lumberjack</a></li>
+<li><a href="hack-tuft.html" data-scroll="hack-tuft">Proof of the Tuft Principle</a></li>
+<li><a href="hack-green0.html" data-scroll="hack-green0">Green Hackenbush</a></li>
+<li><a href="hack-fusion.html" data-scroll="hack-fusion">Proof of the Fusion Principle</a></li>
+<li><a href="hackenbush-exercise.html" data-scroll="hackenbush-exercise" class="active">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="hackenbush-exercise"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">Exercises</span>
+</h2>
+<section class="exercises" id="exercises-4"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercise</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-37"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-440">Prove that Nim and Bamboo Stalks are equivalent games by explaining how to turn one game into the other. More specifically, explain why a bamboo stalk of height \(n\) is equivalent to the nim heap \(*n\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-38"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-441">Determine whether each of the following Bamboo Stalk positions is an \(\cN\)-position or a \(\cP\)-position. If it is an \(\cN\)-position, list all of the winning moves.</p>
+<p id="p-442"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise0.svg" role="img" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-443">Equation <a class="xref" data-knowl="./knowl/eqn-lumberjack.html" title="Equation 4.2.1">(4.2.1)</a>  shows that the Sprague-Grundy value of the Lumberjack position in <a class="xref" data-knowl="./knowl/fig-lumberjack.html" title="Figure 4.2.1">Figure 4.2.1</a> is</p>
+<div class="displaymath">
+\begin{equation*}
+\g(G_1 \oplus G_2 \oplus G_3) =2.
+\end{equation*}
+</div>
+<p class="continuation">There is a winning move for  \(G_1 \oplus G_2 \oplus G_3\) in \(G-1\) and three winning moves for \(G_1 \oplus G_2 \oplus G_3\) in \(G_2\text{.}\) Find all of these  winning moves.</p></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-444">Give an example of a Lumberjack position \(G\) that has a follower \(G'\) with \(\g(G') &lt; \g(G)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-445">Find the Sprague-Grundy value of each of these Lumberjack trees.</p>
+<ol class="lower-alpha">
+<li id="li-98"><p id="p-446">This tree: <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/tree1.png" class="contained"></div></p></li>
+<li id="li-99"><p id="p-447">This other tree: <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/tree2.png" class="contained"></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-448">Show that the following Lumberjack forest is an \Npos. For each of the three trees, find a winning move, or explain why no such move exists. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/forest.png" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-449">This exercise guides you through the proof of Lemma \ref{lemma-loop}. Let \(G\) be a multigraph rooted at vertex \(x\) with a loop edge  \(e\) incident with vertex \(y\text{.}\) Let \(H\) be the multigraph obtained by replacing this loop by a twig edge \(f\) from \(y\) to a new vertex \(z\text{.}\) You will show that the Green Hackenbush game position \(G \oplus H\) satisfies \(\g(G \oplus H) = 0\text{.}\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise4.svg" role="img" class="contained"></div></p>
+<ol class="lower-alpha">
+<li id="li-100"><p id="p-450">Suppose that Left hacks the loop \(e\) in \(G\text{.}\) What should Right do? How do you know that this results in a \Ppos?</p></li>
+<li id="li-101"><p id="p-451">Suppose that Left hacks  an edge in \(G\) that disconnects the loop \(e\) from the root of \(G\text{.}\) What should Right do?</p></li>
+<li id="li-102"><p id="p-452">Use induction on the number of edges \(m\) in \(G\) to prove that if Left hacks an edge in \(G\) that does not disconnect the loop \(e\) from the root, then Right has a move in \(H\) to create a \Ppos. Your base case is \(m=0\text{,}\) in which \(G\) consists of a single root vertex \(x\) with no edges. (This means that for the base case, we have \(y=x\) since this is the only vertex in \(G\text{.}\))</p></li>
+<li id="li-103"><p id="p-453">What if Left makes his first move in \(H\) instead of in \(G\text{?}\)</p></li>
+<li id="li-104"><p id="p-454">Explain why \(\g(G \oplus H) = 0\) means that \(\g(G) = \g(H)\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-455">In this problem, we confirm that there are no winning moves in  <a class="xref" data-knowl="./knowl/fig-hack-example.html" title="Figure 4.4.1">Figure 4.4.1</a> that hack an edge in either the evergreen \(G_1\) or the snowman \(G_3\)</p>
+<ol class="lower-alpha">
+<li id="li-105"><p id="p-456">List the followers of the evergreen \(G_1\text{,}\) and find their Sprague-Grundy values using the Tuft, Loop and Fusion Principles.</p></li>
+<li id="li-106"><p id="p-457">List the followers of \(G_3\text{,}\) and find their Sprague-Grundy values using the Tuft, Loop and Fusion Principles.</p></li>
+<li id="li-107">
+<p id="p-458">The Sprague-Grundy value of the wintery position of Figure \ref{fig:hack-example} is</p>
+<div class="displaymath">
+\begin{equation*}
+\g(G) = \g(G_1) \oplus \g(G_2) \oplus \g(G_3) = 2 \oplus 5 \oplus 1 = 6.
+\end{equation*}
+</div>
+<p class="continuation">Explain why your answers to parts (a) and (b) show that the winning move for \(G\) must involving hacking an edge in the reindeer \(G_2\text{.}\)</p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-459">Determine the Sprague-Grundy value of each of the following sporty Green Hackenbush pictures.</p>
+<ol class="lower-alpha">
+<li id="li-108"><p id="p-460">This quarterback: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/football.png" class="contained"></div></p></li>
+<li id="li-109"><p id="p-461">This fisher: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fishing.png" class="contained"></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-462">Determine the Sprague-Grundy value of each of the following speedy Green Hackenbush pictures.</p>
+<ol class="lower-alpha">
+<li id="li-110"><p id="p-463">This biker: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/biking.png" class="contained"></div></p></li>
+<li id="li-111"><p id="p-464">This horse and rider: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/riding.png" class="contained"></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-465">Consider the following Green Hackenbush volleyball game. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/volleyball.png" class="contained"></div></p>
+<ol class="lower-alpha">
+<li id="li-112"><p id="p-466">Find its Sprague-Grundy value.</p></li>
+<li id="li-113"><p id="p-467">Find all of the winning moves for Left.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-468">In this problem, you will prove the Parity Principle of Theorem \ref{thm-parity}: the Sprague-Grundy value of any Lumberjack position has the same parity as the total number of edges. The key idea behind this proof is the following simple observation:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcccl}
+\mbox{even} + \mbox{even} &amp;=&amp; \mbox{odd} + \mbox{odd} &amp;=&amp; \mbox{even} \\
+\mbox{even} + \mbox{odd} &amp;=&amp; \mbox{odd} + \mbox{even} &amp;=&amp; \mbox{odd} \\
+\\
+\mbox{even} \oplus \mbox{even} &amp;=&amp; \mbox{odd} \oplus \mbox{odd} &amp;=&amp; \mbox{even} \\
+\mbox{even} \oplus \mbox{odd} &amp;=&amp; \mbox{odd} \oplus \mbox{even} &amp;=&amp; \mbox{odd} \\
+\end{array}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-114"><p id="p-469">Prove that the Parity Principle holds for \(k\)-tufts.</p></li>
+<li id="li-115"><p id="p-470">Let \(G\) be a tree, and let \(m\) be the number vertices of degree greater than 2. Use induction on \(m\) to prove that the Parity Principle holds for \(G\text{.}\) You will need to use part (a) during your inductive step.</p></li>
+<li id="li-116"><p id="p-471">Use part (b) to prove that if \(H\) is a forest, then the Parity Principle holds.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-472">Find the Sprague-Grundy value of this classic movie scene. Then find all of the winning moves. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/oz-gang.png" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-473">Prove that the Parity Principle also holds for Green Hackenbush.</p></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-474">The Tuft Principle (Theorem \ref{thm:tuft}) says that we can replace a tuft consisting of paths \(B_1, B_2, \ldots, B_k\) with a single path of length \(B_1 \oplus B_2 \oplus \cdots B_k\text{.}\) Using the proof of Theorem \ref{thm:tuft} as a guide, prove the following <dfn class="terminology">Branch Principle</dfn>: <blockquote class="blockquote" id="blockquote-4">
+<p id="p-475"><em class="emphasis">Branch Principle:</em> Let \(G\) be a tree rooted at \(x\) and let \(y\) be a leaf of \(G\text{.}\) Let \(H_1\) be tree rooted at \(z\) with \(g(H_1)=\ell\text{,}\) and let \(H_2\) be a bamboo stalk of height \(\ell\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+g([G_y:H_1]) = g([G_y:H_2]).
+\end{equation*}
+</div>
+</blockquote></p></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-476">Consider the following family of graphs <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise11.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first four trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-477">Consider the following family of graphs <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise12.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first four trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-478">Consider the following family of graphs <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise13.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first eight trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-479">Consider the following family of graphs <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise14.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first eight trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-480">Recall that an even cycle is a cycle with an even number of edges, and an odd cycle is a cycle with an odd number of edges. In Green Hackenbush, show that we can simply our fusion process as follows.</p>
+<ul class="disc">
+<li id="li-117"><p id="p-481">An even cycle can be replaced by a single fused vertex.</p></li>
+<li id="li-118"><p id="p-482">An odd cycle can be replaced by a single fused vertex with one leaf attached to it.</p></li>
+</ul>
+<p class="continuation">Proving these two statements requires that you combine three principles. You must mention them all, in order.</p></article></section></section></div></main>
+</div>
+</body>
+</html>
