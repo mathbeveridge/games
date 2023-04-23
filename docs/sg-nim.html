@@ -108,6 +108,7 @@
     \def\cB{{\mathcal{B}}}
     \def\cC{{\mathcal{C}}}
     \def\cP{\mathcal P}
+    \def\cF{{\mathcal F}}
     \def\cE{\mathcal E}
     \def\cO{\mathcal O}
 
@@ -255,7 +256,7 @@
 <li><a href="sg-nim.html" data-scroll="sg-nim" class="active">Sprague-Grundy Values for Nim</a></li>
 <li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
 <li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
-<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+<li><a href="sg-exercise.html" data-scroll="sg-exercise">Exercises</a></li>
 </ul>
 </li>
 <li class="link">
@@ -273,7 +274,7 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sg-nim"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Sprague-Grundy Values for Nim</span>
 </h2>
-<p id="p-237">In this subsection, we explore the Sprague-Grundy values for the game of Nim. Let's start simply. What is the Sprague-Grundy value for a single heap nim game  \(\nim{n}\text{?}\) Nim position \(\nim{1}\) only has one follower: \(\nim{0}\text{.}\) Therefore</p>
+<p id="p-238">In this subsection, we explore the Sprague-Grundy values for the game of Nim. Let's start simply. What is the Sprague-Grundy value for a single heap nim game  \(\nim{n}\text{?}\) Nim position \(\nim{1}\) only has one follower: \(\nim{0}\text{.}\) Therefore</p>
 <div class="displaymath">
 \begin{equation*}
 \g(\nim{1}) = \mex \{ \g( \nim{0}) \} = \mex \{ 0 \} = 1.
@@ -294,9 +295,9 @@
 <p class="continuation">This same proof applies in general, and gives us the following lemma.</p>
 <article class="lemma theorem-like" id="lemma-nimsprague"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
-</h6>The Sprague-Grundy value of \(*n\) is  \(g(\nim{n})= n. \)</article><p id="p-238"></p>
-<p id="p-239"><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-240">We leave this straight-forward proof by strong induction for the exercises.</p></article></div></p>
-<p id="p-241">You may be a little disappointed that the Sprague-Grundy value of a nim heap is so \(\ldots\) boring. But this is actually great news! Single heap Nim is the most fundamental combinatorial game, so we expect that its Sprague-Grundy values should be the easiest to calculate. Let's move on to some small two-heap games of Nim. We must build up these values recursively. Clearly</p>
+</h6>The Sprague-Grundy value of \(*n\) is  \(g(\nim{n})= n. \)</article><p id="p-239"></p>
+<p id="p-240"><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-241">We leave this straight-forward proof by strong induction for the exercises.</p></article></div></p>
+<p id="p-242">You may be a little disappointed that the Sprague-Grundy value of a nim heap is so \(\ldots\) boring. But this is actually great news! Single heap Nim is the most fundamental combinatorial game, so we expect that its Sprague-Grundy values should be the easiest to calculate. Let's move on to some small two-heap games of Nim. We must build up these values recursively. Clearly</p>
 <div class="displaymath">
 \begin{equation*}
 \g(\nim{0} \oplus \nim{0})  = 0,
@@ -319,9 +320,9 @@ g(\nim{2} \oplus \nim{2} ) &amp;=&amp; \mex  \{ g(\nim{1} \oplus \nim{2}), g(\ni
 \end{equation*}
 </div>
 <p class="continuation">This is already getting pretty messy. The best way to calculate the Sprague-Grundy value is to use a game tree.  We do this for nim position \(\nim{2} \oplus \nim{1}\) in <a class="xref" data-knowl="./knowl/fig-nim2-2.html" title="Figure 3.3.2">Figure 3.3.2</a>. The tree structure clearly shows the followers of each position. The recursive nature of the Sprague-Grundy definition is easy to chase through. Start by writing down value 0 at the leaves. Then move up the tree, calculating the mex of the followers of each position. Eventually, you will find the value of the root.</p>
-<p id="p-242"><figure class="figure figure-like" id="fig-nim2-2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-nim2-2.svg" role="img" class="contained"></div>
+<p id="p-243"><figure class="figure figure-like" id="fig-nim2-2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-nim2-2.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Calculating \(g(\nim{2} \oplus \nim{1})=3\) using the full game tree. <em class="emphasis">Top</em>: the game tree listing the positions and their followers. <em class="emphasis">Bottom</em>: the Sprague-Grundy values of those positions.</figcaption></figure></p>
-<p id="p-243">Continuing this way, we populate <a class="xref" data-knowl="./knowl/eqn-sgv.html" title="Equation 3.3.1">(3.3.1)</a> for nim heaps \(*n \times *m\) up to size 3.</p>
+<p id="p-244">Continuing this way, we populate <a class="xref" data-knowl="./knowl/eqn-sgv.html" title="Equation 3.3.1">(3.3.1)</a> for nim heaps \(*n \times *m\) up to size 3.</p>
 <div class="displaymath">
 \begin{equation}
 \begin{array}{c|cccc}
@@ -335,9 +336,9 @@ g(\nim{2} \oplus \nim{2} ) &amp;=&amp; \mex  \{ g(\nim{1} \oplus \nim{2}), g(\ni
 \end{equation}
 </div>
 <p class="continuation">As with the nim value, the Sprague-Grundy value is 0 if and only if we are in a \(\cP\)-position. In fact, if we compare these Sprague-Grundy values with the nim addition values in Table <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn-nim-add" missing or not unique]</code>, we see that they are identical! Could it be that these very different functions are actually one and the same? The answer is a resounding yes: \(n \oplus m = g(\nim{n} \oplus \nim{m})\) for all \(n,m \in \W.\) We prove this surprising fact in Section <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec-sumgames" missing or not unique]</code>. We close this section by revisiting our use of the game tree to find the Sprague-Grundy value. In Figure <a class="xref" data-knowl="./knowl/fig-nim2-2.html" title="Figure 3.3.2">Figure 3.3.2</a>, we see many positions that we recognize from our previous analysis. There is no need to expand the tree beneath a position with a known value. Instead, we can prune the tree at that position, and just write down the known Sprague-Grundy value for that position. This can save a lot of work, as show in Figure <a class="xref" data-knowl="./knowl/fig-nim2-4.html" title="Figure 3.3.3">Figure 3.3.3</a> where we calculate \(g(\nim{1} \oplus \nim{4})\text{.}\)</p>
-<p id="p-244"><figure class="figure figure-like" id="fig-nim2-4"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-nim2-4.svg" role="img" class="contained"></div>
+<p id="p-245"><figure class="figure figure-like" id="fig-nim2-4"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-nim2-4.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Calculating \(g(\nim{2} \oplus \nim{4})=6\) using the partial game tree and the known values in Table <a class="xref" data-knowl="./knowl/eqn-sgv.html" title="Equation 3.3.1">(3.3.1)</a>. We stop drawing the game tree when we encounter positions with known values.</figcaption></figure></p>
-<p id="p-245">The definition of the Sprague-Grundy value is much more cumbersome that nim addition. So why should we bother with it? The reason is that the Sprague-Grundy function works for <em class="emphasis">all impartial combinatorial games</em>. Nim addition only applies to the game of Nim (and its disguised forms). In the next section, we will use the Sprague-Grundy value to find winning strategies are games that are distinct from Nim. We will see that for any combinatorial game, the Sprague-Grundy value is zero if and only if the position is a \(\cP\)-position.</p></section></div></main>
+<p id="p-246">The definition of the Sprague-Grundy value is much more cumbersome that nim addition. So why should we bother with it? The reason is that the Sprague-Grundy function works for <em class="emphasis">all impartial combinatorial games</em>. Nim addition only applies to the game of Nim (and its disguised forms). In the next section, we will use the Sprague-Grundy value to find winning strategies are games that are distinct from Nim. We will see that for any combinatorial game, the Sprague-Grundy value is zero if and only if the position is a \(\cP\)-position.</p></section></div></main>
 </div>
 </body>
 </html>

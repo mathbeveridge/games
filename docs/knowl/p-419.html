@@ -12,10 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p><article class="claim theorem-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Claim</span><span class="space"> </span><span class="codenumber">4.5.8</span><span class="period">.</span>
-</h6>
-<em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">(Claim 4)</em>.  \(G\) contains exactly one cycle through the root vertex.</article></p>
+<p>We can now split the graph \(G\) into two subgraphs \(H, K\) at vertex \(y\text{,}\) as shown in  <a class="xref" data-knowl="./knowl/fig-claim3.html" title="Figure 4.5.7">Figure 4.5.7</a>. The subgraph \(K\) contains the cycle \(C\text{,}\) and \(K\) contains strictly fewer vertices than \(G\text{.}\) Therefore, the fusion principle applies to \(K\text{.}\) Let \(K'\) be the graph obtained by fusing all of the vertices of \(C\) into one vertex. We have \(\g(K) = \g(K')\) and therefore</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(G) = \g\left([H_y : K] \right) = \g \left([H_y : K'] \right)
+\end{equation*}
+</div>
+<p class="continuation">by the Colon Principle,  <a class="xref" data-knowl="./knowl/thm-colon.html" title="Theorem 4.5.2: The Colon Principle">Theorem 4.5.2</a>. The resulting graph \([H_y : K']\) has fewer vertices than \(G\text{,}\) so the Fusion Principle applies to \([H_y : K']\text{.}\) But this means that the Fusion Principle also applies to \(G\text{,}\) a contradiction. Therefore, every cycle in our minimal criminal \(G\) must go through the root vertex \(x\text{.}\) \(\Box\)</p>
 <span class="incontext"><a href="hack-fusion.html#p-419">in-context</a></span>
 </body>
 </html>

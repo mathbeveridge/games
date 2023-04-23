@@ -108,6 +108,7 @@
     \def\cB{{\mathcal{B}}}
     \def\cC{{\mathcal{C}}}
     \def\cP{\mathcal P}
+    \def\cF{{\mathcal F}}
     \def\cE{\mathcal E}
     \def\cO{\mathcal O}
 
@@ -255,7 +256,7 @@
 <li><a href="sg-nim.html" data-scroll="sg-nim">Sprague-Grundy Values for Nim</a></li>
 <li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
 <li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
-<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+<li><a href="sg-exercise.html" data-scroll="sg-exercise">Exercises</a></li>
 </ul>
 </li>
 <li class="link">
@@ -273,15 +274,15 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="hack-bamboo"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Bamboo Stalks</span>
 </h2>
-<p id="p-301">In this chapter, we explore three generalizations of Nim: <em class="emphasis">Bamboo Stalks</em>, <em class="emphasis">Lumberjack</em>, and <em class="emphasis">Green Hackenbush.</em> Each game is played by hacking away edges from a graph.</p>
-<p id="p-302">In the  previous chapter, we considered variations of Nim that still dealt with heaps of beans (or tokens or coins or pins). We considered more restricted "taking rules" and added "breaking rules" that split heaps apart. But still, the components of our game were heaps of things. In this chapter, we explore ways to generalize heaps into more exotic structures.</p>
-<p id="p-303">The game of <dfn class="terminology">Bamboo Stalks</dfn> starts with a set of bamboo stalks planted in the ground. We represent the ground by a horizontal dashed line. A \bf bamboo stalk of height \(n\) is a path with \(n\) edges (and \(n+1\) vertices) where one of the endpoints is planted on the ground. <a class="xref" data-knowl="./knowl/fig-stalks.html" title="Figure 4.1.1">Figure 4.1.1</a> shows the Bamboo Stalks position consisting of stalks of heights 4, 1 and 2.</p>
-<p id="p-304"><figure class="figure figure-like" id="fig-stalks"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/fig-img-stalks.svg" role="img" class="contained"></div>
+<p id="p-302">In this chapter, we explore three generalizations of Nim: <em class="emphasis">Bamboo Stalks</em>, <em class="emphasis">Lumberjack</em>, and <em class="emphasis">Green Hackenbush.</em> Each game is played by hacking away edges from a graph.</p>
+<p id="p-303">In the  previous chapter, we considered variations of Nim that still dealt with heaps of beans (or tokens or coins or pins). We considered more restricted "taking rules" and added "breaking rules" that split heaps apart. But still, the components of our game were heaps of things. In this chapter, we explore ways to generalize heaps into more exotic structures.</p>
+<p id="p-304">The game of <dfn class="terminology">Bamboo Stalks</dfn> starts with a set of bamboo stalks planted in the ground. We represent the ground by a horizontal dashed line. A \bf bamboo stalk of height \(n\) is a path with \(n\) edges (and \(n+1\) vertices) where one of the endpoints is planted on the ground. <a class="xref" data-knowl="./knowl/fig-stalks.html" title="Figure 4.1.1">Figure 4.1.1</a> shows the Bamboo Stalks position consisting of stalks of heights 4, 1 and 2.</p>
+<p id="p-305"><figure class="figure figure-like" id="fig-stalks"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/fig-img-stalks.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.1<span class="period">.</span></span><span class="space"> </span>The Bamboo Stalks position \(\pile{4} \oplus \pile{1}  \oplus \pile{2}\)</figcaption></figure></p>
-<p id="p-305">To  move in Bamboo Stalks, you  hack away one of the edges of the graph. You remove the hacked edge, along with the part of the stalk that is no longer connected to the ground. As always, the last player to move wins. For example, there are seven edges in the position of <a class="xref" data-knowl="./knowl/fig-stalks.html" title="Figure 4.1.1">Figure 4.1.1</a>, so there are seven followers for this position. These followers are shown in <a class="xref" data-knowl="./knowl/fig-stalk-follow.html" title="Figure 4.1.2">Figure 4.1.2</a>.</p>
-<p id="p-306"><figure class="figure figure-like" id="fig-stalk-follow"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-stalk-follow.svg" role="img" class="contained"></div>
+<p id="p-306">To  move in Bamboo Stalks, you  hack away one of the edges of the graph. You remove the hacked edge, along with the part of the stalk that is no longer connected to the ground. As always, the last player to move wins. For example, there are seven edges in the position of <a class="xref" data-knowl="./knowl/fig-stalks.html" title="Figure 4.1.1">Figure 4.1.1</a>, so there are seven followers for this position. These followers are shown in <a class="xref" data-knowl="./knowl/fig-stalk-follow.html" title="Figure 4.1.2">Figure 4.1.2</a>.</p>
+<p id="p-307"><figure class="figure figure-like" id="fig-stalk-follow"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-stalk-follow.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.2<span class="period">.</span></span><span class="space"> </span>The followers \(\cF(\pile{4} \oplus \pile{1}  \oplus \pile{2})\)</figcaption></figure></p>
-<p id="p-307">The game of Bamboo Stalks is actually the game of Nim in a very thin disguise. We leave this unmasking as an exercise.</p></section></div></main>
+<p id="p-308">The game of Bamboo Stalks is actually the game of Nim in a very thin disguise. We leave this unmasking as an exercise.</p></section></div></main>
 </div>
 </body>
 </html>

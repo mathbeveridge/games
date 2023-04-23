@@ -12,25 +12,8 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Now let's consider the position \(T_3\text{.}\) We have \(\cF(T_3) = \{ *0, T_2 \}\) and therefore</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(T_3) = \mex \{ \g(*0), \g(T_2) \} = \mex \{ 0, 1 \} = 2.
-\end{equation*}
-</div>
-<p class="continuation">Continuing on, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(T_4) = \mex \{ \g(*0), \g(T_3) \} = \mex \{ 0, 2 \} = 1
-\end{equation*}
-</div>
-<p class="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(T_5) = \mex \{ \g(*0), \g(T_4) \} = \mex \{ 0, 1 \} = 2.
-\end{equation*}
-</div>
-<p class="continuation">From here, the pattern is clear (and can be proven by induction): for \(k \geq 1\text{,}\) we have \(\g(T_{2k-1})=2\) and \(\g(T_{2k})=1\text{.}\) In other words, pairs of leaves adjacent to the same vertex cancel one another out! This is very much like the nim sum (where 1+1=0), except this cancelation is happening in the tree tops. This phenomenon is a simple example of the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Tuft Principle</dfn>.</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/fig-img-lumber-ex1.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.3<span class="period">.</span></span><span class="space"> </span>A partial game tree for the position \(T_2 \oplus *1\) which shows that \(T_2 \oplus *1\) is a \(\cP\)-position.</figcaption></figure></p>
 <span class="incontext"><a href="hack-lumberjack.html#p-315">in-context</a></span>
 </body>
 </html>

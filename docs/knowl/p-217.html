@@ -12,29 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Now that you have mastered one-heap \(S(1,2,3)\text{,}\) let's calculate its Sprague-Grundy values. Just as with Nim, it is helpful to use a notation that distinguishes heaps from numbers. The starred symbol \(*n\) is reserved exclusively for a nim heap of size \(n\) (where we are allowed to remove any number of beans). For Subtraction (and other various take-away games), we will use the "bullet" notation \(\pile{n}\) to denote a heap of size \(n\) in a subtraction game. We have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{rcl}
-g \left(\pile{0} \right) &amp;=&amp; \mex \{ \} =0, \\
-g \left(\pile{1} \right) &amp;=&amp; \mex \{ g(\pile{0}) \} = \mex \{ 0 \} = 1, \\
-g \left(\pile{2} \right) &amp;=&amp; \mex \{ g(\pile{0}), g(\pile{1})  \} = \mex \{ 0,1 \} = 2, \\
-g \left(\pile{3} \right) &amp;=&amp; \mex \{ g(\pile{0}), g(\pile{1}), g(\pile{2})  \} = \mex \{ 0,1,2 \} = 3,  \\
-g \left(\pile{4} \right) &amp;=&amp; \mex \{  g(\pile{1}), g(\pile{2}), g(\pile{3})  \} = \mex \{ 1,2,3 \} = 0.
-\end{array}
-\end{equation*}
-</div>
-<p class="continuation">We see that the Sprague-Grundy value equals the size of the heap until we reach \(n=4\text{.}\) At this point, we can only remove 1, 2 or 3 beans. Therefore position \(\pile{0}\) is not among the followers of position \(\pile{4}\text{.}\) If we continue this way, we get the Sprague-Grundy values shown here:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
-n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 &amp; 13 \\
-\hline
-\g(\pile{n}) &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 0 &amp; 1
-\end{array}
-\end{equation*}
-</div>
-<p class="continuation">What is the relationship  between these values and the \(\cN\)-positions and \(\cP\)-positions of \(S(1,2,3)\) that you found by playing the game? Are you willing to make any conjectures at this point?</p>
+<p> Play a few games of single heap \(S(1,2,3)\text{.}\) Start small, with heap sizes \(n=1,2,3,4,5,6\text{,}\) etc. Keep playing until you figure out the winning strategy, as well as characterizing the \(\cN\)-positions and \(\cP\)-positions.</p>
 <span class="incontext"><a href="sg-subtract.html#p-217">in-context</a></span>
 </body>
 </html>

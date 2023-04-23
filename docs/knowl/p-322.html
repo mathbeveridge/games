@@ -12,13 +12,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Similarly, we can use the Tuft Principle to show that \(\g(G_2) = 3\text{.}\) The calculation is shown in <a class="xref" data-knowl="./knowl/fig-lumberjack2.html" title="Figure 4.2.6">Figure 4.2.6</a>. With these calculations complete, we can find the Sprague-Grundy value of the Lumberjack position in <a class="xref" data-knowl="./knowl/fig-lumberjack.html" title="Figure 4.2.1">Figure 4.2.1</a>:</p>
+<p>We start at the tree top and look for a join that only involves straight branches. We find one in the upper left part of the tree and replace these two branches of length 1 with one branch of length 0 because</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation}
-\g(G_1 \oplus G_2 \oplus G_3) = \g(G_1) \oplus \g(G_2) \oplus \g(G_3) = 5 \oplus 3 \oplus 4 = 2.\tag{4.2.1}
-\end{equation}
+\begin{equation*}
+\g(*1) \oplus \g(*1) = 1 \oplus 1 = 0.
+\end{equation*}
 </div>
-<p class="continuation">So this Lumberjack position \(G_1 \oplus G_2 \oplus G_3\) is an \(\cN\)-position. There are actually four winning moves for this position: there is one winning move in \(G_1\) and there are three winning moves in \(G_2\text{.}\) We leave finding these winning moves as an exercise.</p>
+<p class="continuation">In other words, these two branches cancel one another. This gives tree \(G_1'\text{,}\) which has the same value as \(G_1\text{.}\) Next, we use the Tuft Principle on the highest remaining join, and calculate \(g(*1) \oplus g(*2)= 1 \oplus 2 = 3\text{.}\) Therefore we replace these two branches with a single branch of length 3. This results in \(G_1''\text{,}\) and we use the tuft principle on the last remaining join. This gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+g(*2) \oplus g(*4) \oplus g(*2)= 2 \oplus 4 \oplus 2= 4.
+\end{equation*}
+</div>
+<p class="continuation">Finally, we have \({G'''}_1\text{,}\) which is a bamboo stalk of height 5. This means that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(G_1) = \g({G_1}') = \g({G_1}'') =g({G_1}''')= 5.
+\end{equation*}
+</div>
+<p class="continuation"><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/fig-img-lumberjack2.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.6<span class="period">.</span></span><span class="space"> </span>Using the Tuft Principle on \(G_2\text{.}\)</figcaption></figure></p>
 <span class="incontext"><a href="hack-lumberjack.html#p-322">in-context</a></span>
 </body>
 </html>

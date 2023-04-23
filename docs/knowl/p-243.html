@@ -12,20 +12,8 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Continuing this way, we populate <a class="xref" data-knowl="./knowl/eqn-sgv.html" title="Equation 3.3.1">(3.3.1)</a> for nim heaps \(*n \times *m\) up to size 3.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation}
-\begin{array}{c|cccc}
-\g(\cdot) &amp; \nim{0} &amp; \nim{1} &amp; \nim{2} &amp; \nim{3} \\
-\hline
-\nim{0} &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
-\nim{1} &amp; 1 &amp; 0 &amp; 3 &amp; 2 \\
-\nim{2} &amp; 2 &amp; 3 &amp; 0 &amp; 1 \\
-\nim{3} &amp;3 &amp; 2 &amp; 1 &amp; 0
-\end{array}\tag{3.3.1}
-\end{equation}
-</div>
-<p class="continuation">As with the nim value, the Sprague-Grundy value is 0 if and only if we are in a \(\cP\)-position. In fact, if we compare these Sprague-Grundy values with the nim addition values in Table <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn-nim-add" missing or not unique]</code>, we see that they are identical! Could it be that these very different functions are actually one and the same? The answer is a resounding yes: \(n \oplus m = g(\nim{n} \oplus \nim{m})\) for all \(n,m \in \W.\) We prove this surprising fact in Section <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec-sumgames" missing or not unique]</code>. We close this section by revisiting our use of the game tree to find the Sprague-Grundy value. In Figure <a class="xref" data-knowl="./knowl/fig-nim2-2.html" title="Figure 3.3.2">Figure 3.3.2</a>, we see many positions that we recognize from our previous analysis. There is no need to expand the tree beneath a position with a known value. Instead, we can prune the tree at that position, and just write down the known Sprague-Grundy value for that position. This can save a lot of work, as show in Figure <a class="xref" data-knowl="./knowl/fig-nim2-4.html" title="Figure 3.3.3">Figure 3.3.3</a> where we calculate \(g(\nim{1} \oplus \nim{4})\text{.}\)</p>
+<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-nim2-2.svg" role="img" class="contained"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Calculating \(g(\nim{2} \oplus \nim{1})=3\) using the full game tree. <em class="emphasis">Top</em>: the game tree listing the positions and their followers. <em class="emphasis">Bottom</em>: the Sprague-Grundy values of those positions.</figcaption></figure></p>
 <span class="incontext"><a href="sg-nim.html#p-243">in-context</a></span>
 </body>
 </html>

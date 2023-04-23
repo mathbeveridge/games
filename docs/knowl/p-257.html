@@ -12,19 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Of course, we can also take the sum of any number of games \(\cG_1, \cG_2, \ldots \cG_k\text{.}\) The game</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\cG_1 \oplus  \cG_2 \oplus \cdots \oplus \cG_k
-\end{equation*}
-</div>
-<p class="continuation">is defined as follows. The \(\cG_i\) are called the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">component games</dfn>. The positions are of the form \((X_1, X_2, \ldots , X_k)\) where \(X_i \in \cG_i\) is a position in the corresponding component game. A valid move consists of picking one of the component games \(\cG_i\) and making a valid move in that game:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-(X_1,  \ldots , X_{i-1}, X_i, X_{i+1}, \ldots,   X_k) \rightarrow (X_1,  \ldots , X_{i-1}, Z, X_{i+1}, \ldots ,  X_k)
-\end{equation*}
-</div>
-<p class="continuation">where \(Z \in \cF(X_i)\text{.}\) We leave all the other games untouched. We play until every component game has completed, meaning that there are no moves available in any component. The winner is the player who makes the last move.</p>
+<p>Given two combinatorial games \(\cG_1, \cG_2\text{,}\) we can define a new game as follows. A player's turn consists of choosing one of the two games and then making a move in that game. The winner is the person who makes the last move overall (when there are no moves possible in either \(\cG_1\) or \(\cG_2\)). The resulting game is called the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">sum of games</dfn>, and is denoted by \(\cG_1 \oplus \cG_2\text{.}\)</p>
 <span class="incontext"><a href="sg-sumgames.html#p-257">in-context</a></span>
 </body>
 </html>

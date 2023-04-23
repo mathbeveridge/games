@@ -12,29 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Next, we show that as soon as we encounter our first repeated block, we can be sure that the sequence has become periodic. Choose \(i &lt; j\) such that \(B_i=B_j\text{,}\) and this is the first such pair of repeating blocks in the sequence. In other words, setting \(N=i \cdot s_k\) and \(M = j \cdot s_k\) we have</p>
+<p>Partition \(\W\) into disjoint sets \(B_0, B_1, \ldots, B_m, \ldots\) where \(B_0 = \{ 0, 1, 2, \ldots , s_{k}-1 \}\text{,}\) \(B_1 = \{ s_k, s_k + 1, \ldots, 2 s_k -1 \}\) and in general,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{rcl}
-\g(\pile{M}) &amp;=&amp; \g(\pile{N}),  \\
-\g(\ppile{M + 1}) &amp;=&amp; \g(\ppile{N + 1}),  \\
-&amp; \vdots &amp; \\
-\g(\ppile{M + s_k -1}) &amp;=&amp; \g(\ppile{N + s_k - 1}).
-\end{array}
+B_i = \{ i \cdot s_k,  i \cdot s_k + 1, \ldots , (i+1) s_k -1 \}.
 \end{equation*}
 </div>
-<p class="continuation">But this forces \(\g(\ppile{M + s_k}) = \g(\ppile{N +  s_k}) \) because</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{rcl}
-&amp; &amp; \g(\ppile{M +  s_k)}  \\
-&amp;=&amp; \mex \{ \g(\ppile{M + s_k - s_1}), \g(\ppile{M +  s_k - s_2}), \ldots , \g(\ppile{M + s_k - s_{k-1})}, \g(\ppile{M} ) \} \\
-&amp;=&amp; \mex \{ \g(\ppile{N + s_k - s_1}), \g(\ppile{N +  s_k - s_2}), \ldots , \g(\ppile{N + s_k - s_{k-1}}), \g(\pile{N} ) \} \\
-&amp;=&amp; \g(\ppile{N +  s_k})
-\end{array}
-\end{equation*}
-</div>
-<p class="continuation">This repetition continues (for the same exact reason). We have \(\g(\ppile{M + s_k+1}) = \g(\ppile{N +  s_k+1}), \) and \(\g(\ppile{M + s_k+2}) = \g(\ppile{N +  s_k+2})\text{,}\) and so on. Therefore, the sequences continue to coincide forever.</p>
+<p class="continuation">There are an infinite number of \(B_i\)'s. However, there are  \((k+1)^{s_k}\) possibilities for the sequence of Sprague-Grundy values associated to each \(B_i\text{.}\) This means that these blocks Sprague-Grundy sequences of length \(s_k\) must repeat! In other words, there exists \(i \neq j\) such that  \(B_i = B_j\text{.}\) Furthermore, there must be an infinite number of repeats (because there are only a finite number of possible blocks.</p>
 <span class="incontext"><a href="sg-subtract.html#p-235">in-context</a></span>
 </body>
 </html>

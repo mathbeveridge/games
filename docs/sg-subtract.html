@@ -108,6 +108,7 @@
     \def\cB{{\mathcal{B}}}
     \def\cC{{\mathcal{C}}}
     \def\cP{\mathcal P}
+    \def\cF{{\mathcal F}}
     \def\cE{\mathcal E}
     \def\cO{\mathcal O}
 
@@ -255,7 +256,7 @@
 <li><a href="sg-nim.html" data-scroll="sg-nim">Sprague-Grundy Values for Nim</a></li>
 <li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
 <li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
-<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+<li><a href="sg-exercise.html" data-scroll="sg-exercise">Exercises</a></li>
 </ul>
 </li>
 <li class="link">
@@ -273,11 +274,11 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sg-subtract"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Subtraction Games</span>
 </h2>
-<p id="p-215">Let's calculate some examples of Sprague-Grundy values for some simple games. We'll get to Nim soon enough, but for now we explore a class of games called <dfn class="terminology">Subtraction Games</dfn>. Our first game is named \(S(1,2,3)\text{.}\) The game plays like Nim, except you are only allowed to take 1, 2 or 3 beans from a heap.</p>
+<p id="p-216">Let's calculate some examples of Sprague-Grundy values for some simple games. We'll get to Nim soon enough, but for now we explore a class of games called <dfn class="terminology">Subtraction Games</dfn>. Our first game is named \(S(1,2,3)\text{.}\) The game plays like Nim, except you are only allowed to take 1, 2 or 3 beans from a heap.</p>
 <article class="exploration project-like" id="exploration-5"><h6 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-216"> Play a few games of single heap \(S(1,2,3)\text{.}\) Start small, with heap sizes \(n=1,2,3,4,5,6\text{,}\) etc. Keep playing until you figure out the winning strategy, as well as characterizing the \(\cN\)-positions and \(\cP\)-positions.</p></article><p id="p-217">Now that you have mastered one-heap \(S(1,2,3)\text{,}\) let's calculate its Sprague-Grundy values. Just as with Nim, it is helpful to use a notation that distinguishes heaps from numbers. The starred symbol \(*n\) is reserved exclusively for a nim heap of size \(n\) (where we are allowed to remove any number of beans). For Subtraction (and other various take-away games), we will use the "bullet" notation \(\pile{n}\) to denote a heap of size \(n\) in a subtraction game. We have</p>
+<p id="p-217"> Play a few games of single heap \(S(1,2,3)\text{.}\) Start small, with heap sizes \(n=1,2,3,4,5,6\text{,}\) etc. Keep playing until you figure out the winning strategy, as well as characterizing the \(\cN\)-positions and \(\cP\)-positions.</p></article><p id="p-218">Now that you have mastered one-heap \(S(1,2,3)\text{,}\) let's calculate its Sprague-Grundy values. Just as with Nim, it is helpful to use a notation that distinguishes heaps from numbers. The starred symbol \(*n\) is reserved exclusively for a nim heap of size \(n\) (where we are allowed to remove any number of beans). For Subtraction (and other various take-away games), we will use the "bullet" notation \(\pile{n}\) to denote a heap of size \(n\) in a subtraction game. We have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rcl}
@@ -300,7 +301,7 @@ n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 
 \end{equation*}
 </div>
 <p class="continuation">What is the relationship  between these values and the \(\cN\)-positions and \(\cP\)-positions of \(S(1,2,3)\) that you found by playing the game? Are you willing to make any conjectures at this point?</p>
-<p id="p-218">Let's try another game of Subtraction, using a different subtraction set. Given a set \(A \in \W\text{,}\) the Subtraction game \(S(A)\) is played as you would expect: make Nim moves, but  restricted to  numbers that appear in the  subtraction set \(A\text{.}\) Here are the Sprague-Grundy values for \(S(2,3)\text{:}\)</p>
+<p id="p-219">Let's try another game of Subtraction, using a different subtraction set. Given a set \(A \in \W\text{,}\) the Subtraction game \(S(A)\) is played as you would expect: make Nim moves, but  restricted to  numbers that appear in the  subtraction set \(A\text{.}\) Here are the Sprague-Grundy values for \(S(2,3)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
@@ -314,7 +315,7 @@ n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 
 <article class="exploration project-like" id="exploration-6"><h6 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
 </h6>
-<p id="p-219"> Find the Sprague-Grundy values for a few more subtraction games \(S(s_1,s_2, \ldots, s_k)\text{.}\) Experiment with different sizes of subtraction sets, different values, and different relationships between these values. Be creative!</p></article><p id="p-220">Here are the Sprague-Grundy values for a more complicated game: \(S(2,5,7)\text{.}\)</p>
+<p id="p-220"> Find the Sprague-Grundy values for a few more subtraction games \(S(s_1,s_2, \ldots, s_k)\text{.}\) Experiment with different sizes of subtraction sets, different values, and different relationships between these values. Be creative!</p></article><p id="p-221">Here are the Sprague-Grundy values for a more complicated game: \(S(2,5,7)\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 {\small
@@ -327,43 +328,43 @@ n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 
 \end{equation*}
 </div>
 <p class="continuation">There is a nice technique for calculating the Sprague-Grundy values for a game with a tricky subtraction set (like \(2,5,7\)). We use something called a <dfn class="terminology">Grundy scale</dfn>. Intuitively, a Grundy scale is a ruler with tick marks that identify the allowed subtractions. It is pretty easy to calculate the first 7 values of \(S(2,5,7)\text{,}\) so we will pick up our calculation there. Here is the partially filled in table for \(S(2,5,7)\text{:}\)</p>
-<p id="p-221"><figure class="figure figure-like" id="fig-sg-subtraction0"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-sg-subtraction0.svg" role="img" class="contained"></div>
+<p id="p-222"><figure class="figure figure-like" id="fig-sg-subtraction0"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-sg-subtraction0.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span>A Sprague-Grundy scale.</figcaption></figure></p>
-<p id="p-222">Below this table is the Grundy scale for \(S(2,5,7)\text{,}\) positioned under the column for \(\pile{7}\text{.}\)  You create the Grundy scale on a separate piece of paper. Starting at the double arrow, we create 3 arrows to the left, at distances 2, 5 and 7.  As shown the double arrow points to 7 and the single arrows point to the followers of \(\pile{7}\text{.}\) This makes it easy to calculate the Sprague Grundy value for \(\pile{7}\text{:}\)</p>
+<p id="p-223">Below this table is the Grundy scale for \(S(2,5,7)\text{,}\) positioned under the column for \(\pile{7}\text{.}\)  You create the Grundy scale on a separate piece of paper. Starting at the double arrow, we create 3 arrows to the left, at distances 2, 5 and 7.  As shown the double arrow points to 7 and the single arrows point to the followers of \(\pile{7}\text{.}\) This makes it easy to calculate the Sprague Grundy value for \(\pile{7}\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \g(\pile{7}) = \mex \{ \g(\pile{5}), \g(\pile{2}), \g(\pile{0}) \} = \mex \{ 2, 1, 0 \} = 3.
 \end{equation*}
 </div>
 <p class="continuation">To find \(\g(\pile{8})\text{,}\) we just move our Grundy scale to the right. It's a snap to see that \(\g(\pile{8}) = \mex \{ 1,1,0 \} = 2\text{,}\) and shown below.</p>
-<p id="p-223"><figure class="figure figure-like" id="fig-sg-subtraction1"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-sg-subtraction1.svg" role="img" class="contained"></div>
+<p id="p-224"><figure class="figure figure-like" id="fig-sg-subtraction1"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-sg-subtraction1.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Using the Sprague-Grundy scale to find the next value</figcaption></figure></p>
-<p id="p-224">We treat a Grundy scale like a ruler: it quickly identifies the Grundy values of the followers. We create the Grundy scale on a separate piece of paper so that we can continue to shift it rightwards, and then  calculate successive Grundy values of Subtraction Games. Hopefully, you can see what the Grundy value for \(\pile{9}\) should be from the following picture. (You can check your calculation against the completed table above.)</p>
-<p id="p-225"><figure class="figure figure-like" id="fig-sg-subtraction2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-sg-subtraction2.svg" role="img" class="contained"></div>
+<p id="p-225">We treat a Grundy scale like a ruler: it quickly identifies the Grundy values of the followers. We create the Grundy scale on a separate piece of paper so that we can continue to shift it rightwards, and then  calculate successive Grundy values of Subtraction Games. Hopefully, you can see what the Grundy value for \(\pile{9}\) should be from the following picture. (You can check your calculation against the completed table above.)</p>
+<p id="p-226"><figure class="figure figure-like" id="fig-sg-subtraction2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-sg-subtraction2.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>Finding another valuing using the Sprague-Grundy scale.</figcaption></figure></p>
-<p id="p-226">At this point, you should be pretty confident that \(\pile{n}\) is  a \(\cP\)-position~if and only if \(\g(\pile{n})=0\text{.}\) We will prove this in the next section.</p>
-<p id="p-227">Undoubtedly, you will also have noticed that the Sprague-Grundy values for \(S(1,2,3)\) and \(S(2,3)\) are periodic. The Sprague Grundy values for \(S(2,5,7)\) eventually become periodic as well, thought it takes a little while for them to settle down. In other words, \(S(2,5,7)\) does become periodic if we ignore the first few values. (Keep calculating these values for \(n \geq 22\) to see the pattern that emerges).</p>
-<p id="p-228">Our next theorem shows that this is always the case:  every Subtraction Game with a finite subtraction set eventually becomes periodic.</p>
-<p id="p-229"><article class="theorem theorem-like" id="theorem-3"><h6 class="heading">
+<p id="p-227">At this point, you should be pretty confident that \(\pile{n}\) is  a \(\cP\)-position~if and only if \(\g(\pile{n})=0\text{.}\) We will prove this in the next section.</p>
+<p id="p-228">Undoubtedly, you will also have noticed that the Sprague-Grundy values for \(S(1,2,3)\) and \(S(2,3)\) are periodic. The Sprague Grundy values for \(S(2,5,7)\) eventually become periodic as well, thought it takes a little while for them to settle down. In other words, \(S(2,5,7)\) does become periodic if we ignore the first few values. (Keep calculating these values for \(n \geq 22\) to see the pattern that emerges).</p>
+<p id="p-229">Our next theorem shows that this is always the case:  every Subtraction Game with a finite subtraction set eventually becomes periodic.</p>
+<p id="p-230"><article class="theorem theorem-like" id="theorem-3"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
 </h6>
-<p id="p-230">The Sprague-Grundy values for the subtraction game \(S(s_1, s_2, \ldots , s_k)\) eventually becomes periodic.</p></article></p>
-<p id="p-231"><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-232">Without loss of generality, we have \(s_1 &lt; s_2 &lt; \cdots &lt; s_k\text{.}\)</p>
-<p id="p-233">For \(n \geq s_k\text{,}\) we have</p>
+<p id="p-231">The Sprague-Grundy values for the subtraction game \(S(s_1, s_2, \ldots , s_k)\) eventually becomes periodic.</p></article></p>
+<p id="p-232"><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-233">Without loss of generality, we have \(s_1 &lt; s_2 &lt; \cdots &lt; s_k\text{.}\)</p>
+<p id="p-234">For \(n \geq s_k\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \g(\pile{n}) = \mex \{ \g(\ppile{n-s_1}),  \g(\ppile{n-s_2}), \ldots , \g(\ppile{n-s_k}) \}.
 \end{equation*}
 </div>
 <p class="continuation">Since there are only \(k\) followers, we have \(\g(\pile{n}) \leq k\text{,}\) with \(\g(\pile{n})=k\) precisely when the followers of \(\pile{n}\) take on the Sprague-Grundy values \(0,1,2,\ldots , k-1\) in some order.</p>
-<p id="p-234">Partition \(\W\) into disjoint sets \(B_0, B_1, \ldots, B_m, \ldots\) where \(B_0 = \{ 0, 1, 2, \ldots , s_{k}-1 \}\text{,}\) \(B_1 = \{ s_k, s_k + 1, \ldots, 2 s_k -1 \}\) and in general,</p>
+<p id="p-235">Partition \(\W\) into disjoint sets \(B_0, B_1, \ldots, B_m, \ldots\) where \(B_0 = \{ 0, 1, 2, \ldots , s_{k}-1 \}\text{,}\) \(B_1 = \{ s_k, s_k + 1, \ldots, 2 s_k -1 \}\) and in general,</p>
 <div class="displaymath">
 \begin{equation*}
 B_i = \{ i \cdot s_k,  i \cdot s_k + 1, \ldots , (i+1) s_k -1 \}.
 \end{equation*}
 </div>
 <p class="continuation">There are an infinite number of \(B_i\)'s. However, there are  \((k+1)^{s_k}\) possibilities for the sequence of Sprague-Grundy values associated to each \(B_i\text{.}\) This means that these blocks Sprague-Grundy sequences of length \(s_k\) must repeat! In other words, there exists \(i \neq j\) such that  \(B_i = B_j\text{.}\) Furthermore, there must be an infinite number of repeats (because there are only a finite number of possible blocks.</p>
-<p id="p-235">Next, we show that as soon as we encounter our first repeated block, we can be sure that the sequence has become periodic. Choose \(i &lt; j\) such that \(B_i=B_j\text{,}\) and this is the first such pair of repeating blocks in the sequence. In other words, setting \(N=i \cdot s_k\) and \(M = j \cdot s_k\) we have</p>
+<p id="p-236">Next, we show that as soon as we encounter our first repeated block, we can be sure that the sequence has become periodic. Choose \(i &lt; j\) such that \(B_i=B_j\text{,}\) and this is the first such pair of repeating blocks in the sequence. In other words, setting \(N=i \cdot s_k\) and \(M = j \cdot s_k\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rcl}
@@ -386,7 +387,7 @@ B_i = \{ i \cdot s_k,  i \cdot s_k + 1, \ldots , (i+1) s_k -1 \}.
 \end{equation*}
 </div>
 <p class="continuation">This repetition continues (for the same exact reason). We have \(\g(\ppile{M + s_k+1}) = \g(\ppile{N +  s_k+1}), \) and \(\g(\ppile{M + s_k+2}) = \g(\ppile{N +  s_k+2})\text{,}\) and so on. Therefore, the sequences continue to coincide forever.</p></article></div></p>
-<p id="p-236">We make one comment about the above proof. We do successfully prove that the sequence must repeat after a certain point, but our proof does not claim to find the <em class="emphasis">first</em> heap size where the Sprague-Grundy values start to repeat.  We also don't learn much about the actual period of the sequence. The problem: we blindly chose to look at the sequence in huge blocks, regardless of the actually behavior of the sequence. In a sense, we are considering a "worst case scenario," so all we learn is that the period is at most \(M-N= s_k(j-i).\) We can get an upper bound on \(j-i\) using the Pigeonhole Principle, which says that \(j-i \leq (k+1)^{s_k}\text{.}\) Our resulting bound on the period of the Sprague-Grundy values is \(s_k (k+1)^{s_k}\text{,}\) which can be very large indeed.</p></section></div></main>
+<p id="p-237">We make one comment about the above proof. We do successfully prove that the sequence must repeat after a certain point, but our proof does not claim to find the <em class="emphasis">first</em> heap size where the Sprague-Grundy values start to repeat.  We also don't learn much about the actual period of the sequence. The problem: we blindly chose to look at the sequence in huge blocks, regardless of the actually behavior of the sequence. In a sense, we are considering a "worst case scenario," so all we learn is that the period is at most \(M-N= s_k(j-i).\) We can get an upper bound on \(j-i\) using the Pigeonhole Principle, which says that \(j-i \leq (k+1)^{s_k}\text{.}\) Our resulting bound on the period of the Sprague-Grundy values is \(s_k (k+1)^{s_k}\text{,}\) which can be very large indeed.</p></section></div></main>
 </div>
 </body>
 </html>

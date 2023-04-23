@@ -12,29 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>You may be a little disappointed that the Sprague-Grundy value of a nim heap is so \(\ldots\) boring. But this is actually great news! Single heap Nim is the most fundamental combinatorial game, so we expect that its Sprague-Grundy values should be the easiest to calculate. Let's move on to some small two-heap games of Nim. We must build up these values recursively. Clearly</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(\nim{0} \oplus \nim{0})  = 0,
-\end{equation*}
-</div>
-<p class="continuation">because \(\nim{0} \oplus \nim{0}\) is a terminal position, and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(\nim{n} \oplus \nim{0}) = \g( \nim{0}  \oplus \nim{n}) = n
-\end{equation*}
-</div>
-<p class="continuation">because \(\nim{0}  \oplus \nim{n}\) plays just like the one-pile game \(\nim{n}\text{.}\) Recursively, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{rcl}
-\g(\nim{1} \oplus \nim{1} ) &amp;=&amp; \mex  \{ g(\nim{1} \oplus \nim{0}), g(\nim{0} \oplus \nim{1})  \}  =  \mex \{ 1, 1 \} = 0, \\
-g(\nim{2} \oplus \nim{1} ) &amp;=&amp; \mex  \{ g(\nim{1} \oplus \nim{1}), g(\nim{0} \oplus \nim{1}),  g(\nim{2} \oplus \nim{0}) \}  =  \mex \{ 0,1,2 \} = 3, \\
-g(\nim{2} \oplus \nim{2} ) &amp;=&amp; \mex  \{ g(\nim{1} \oplus \nim{2}), g(\nim{0} \oplus \nim{2}),  g(\nim{2} \oplus \nim{1}), g(\nim{2} \oplus \nim{0}) \}  =  \mex \{ 3, 2, 3, 2 \} = 0.
-\end{array}
-\end{equation*}
-</div>
-<p class="continuation">This is already getting pretty messy. The best way to calculate the Sprague-Grundy value is to use a game tree.  We do this for nim position \(\nim{2} \oplus \nim{1}\) in <a class="xref" data-knowl="./knowl/fig-nim2-2.html" title="Figure 3.3.2">Figure 3.3.2</a>. The tree structure clearly shows the followers of each position. The recursive nature of the Sprague-Grundy definition is easy to chase through. Start by writing down value 0 at the leaves. Then move up the tree, calculating the mex of the followers of each position. Eventually, you will find the value of the root.</p>
+<p>We leave this straight-forward proof by strong induction for the exercises.</p>
 <span class="incontext"><a href="sg-nim.html#p-241">in-context</a></span>
 </body>
 </html>

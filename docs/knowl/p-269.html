@@ -12,13 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Next, we prove (2). Let \(s(X)\) be the size of the game tree rooted at \(X\text{.}\)  We prove (2) by strong induction on \(s(X)\text{.}\) The statement holds for the terminal positions of the game, which form our base cases. Assume that</p>
+<p>Recall that \(b =g_1(X_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n)\text{,}\) which means that the binary expansion of at least one \(g(X_i)\) also has a 1 in the \(k\)th position. To keep our argument simple, we assume that \(i=1\text{,}\) because we can just rearrange the \(X_i\) so that \(i=1\) without effecting the gameplay of \(G\text{.}\) We have \(d \oplus g_1(X_1) &lt; g_1(X_1)\) because the leftmost binary digit that changes the \(k\)th digit, which goes from 1 to 0. Because \(g_1\) is the Sprague-Grundy function for \(\cG_1\text{,}\) there is a move from \(X_1\) to \(Y_1 \in \cF_{\cG_1}(X)\) where \(g_1(Y_1) = d \oplus g_1(X_1).\) The move</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-g\left( (Z_1, Z_2 , \ldots Z_n) \right) = g_1(Z_1) \oplus g_2( Z_2 ) \oplus \cdots \oplus g_n(Z_n)
+(X_1, X_2, \ldots, X_n) \rightarrow (Y_1, X_2, \ldots X_n)
 \end{equation*}
 </div>
-<p class="continuation">for every position \(Z=(Z_1, Z_2, \ldots, Z_n)\) with \(s(Z) &lt; m\text{.}\)</p>
+<p class="continuation">is a legal move in \(\cG = \cG_1 \oplus  \cG_2 \oplus \cdots \oplus \cG_n\) and $$ \​begin{array}{rcl} &amp; &amp; g_1(Y_1) \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \\ &amp;=&amp; \big( d \oplus g_1(X_1) \big)  \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \\ &amp;=&amp;  d \oplus \big(g_1(X_1)  \oplus g_2(X_2) \oplus \cdots \oplus g_n(X_n) \big)\\ &amp;=&amp; d \oplus b \, =  \, a. \end{array} $$ In summary, we have found a follower of  \((X_1, X_2, \ldots, X_n)\) whose Sprague-Grundy value is \(a\text{.}\)</p>
 <span class="incontext"><a href="sg-sumgames.html#p-269">in-context</a></span>
 </body>
 </html>

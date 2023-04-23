@@ -12,13 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p><a class="xref" data-knowl="./knowl/lemma-tuft.html" title="Lemma 4.3.1">Lemma 4.3.1</a> is a special case of the Tuft Principle. It says that the Tuft Principle holds when the branching vertex is on the ground. We can now prove the Tuft Principle itself, which says that we can still take the nim sums of these branching paths when we are "up in the air." We introduce the following notation. Let \(G\) be a graph rooted at vertex \(x\text{,}\) and let \(y\) be another vertex of \(G\text{.}\) Let \(H\) be another rooted graph, with root \(z\text{.}\) We define the rooted graph</p>
+<p>The Sprague-Grundy value of these independent bamboo stalks is just the nim sum of their individual Sprague-Grundy values by  <a class="xref" data-knowl="./knowl/thm-sg.html" title="Theorem 3.5.1">Theorem 3.5.1</a>. Therefore</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-[G_y : H]
+\g(G) = \g(B_1) \oplus \g(B_2) \oplus \cdots \oplus \g(B_k).
 \end{equation*}
 </div>
-<p class="continuation">to be the graph obtained by starting with the rooted graph \(G\) and then attaching the graph \(H\) to \(G\) so that the root \(z\) of \(H\) is identified with the vertex \(y\) of \(G\text{.}\) See  <a class="xref" data-knowl="./knowl/fig-tuft-ex.html" title="Figure 4.3.3">Figure 4.3.3</a> for an example.</p>
+<p class="continuation">The Sprague-Grundy value of a bamboo stalk is equal to its height (see Exercise 1 below), so this simplifies to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(G) = m_1 \oplus m_2 \oplus \cdots \oplus m_k.
+\end{equation*}
+</div>
 <span class="incontext"><a href="hack-tuft.html#p-331">in-context</a></span>
 </body>
 </html>

@@ -12,8 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-sg-subtraction0.svg" role="img" class="contained"></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span>A Sprague-Grundy scale.</figcaption></figure></p>
+<p>Here are the Sprague-Grundy values for a more complicated game: \(S(2,5,7)\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+{\small
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 &amp; 16 &amp; 17 &amp; 18 &amp; 19 &amp; 20 &amp; 21\\
+\hline
+\g(\pile{n}) &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 2 &amp; 1 &amp; 3 &amp; 2 &amp; 2 &amp; 0 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 3 &amp; 3 &amp; 2
+\end{array}
+}
+\end{equation*}
+</div>
+<p class="continuation">There is a nice technique for calculating the Sprague-Grundy values for a game with a tricky subtraction set (like \(2,5,7\)). We use something called a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Grundy scale</dfn>. Intuitively, a Grundy scale is a ruler with tick marks that identify the allowed subtractions. It is pretty easy to calculate the first 7 values of \(S(2,5,7)\text{,}\) so we will pick up our calculation there. Here is the partially filled in table for \(S(2,5,7)\text{:}\)</p>
 <span class="incontext"><a href="sg-subtract.html#p-221">in-context</a></span>
 </body>
 </html>

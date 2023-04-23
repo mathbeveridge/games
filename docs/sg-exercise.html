@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Games: Who Wins?</title>
+<title>Games: Exercises</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>window.MathJax = {
@@ -221,10 +221,10 @@
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sg-nim.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-sg.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sg-sumgames.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sg-sumgames.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-sg.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch-hack.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sg-nim.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-sg.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sg-sumgames.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sg-sumgames.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-sg.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch-hack.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -254,9 +254,9 @@
 <li><a href="sg-mex.html" data-scroll="sg-mex">Mex</a></li>
 <li><a href="sg-subtract.html" data-scroll="sg-subtract">Subtraction Games</a></li>
 <li><a href="sg-nim.html" data-scroll="sg-nim">Sprague-Grundy Values for Nim</a></li>
-<li><a href="sg-winner.html" data-scroll="sg-winner" class="active">Who Wins?</a></li>
+<li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
 <li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
-<li><a href="sg-exercise.html" data-scroll="sg-exercise">Exercises</a></li>
+<li><a href="sg-exercise.html" data-scroll="sg-exercise" class="active">Exercises</a></li>
 </ul>
 </li>
 <li class="link">
@@ -271,21 +271,46 @@
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sg-winner"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Who Wins?</span>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sg-exercise"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.6</span> <span class="title">Exercises</span>
 </h2>
-<p id="p-247">In this section, we prove that the Sprague-Grundy value of a position tells us whether it is an \(\cN\)-position or a \(\cP\)-position. We have seen some nice evidence that the Sprague-Grundy value is actually a generalization of the nim value. Indeed,  our main result is analogous to  <a class="xref" data-knowl="./knowl/thm-nim.html" title="Theorem 2.3.2">Theorem 2.3.2</a>: we are in an \(\cN\)-position if and only if the Sprague-Grundy value is nonzero.</p>
-<p id="p-248"><article class="theorem theorem-like" id="thm-sprague-grundy"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
-</h6>
-<p id="p-249">The \(\cG\) be any combinatorial game. The game position \(X \in \cG\) is</p>
-<ul class="disc">
-<li id="li-67"><p id="p-250">a \(\cP\)-position  when \(\g(X) = 0\text{,}\)</p></li>
-<li id="li-68"><p id="p-251">an \(\cN\)-position  when \(\g(X) \neq 0\text{.}\)</p></li>
-</ul></article></p>
-<p id="p-252">Our proof is a streamlined form of the proof of  <a class="xref" data-knowl="./knowl/thm-nim.html" title="Theorem 2.3.2">Theorem 2.3.2</a>. In that proof, we had an explicit formula for the nim sum, rather than a recursive definition that uses the values of the followers. Starting with that formula, we had to understand the behavior of the nim value, compared to the nim value of the followers. The recursive definition for the Sprague-Grundy value makes our general argument a breeze.</p>
-<p id="p-253"><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-254">Let \(\cA = \{ X \in \cG  \mid g(X)=0 \}\) and \(\cB = \{ Y \in \cG \mid g(X) \neq 0 \}\text{.}\) If \(X \in \cA\text{,}\) then no follower of \(X\) is in \(\cA\) (because otherwise \(g(X) \neq 0\)). In other words, every follower of \(X\)  is in \(\cB\text{.}\) Meanwhile, if \(Y \in \cB\) then \(g(Y) \neq 0\text{.}\) This means that there is at least one follower of \(Y\) that is in \(\cA\text{.}\) By  <a class="xref" data-knowl="./knowl/thm-NP.html" title="Theorem 1.3.6">Theorem 1.3.6</a>, \(\cA\) is the set of \(\cP\)-positions and \(\cB\) is the set of \(\cN\)-positions.</p></article></div></p>
-<p id="p-255">In the next section, we will finally show that the nim value of a Nim position is identical to its Sprague-Grundy value. In other words, the Sprague-Grundy value is truly a generalization of the Nim value.</p></section></div></main>
+<section class="exercises" id="exercises-3"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-29"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-277">Find the mex of the following subsets of \(\W\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-71"><p id="p-278">\(\displaystyle \{ 1,3,5,7 \}\)</p></li>
+<li id="li-72"><p id="p-279">\(\displaystyle \{ 2,4,6,8 \}\)</p></li>
+<li id="li-73"><p id="p-280">\(\displaystyle \{ 0,1,2,4,8,16 \}\)</p></li>
+<li id="li-74"><p id="p-281">\(\displaystyle \{ 1,2,3,4,5 \}\)</p></li>
+<li id="li-75"><p id="p-282">\(\displaystyle \{ 0,2,3,5 \}\)</p></li>
+<li id="li-76"><p id="p-283">\(\displaystyle \{ 0,1,2,3,4,5,6,7 \}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-284">Calculate the Sprague-Grundy values for the following Subtraction Games. Keep going until these values become periodic.</p>
+<ol class="lower-alpha">
+<li id="li-77"><p id="p-285">\(\displaystyle S(2,5)\)</p></li>
+<li id="li-78"><p id="p-286">\(\displaystyle S(2,6)\)</p></li>
+<li id="li-79"><p id="p-287">\(\displaystyle S(2,7)\)</p></li>
+<li id="li-80"><p id="p-288">\(\displaystyle S(2,3,5)\)</p></li>
+<li id="li-81"><p id="p-289">\(\displaystyle S(1,4,6)\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-290">Find the Sprague-Grundy values for \(S(1,2, \ldots , k)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-291">Prove that your answer from the previous problem is correct using strong induction. Hint: your base cases are \(1,2, \ldots, k+1\text{.}\) In order to prove the result for \(n\text{,}\) it is best to think of \(n\) as  \(n  = r(k+1) + s\) where \(0 \leq s &lt; k+1\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-292">Continue to calculate the Sprague-Grundy values for \(S(2,5,7)\) as found in Table \ref{table-sub3}. Notice that this sequence of 22 values repeats itself. Will this continue? How can you be sure?</p></article><article class="exercise exercise-like" id="exercise-34"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-293">Show that the Sprague-Grundy values for \(S(2,4,7)\) are periodic, but that this sequence does not settle down until the heap size is greater than 7. What is the period of this sequence for large pile sizes? \item</p>
+<ol class="lower-alpha">
+<li id="li-82"><p id="p-294">Create a table of Sprague-Grundy values for \(S(1,2)\) for pile sizes \(0 \leq n \leq 4\text{.}\)</p></li>
+<li id="li-83"><p id="p-295">Create a table of Sprague-Grundy values for \(S(1,2,3)\) for pile sizes \(0 \leq n \leq 4\text{.}\)</p></li>
+<li id="li-84"><p id="p-296">Now consider a two-pile game \((\pile{n}, \pile{m})\) where we play \(S(1,2)\) on the left pile and \(S(1,2,3)\) on the right pile. Create a \(5 \times 5\) table of Sprague-Grundy values for this two-pile game. The <em class="emphasis">rows</em> of your table should correspond to \(S(1,2)\) moves on the left pile, and the <em class="emphasis">columns</em> of your table should correspond to \(S(1,2,3)\) moves on the right pile.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-297">Consider the subtraction game \(S(A)\) where \(A= \{ s_1, s_2, \ldots s_k \}\) where \(s_1 &lt; s_2 &lt; \cdots &lt; s_k\text{.}\) Prove that \(g(\pile{n}) =1\) if and only if \(g(\ppile{n-s_1}) =0\text{.}\) \item</p>
+<ol class="lower-alpha">
+<li id="li-85"><p id="p-298">Calculate the nim sum \(2 \oplus 3\)</p></li>
+<li id="li-86"><p id="p-299">Create the game tree for  \(\nim{2} \oplus \nim{3}\text{.}\)</p></li>
+<li id="li-87"><p id="p-300">Starting at the leaves of your tree, mark the Sprague-Grundy value for each game position in your tree by using Definition \ref{def-sprague}. Check that the Sprague-Grundy value of your root \(\nim{2} \oplus \nim{3}\) matches the nim value in part (a).</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-36"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-301">Use strong induction to prove <a class="xref" data-knowl="./knowl/lemma-nimsprague.html" title="Lemma 3.3.1">Lemma 3.3.1</a>. Namely, prove that the Sprague-Grundy value of \(*n\) is  \(g(\nim{n})= n.\)</p></article></section></section></div></main>
 </div>
 </body>
 </html>

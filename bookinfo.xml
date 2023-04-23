@@ -76,6 +76,7 @@
     \def\cB{{\mathcal{B}}}
     \def\cC{{\mathcal{C}}}
     \def\cP{\mathcal P}
+    \def\cF{{\mathcal F}}
     \def\cE{\mathcal E}
     \def\cO{\mathcal O}
 

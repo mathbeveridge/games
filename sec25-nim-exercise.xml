@@ -73,7 +73,7 @@
 		<exercise>
 			<statement>
 				<p>
- Convert the numbers in equation \eqref{eqn:binary-addition} to decimal representations. Check that you get the same answer when you sum these decimal numbers.
+ Convert the numbers in equation <xref ref="eqn-binary-addition" /> to decimal representations. Check that you get the same answer when you sum these decimal numbers.
 
 
 				</p>
@@ -104,9 +104,9 @@
 		<exercise>
 			<statement>
 				<p>
- Here is a cool magician's trick. The magician gives the six cards in Figure \ref{fig:cards} to an audience member. The magician asks her to pick a number that appears on at least one of the cards, and then sort the cards into two piles: those that contain her number and those that do not. After some deep concentration, the magician reads her mind, and correctly guesses her number!
+ Here is a cool magician's trick. The magician gives these six cards to an audience member. 
+ 
 
-Here are the cards.
 
 
 
@@ -175,6 +175,10 @@ Here are the cards.
 \end{array}
 </me>
 
+The magician asks her to pick a number that appears on at least one of the cards, and then sort the cards into two piles: those that contain her number and those that do not. After some deep concentration, the magician reads her mind, and correctly guesses her number!
+
+</p>
+<p>
 
 Here are some examples:
 
@@ -295,7 +299,7 @@ Create a nim sum addition table for the numbers 0 through 7. Comment on any patt
 		<exercise>
 			<statement>
 				<p>
- In this problem, you will prove Lemma \ref{lemma:nimadd-rules}. For any integers <m>a,b,c</m>, prove that the following hold.
+ In this problem, you will prove <ref ref="lemma-nimadd-rules"/>. For any integers <m>a,b,c</m>, prove that the following hold.
 			<ol>
 				<li>
 					<p>
@@ -445,7 +449,7 @@ Create a nim sum addition table for the numbers 0 through 7. Comment on any patt
 			<ol>
 				<li>
 					<p>
- Play Northcott's Game with one bLue checker and one Red checker on a single row. Who wins?
+ Play Northcott's Game with one Blue checker and one Red checker on a single row. Who wins?
 					</p>
 				</li>
 				<li>
@@ -467,7 +471,7 @@ Create a nim sum addition table for the numbers 0 through 7. Comment on any patt
 			<statement>
 				<p>
  In the previous question, you explained how to map a position in Northcott's Game to a position in Nim.
-Use nim sums to decide whether the positions of Northcott's Game in Figure \ref{fig:northcott-exercise} are <m>\cN</m>-positions or <m>\cP</m>-positions.
+Use nim sums to decide whether the positions of Northcott's Game in <xref ref="fig-northcott-exercise" /> are <m>\cN</m>-positions or <m>\cP</m>-positions.
 
 
 <figure xml:id="fig-northcott-exercise">

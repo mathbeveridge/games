@@ -108,6 +108,7 @@
     \def\cB{{\mathcal{B}}}
     \def\cC{{\mathcal{C}}}
     \def\cP{\mathcal P}
+    \def\cF{{\mathcal F}}
     \def\cE{\mathcal E}
     \def\cO{\mathcal O}
 
@@ -255,7 +256,7 @@
 <li><a href="sg-nim.html" data-scroll="sg-nim">Sprague-Grundy Values for Nim</a></li>
 <li><a href="sg-winner.html" data-scroll="sg-winner">Who Wins?</a></li>
 <li><a href="sg-sumgames.html" data-scroll="sg-sumgames">The Sprague-Grundy Theorem</a></li>
-<li><a href="nim-exercise.html" data-scroll="nim-exercise">Exercises</a></li>
+<li><a href="sg-exercise.html" data-scroll="sg-exercise">Exercises</a></li>
 </ul>
 </li>
 <li class="link">
@@ -273,8 +274,8 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sg-mex"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Mex</span>
 </h2>
-<p id="p-206">In the first two chapters, we cracked the game of Nim: the nim value of a Nim position determines the winner. However, Nim is not the only game in town. The goal of this chapter is to introduce a broader framework that applies to all impartial combinatorial games. Our investigation will culminate in the <em class="emphasis">Sprague-Grundy value</em> of a game position.</p>
-<p id="p-207">The heart of the Sprague-Grundy value is a function called <dfn class="terminology">mex</dfn>. The domain of the mex function is the set of subsets of the whole numbers \(\W = \{ 0 ,1, 2, 3, \ldots \}\text{.}\) The domain is also called the <em class="emphasis">power set</em> of \(\W\text{,}\) and is denoted by \(\mathcal{P}(\W)\text{.}\) The mex of a set \(S \in \mathcal{P}(\W)\) is the least whole number that does not appear in \(S\text{.}\) In other words, the function  \(\mex : \mathcal{P}(\W) \rightarrow \W\) is given by</p>
+<p id="p-207">In the first two chapters, we cracked the game of Nim: the nim value of a Nim position determines the winner. However, Nim is not the only game in town. The goal of this chapter is to introduce a broader framework that applies to all impartial combinatorial games. Our investigation will culminate in the <em class="emphasis">Sprague-Grundy value</em> of a game position.</p>
+<p id="p-208">The heart of the Sprague-Grundy value is a function called <dfn class="terminology">mex</dfn>. The domain of the mex function is the set of subsets of the whole numbers \(\W = \{ 0 ,1, 2, 3, \ldots \}\text{.}\) The domain is also called the <em class="emphasis">power set</em> of \(\W\text{,}\) and is denoted by \(\mathcal{P}(\W)\text{.}\) The mex of a set \(S \in \mathcal{P}(\W)\) is the least whole number that does not appear in \(S\text{.}\) In other words, the function  \(\mex : \mathcal{P}(\W) \rightarrow \W\) is given by</p>
 <div class="displaymath">
 \begin{equation*}
 \mex (S) = \min \{ i \in \W \mid i \notin S\}.
@@ -297,12 +298,12 @@
 <article class="fact theorem-like" id="fact-6"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-208">\(\mex (S)=0\) if and only if \(0 \notin S\text{.}\)</p></article><p id="p-209">Note that \(\mex( \emptyset) = 0\) since the number \(0\) is certainly the smallest number that is not a member of \(\emptyset\text{.}\)</p>
-<p id="p-210">We stress that the mex function assigns a whole number to a <em class="emphasis">set of numbers</em>. We are interested in assigning a number to a <em class="emphasis">position of a game</em>. To avoid confusion, we will follow two conventions.</p>
+<p id="p-209">\(\mex (S)=0\) if and only if \(0 \notin S\text{.}\)</p></article><p id="p-210">Note that \(\mex( \emptyset) = 0\) since the number \(0\) is certainly the smallest number that is not a member of \(\emptyset\text{.}\)</p>
+<p id="p-211">We stress that the mex function assigns a whole number to a <em class="emphasis">set of numbers</em>. We are interested in assigning a number to a <em class="emphasis">position of a game</em>. To avoid confusion, we will follow two conventions.</p>
 <ul class="disc">
-<li id="li-65"><p id="p-211">First,  we will restrict the term "mex" to sets of numbers, and use the term "Sprague-Grundy value" for the number assigned to a game position.</p></li>
+<li id="li-65"><p id="p-212">First,  we will restrict the term "mex" to sets of numbers, and use the term "Sprague-Grundy value" for the number assigned to a game position.</p></li>
 <li id="li-66">
-<p id="p-212">Second, we need a new notation for a nim heap of size \(n\text{.}\) From this point forward, we will use the symbol \(\nim{n}\) for this game position. The nim game with heap sizes \(5, 3, 8\) will now be denoted by</p>
+<p id="p-213">Second, we need a new notation for a nim heap of size \(n\text{.}\) From this point forward, we will use the symbol \(\nim{n}\) for this game position. The nim game with heap sizes \(5, 3, 8\) will now be denoted by</p>
 <div class="displaymath">
 \begin{equation*}
 \nim{5} \oplus \nim{3} \oplus \nim{8},
@@ -315,12 +316,12 @@
 <article class="definition definition-like" id="sg-def-sprague"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
 </h6>
-<p id="p-213">Let \(\cG\) be a combinatorial game and let \(X\) be a position in this game. Let \(\cF(X) = \{Y_1, Y_2, \ldots , Y_k \}\) be the followers of position \(X\text{.}\) Then the <dfn class="terminology">Sprague-Grundy value</dfn> of \(X\) is</p>
+<p id="p-214">Let \(\cG\) be a combinatorial game and let \(X\) be a position in this game. Let \(\cF(X) = \{Y_1, Y_2, \ldots , Y_k \}\) be the followers of position \(X\text{.}\) Then the <dfn class="terminology">Sprague-Grundy value</dfn> of \(X\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \g(X) = \mex \{ \g(Y_1), \g(Y_2), \ldots , \g(Y_k) \}.
 \end{equation*}
-</div></article><p id="p-214">We make two quick observations. First, if game position \(X\) has no followers then \(\g(X) = \mex (\emptyset) = 0\text{.}\) Second, if position \(X\) has followers \(\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}\) then \(\g(X)\) might still be zero: it depends on whether any of the followers have zero Sprague-Grundy value.</p></section></div></main>
+</div></article><p id="p-215">We make two quick observations. First, if game position \(X\) has no followers then \(\g(X) = \mex (\emptyset) = 0\text{.}\) Second, if position \(X\) has followers \(\cF(X) = \{ Y_1, Y_2, \ldots , Y_k \}\) then \(\g(X)\) might still be zero: it depends on whether any of the followers have zero Sprague-Grundy value.</p></section></div></main>
 </div>
 </body>
 </html>

@@ -12,26 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The heart of the Sprague-Grundy value is a function called <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">mex</dfn>. The domain of the mex function is the set of subsets of the whole numbers \(\W = \{ 0 ,1, 2, 3, \ldots \}\text{.}\) The domain is also called the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">power set</em> of \(\W\text{,}\) and is denoted by \(\mathcal{P}(\W)\text{.}\) The mex of a set \(S \in \mathcal{P}(\W)\) is the least whole number that does not appear in \(S\text{.}\) In other words, the function  \(\mex : \mathcal{P}(\W) \rightarrow \W\) is given by</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\mex (S) = \min \{ i \in \W \mid i \notin S\}.
-\end{equation*}
-</div>
-<p class="continuation">Here are some examples:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{rcl}
-\mex ( \{0, 1, 3 \} )&amp;=&amp;2 \\
-\mex ( \{1, 2, 3 \} )&amp;=&amp; 0 \\
-\mex (\{0, 3, 6 \}) &amp;=&amp; 1 \\
-\mex (\{2, 4, 6 \}) &amp;=&amp; 0 \\
-\mex (\{0,1,2,3, 5, 7,9 \}) &amp;=&amp; 4 \\
-\mex ( \emptyset )&amp;=&amp; 0
-\end{array}
-\end{equation*}
-</div>
-<p class="continuation">So the mex of a set is the smallest missing whole number. Like the nim value, we will be particularly interested in whether the mex of a set is zero or nonzero. Therefore, we want to emphasize that</p>
+<p>In the first two chapters, we cracked the game of Nim: the nim value of a Nim position determines the winner. However, Nim is not the only game in town. The goal of this chapter is to introduce a broader framework that applies to all impartial combinatorial games. Our investigation will culminate in the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Sprague-Grundy value</em> of a game position.</p>
 <span class="incontext"><a href="sg-mex.html#p-207">in-context</a></span>
 </body>
 </html>

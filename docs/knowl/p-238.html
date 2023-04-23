@@ -12,7 +12,25 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p></p>
+<p>In this subsection, we explore the Sprague-Grundy values for the game of Nim. Let's start simply. What is the Sprague-Grundy value for a single heap nim game  \(\nim{n}\text{?}\) Nim position \(\nim{1}\) only has one follower: \(\nim{0}\text{.}\) Therefore</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(\nim{1}) = \mex \{ \g( \nim{0}) \} = \mex \{ 0 \} = 1.
+\end{equation*}
+</div>
+<p class="continuation">Nim position \(\nim{2}\) has two followers: \(\cF( \nim{2} ) = \{ \nim{0}, \nim{1} \}\text{,}\) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(\nim{2}) = \mex \{ \g( \nim{0}) , \g( \nim{1}) \} = \mex \{ 0, 1 \} = 2.
+\end{equation*}
+</div>
+<p class="continuation">Continuing this way, we find that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\g(\nim{3}) = \mex \{ \g(\nim{0}), \g(\nim{1}) , \g(\nim{2}) \} = \mex \{ 0, 1, 2 \} = 3.
+\end{equation*}
+</div>
+<p class="continuation">This same proof applies in general, and gives us the following lemma.</p>
 <span class="incontext"><a href="sg-nim.html#p-238">in-context</a></span>
 </body>
 </html>

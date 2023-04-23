@@ -12,25 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In this subsection, we explore the Sprague-Grundy values for the game of Nim. Let's start simply. What is the Sprague-Grundy value for a single heap nim game  \(\nim{n}\text{?}\) Nim position \(\nim{1}\) only has one follower: \(\nim{0}\text{.}\) Therefore</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(\nim{1}) = \mex \{ \g( \nim{0}) \} = \mex \{ 0 \} = 1.
-\end{equation*}
-</div>
-<p class="continuation">Nim position \(\nim{2}\) has two followers: \(\cF( \nim{2} ) = \{ \nim{0}, \nim{1} \}\text{,}\) so that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(\nim{2}) = \mex \{ \g( \nim{0}) , \g( \nim{1}) \} = \mex \{ 0, 1 \} = 2.
-\end{equation*}
-</div>
-<p class="continuation">Continuing this way, we find that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(\nim{3}) = \mex \{ \g(\nim{0}), \g(\nim{1}) , \g(\nim{2}) \} = \mex \{ 0, 1, 2 \} = 3.
-\end{equation*}
-</div>
-<p class="continuation">This same proof applies in general, and gives us the following lemma.</p>
-<span class="incontext"><a href="sg-nim.html#p-237">in-context</a></span>
+<p>We make one comment about the above proof. We do successfully prove that the sequence must repeat after a certain point, but our proof does not claim to find the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">first</em> heap size where the Sprague-Grundy values start to repeat.  We also don't learn much about the actual period of the sequence. The problem: we blindly chose to look at the sequence in huge blocks, regardless of the actually behavior of the sequence. In a sense, we are considering a "worst case scenario," so all we learn is that the period is at most \(M-N= s_k(j-i).\) We can get an upper bound on \(j-i\) using the Pigeonhole Principle, which says that \(j-i \leq (k+1)^{s_k}\text{.}\) Our resulting bound on the period of the Sprague-Grundy values is \(s_k (k+1)^{s_k}\text{,}\) which can be very large indeed.</p>
+<span class="incontext"><a href="sg-subtract.html#p-237">in-context</a></span>
 </body>
 </html>
