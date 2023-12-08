@@ -12,7 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Starting clockwise from the root vertex, label each edge with \(\alpha\) or \(\beta\text{,}\) giving adjacent edges the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">same</em> label if there is an <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">odd</em> length string between them, and <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">different</em> labels if there is an <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">even</em> length string. There are an odd number of edges in \(C\text{,}\) so one label occurs an odd number of times, and the other label occurs an even number of times. For simplicity, we assume that label \(\alpha\) appears an even number of times and that label \(\beta\) appears an odd number of times. It turns out that there exists  a \(\beta\)-edge such that hacking this edge results in a position with value 0.</p>
+<p>We will prove that \(g(H)=1\) by showing that</p>
+<ol class="decimal">
+<li><p>No follower of this position has value 1.</p></li>
+<li><p>There is a follower of value 0</p></li>
+</ol>
+<p class="continuation">The first statement is straight forward to prove. Hacking the cycle leads to a Lumberjack position with an even number of edges. By the Parity Principle, the Sprague-Grundy value of this position is even, so clearly it cannot be equal to 1. If Left hacks a path edge to obtain position \(G'\text{,}\) then Right responds by hacking the analogous path edge in the other part of the graph to obtain \(G"\text{.}\) The graph \(G"\) has fewer edges than \(G\text{,}\) so the Fusion Principle applies to \(G"\) and its Sprague-Grundy value is 1. This means that \(\g(G') \neq 1\) since its follower \(G"\) has \(\g(G")=1\text{.}\)</p>
 <span class="incontext"><a href="hack-fusion.html#p-436">in-context</a></span>
 </body>
 </html>

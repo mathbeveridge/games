@@ -12,13 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p><a class="xref" data-knowl="./knowl/fig-lumberjack.html" title="Figure 4.2.1">Figure 4.2.1</a> shows a game position of Lumberjack with three rooted trees. The root vertex of each tree lies on the dashed ground. Note that the middle tree in this position is more of a bush than a tree, since it does not have a single "trunk" leading up from its root. Clearly, this position of Lumberjack is just the sum of the games played on the individual trees of the forest. By <a class="xref" data-knowl="./knowl/thm-sg.html" title="Theorem 3.5.1">Theorem 3.5.1</a>, the Sprague-Grundy value of this game is just the nim sum of the Sprague Grundy values of the three trees:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\g(G_1 \oplus G_2 \oplus G_3) = \g(G_1) \oplus \g(G_2) \oplus g(G_3).
-\end{equation*}
-</div>
-<p class="continuation">The rightmost tree in this forest is a bamboo stalk, so it is equivalent to the nim heap \(*4\text{.}\) What about the other two trees? As always, we could find the Sprague-Grundy value the hard way: recursively find the values of all the followers and then take the mex of those values. You can imagine how tedious this process would be: the leftmost tree has seven followers and the middle tree has nine followers. In this section, we will describe the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Tuft Principle</em> which gives a much quicker way to calculate the Sprague-Grundy value of rooted trees. The Tuft Principle is, in fact, a variation of <a class="xref" data-knowl="./knowl/thm-sg.html" title="Theorem 3.5.1">Theorem 3.5.1</a> about the sum of games.</p>
+<p>The game of <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Lumberjack</dfn> is a generalization of Bamboo Stalks. Once again, we have the ground, denoted by a dashed line. We then have a collection of trees (acyclic graphs) planted on the ground. The grounded vertex is special, and we call this vertex the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">root</dfn> of the tree. Therefore, we are playing on a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">rooted forest</dfn>, in which every tree has a root. A move consists of picking a tree and then hacking off one edge. We remove the edge, as well as the branch of the tree that is no longer connected to the ground (or equivalently: no longer connected to the root of the tree). Once again, the last person to move wins.</p>
 <span class="incontext"><a href="hack-lumberjack.html#p-312">in-context</a></span>
 </body>
 </html>

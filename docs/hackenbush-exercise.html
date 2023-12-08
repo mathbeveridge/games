@@ -277,38 +277,38 @@
 <section class="exercises" id="exercises-4"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercise</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-37"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-441">Prove that Nim and Bamboo Stalks are equivalent games by explaining how to turn one game into the other. More specifically, explain why a bamboo stalk of height \(n\) is equivalent to the nim heap \(*n\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-38"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-442">Determine whether each of the following Bamboo Stalk positions is an \(\cN\)-position or a \(\cP\)-position. If it is an \(\cN\)-position, list all of the winning moves.</p>
-<p id="p-443"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise0.svg" role="img" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-444">Equation <a class="xref" data-knowl="./knowl/eqn-lumberjack.html" title="Equation 4.2.1">(4.2.1)</a>  shows that the Sprague-Grundy value of the Lumberjack position in <a class="xref" data-knowl="./knowl/fig-lumberjack.html" title="Figure 4.2.1">Figure 4.2.1</a> is</p>
+<article class="exercise exercise-like" id="exercise-39"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-443">Prove that Nim and Bamboo Stalks are equivalent games by explaining how to turn one game into the other. More specifically, explain why a bamboo stalk of height \(n\) is equivalent to the nim heap \(*n\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-444">Determine whether each of the following Bamboo Stalk positions is an \(\cN\)-position or a \(\cP\)-position. If it is an \(\cN\)-position, list all of the winning moves.</p>
+<p id="p-445"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise0.svg" role="img" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-446">Equation <a class="xref" data-knowl="./knowl/eqn-lumberjack.html" title="Equation 4.2.1">(4.2.1)</a>  shows that the Sprague-Grundy value of the Lumberjack position in <a class="xref" data-knowl="./knowl/fig-lumberjack.html" title="Figure 4.2.1">Figure 4.2.1</a> is</p>
 <div class="displaymath">
 \begin{equation*}
 \g(G_1 \oplus G_2 \oplus G_3) =2.
 \end{equation*}
 </div>
-<p class="continuation">There is a winning move for  \(G_1 \oplus G_2 \oplus G_3\) in \(G-1\) and three winning moves for \(G_1 \oplus G_2 \oplus G_3\) in \(G_2\text{.}\) Find all of these  winning moves.</p></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-445">Give an example of a Lumberjack position \(G\) that has a follower \(G'\) with \(\g(G') &lt; \g(G)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-446">Find the Sprague-Grundy value of each of these Lumberjack trees.</p>
+<p class="continuation">There is a winning move for  \(G_1 \oplus G_2 \oplus G_3\) in \(G-1\) and three winning moves for \(G_1 \oplus G_2 \oplus G_3\) in \(G_2\text{.}\) Find all of these  winning moves.</p></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-447">Give an example of a Lumberjack position \(G\) that has a follower \(G'\) with \(\g(G') &lt; \g(G)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-448">Find the Sprague-Grundy value of each of these Lumberjack trees.</p>
 <ol class="lower-alpha">
-<li id="li-98"><p id="p-447">This tree: <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/tree1.png" class="contained"></div></p></li>
-<li id="li-99"><p id="p-448">This other tree: <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/tree2.png" class="contained"></div></p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-449">Show that the following Lumberjack forest is an \Npos. For each of the three trees, find a winning move, or explain why no such move exists. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/forest.png" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-450">This exercise guides you through the proof of Lemma \ref{lemma-loop}. Let \(G\) be a multigraph rooted at vertex \(x\) with a loop edge  \(e\) incident with vertex \(y\text{.}\) Let \(H\) be the multigraph obtained by replacing this loop by a twig edge \(f\) from \(y\) to a new vertex \(z\text{.}\) You will show that the Green Hackenbush game position \(G \oplus H\) satisfies \(\g(G \oplus H) = 0\text{.}\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise4.svg" role="img" class="contained"></div></p>
+<li id="li-98"><p id="p-449">This tree: <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/tree1.png" class="contained"></div></p></li>
+<li id="li-99"><p id="p-450">This other tree: <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/tree2.png" class="contained"></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-451">Show that the following Lumberjack forest is an \(\cN\)-position. For each of the three trees, find a winning move, or explain why no such move exists. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/forest.png" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-452">This exercise guides you through the proof of Lemma \ref{lemma-loop}. Let \(G\) be a multigraph rooted at vertex \(x\) with a loop edge  \(e\) incident with vertex \(y\text{.}\) Let \(H\) be the multigraph obtained by replacing this loop by a twig edge \(f\) from \(y\) to a new vertex \(z\text{.}\) You will show that the Green Hackenbush game position \(G \oplus H\) satisfies \(\g(G \oplus H) = 0\text{.}\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise4.svg" role="img" class="contained"></div></p>
 <ol class="lower-alpha">
-<li id="li-100"><p id="p-451">Suppose that Left hacks the loop \(e\) in \(G\text{.}\) What should Right do? How do you know that this results in a \Ppos?</p></li>
-<li id="li-101"><p id="p-452">Suppose that Left hacks  an edge in \(G\) that disconnects the loop \(e\) from the root of \(G\text{.}\) What should Right do?</p></li>
-<li id="li-102"><p id="p-453">Use induction on the number of edges \(m\) in \(G\) to prove that if Left hacks an edge in \(G\) that does not disconnect the loop \(e\) from the root, then Right has a move in \(H\) to create a \Ppos. Your base case is \(m=0\text{,}\) in which \(G\) consists of a single root vertex \(x\) with no edges. (This means that for the base case, we have \(y=x\) since this is the only vertex in \(G\text{.}\))</p></li>
-<li id="li-103"><p id="p-454">What if Left makes his first move in \(H\) instead of in \(G\text{?}\)</p></li>
-<li id="li-104"><p id="p-455">Explain why \(\g(G \oplus H) = 0\) means that \(\g(G) = \g(H)\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-456">In this problem, we confirm that there are no winning moves in  <a class="xref" data-knowl="./knowl/fig-hack-example.html" title="Figure 4.4.1">Figure 4.4.1</a> that hack an edge in either the evergreen \(G_1\) or the snowman \(G_3\)</p>
+<li id="li-100"><p id="p-453">Suppose that Left hacks the loop \(e\) in \(G\text{.}\) What should Right do? How do you know that this results in a \(\cP\)-position?</p></li>
+<li id="li-101"><p id="p-454">Suppose that Left hacks  an edge in \(G\) that disconnects the loop \(e\) from the root of \(G\text{.}\) What should Right do?</p></li>
+<li id="li-102"><p id="p-455">Use induction on the number of edges \(m\) in \(G\) to prove that if Left hacks an edge in \(G\) that does not disconnect the loop \(e\) from the root, then Right has a move in \(H\) to create a \(\cP\)-position. Your base case is \(m=0\text{,}\) in which \(G\) consists of a single root vertex \(x\) with no edges. (This means that for the base case, we have \(y=x\) since this is the only vertex in \(G\text{.}\))</p></li>
+<li id="li-103"><p id="p-456">What if Left makes his first move in \(H\) instead of in \(G\text{?}\)</p></li>
+<li id="li-104"><p id="p-457">Explain why \(\g(G \oplus H) = 0\) means that \(\g(G) = \g(H)\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-458">In this problem, we confirm that there are no winning moves in  <a class="xref" data-knowl="./knowl/fig-hack-example.html" title="Figure 4.4.1">Figure 4.4.1</a> that hack an edge in either the evergreen \(G_1\) or the snowman \(G_3\)</p>
 <ol class="lower-alpha">
-<li id="li-105"><p id="p-457">List the followers of the evergreen \(G_1\text{,}\) and find their Sprague-Grundy values using the Tuft, Loop and Fusion Principles.</p></li>
-<li id="li-106"><p id="p-458">List the followers of \(G_3\text{,}\) and find their Sprague-Grundy values using the Tuft, Loop and Fusion Principles.</p></li>
+<li id="li-105"><p id="p-459">List the followers of the evergreen \(G_1\text{,}\) and find their Sprague-Grundy values using the Tuft, Loop and Fusion Principles.</p></li>
+<li id="li-106"><p id="p-460">List the followers of \(G_3\text{,}\) and find their Sprague-Grundy values using the Tuft, Loop and Fusion Principles.</p></li>
 <li id="li-107">
-<p id="p-459">The Sprague-Grundy value of the wintery position of Figure \ref{fig:hack-example} is</p>
+<p id="p-461">The Sprague-Grundy value of the wintery position of Figure \ref{fig:hack-example} is</p>
 <div class="displaymath">
 \begin{equation*}
 \g(G) = \g(G_1) \oplus \g(G_2) \oplus \g(G_3) = 2 \oplus 5 \oplus 1 = 6.
@@ -316,23 +316,23 @@
 </div>
 <p class="continuation">Explain why your answers to parts (a) and (b) show that the winning move for \(G\) must involving hacking an edge in the reindeer \(G_2\text{.}\)</p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-460">Determine the Sprague-Grundy value of each of the following sporty Green Hackenbush pictures.</p>
+</ol></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-462">Determine the Sprague-Grundy value of each of the following sporty Green Hackenbush pictures.</p>
 <ol class="lower-alpha">
-<li id="li-108"><p id="p-461">This quarterback: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/football.png" class="contained"></div></p></li>
-<li id="li-109"><p id="p-462">This fisher: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fishing.png" class="contained"></div></p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
-<p id="p-463">Determine the Sprague-Grundy value of each of the following speedy Green Hackenbush pictures.</p>
+<li id="li-108"><p id="p-463">This quarterback: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/football.png" class="contained"></div></p></li>
+<li id="li-109"><p id="p-464">This fisher: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fishing.png" class="contained"></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-465">Determine the Sprague-Grundy value of each of the following speedy Green Hackenbush pictures.</p>
 <ol class="lower-alpha">
-<li id="li-110"><p id="p-464">This biker: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/biking.png" class="contained"></div></p></li>
-<li id="li-111"><p id="p-465">This horse and rider: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/riding.png" class="contained"></div></p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
-<p id="p-466">Consider the following Green Hackenbush volleyball game. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/volleyball.png" class="contained"></div></p>
+<li id="li-110"><p id="p-466">This biker: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/biking.png" class="contained"></div></p></li>
+<li id="li-111"><p id="p-467">This horse and rider: <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/riding.png" class="contained"></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-468">Consider the following Green Hackenbush volleyball game. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/volleyball.png" class="contained"></div></p>
 <ol class="lower-alpha">
-<li id="li-112"><p id="p-467">Find its Sprague-Grundy value.</p></li>
-<li id="li-113"><p id="p-468">Find all of the winning moves for Left.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
-<p id="p-469">In this problem, you will prove the Parity Principle of Theorem \ref{thm-parity}: the Sprague-Grundy value of any Lumberjack position has the same parity as the total number of edges. The key idea behind this proof is the following simple observation:</p>
+<li id="li-112"><p id="p-469">Find its Sprague-Grundy value.</p></li>
+<li id="li-113"><p id="p-470">Find all of the winning moves for Left.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-471">In this problem, you will prove the Parity Principle of Theorem \ref{thm-parity}: the Sprague-Grundy value of any Lumberjack position has the same parity as the total number of edges. The key idea behind this proof is the following simple observation:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rcccl}
@@ -345,28 +345,28 @@
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-114"><p id="p-470">Prove that the Parity Principle holds for \(k\)-tufts.</p></li>
-<li id="li-115"><p id="p-471">Let \(G\) be a tree, and let \(m\) be the number vertices of degree greater than 2. Use induction on \(m\) to prove that the Parity Principle holds for \(G\text{.}\) You will need to use part (a) during your inductive step.</p></li>
-<li id="li-116"><p id="p-472">Use part (b) to prove that if \(H\) is a forest, then the Parity Principle holds.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
-<p id="p-473">Find the Sprague-Grundy value of this classic movie scene. Then find all of the winning moves. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/oz-gang.png" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
-<p id="p-474">Prove that the Parity Principle also holds for Green Hackenbush.</p></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
-<p id="p-475">The Tuft Principle (Theorem \ref{thm:tuft}) says that we can replace a tuft consisting of paths \(B_1, B_2, \ldots, B_k\) with a single path of length \(B_1 \oplus B_2 \oplus \cdots B_k\text{.}\) Using the proof of Theorem \ref{thm:tuft} as a guide, prove the following <dfn class="terminology">Branch Principle</dfn>: <blockquote class="blockquote" id="blockquote-4">
-<p id="p-476"><em class="emphasis">Branch Principle:</em> Let \(G\) be a tree rooted at \(x\) and let \(y\) be a leaf of \(G\text{.}\) Let \(H_1\) be tree rooted at \(z\) with \(g(H_1)=\ell\text{,}\) and let \(H_2\) be a bamboo stalk of height \(\ell\text{.}\) Then</p>
+<li id="li-114"><p id="p-472">Prove that the Parity Principle holds for \(k\)-tufts.</p></li>
+<li id="li-115"><p id="p-473">Let \(G\) be a tree, and let \(m\) be the number vertices of degree greater than 2. Use induction on \(m\) to prove that the Parity Principle holds for \(G\text{.}\) You will need to use part (a) during your inductive step.</p></li>
+<li id="li-116"><p id="p-474">Use part (b) to prove that if \(H\) is a forest, then the Parity Principle holds.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-475">Find the Sprague-Grundy value of this classic movie scene. Then find all of the winning moves. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/oz-gang.png" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-476">Prove that the Parity Principle also holds for Green Hackenbush.</p></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-477">The Tuft Principle (Theorem \ref{thm:tuft}) says that we can replace a tuft consisting of paths \(B_1, B_2, \ldots, B_k\) with a single path of length \(B_1 \oplus B_2 \oplus \cdots B_k\text{.}\) Using the proof of Theorem \ref{thm:tuft} as a guide, prove the following <dfn class="terminology">Branch Principle</dfn>: <blockquote class="blockquote" id="blockquote-4">
+<p id="p-478"><em class="emphasis">Branch Principle:</em> Let \(G\) be a tree rooted at \(x\) and let \(y\) be a leaf of \(G\text{.}\) Let \(H_1\) be tree rooted at \(z\) with \(g(H_1)=\ell\text{,}\) and let \(H_2\) be a bamboo stalk of height \(\ell\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 g([G_y:H_1]) = g([G_y:H_2]).
 \end{equation*}
 </div>
-</blockquote></p></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
-<p id="p-477">Consider the following family of graphs <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise11.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first four trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
-<p id="p-478">Consider the following family of graphs <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise12.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first four trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
-<p id="p-479">Consider the following family of graphs <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise13.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first eight trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
-<p id="p-480">Consider the following family of graphs <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise14.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first eight trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
-<p id="p-481">Recall that an even cycle is a cycle with an even number of edges, and an odd cycle is a cycle with an odd number of edges. In Green Hackenbush, show that we can simply our fusion process as follows.</p>
+</blockquote></p></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-479">Consider the following family of graphs <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise11.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first four trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-480">Consider the following family of graphs <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-hack-exercise12.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first four trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-481">Consider the following family of graphs <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise13.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first eight trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-57"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-482">Consider the following family of graphs <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-hack-exercise14.svg" role="img" class="contained"></div> Calculate the Sprague-Grundy values for the first eight trees in this family. Make a conjecture about the Sprague-Grundy value \(g(G_k)\) and then use induction and the Branch Principle to prove that your answer is correct.</p></article><article class="exercise exercise-like" id="exercise-58"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-483">Recall that an even cycle is a cycle with an even number of edges, and an odd cycle is a cycle with an odd number of edges. In Green Hackenbush, show that we can simply our fusion process as follows.</p>
 <ul class="disc">
-<li id="li-117"><p id="p-482">An even cycle can be replaced by a single fused vertex.</p></li>
-<li id="li-118"><p id="p-483">An odd cycle can be replaced by a single fused vertex with one leaf attached to it.</p></li>
+<li id="li-117"><p id="p-484">An even cycle can be replaced by a single fused vertex.</p></li>
+<li id="li-118"><p id="p-485">An odd cycle can be replaced by a single fused vertex with one leaf attached to it.</p></li>
 </ul>
 <p class="continuation">Proving these two statements requires that you combine three principles. You must mention them all, in order.</p></article></section></section></div></main>
 </div>

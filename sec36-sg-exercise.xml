@@ -100,7 +100,7 @@
 		<exercise>
 			<statement>
 				<p>
- Continue to calculate the Sprague-Grundy values for <m>S(2,5,7)</m> as found in Table \ref{table-sub3}. Notice that this sequence of 22 values repeats itself. Will this continue? How can you be sure?
+ Continue to calculate the Sprague-Grundy values for <m>S(2,5,7)</m> as found in Table <xref ref="fig-sg-subtraction2"/>. Notice that this sequence of 22 values repeats itself. Will this continue? How can you be sure?
 
 				</p>
 			</statement>
@@ -109,8 +109,12 @@
 			<statement>
 				<p>
  Show that the Sprague-Grundy values for <m>S(2,4,7)</m> are periodic, but that this sequence does not settle down until the heap size is greater than 7. What is the period of this sequence for large pile sizes?
-
-\item
+</p>			
+</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
 			<ol>
 				<li>
 					<p>
@@ -137,9 +141,13 @@ The <em>rows</em> of your table should correspond to <m>S(1,2)</m> moves on the 
 			<statement>
 				<p>
  Consider the subtraction game <m>S(A)</m> where <m>A= \{ s_1, s_2, \ldots s_k \}</m> where <m>s_1 &lt; s_2 &lt; \cdots &lt; s_k</m>. Prove that <m>g(\pile{n}) =1</m> if and only if <m>g(\ppile{n-s_1}) =0</m>.
+</p>
 
-
-\item
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
 			<ol>
 				<li>
 					<p>

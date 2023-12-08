@@ -191,7 +191,7 @@
 		<exercise>
 			<statement>
 				<p>
- Show that the following Lumberjack forest is an \Npos. For each of the three trees, find a winning move, or explain why no such move exists.
+ Show that the following Lumberjack forest is an <m>\cN</m>-position. For each of the three trees, find a winning move, or explain why no such move exists.
 
 			<image width="50%" xml:id="fig-img-hack-exercise3" source="images/forest.png" />
 
@@ -256,7 +256,7 @@
 			<ol>
 				<li>
 					<p>
- Suppose that Left hacks the loop <m>e</m> in <m>G</m>. What should Right do? How do you know that this results in a \Ppos?
+ Suppose that Left hacks the loop <m>e</m> in <m>G</m>. What should Right do? How do you know that this results in a <m>\cP</m>-position?
 					</p>
 				</li>
 				<li>
@@ -266,7 +266,7 @@
 				</li>
 				<li>
 					<p>
- Use induction on the number of edges <m>m</m> in <m>G</m> to prove that if Left hacks an edge in <m>G</m> that does not disconnect the loop <m>e</m> from the root, then Right has a move in <m>H</m> to create a \Ppos. Your base case is <m>m=0</m>, in which <m>G</m> consists of a single root vertex <m>x</m> with no edges. (This means that for the base case, we have <m>y=x</m> since this is the only vertex in <m>G</m>.)
+ Use induction on the number of edges <m>m</m> in <m>G</m> to prove that if Left hacks an edge in <m>G</m> that does not disconnect the loop <m>e</m> from the root, then Right has a move in <m>H</m> to create a <m>\cP</m>-position. Your base case is <m>m=0</m>, in which <m>G</m> consists of a single root vertex <m>x</m> with no edges. (This means that for the base case, we have <m>y=x</m> since this is the only vertex in <m>G</m>.)
 					</p>
 				</li>
 				<li>

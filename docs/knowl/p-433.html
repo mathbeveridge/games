@@ -12,7 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, we rule out the last suspected minimal criminal. This argument gets quite technical, and requires some new ingenuity. Therefore, we only sketch the final steps of this proof. Suppose that \(C\) contains an odd number of edges.  This time, we need a more intricate argument. As in the previous case, we consider position \(H\)  consisting of \(G\) and copies of each of the strings the cycle of \(G\text{,}\) as shown in  <a class="xref" data-knowl="./knowl/fig-fusion-odd.html" title="Figure 4.5.12">Figure 4.5.12</a>. If we can show that \(g(H)=1\text{,}\) then this means that the Fusion Principle holds for \(G\text{,}\) since fusing the cycle creates an odd number of paths of height 1.</p>
+<p>The above argument shows that the position in  <a class="xref" data-knowl="./knowl/fig-fusion-even.html" title="Figure 4.5.11">Figure 4.5.11</a> is a \(\cP\)-position with Sprague-Grundy value 0. Therefore the Sprague-Grundy value of \(G\) equals</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+n_1 \oplus n_2 \oplus \cdots \oplus n_k.
+\end{equation*}
+</div>
+<p class="continuation">But this means that the Fusion Principle holds for \(G\text{:}\) fusing the cycle \(C\) results in an even number of loops at ground level. These loops cancel one another out, so the Sprague-Grundy value is just the nim sum of the lengths of the strings. In summary, \(G\) is not our minimal criminal.</p>
 <span class="incontext"><a href="hack-fusion.html#p-433">in-context</a></span>
 </body>
 </html>

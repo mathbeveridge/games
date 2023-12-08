@@ -297,20 +297,20 @@
 </ol></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-290">Find the Sprague-Grundy values for \(S(1,2, \ldots , k)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-291">Prove that your answer from the previous problem is correct using strong induction. Hint: your base cases are \(1,2, \ldots, k+1\text{.}\) In order to prove the result for \(n\text{,}\) it is best to think of \(n\) as  \(n  = r(k+1) + s\) where \(0 \leq s &lt; k+1\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-292">Continue to calculate the Sprague-Grundy values for \(S(2,5,7)\) as found in Table \ref{table-sub3}. Notice that this sequence of 22 values repeats itself. Will this continue? How can you be sure?</p></article><article class="exercise exercise-like" id="exercise-34"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-293">Show that the Sprague-Grundy values for \(S(2,4,7)\) are periodic, but that this sequence does not settle down until the heap size is greater than 7. What is the period of this sequence for large pile sizes? \item</p>
-<ol class="lower-alpha">
-<li id="li-82"><p id="p-294">Create a table of Sprague-Grundy values for \(S(1,2)\) for pile sizes \(0 \leq n \leq 4\text{.}\)</p></li>
-<li id="li-83"><p id="p-295">Create a table of Sprague-Grundy values for \(S(1,2,3)\) for pile sizes \(0 \leq n \leq 4\text{.}\)</p></li>
-<li id="li-84"><p id="p-296">Now consider a two-pile game \((\pile{n}, \pile{m})\) where we play \(S(1,2)\) on the left pile and \(S(1,2,3)\) on the right pile. Create a \(5 \times 5\) table of Sprague-Grundy values for this two-pile game. The <em class="emphasis">rows</em> of your table should correspond to \(S(1,2)\) moves on the left pile, and the <em class="emphasis">columns</em> of your table should correspond to \(S(1,2,3)\) moves on the right pile.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-297">Consider the subtraction game \(S(A)\) where \(A= \{ s_1, s_2, \ldots s_k \}\) where \(s_1 &lt; s_2 &lt; \cdots &lt; s_k\text{.}\) Prove that \(g(\pile{n}) =1\) if and only if \(g(\ppile{n-s_1}) =0\text{.}\) \item</p>
-<ol class="lower-alpha">
-<li id="li-85"><p id="p-298">Calculate the nim sum \(2 \oplus 3\)</p></li>
-<li id="li-86"><p id="p-299">Create the game tree for  \(\nim{2} \oplus \nim{3}\text{.}\)</p></li>
-<li id="li-87"><p id="p-300">Starting at the leaves of your tree, mark the Sprague-Grundy value for each game position in your tree by using Definition \ref{def-sprague}. Check that the Sprague-Grundy value of your root \(\nim{2} \oplus \nim{3}\) matches the nim value in part (a).</p></li>
+<p id="p-292">Continue to calculate the Sprague-Grundy values for \(S(2,5,7)\) as found in Table <a class="xref" data-knowl="./knowl/fig-sg-subtraction2.html" title="Figure 3.2.3">Figure 3.2.3</a>. Notice that this sequence of 22 values repeats itself. Will this continue? How can you be sure?</p></article><article class="exercise exercise-like" id="exercise-34"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-293">Show that the Sprague-Grundy values for \(S(2,4,7)\) are periodic, but that this sequence does not settle down until the heap size is greater than 7. What is the period of this sequence for large pile sizes?</p></article><article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<ol id="p-294" class="lower-alpha">
+<li id="li-82"><p id="p-295">Create a table of Sprague-Grundy values for \(S(1,2)\) for pile sizes \(0 \leq n \leq 4\text{.}\)</p></li>
+<li id="li-83"><p id="p-296">Create a table of Sprague-Grundy values for \(S(1,2,3)\) for pile sizes \(0 \leq n \leq 4\text{.}\)</p></li>
+<li id="li-84"><p id="p-297">Now consider a two-pile game \((\pile{n}, \pile{m})\) where we play \(S(1,2)\) on the left pile and \(S(1,2,3)\) on the right pile. Create a \(5 \times 5\) table of Sprague-Grundy values for this two-pile game. The <em class="emphasis">rows</em> of your table should correspond to \(S(1,2)\) moves on the left pile, and the <em class="emphasis">columns</em> of your table should correspond to \(S(1,2,3)\) moves on the right pile.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-36"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-301">Use strong induction to prove <a class="xref" data-knowl="./knowl/lemma-nimsprague.html" title="Lemma 3.3.1">Lemma 3.3.1</a>. Namely, prove that the Sprague-Grundy value of \(*n\) is  \(g(\nim{n})= n.\)</p></article></section></section></div></main>
+<p id="p-298">Consider the subtraction game \(S(A)\) where \(A= \{ s_1, s_2, \ldots s_k \}\) where \(s_1 &lt; s_2 &lt; \cdots &lt; s_k\text{.}\) Prove that \(g(\pile{n}) =1\) if and only if \(g(\ppile{n-s_1}) =0\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-37"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<ol id="p-299" class="lower-alpha">
+<li id="li-85"><p id="p-300">Calculate the nim sum \(2 \oplus 3\)</p></li>
+<li id="li-86"><p id="p-301">Create the game tree for  \(\nim{2} \oplus \nim{3}\text{.}\)</p></li>
+<li id="li-87"><p id="p-302">Starting at the leaves of your tree, mark the Sprague-Grundy value for each game position in your tree by using Definition \ref{def-sprague}. Check that the Sprague-Grundy value of your root \(\nim{2} \oplus \nim{3}\) matches the nim value in part (a).</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-38"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-303">Use strong induction to prove <a class="xref" data-knowl="./knowl/lemma-nimsprague.html" title="Lemma 3.3.1">Lemma 3.3.1</a>. Namely, prove that the Sprague-Grundy value of \(*n\) is  \(g(\nim{n})= n.\)</p></article></section></section></div></main>
 </div>
 </body>
 </html>
