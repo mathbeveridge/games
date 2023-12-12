@@ -84,7 +84,7 @@
 		<exercise>
 			<statement>
 				<p>
- Find the Sprague-Grundy values for <m>S(1,2, \ldots , k)</m>.
+ Find the Sprague-Grundy values for <m>S(1,2,3,4,5)</m>.
 
 				</p>
 			</statement>
@@ -92,7 +92,7 @@
 		<exercise>
 			<statement>
 				<p>
- Prove that your answer from the previous problem is correct using strong induction. Hint: your base cases are <m>1,2, \ldots, k+1</m>. In order to prove the result for <m>n</m>, it is best to think of <m>n</m> as  <m>n  = r(k+1) + s</m> where <m>0 \leq s &lt; k+1</m>.
+ Prove that your answer from the previous problem is correct using strong induction. Hint: your base cases are <m>1,2,3,4,5,6</m>. In order to prove the result for <m>n</m>, it is best to think of <m>n</m> as  <m>n  = 6m + r</m> where <m>0 \leq r \leq 5</m>.
 
 				</p>
 			</statement>
